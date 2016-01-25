@@ -148,8 +148,8 @@ section, .row {
 @media screen and (max-width: 414px) {
   /* line 106, ../sass/screen.scss */
   .small {
-    font-size: 2vw;
-    line-height: 3vw;
+    font-size: 2.8vw;
+    line-height: 4.76vw;
   }
 }
 

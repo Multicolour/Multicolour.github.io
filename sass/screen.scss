@@ -108,8 +108,8 @@ section, .row {
   line-height: ($base-font-size / 1.5) * 1.7;
 
   @media screen and (max-width: $break-small) {
-    font-size: $base-font-size;
-    line-height: $base-font-size * 1.5;
+    font-size: $base-font-size * 1.4;
+    line-height: ($base-font-size * 1.4) * 1.7;
   }
 }
 
