@@ -12,6 +12,7 @@ $stripe-colours: #fa9300, #66c9ee, #c9c9c9, #82b964, #d24d33, #fffbdb, #2e77bb, 
 
 // Media query vars.
 $break-small: 414px;
+$break-medium: 768px;
 $break-large: 1200px;
 
 // @link https://css-tricks.com/striped-background-gradients/
@@ -97,6 +98,10 @@ section, .row {
   @media screen and (max-width: $break-small) {
     margin-bottom: $vertical-rhythm;
   }
+
+  @media screen and (max-width: $break-medium) {
+    margin-bottom: $vertical-rhythm / 2;
+  }
 }
 
 .top p {
@@ -143,6 +148,10 @@ section, .row {
     vertical-align: top;
     width: 45%;
 
+    &:first-child {
+      margin-right: 9%;
+    }
+
     @media screen and (max-width: $break-small) {
       width: 100%;
       text-align: center;
@@ -150,8 +159,6 @@ section, .row {
   }
 
   img {
-    margin-right: 3%;
-
     @media screen and (max-width: $break-small) {
       display: none;
     }
@@ -166,7 +173,8 @@ section, .row {
     width: 75vw;
     margin: 0 auto;
     clear: both;
-    height: 3em;
+    height: 4em;
+    overflow: hidden;
   }
 
   input, button {
@@ -175,7 +183,7 @@ section, .row {
     font-family: inherit;
     font-size: $base-font-size;
     float: left;
-    padding: $vertical-rhythm / 2 $horizontal-rhythm;
+    padding: 0 $horizontal-rhythm;
     border-radius: 0;
     @include appearance(none);
     box-sizing: border-box;
