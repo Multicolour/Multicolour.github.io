@@ -215,12 +215,15 @@ section, .row {
 }
 /* line 164, ../sass/screen.scss */
 .email-signup fieldset {
+  display: block;
   width: 75vw;
   margin: 0 auto;
   clear: both;
+  height: 3em;
 }
-/* line 170, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 .email-signup input, .email-signup button {
+  height: 100%;
   margin: 0;
   font-family: inherit;
   font-size: 2vw;
@@ -229,20 +232,21 @@ section, .row {
   border-radius: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 414px) {
-  /* line 170, ../sass/screen.scss */
+  /* line 172, ../sass/screen.scss */
   .email-signup input, .email-signup button {
     padding: 2.22222vh 2vw;
     font-size: 3vw;
   }
 }
-/* line 185, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 .email-signup input {
-  width: 70%;
+  width: 80%;
   border: 1px solid #979797;
 }
-/* line 190, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 .email-signup button {
   border: 0;
   width: 20%;
@@ -253,12 +257,12 @@ section, .row {
   border: 1px solid #333;
 }
 @media screen and (max-width: 414px) {
-  /* line 190, ../sass/screen.scss */
+  /* line 194, ../sass/screen.scss */
   .email-signup button {
     padding: 1.25vh 2vw;
   }
 }
-/* line 203, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 .email-signup button:hover {
   cursor: pointer;
 }

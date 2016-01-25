@@ -162,12 +162,15 @@ section, .row {
   text-align: center;
 
   fieldset {
+    display: block;
     width: 75vw;
     margin: 0 auto;
     clear: both;
+    height: 3em;
   }
 
   input, button {
+    height: 100%;
     margin: 0;
     font-family: inherit;
     font-size: $base-font-size;
@@ -175,6 +178,7 @@ section, .row {
     padding: $vertical-rhythm / 2 $horizontal-rhythm;
     border-radius: 0;
     @include appearance(none);
+    box-sizing: border-box;
 
     @media screen and (max-width: $break-small) {
       padding: $vertical-rhythm / 2.25 $horizontal-rhythm;
@@ -183,7 +187,7 @@ section, .row {
   }
 
   input {
-    width: 70%;
+    width: 80%;
     border: 1px solid #979797;
   }
 
