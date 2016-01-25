@@ -9,6 +9,10 @@ $horizontal-rhythm: 2vw;
 $base-font-size: 2vw;
 $stripe-colours: #fa9300, #66c9ee, #c9c9c9, #82b964, #d24d33, #fffbdb, #2e77bb, #6bd5b1, #f87aa0, #c9c9c9, #72664e, #ccd600, #fffbdb, #df620e, #993838, #ff9600, #d24d33, #8960a7, #82b964, #f87aa0, #d43f3f, #668000, #ff9600, #8960a7, #c9c9c9, #993838, #ccd600, #668000, #f4cc13, #72664e, #fa9300, #66c9ee, #c9c9c9, #82b964, #ccd600, #fffbdb, #2e77bb, #6bd5b1, #f87aa0, #c9c9c9, #fa9300, #66c9ee, #c9c9c9, #82b964, #ccd600, #fffbdb, #fa9300;
 
+// Media query vars.
+$break-small: 320px;
+$break-large: 1200px;
+
 // @link https://css-tricks.com/striped-background-gradients/
 // @credit Hugo Giraudel http://hugogiraudel.com/
 // Thanks dude, amazing work.
@@ -58,6 +62,11 @@ body {
   background-color: #ededed; // Old browsers
   @include filter-gradient(#ededed, #ffffff, vertical); // IE6-9
   @include background-image(linear-gradient(top, #ededed 0%, #f6f6f6 25%, #ffffff 100%));
+
+  @media screen and (max-width: $break-small) {
+    font-size: $base-font-size * 2;
+    line-height: ($base-font-size * 2) * 1.5;
+  }
 }
 
 strong {
@@ -83,6 +92,10 @@ a {
 // Our styles.
 section, .row {
   margin-bottom: $vertical-rhythm * 2;
+
+  @media screen and (max-width: $break-small) {
+    margin-bottom: $vertical-rhythm;
+  }
 }
 
 .top p {
@@ -103,20 +116,40 @@ section, .row {
   width: 30vw;
   margin: $vertical-rhythm auto;
   margin-top: 0;
+
+  @media screen and (max-width: $break-small) {
+    width: 60vw;
+  }
 }
 
 .row {
   clear: both;
   overflow: hidden;
 
-  img {
-    margin-right: 3%;
-  }
-
   img, .text {
     display: inline-block;
     vertical-align: top;
     width: 45%;
+
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+      text-align: center;
+    }
+
+    .small {
+      @media screen and (max-width: $break-small) {
+        font-size: $vertical-rhythm / 2.5;
+        line-height: ($vertical-rhythm / 2.5) * 1.5;
+      }
+    }
+  }
+
+  img {
+    margin-right: 3%;
+
+    @media screen and (max-width: $break-small) {
+      display: none;
+    }
   }
 }
 
