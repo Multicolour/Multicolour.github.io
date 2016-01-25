@@ -91,7 +91,7 @@ body {
   background-image: -webkit-linear-gradient(top, #ededed 0%, #f6f6f6 25%, #ffffff 100%);
   background-image: linear-gradient(to bottom, #ededed 0%, #f6f6f6 25%, #ffffff 100%);
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 414px) {
   /* line 53, ../sass/screen.scss */
   body {
     font-size: 4vw;
@@ -128,7 +128,7 @@ a {
 section, .row {
   margin-bottom: 10vh;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 414px) {
   /* line 93, ../sass/screen.scss */
   section, .row {
     margin-bottom: 5vh;
@@ -158,7 +158,7 @@ section, .row {
   margin: 5vh auto;
   margin-top: 0;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 414px) {
   /* line 114, ../sass/screen.scss */
   .logo {
     width: 60vw;
@@ -176,14 +176,14 @@ section, .row {
   vertical-align: top;
   width: 45%;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 414px) {
   /* line 129, ../sass/screen.scss */
   .row img, .row .text {
     width: 100%;
     text-align: center;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 414px) {
   /* line 139, ../sass/screen.scss */
   .row img .small, .row .text .small {
     font-size: 2vh;
@@ -194,7 +194,7 @@ section, .row {
 .row img {
   margin-right: 3%;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 414px) {
   /* line 147, ../sass/screen.scss */
   .row img {
     display: none;
