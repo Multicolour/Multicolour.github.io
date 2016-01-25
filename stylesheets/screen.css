@@ -63,7 +63,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 html {
   margin: 0;
   padding: 5vh 2vw;
@@ -74,7 +74,7 @@ html {
   background-image: linear-gradient(45deg, #fa9300 0%, #fa9300 2.12766%, #66c9ee 2.12766%, #66c9ee 4.25532%, #c9c9c9 4.25532%, #c9c9c9 6.38298%, #82b964 6.38298%, #82b964 8.51064%, #d24d33 8.51064%, #d24d33 10.6383%, #fffbdb 10.6383%, #fffbdb 12.76596%, #2e77bb 12.76596%, #2e77bb 14.89362%, #6bd5b1 14.89362%, #6bd5b1 17.02128%, #f87aa0 17.02128%, #f87aa0 19.14894%, #c9c9c9 19.14894%, #c9c9c9 21.2766%, #72664e 21.2766%, #72664e 23.40426%, #ccd600 23.40426%, #ccd600 25.53191%, #fffbdb 25.53191%, #fffbdb 27.65957%, #df620e 27.65957%, #df620e 29.78723%, #993838 29.78723%, #993838 31.91489%, #ff9600 31.91489%, #ff9600 34.04255%, #d24d33 34.04255%, #d24d33 36.17021%, #8960a7 36.17021%, #8960a7 38.29787%, #82b964 38.29787%, #82b964 40.42553%, #f87aa0 40.42553%, #f87aa0 42.55319%, #d43f3f 42.55319%, #d43f3f 44.68085%, #668000 44.68085%, #668000 46.80851%, #ff9600 46.80851%, #ff9600 48.93617%, #8960a7 48.93617%, #8960a7 51.06383%, #c9c9c9 51.06383%, #c9c9c9 53.19149%, #993838 53.19149%, #993838 55.31915%, #ccd600 55.31915%, #ccd600 57.44681%, #668000 57.44681%, #668000 59.57447%, #f4cc13 59.57447%, #f4cc13 61.70213%, #72664e 61.70213%, #72664e 63.82979%, #fa9300 63.82979%, #fa9300 65.95745%, #66c9ee 65.95745%, #66c9ee 68.08511%, #c9c9c9 68.08511%, #c9c9c9 70.21277%, #82b964 70.21277%, #82b964 72.34043%, #ccd600 72.34043%, #ccd600 74.46809%, #fffbdb 74.46809%, #fffbdb 76.59574%, #2e77bb 76.59574%, #2e77bb 78.7234%, #6bd5b1 78.7234%, #6bd5b1 80.85106%, #f87aa0 80.85106%, #f87aa0 82.97872%, #c9c9c9 82.97872%, #c9c9c9 85.10638%, #fa9300 85.10638%, #fa9300 87.23404%, #66c9ee 87.23404%, #66c9ee 89.3617%, #c9c9c9 89.3617%, #c9c9c9 91.48936%, #82b964 91.48936%, #82b964 93.61702%, #ccd600 93.61702%, #ccd600 95.74468%, #fffbdb 95.74468%, #fffbdb 97.87234%, #fa9300 97.87234%, #fa9300 100%);
 }
 
-/* line 53, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 body {
   font-family: "Lato", sans-serif;
   font-size: 2vw;
@@ -92,66 +92,81 @@ body {
   background-image: linear-gradient(to bottom, #ededed 0%, #f6f6f6 25%, #ffffff 100%);
 }
 @media screen and (max-width: 414px) {
-  /* line 53, ../sass/screen.scss */
+  /* line 54, ../sass/screen.scss */
   body {
     font-size: 4vw;
     line-height: 6vw;
   }
 }
 
-/* line 72, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 code {
   font-family: Courier, Times, sans-serif;
 }
 
-/* line 80, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 p, img {
   vertical-align: top;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 a {
   color: #C13C8C;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 * + * {
   margin-bottom: 5vh;
 }
 
-/* line 93, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 section, .row {
   margin-bottom: 10vh;
 }
 @media screen and (max-width: 414px) {
-  /* line 93, ../sass/screen.scss */
+  /* line 94, ../sass/screen.scss */
   section, .row {
     margin-bottom: 5vh;
   }
 }
 
-/* line 101, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 .top p {
   margin-bottom: 5vh;
 }
 
-/* line 105, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .small {
   font-size: 1.33333vw;
   line-height: 2.26667vw;
 }
+@media screen and (max-width: 414px) {
+  /* line 106, ../sass/screen.scss */
+  .small {
+    font-size: 2vw;
+    line-height: 3vw;
+  }
+}
 
-/* line 110, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .really-small {
   font-size: 1vw;
 }
+@media screen and (max-width: 414px) {
+  /* line 116, ../sass/screen.scss */
+  .really-small {
+    margin-top: 1vh;
+    font-size: 2vw;
+    line-height: 3vw;
+  }
+}
 
-/* line 114, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 .logo {
   display: block;
   width: 30vw;
@@ -159,71 +174,74 @@ section, .row {
   margin-top: 0;
 }
 @media screen and (max-width: 414px) {
-  /* line 114, ../sass/screen.scss */
+  /* line 126, ../sass/screen.scss */
   .logo {
     width: 60vw;
   }
 }
 
-/* line 125, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 .row {
   clear: both;
   overflow: hidden;
 }
-/* line 129, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .row img, .row .text {
   display: inline-block;
   vertical-align: top;
   width: 45%;
 }
 @media screen and (max-width: 414px) {
-  /* line 129, ../sass/screen.scss */
+  /* line 141, ../sass/screen.scss */
   .row img, .row .text {
     width: 100%;
     text-align: center;
   }
 }
-@media screen and (max-width: 414px) {
-  /* line 139, ../sass/screen.scss */
-  .row img .small, .row .text .small {
-    font-size: 2vh;
-    line-height: 3vh;
-  }
-}
-/* line 147, ../sass/screen.scss */
+/* line 152, ../sass/screen.scss */
 .row img {
   margin-right: 3%;
 }
 @media screen and (max-width: 414px) {
-  /* line 147, ../sass/screen.scss */
+  /* line 152, ../sass/screen.scss */
   .row img {
     display: none;
   }
 }
 
-/* line 156, ../sass/screen.scss */
+/* line 161, ../sass/screen.scss */
 .email-signup {
   text-align: center;
 }
-/* line 159, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .email-signup fieldset {
   width: 75vw;
   margin: 0 auto;
   clear: both;
 }
-/* line 165, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 .email-signup input, .email-signup button {
   margin: 0;
   font-family: inherit;
   font-size: 2vw;
   float: left;
   padding: 2.5vh 2vw;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
-/* line 173, ../sass/screen.scss */
+@media screen and (max-width: 414px) {
+  /* line 170, ../sass/screen.scss */
+  .email-signup input, .email-signup button {
+    font-size: 2vw;
+    line-height: 3vw;
+  }
+}
+/* line 184, ../sass/screen.scss */
 .email-signup input {
   width: 70%;
+  border: 1px solid #979797;
 }
-/* line 177, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 .email-signup button {
   border: 0;
   width: 20%;
@@ -233,7 +251,7 @@ section, .row {
   text-transform: uppercase;
   border: 1px solid #333;
 }
-/* line 186, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 .email-signup button:hover {
   cursor: pointer;
 }

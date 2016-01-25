@@ -1,6 +1,7 @@
 @import
   "compass",
   "compass/reset",
+  "compass/css3/appearance",
   "compass/css3/animation";
 
 // Vars and mixins //
@@ -105,10 +106,21 @@ section, .row {
 .small {
   font-size: $base-font-size / 1.5;
   line-height: ($base-font-size / 1.5) * 1.7;
+
+  @media screen and (max-width: $break-small) {
+    font-size: $base-font-size;
+    line-height: $base-font-size * 1.5;
+  }
 }
 
 .really-small {
   font-size: $base-font-size / 2;
+
+  @media screen and (max-width: $break-small) {
+    margin-top: 1vh;
+    font-size: $base-font-size;
+    line-height: $base-font-size * 1.5;
+  }
 }
 
 .logo {
@@ -134,13 +146,6 @@ section, .row {
     @media screen and (max-width: $break-small) {
       width: 100%;
       text-align: center;
-    }
-
-    .small {
-      @media screen and (max-width: $break-small) {
-        font-size: $vertical-rhythm / 2.5;
-        line-height: ($vertical-rhythm / 2.5) * 1.5;
-      }
     }
   }
 
@@ -168,10 +173,17 @@ section, .row {
     font-size: $base-font-size;
     float: left;
     padding: $vertical-rhythm / 2 $horizontal-rhythm;
+    @include appearance(none);
+
+    @media screen and (max-width: $break-small) {
+      font-size: $base-font-size;
+      line-height: $base-font-size * 1.5;
+    }
   }
 
   input {
     width: 70%;
+    border: 1px solid #979797;
   }
 
   button {
