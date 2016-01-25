@@ -232,8 +232,8 @@ section, .row {
 @media screen and (max-width: 414px) {
   /* line 170, ../sass/screen.scss */
   .email-signup input, .email-signup button {
-    font-size: 2vw;
-    line-height: 3vw;
+    padding: 2.22222vh 2vw;
+    font-size: 3vw;
   }
 }
 /* line 184, ../sass/screen.scss */
@@ -251,7 +251,13 @@ section, .row {
   text-transform: uppercase;
   border: 1px solid #333;
 }
-/* line 198, ../sass/screen.scss */
+@media screen and (max-width: 414px) {
+  /* line 189, ../sass/screen.scss */
+  .email-signup button {
+    padding: 1.25vh 2vw;
+  }
+}
+/* line 202, ../sass/screen.scss */
 .email-signup button:hover {
   cursor: pointer;
 }

@@ -176,8 +176,8 @@ section, .row {
     @include appearance(none);
 
     @media screen and (max-width: $break-small) {
-      font-size: $base-font-size;
-      line-height: $base-font-size * 1.5;
+      padding: $vertical-rhythm / 2.25 $horizontal-rhythm;
+      font-size: $base-font-size * 1.5;
     }
   }
 
@@ -194,6 +194,10 @@ section, .row {
     font-weight: 700;
     text-transform: uppercase;
     border: 1px solid #333;
+
+    @media screen and (max-width: $break-small) {
+      padding: $vertical-rhythm / 4 $horizontal-rhythm;
+    }
 
     &:hover {
       cursor: pointer;
