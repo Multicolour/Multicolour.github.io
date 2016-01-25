@@ -1,0 +1,159 @@
+@import
+  "compass",
+  "compass/reset",
+  "compass/css3/animation";
+
+// Vars and mixins //
+$vertical-rhythm: 5vh;
+$horizontal-rhythm: 2vw;
+$base-font-size: 2vw;
+$stripe-colours: #fa9300, #66c9ee, #c9c9c9, #82b964, #d24d33, #fffbdb, #2e77bb, #6bd5b1, #f87aa0, #c9c9c9, #72664e, #ccd600, #fffbdb, #df620e, #993838, #ff9600, #d24d33, #8960a7, #82b964, #f87aa0, #d43f3f, #668000, #ff9600, #8960a7, #c9c9c9, #993838, #ccd600, #668000, #f4cc13, #72664e, #fa9300, #66c9ee, #c9c9c9, #82b964, #ccd600, #fffbdb, #2e77bb, #6bd5b1, #f87aa0, #c9c9c9, #fa9300, #66c9ee, #c9c9c9, #82b964, #ccd600, #fffbdb, #fa9300;
+
+// @link https://css-tricks.com/striped-background-gradients/
+// @credit Hugo Giraudel http://hugogiraudel.com/
+// Thanks dude, amazing work.
+@mixin stripes($colors, $direction: "to bottom") {
+    $stripe-width: 100% / length($colors);
+    $auto:         if( type-of(nth($colors, 1)) == list, false, true );
+    $gradient:     ();
+
+    @for $i from 1 through length($colors) {
+      $item: nth($colors, $i);
+      $dump: ();
+
+      @if $auto == true {
+        $dump: $item $stripe-width * ($i - 1), $item $stripe-width * $i;
+      }
+
+      @else {
+        @if $i > 1 {
+          $previous-item: nth($colors, $i - 1);
+          $dump: append($dump, nth($item, 1) nth($previous-item, 2));
+        }
+        $dump: append($dump, $item);
+      }
+
+      $gradient: join($gradient, $dump, comma);
+    }
+
+    @include background-image(linear-gradient($direction, $gradient));
+}
+
+// Global element styles //
+html {
+  margin: 0;
+  padding: $vertical-rhythm $horizontal-rhythm;
+  @include stripes($stripe-colours, 45deg)
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: $base-font-size;
+  line-height: $base-font-size * 1.7;
+  -webkit-font-smoothing: antialiased;
+  padding: $vertical-rhythm $horizontal-rhythm * 5;
+
+  // Permalink - use to edit and share this gradient:
+  // http://colorzilla.com/gradient-editor/#ededed+0,f6f6f6+53,ffffff+100
+  background-color: #ededed; // Old browsers
+  @include filter-gradient(#ededed, #ffffff, vertical); // IE6-9
+  @include background-image(linear-gradient(top, #ededed 0%, #f6f6f6 25%, #ffffff 100%));
+}
+
+strong {
+  font-weight: 700;
+}
+
+code {
+  font-family: Courier, Times, sans-serif;
+}
+
+p, img {
+  vertical-align: top;
+}
+
+a {
+  color: #C13C8C;
+}
+
+* + * {
+  margin-bottom: $vertical-rhythm;
+}
+
+// Our styles.
+section, .row {
+  margin-bottom: $vertical-rhythm * 2;
+}
+
+.top p {
+  margin-bottom: $vertical-rhythm;
+}
+
+.small {
+  font-size: $base-font-size / 1.5;
+  line-height: ($base-font-size / 1.5) * 1.7;
+}
+
+.really-small {
+  font-size: $base-font-size / 2;
+}
+
+.logo {
+  display: block;
+  width: 30vw;
+  margin: $vertical-rhythm auto;
+  margin-top: 0;
+}
+
+.row {
+  clear: both;
+  overflow: hidden;
+
+  img {
+    margin-right: 3%;
+  }
+
+  img, .text {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+  }
+
+  .text {
+    margin-top: -1.3vh;
+  }
+}
+
+.email-signup {
+  text-align: center;
+
+  fieldset {
+    width: 75vw;
+    margin: 0 auto;
+    clear: both;
+  }
+
+  input, button {
+    margin: 0;
+    font-size: $base-font-size;
+    float: left;
+    padding: $vertical-rhythm / 2 $horizontal-rhythm;
+  }
+
+  input {
+    width: 70%;
+  }
+
+  button {
+    border: 0;
+    width: 20%;
+    background: #333;
+    color: #FFF;
+    text-transform: uppercase;
+    border: 1px solid #333;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
