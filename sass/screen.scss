@@ -49,7 +49,7 @@ html {
 body {
   font-family: "Lato", sans-serif;
   font-size: $base-font-size;
-  line-height: $base-font-size * 1.7;
+  line-height: $base-font-size * 1.5;
   -webkit-font-smoothing: antialiased;
   padding: $vertical-rhythm $horizontal-rhythm * 5;
 
@@ -118,10 +118,6 @@ section, .row {
     vertical-align: top;
     width: 45%;
   }
-
-  .text {
-    margin-top: -1.3vh;
-  }
 }
 
 .email-signup {
@@ -135,6 +131,7 @@ section, .row {
 
   input, button {
     margin: 0;
+    font-family: inherit;
     font-size: $base-font-size;
     float: left;
     padding: $vertical-rhythm / 2 $horizontal-rhythm;
@@ -149,6 +146,7 @@ section, .row {
     width: 20%;
     background: #333;
     color: #FFF;
+    font-weight: 700;
     text-transform: uppercase;
     border: 1px solid #333;
 

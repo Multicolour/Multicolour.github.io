@@ -78,7 +78,7 @@ html {
 body {
   font-family: "Lato", sans-serif;
   font-size: 2vw;
-  line-height: 3.4vw;
+  line-height: 3vw;
   -webkit-font-smoothing: antialiased;
   padding: 5vh 10vw;
   background-color: #ededed;
@@ -161,42 +161,40 @@ section, .row {
   vertical-align: top;
   width: 45%;
 }
-/* line 122, ../sass/screen.scss */
-.row .text {
-  margin-top: -1.3vh;
-}
 
-/* line 127, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .email-signup {
   text-align: center;
 }
-/* line 130, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 .email-signup fieldset {
   width: 75vw;
   margin: 0 auto;
   clear: both;
 }
-/* line 136, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 .email-signup input, .email-signup button {
   margin: 0;
+  font-family: inherit;
   font-size: 2vw;
   float: left;
   padding: 2.5vh 2vw;
 }
-/* line 143, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .email-signup input {
   width: 70%;
 }
-/* line 147, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .email-signup button {
   border: 0;
   width: 20%;
   background: #333;
   color: #FFF;
+  font-weight: 700;
   text-transform: uppercase;
   border: 1px solid #333;
 }
-/* line 155, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 .email-signup button:hover {
   cursor: pointer;
 }
