@@ -173,6 +173,7 @@ section, .row {
     font-size: $base-font-size;
     float: left;
     padding: $vertical-rhythm / 2 $horizontal-rhythm;
+    border-radius: 0;
     @include appearance(none);
 
     @media screen and (max-width: $break-small) {

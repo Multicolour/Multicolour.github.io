@@ -226,6 +226,7 @@ section, .row {
   font-size: 2vw;
   float: left;
   padding: 2.5vh 2vw;
+  border-radius: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -236,12 +237,12 @@ section, .row {
     font-size: 3vw;
   }
 }
-/* line 184, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 .email-signup input {
   width: 70%;
   border: 1px solid #979797;
 }
-/* line 189, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 .email-signup button {
   border: 0;
   width: 20%;
@@ -252,12 +253,12 @@ section, .row {
   border: 1px solid #333;
 }
 @media screen and (max-width: 414px) {
-  /* line 189, ../sass/screen.scss */
+  /* line 190, ../sass/screen.scss */
   .email-signup button {
     padding: 1.25vh 2vw;
   }
 }
-/* line 202, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .email-signup button:hover {
   cursor: pointer;
 }
