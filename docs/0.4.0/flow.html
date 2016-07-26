@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Multicolour - NodeJS REST API generator.</title>
+
+    <!-- @TODO REMOVE BEFORE GOING LIVE. IS FOR RAWGIT -->
+    <script>
+      if (window.location.host === "cdn.rawgit.com" || window.location.host === "rawgit.com")
+        document.write("<base href=\"" + window.location.protocol + "//" + window.location.host + "/Multicolour/Multicolour.github.io/0.4.0/\" />")
+      else
+        document.write("<base href=\"" + window.location.protocol + "//" + window.location.host + "/\" />")
+    </script>
+
+    <!-- Base meta. -->
+    <meta name="identifier-url" content="https://getmulticolour.com" />
+    <meta name="title" content="Multicolour - REST API &amp; single page app generator." />
+    <meta name="description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline." />
+    <meta name="abstract" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline." />
+    <meta name="keywords" content="multicolour, rest api, polymer, generator, nodejs" />
+    <meta name="author" content="New World Code Ltd" />
+    <meta name="revisit-after" content="15" />
+    <meta name="language" content="EN" />
+    <meta name="copyright" content="© 2016 New World Code Ltd" />
+    <meta name="robots" content="Index" />
+
+    <!-- Google+ -->
+    <meta itemprop="name" content="Multicolour - REST API &amp; single page app generator.">
+    <meta itemprop="description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline.">
+    <meta itemprop="image" content="https://getmulticolour.com/images/logo-text-outlined.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@getmulticolour">
+    <meta name="twitter:title" content="Multicolour - REST API &amp; single page app generator.">
+    <meta name="twitter:description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline.">
+    <meta name="twitter:creator" content="@getmulticolour">
+    <meta name="twitter:image" content="https://getmulticolour.com/images/logo-text-outlined.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Multicolour - REST API &amp; single page app generator." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://getmulticolour.com" />
+    <meta property="og:image" content="https://getmulticolour.com/images/logo-text-outlined.png" />
+    <meta property="og:description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline." />
+    <meta property="og:site_name" content="Multicolour - REST API &amp; single page app generator." />
+
+    <!-- Browser behaviour -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
+  </head>
+
+  <body class="docs">
+    <main>
+      <nav class="general-nav">
+        <ul>
+          <li>
+            <a href="" class="no-border">
+              <img class="nav-logo" src="images/logo-stamp.png" alt="Multicolour - REST API generator.">
+            </a>
+          </li>
+          <li>
+            <a href="examples">examples</a>
+          </li>
+          <li>
+            <a href="docs/0.4.0">docs</a>
+          </li>
+          <li>
+            <a href="blog">blog</a>
+          </li>
+          <li>
+            <a href="social">social</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="docs">
+        <h1 id="flow">Flow</h1>
+
+        <p>Flows are a simple way to test the way your API functionality in a way your user or developer might interact with it.</p>
+
+        <p>These are called flows, as the user flows through the API to perform their desired actions, it’s our job as developers to ensure it all goes smoothly.</p>
+
+
+
+        <h2 id="getting-started-with-multicolour-flows">Getting started with Multicolour Flows</h2>
+
+        <p>There are two ways to create your flows, the Multicolour example app exports our service in it’s <code>app.js</code> file and we simply pass that to the <code>Flow</code> constructor.</p>
+
+        <p>I.E</p>
+
+
+
+        <pre class="prettyprint"><code class="language-js hljs "><span class="hljs-comment">// tests/simple-flow.js</span>
+        <span class="hljs-pi">"use strict"</span>
+
+        <span class="hljs-keyword">const</span> Flow = <span class="hljs-built_in">require</span>(<span class="hljs-string">"multicolour/flow"</span>)
+        <span class="hljs-keyword">const</span> service = <span class="hljs-built_in">require</span>(<span class="hljs-string">"../app"</span>)
+
+        <span class="hljs-keyword">new</span> Flow(service)
+          .create(<span class="hljs-string">"person"</span>, {
+            name: <span class="hljs-string">"Multicolour Flow"</span>,
+            age: <span class="hljs-number">1</span>,
+            secret: <span class="hljs-string">"super private awesome secret"</span>
+          })
+          .read(<span class="hljs-string">"person"</span>, <span class="hljs-number">1</span>)
+          .create(<span class="hljs-string">"gadget"</span>, {
+            type: <span class="hljs-string">"laptop"</span>,
+            cost: <span class="hljs-number">1200</span>,
+            brand: <span class="hljs-string">"Apple"</span>,
+            owner: <span class="hljs-string">"1"</span>
+          })
+          .read(<span class="hljs-string">"gadget"</span>, <span class="hljs-number">1</span>)
+
+          <span class="hljs-comment">// Run the flow.</span>
+          .run()</code></pre>
+
+        <p>The alternative way to write your flows is to use the <code>.flow</code> function on Multicolour</p>
+
+
+
+        <h2 id="api">API</h2>
+
+        <p>Flows should read easily, they’re written by developers for developers but they should still resemble our native language.</p>
+
+        <p>Inside of <a href="https://github.com/Multicolour/multicolour/blob/master/flow/lex.js"><code>multicolour/flow/lex.js</code></a> you will see a list of the terminologies that Flows currently understand and translates them to HTTP verbs.</p>
+
+        <p>I.E</p>
+
+        <ul>
+        <li><code>"create"</code> is turned into <code>"post"</code>  </li>
+        <li><code>"update or create"</code> is turned into <code>"put"</code></li>
+        <li><code>"destroy"</code> is turned into <code>"delete"</code></li>
+        </ul>
+
+        <p>So on and so-forth, this lets us write expressive tests in an easy to understand way. There are several helper functions that go to aid this as well documented below.</p>
+
+        <p>Where <code>search_payload</code> appears as an argument to any of the below functions, where you are only going to search based on id can omit the usage of an object. I.E change <code>{ id: 1 }</code> into simply just <code>1</code> and Flow will make it an object for you.</p>
+
+
+
+        <h3 id="createstring-modelname-object-payload"><code>.create(String model_name, Object payload)</code></h3>
+
+        <p>Creates a new <code>Task</code> to create a new row on the <code>model_name</code> collection with the <code>payload</code> values.</p>
+
+
+
+        <h3 id="readstring-modelname-object-searchpayload"><code>.read(String model_name, Object search_payload)</code></h3>
+
+        <p>Creates a new <code>Task</code> to read a row on the <code>model_name</code>.</p>
+
+        <p>If an <code>id</code> attribute is present within <code>search_payload</code> it is plucked from the search payload and appended to the url, for instance.</p>
+
+        <p><code>.read("gadget", { id: 1, type: "tablet" })</code></p>
+
+        <p>Will be turned into a get request to this uri:</p>
+
+        <p><code>/gadget/1?type=tablet</code></p>
+
+
+
+        <h3 id="updatestring-modelname-object-searchpayload-object-payload"><code>.update(String model_name, Object search_payload, Object payload)</code></h3>
+
+        <p>Creates a new <code>Task</code> to update a row on the <code>model_name</code> collection based on the <code>search_payload</code> with the <code>payload</code> values.</p>
+
+
+
+        <h3 id="deletestring-modelname-object-searchpayload"><code>.delete(String model_name, Object search_payload)</code></h3>
+
+        <p>Creates a new <code>Task</code> to delete a row on the <code>model_name</code> collection based on the <code>search_payload</code>.</p>
+
+
+
+        <h3 id="thenstring-lexableverb-string-modelname-object-searchpayload-object-payload"><code>.then(String lexable_verb, String model_name, [Object search_payload, Object payload])</code></h3>
+
+        <p><code>.then</code> is an expressive helper function that allows any of the above documented functions to run using any of the “lex-able” tokens found in the <a href="https://github.com/Multicolour/multicolour/blob/master/flow/lex.js">lexicon</a></p>
+
+        <p>Example usage of <code>.then</code></p>
+
+
+
+        <pre class="prettyprint"><code class=" hljs sql">my_flow.then(
+            // <span class="hljs-operator"><span class="hljs-keyword">Update</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">create</span> a <span class="hljs-keyword">row</span>
+            <span class="hljs-string">"update or create"</span>,
+
+            // <span class="hljs-keyword">In</span> the <span class="hljs-string">"gadget"</span> collection.
+            <span class="hljs-string">"gadget"</span>,
+
+            // Either find <span class="hljs-keyword">or</span> <span class="hljs-keyword">create</span> a <span class="hljs-keyword">row</span> <span class="hljs-keyword">with</span> id: <span class="hljs-number">2</span>
+            { id: <span class="hljs-number">2</span> },
+
+            // <span class="hljs-keyword">And</span> these <span class="hljs-keyword">values</span>.
+            { name: <span class="hljs-string">"https://getmulticolour.com"</span> })</span></code></pre>
+
+
+
+        <h3 id="run"><code>.run()</code></h3>
+
+        <p>Simply runs your flow as a test suite.</p>
+      </section>
+
+      <section class="email-signup">
+        <form
+          method="post"
+          enctype="multipart/form-data"
+          action="https://getmulticolour.us12.list-manage.com/subscribe/post?u=bec938217586432b04e1ea290&amp;id=e5a068eb80">
+          <fieldset name="email">
+            <input
+              name="EMAIL"
+              type="email"
+              alt="Enter your best email for news on Multicolour's development"
+              placeholder="Enter your best email for news on Multicolour's development">
+            <button
+              type="submit"
+              name="subscribe">
+              SIGN UP
+            </button>
+          </fieldset>
+        </form>
+        <p class="really-small">
+          Your email address is safe with us, you'll ONLY receive occasional news about Multicolour. Nothing and no one else, but us &hearts;
+        </p>
+      </section>
+
+    </main>
+
+    <script async src="prism.js"></script>
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+        analytics.page()
+      }}();
+
+      if (window.location.host === "cdn.rawgit.com" || window.location.host === "rawgit.com")
+        [].slice.apply(document.querySelector("nav").querySelectorAll("a")).forEach(function(link) {
+          link.setAttribute("href", link.getAttribute("href") + "/index.html")
+        })
+    </script>
+  </body>
+</html>

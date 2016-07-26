@@ -97,8 +97,13 @@ ol {
   padding-bottom: 2em;
 }
 
-li {
+ul > li {
   list-style-type: square;
+}
+
+li li {
+  list-style-type: circle;
+  margin-left: $horizontal-rhythm;
 }
 
 strong {
@@ -108,6 +113,10 @@ strong {
 pre {
   // Icky important here because Prism.
   margin: $vertical-rhythm 0 !important;
+}
+
+p {
+  margin-bottom: $vertical-rhythm;
 }
 
 p, img {
@@ -155,10 +164,6 @@ section, .row {
   @media screen and (max-width: $break-medium) {
     margin-bottom: $vertical-rhythm / 2;
   }
-}
-
-.top p {
-  margin-bottom: $vertical-rhythm;
 }
 
 .small {
@@ -285,7 +290,7 @@ nav {
     left: 0;
     right: 0;
     background: #FFF;
-    padding: $vertical-rhythm $horizontal-rhythm;
+    padding: $vertical-rhythm / 2 $horizontal-rhythm;
     border-bottom: 2px solid #00DEAF;
   }
 

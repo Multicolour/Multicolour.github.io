@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Multicolour - NodeJS REST API generator.</title>
+
+    <!-- @TODO REMOVE BEFORE GOING LIVE. IS FOR RAWGIT -->
+    <script>
+      if (window.location.host === "cdn.rawgit.com" || window.location.host === "rawgit.com")
+        document.write("<base href=\"" + window.location.protocol + "//" + window.location.host + "/Multicolour/Multicolour.github.io/0.4.0/\" />")
+      else
+        document.write("<base href=\"" + window.location.protocol + "//" + window.location.host + "/\" />")
+    </script>
+
+    <!-- Base meta. -->
+    <meta name="identifier-url" content="https://getmulticolour.com" />
+    <meta name="title" content="Multicolour - REST API &amp; single page app generator." />
+    <meta name="description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline." />
+    <meta name="abstract" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline." />
+    <meta name="keywords" content="multicolour, rest api, polymer, generator, nodejs" />
+    <meta name="author" content="New World Code Ltd" />
+    <meta name="revisit-after" content="15" />
+    <meta name="language" content="EN" />
+    <meta name="copyright" content="© 2016 New World Code Ltd" />
+    <meta name="robots" content="Index" />
+
+    <!-- Google+ -->
+    <meta itemprop="name" content="Multicolour - REST API &amp; single page app generator.">
+    <meta itemprop="description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline.">
+    <meta itemprop="image" content="https://getmulticolour.com/images/logo-text-outlined.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@getmulticolour">
+    <meta name="twitter:title" content="Multicolour - REST API &amp; single page app generator.">
+    <meta name="twitter:description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline.">
+    <meta name="twitter:creator" content="@getmulticolour">
+    <meta name="twitter:image" content="https://getmulticolour.com/images/logo-text-outlined.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Multicolour - REST API &amp; single page app generator." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://getmulticolour.com" />
+    <meta property="og:image" content="https://getmulticolour.com/images/logo-text-outlined.png" />
+    <meta property="og:description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline." />
+    <meta property="og:site_name" content="Multicolour - REST API &amp; single page app generator." />
+
+    <!-- Browser behaviour -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
+  </head>
+
+  <body class="docs">
+    <main>
+      <nav class="general-nav">
+        <ul>
+          <li>
+            <a href="" class="no-border">
+              <img class="nav-logo" src="images/logo-stamp.png" alt="Multicolour - REST API generator.">
+            </a>
+          </li>
+          <li>
+            <a href="examples">examples</a>
+          </li>
+          <li>
+            <a href="docs/0.4.0">docs</a>
+          </li>
+          <li>
+            <a href="blog">blog</a>
+          </li>
+          <li>
+            <a href="social">social</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="docs">
+        <h1 id="collections">Collections</h1>
+
+        <p>Multicolour collections are built on the popular <a href="https://github.com/balderdashy/waterline">Waterline ORM</a>, this allowed us to minimise the amount of work that you do to get something you’d spend weeks or months doing.</p>
+
+        <p>Multicolour expands on Blueprints slightly to give you some extra behavioural and timesaving tweaks as well as extra behaviour for Multicolour.</p>
+
+        <p>Things like:</p>
+
+        <p><a href="docs/0.4.0/constraints.html">Constraints</a> <br>
+        <a href="docs/0.4.0/routing.html">Custom Routes</a> <br>
+        <a href="docs/0.4.0/uploads.html">Uploads</a>  </p>
+
+        <p>A simple, example Multicolour blueprint might look something like this.</p>
+
+        <pre class="prettyprint"><code class="language-js hljs "><span class="hljs-pi">"use strict"</span>
+
+        module.exports = {
+          attributes: {
+            slug: <span class="hljs-string">"string"</span>,
+
+            title: {
+              type: <span class="hljs-string">"string"</span>,
+              required: <span class="hljs-literal">true</span>,
+              index: <span class="hljs-literal">true</span>
+            },
+
+            description: {
+              type: <span class="hljs-string">"string"</span>,
+              required: <span class="hljs-literal">true</span>
+            },
+
+            public: {
+              type: <span class="hljs-string">"boolean"</span>,
+              defaultsTo: <span class="hljs-literal">true</span>
+            },
+
+            <span class="hljs-comment">// Associations.</span>
+            user: {
+              model: <span class="hljs-string">"user"</span>
+            }
+          },
+
+          constraints: {
+            get: {
+              user: <span class="hljs-string">"auth.credentials.user.id"</span>,
+              public: { compile: <span class="hljs-literal">false</span>, value: <span class="hljs-literal">true</span> }
+            },
+          }
+        }</code></pre>
+
+        <p>A few things are happening above, we’re exporting an Object with a few keys. The first key is <code>attributes</code>, this is where you define the properties/columns/keys in your table/document.</p>
+
+        <p>Each key of the <code>attributes</code> can be an object of properties or simply the type that key should be. Valid types are:</p>
+
+        <ul>
+        <li><code>"string"</code></li>
+        <li><code>"text"</code></li>
+        <li><code>"email"</code></li>
+        <li><code>"integer"</code></li>
+        <li><code>"float"</code></li>
+        <li><code>"date"</code></li>
+        <li><code>"time"</code></li>
+        <li><code>"datetime"</code></li>
+        <li><code>"boolean"</code></li>
+        <li><code>"binary"</code></li>
+        <li><code>"array"</code></li>
+        <li><code>"json"</code></li>
+        </ul>
+
+        <p>There is also a <code>constraints</code> key outside of the <code>attributes</code>, this serves as a simple “logic free” way to constrain actions on the database.</p>
+
+        <p>If you were to write the JavaScript for that constraint, it might look something like this.</p>
+
+
+
+        <pre class="prettyprint"><code class="language-js hljs ">projects.findOne(request.payload, (err, project) =&gt; {
+          <span class="hljs-keyword">if</span> (row.user.toString() !== request.auth.credentials.user.id.toString()
+            || row.public === <span class="hljs-literal">false</span>) {
+            reply(<span class="hljs-string">"You aren't allowed to do this."</span>).code(<span class="hljs-number">412</span>)
+          }
+          <span class="hljs-keyword">else</span> {
+            reply(project)
+          }
+        })
+        ...</code></pre>
+
+        <p>A value computed by a constraint will <strong><em>always</em></strong> overwrite any value sent to the server intended for a write request to the database.</p>
+
+
+
+        <h2 id="naming-and-identity">Naming and identity</h2>
+
+        <p>To be as predictable as possible, Multicolour takes the name of your <code>blueprint.js</code> and makes sure it is not pluralised in any way. If you have a blueprint named <code>projects.js</code> in your <code>blueprints</code> folder, Multicolour will name your collection <code>project</code> and your routes will all be <code>/project/</code>.</p>
+
+
+
+        <h2 id="lifecycle-callbacks">Lifecycle callbacks</h2>
+
+        <p>If constraints aren’t for you, you can use lifecycle callbacks to prevent/check writes and reads from your database.</p>
+
+        <p>Each model has the following available callbacks.</p>
+
+        <ul>
+        <li><code>beforeValidate(values, next)</code></li>
+        <li><code>afterValidate(values, next)</code></li>
+        <li><code>beforeCreate(values, next)</code></li>
+        <li><code>afterCreatefn(newlyInsertedRecord, next)</code></li>
+        <li><code>beforeUpdate(valuesToUpdate, next)</code></li>
+        <li><code>afterUpdate(updatedRecord, next)</code></li>
+        <li><code>beforeDestroy(criteria, next)</code></li>
+        <li><code>afterDestroy(deletedRecord, next)</code></li>
+        </ul>
+
+        <p>To read more on lifecycle callbacks, read the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/lifecycle-callbacks.md">Waterline lifecycle documentation</a>.</p>
+
+
+
+        <h2 id="associations">Associations</h2>
+
+        <p>Your blueprints can have associations to other blueprints (even across database technologies) which are automatically populated by Multicolour. Your associations can be <code>one-to-one</code>, <code>one-to-many</code> or <code>many-to-many</code>.</p>
+
+        <p>You make associations in your blueprint by specifying the property that should be associated and either a <code>model</code> or <code>collection</code> property within with an optional <code>via</code> value.</p>
+
+        <p>Example:</p>
+
+
+
+        <pre class="prettyprint"><code class="language-js hljs ">...
+        attributes: {
+          <span class="hljs-comment">// One-to-one</span>
+          user: {
+            model: <span class="hljs-string">"user"</span>
+          },
+
+          <span class="hljs-comment">// One-to-many</span>
+          projects: {
+            collection: <span class="hljs-string">"project"</span>,
+            via: <span class="hljs-string">"user"</span>
+          }
+        }
+        ...</code></pre>
+
+
+
+        <h3 id="adding-associations-programatically">Adding associations programatically.</h3>
+
+        <p>There may be a time you need to add a relationship to another collection without modifying the blueprint. The <code>add_relation_to_collection(as, target_collection, related_collection, many)</code> function will do this for you.</p>
+
+        <p>This function will add a relationship, either one to one or one to many to your collection. <br>
+        It will <em>not</em> overwrite any relationship by the same name <br>
+        It will throw if either collection does not exist. <br>
+        Passing true to <code>many</code> will make the relationship one to many.</p>
+
+        <p><em>Example</em></p>
+
+        <p>Adding a team relationship to the <code>multicolour_user</code> collection.</p>
+
+
+
+        <pre class="prettyprint"><code class="language-js hljs "><span class="hljs-comment">// app.js</span>
+        my_service.get(<span class="hljs-string">"database"</span>)
+          .add_relation_to_collection(<span class="hljs-string">"team"</span>, <span class="hljs-string">"multicolour_user"</span>, <span class="hljs-string">"team"</span>)
+          .add_relation_to_collection(<span class="hljs-string">"users"</span>, <span class="hljs-string">"team"</span>, <span class="hljs-string">"multicolour_user"</span>)</code></pre>
+
+        <p>A sugar function that does the same in a more terse way is the <code>.join</code> method.</p>
+
+
+
+        <pre class="prettyprint"><code class="language-js hljs ">my_service.get(<span class="hljs-string">"database"</span>)
+          .join({
+            as: <span class="hljs-string">"team"</span>,
+            from: <span class="hljs-string">"multicolour_user"</span>,
+            to: <span class="hljs-string">"team"</span>
+          })
+          .join({
+            as: <span class="hljs-string">"team"</span>,
+            from: <span class="hljs-string">"team"</span>,
+            to: <span class="hljs-string">"multicolour_user"</span>
+          })</code></pre>
+
+        <p>You can find more about how Waterline handles associations by <a href="https://github.com/balderdashy/waterline-docs/tree/master/models/associations">reading the documentation</a></p>
+
+
+
+        <h2 id="tojson"><code>toJSON</code></h2>
+
+        <p>Every model has a <code>toJSON</code> method, even if you don’t supply one, Multicolour adds one for you which simply removes any <code>null</code> or <code>undefined</code> keys before conitnueing with the reply.</p>
+
+        <p>If you supply a <code>toJSON</code> method, Multicolour wraps your <code>toJSON</code> in the default so behaviour stays predictable.</p>
+
+        <p>Example removing a password and salt from a reply:</p>
+
+
+
+        <pre class="prettyprint"><code class="language-js hljs ">attributes: {
+          <span class="hljs-comment">// Your model...</span>
+
+          toJSON: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">const</span> model = <span class="hljs-keyword">this</span>.toObject()
+            <span class="hljs-keyword">delete</span> model.password
+            <span class="hljs-keyword">delete</span> model.salt
+            <span class="hljs-keyword">return</span> model
+          }
+        }</code></pre>
+
+
+
+        <h2 id="flags">Flags</h2>
+
+        <p>There are flags available to change Multicolour behaviour on your models, they are:</p>
+
+        <ul>
+        <li><code>NO_AUTO_GEN_ROUTES: Boolean</code> This tells Multicolour whether or not to generate CRUD endpoints for this model. <code>custom_routes</code> are still honoured.</li>
+        <li><code>NO_AUTO_GEN_FRONTEND: Boolean</code> This tells Multicolour whether or not to generate a frontend (if you have enabled a frontend plugin).</li>
+        </ul>
+
+        <p>During the generation Multicolour also adds a new property to each model, <code>multicolour_instance</code> which is the current instance of Multicolour from which you can access your entire app.</p>
+      </section>
+
+      <section class="email-signup">
+        <form
+          method="post"
+          enctype="multipart/form-data"
+          action="https://getmulticolour.us12.list-manage.com/subscribe/post?u=bec938217586432b04e1ea290&amp;id=e5a068eb80">
+          <fieldset name="email">
+            <input
+              name="EMAIL"
+              type="email"
+              alt="Enter your best email for news on Multicolour's development"
+              placeholder="Enter your best email for news on Multicolour's development">
+            <button
+              type="submit"
+              name="subscribe">
+              SIGN UP
+            </button>
+          </fieldset>
+        </form>
+        <p class="really-small">
+          Your email address is safe with us, you'll ONLY receive occasional news about Multicolour. Nothing and no one else, but us &hearts;
+        </p>
+      </section>
+
+    </main>
+
+    <script async src="prism.js"></script>
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+        analytics.page()
+      }}();
+
+      if (window.location.host === "cdn.rawgit.com" || window.location.host === "rawgit.com")
+        [].slice.apply(document.querySelector("nav").querySelectorAll("a")).forEach(function(link) {
+          link.setAttribute("href", link.getAttribute("href") + "/index.html")
+        })
+    </script>
+  </body>
+</html>
