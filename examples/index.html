@@ -125,6 +125,11 @@
         analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
         analytics.page()
       }}();
+
+      if (window.location.host === "cdn.rawgit.com")
+        [].slice.apply(document.querySelector("nav").querySelectorAll("a")).forEach(function(link) {
+          link.setAttribute("href", link.getAttribute("href") + "/index.html")
+        })
     </script>
   </body>
 </html>
