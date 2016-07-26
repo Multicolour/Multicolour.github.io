@@ -2,7 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Multicolour - REST API &amp; single page app generator.</title>
+    <title>Multicolour - NodeJS REST API generator.</title>
+
+    <!-- @TODO REMOVE BEFORE GOING LIVE. IS FOR RAWGIT -->
+    <script>
+      if (window.location.host === "cdn.rawgit.com")
+        document.write("<base href=\"" + window.location.protocol + "//" + window.location.host + "/Multicolour/Multicolour.github.io/0.4.0/\" />")
+    </script>
 
     <!-- Base meta. -->
     <meta name="identifier-url" content="https://getmulticolour.com" />
@@ -48,10 +54,10 @@
     <link href="/stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body>
+  <body class="examples">
     <main>
-      <nav>
-        <ul class="general-nav">
+      <nav class="general-nav">
+        <ul>
           <li>
             <a href="/" class="no-border">
               <img class="nav-logo" src="/images/logo-stamp.png" alt="Multicolour - REST API generator.">
@@ -72,16 +78,18 @@
         </ul>
       </nav>
 
-      <section class="top">
+      <section class="getting-started">
         <h1>Multicolour examples</h1>
         <p>Multicolour tries to be as helpful as possible with creating and maintaining your REST APIs.</p>
         <p>Getting started is really simple and quick, simply start by running</p>
         <pre>
-          <code class="language-none">
+          <code class="language-javascript">
             npm install -g multicolour
             multicolour init .
           </code>
         </pre>
+        <p>Once you've answered a few simple questions about your project you'll have a functional REST API with some dummy content ready to start</p>
+        <pre><code class="language-none">node app.js</code></pre>
       </section>
 
       <section class="email-signup">
