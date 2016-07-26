@@ -133,6 +133,10 @@ p, img {
   line-height: 1.7em;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -338,5 +342,41 @@ nav {
 .examples {
   .getting-started {
     margin-top: $vertical-rhythm * 3;
+  }
+}
+
+.home .sponsors {
+  text-align: center;
+}
+
+.transparency .list {
+  clear: both;
+
+  a {
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  &, li {
+    list-style: none;
+  }
+
+  .left {
+    width: 30%;
+  }
+
+  .right {
+    width: 68%;
+  }
+
+  .left, .right {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.docs {
+  h2, h3 {
+    border-bottom: 1px dashed #272822;
   }
 }

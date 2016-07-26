@@ -168,23 +168,28 @@ p, img {
 }
 
 /* line 136, ../sass/screen.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 140, ../sass/screen.scss */
 a {
   color: inherit;
   text-decoration: none;
 }
-/* line 140, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 a img {
   border: 0;
   outline: 0;
 }
-/* line 145, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 a:not(.no-border) {
   padding-bottom: .1em;
   border-style: solid;
   border-width: 0px 0px 1px 0px;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 code:not([class]) {
   background-color: #272822;
   color: #f8f8f2;
@@ -195,11 +200,11 @@ code:not([class]) {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
-/* line 162, ../sass/screen.scss */
+/* line 166, ../sass/screen.scss */
 .simplified-example {
   text-align: center;
 }
-/* line 165, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 .simplified-example pre {
   font-size: .65em;
   display: inline-block;
@@ -208,44 +213,44 @@ code:not([class]) {
   margin: 0 2vw;
 }
 
-/* line 175, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 section, .row {
   width: 70vw;
   margin: 10vh auto;
 }
 @media screen and (max-width: 414px) {
-  /* line 175, ../sass/screen.scss */
+  /* line 179, ../sass/screen.scss */
   section, .row {
     margin-bottom: 5vh;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 175, ../sass/screen.scss */
+  /* line 179, ../sass/screen.scss */
   section, .row {
     margin-bottom: 2.5vh;
   }
 }
 
-/* line 188, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 .small {
   font-size: 1.3333333333vw;
   line-height: 2.2666666667vw;
 }
 @media screen and (max-width: 414px) {
-  /* line 188, ../sass/screen.scss */
+  /* line 192, ../sass/screen.scss */
   .small {
     font-size: 2.8vw;
     line-height: 4.76vw;
   }
 }
 
-/* line 198, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 .really-small {
   margin-top: .5em;
   font-size: 1vw;
 }
 @media screen and (max-width: 414px) {
-  /* line 198, ../sass/screen.scss */
+  /* line 202, ../sass/screen.scss */
   .really-small {
     margin-top: 1vh;
     font-size: 2vw;
@@ -253,54 +258,54 @@ section, .row {
   }
 }
 
-/* line 209, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 .logo {
   display: block;
   width: 30vw;
   margin: 15vh auto;
 }
 @media screen and (max-width: 414px) {
-  /* line 209, ../sass/screen.scss */
+  /* line 213, ../sass/screen.scss */
   .logo {
     width: 60vw;
   }
 }
 
-/* line 219, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 .row {
   clear: both;
   overflow: hidden;
 }
-/* line 223, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 .row img, .row .text {
   display: inline-block;
   vertical-align: top;
   width: 48%;
 }
-/* line 228, ../sass/screen.scss */
+/* line 232, ../sass/screen.scss */
 .row img:first-child, .row .text:first-child {
   margin-right: 3%;
 }
 @media screen and (max-width: 414px) {
-  /* line 223, ../sass/screen.scss */
+  /* line 227, ../sass/screen.scss */
   .row img, .row .text {
     width: 100%;
     text-align: center;
   }
 }
 @media screen and (max-width: 414px) {
-  /* line 238, ../sass/screen.scss */
+  /* line 242, ../sass/screen.scss */
   .row img {
     display: none;
   }
 }
 
-/* line 245, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .email-signup {
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
 }
-/* line 249, ../sass/screen.scss */
+/* line 253, ../sass/screen.scss */
 .email-signup fieldset {
   display: block;
   margin: 0 auto;
@@ -308,7 +313,7 @@ section, .row {
   height: 4em;
   overflow: hidden;
 }
-/* line 257, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .email-signup input, .email-signup button {
   height: 100%;
   margin: 0;
@@ -322,18 +327,18 @@ section, .row {
   box-sizing: border-box;
 }
 @media screen and (max-width: 414px) {
-  /* line 257, ../sass/screen.scss */
+  /* line 261, ../sass/screen.scss */
   .email-signup input, .email-signup button {
     padding: 2.2222222222vh 2vw;
     font-size: 3vw;
   }
 }
-/* line 274, ../sass/screen.scss */
+/* line 278, ../sass/screen.scss */
 .email-signup input {
   width: 80%;
   border: 1px solid #979797;
 }
-/* line 279, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 .email-signup button {
   border: 0;
   width: 20%;
@@ -344,24 +349,24 @@ section, .row {
   border: 1px solid #333;
 }
 @media screen and (max-width: 414px) {
-  /* line 279, ../sass/screen.scss */
+  /* line 283, ../sass/screen.scss */
   .email-signup button {
     padding: 1.25vh 2vw;
   }
 }
-/* line 293, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 .email-signup button:hover {
   cursor: pointer;
 }
 
-/* line 299, ../sass/screen.scss */
+/* line 303, ../sass/screen.scss */
 nav {
   padding: 0;
   display: block;
   text-align: center;
   margin: 5vh auto;
 }
-/* line 305, ../sass/screen.scss */
+/* line 309, ../sass/screen.scss */
 nav.general-nav {
   margin-top: 0;
   position: fixed;
@@ -372,11 +377,11 @@ nav.general-nav {
   padding: 2.5vh 2vw;
   border-bottom: 2px solid #00DEAF;
 }
-/* line 316, ../sass/screen.scss */
+/* line 320, ../sass/screen.scss */
 nav a {
   font-weight: 500;
 }
-/* line 320, ../sass/screen.scss */
+/* line 324, ../sass/screen.scss */
 nav li {
   display: inline;
   list-style: none;
@@ -384,19 +389,56 @@ nav li {
   padding: 0 2vw;
 }
 
-/* line 328, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 .point-header {
   margin-top: 0;
   line-height: 1.5em;
 }
 
-/* line 333, ../sass/screen.scss */
+/* line 337, ../sass/screen.scss */
 .nav-logo {
   width: 5vw;
   display: inline;
 }
 
-/* line 339, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
 .examples .getting-started {
   margin-top: 15vh;
+}
+
+/* line 348, ../sass/screen.scss */
+.home .sponsors {
+  text-align: center;
+}
+
+/* line 352, ../sass/screen.scss */
+.transparency .list {
+  clear: both;
+}
+/* line 355, ../sass/screen.scss */
+.transparency .list a {
+  font-weight: 700;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+/* line 360, ../sass/screen.scss */
+.transparency .list, .transparency .list li {
+  list-style: none;
+}
+/* line 364, ../sass/screen.scss */
+.transparency .list .left {
+  width: 30%;
+}
+/* line 368, ../sass/screen.scss */
+.transparency .list .right {
+  width: 68%;
+}
+/* line 372, ../sass/screen.scss */
+.transparency .list .left, .transparency .list .right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 379, ../sass/screen.scss */
+.docs h2, .docs h3 {
+  border-bottom: 1px dashed #272822;
 }
