@@ -46,24 +46,19 @@ $break-large: 1200px;
 }
 
 // Global element styles //
-html {
-  margin: 0;
-  padding: $vertical-rhythm $horizontal-rhythm;
-  @include stripes($stripe-colours, 45deg)
+
+* + * {
+  margin-bottom: $vertical-rhythm;
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "georgia", Times, sans-serif;
   font-size: $base-font-size;
-  line-height: $base-font-size * 1.5;
+  line-height: $base-font-size * 1.4;
   -webkit-font-smoothing: antialiased;
-  padding: $vertical-rhythm $horizontal-rhythm * 5;
-
-  // Permalink - use to edit and share this gradient:
-  // http://colorzilla.com/gradient-editor/#ededed+0,f6f6f6+53,ffffff+100
-  background-color: #ededed; // Old browsers
-  @include filter-gradient(#ededed, #ffffff, vertical); // IE6-9
-  @include background-image(linear-gradient(top, #ededed 0%, #f6f6f6 25%, #ffffff 100%));
+  padding: 1.5rem;
+  color: #3D3E3F;
+  @include stripes($stripe-colours, 45deg);
 
   @media screen and (max-width: $break-small) {
     font-size: $base-font-size * 2;
@@ -71,9 +66,17 @@ body {
   }
 }
 
-h1, h2, h3 {
+main {
+  padding: $vertical-rhythm 0;
+  background-color: #FFF;
+}
+
+nav a,
+h1, h2, h3,
+.point-header {
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
-  color: #333;
+  color: #3D3E3F;
   margin: 1.4em 0;
 }
 
@@ -108,19 +111,41 @@ code {
 
 p, img {
   vertical-align: top;
+  line-height: 1.7em;
 }
 
 a {
-  color: #C13C8C;
+  color: inherit;
+  text-decoration: none;
+
+  img {
+    border: 0;
+    outline: 0;
+  }
+
+  &:not(.no-border) {
+    padding-bottom: .1em;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+  }
 }
 
-* + * {
-  margin-bottom: $vertical-rhythm;
+.simplified-example {
+  text-align: center;
+
+  pre {
+    font-size: .65em;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 2vw;
+  }
 }
 
 // Our styles.
 section, .row {
-  margin-bottom: $vertical-rhythm * 2;
+  width: 70vw;
+  margin: $vertical-rhythm * 2 auto;
 
   @media screen and (max-width: $break-small) {
     margin-bottom: $vertical-rhythm;
@@ -146,6 +171,7 @@ section, .row {
 }
 
 .really-small {
+  margin-top: .5em;
   font-size: $base-font-size / 2;
 
   @media screen and (max-width: $break-small) {
@@ -158,8 +184,7 @@ section, .row {
 .logo {
   display: block;
   width: 30vw;
-  margin: $vertical-rhythm auto;
-  margin-top: 0;
+  margin: $vertical-rhythm * 3 auto;
 
   @media screen and (max-width: $break-small) {
     width: 60vw;
@@ -173,10 +198,10 @@ section, .row {
   img, .text {
     display: inline-block;
     vertical-align: top;
-    width: 45%;
+    width: 48%;
 
     &:first-child {
-      margin-right: 9%;
+      margin-right: 3%;
     }
 
     @media screen and (max-width: $break-small) {
@@ -194,6 +219,7 @@ section, .row {
 
 .email-signup {
   text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
 
   fieldset {
     display: block;
@@ -235,6 +261,7 @@ section, .row {
     text-transform: uppercase;
     border: 1px solid #333;
 
+
     @media screen and (max-width: $break-small) {
       padding: $vertical-rhythm / 4 $horizontal-rhythm;
     }
@@ -243,4 +270,43 @@ section, .row {
       cursor: pointer;
     }
   }
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+  margin: $vertical-rhythm auto;
+
+  ul.general-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    padding: $vertical-rhythm $horizontal-rhythm;
+    border-bottom: 2px solid #00DEAF;
+  }
+
+  a {
+    font-weight: 500;
+  }
+
+  li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0 $horizontal-rhythm;
+  }
+}
+
+.point-header {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.nav-logo {
+  width: 5vw;
+  display: inline;
 }
