@@ -122,10 +122,18 @@ strong {
 pre {
   // Icky important here because Prism.
   margin: $vertical-rhythm 0 !important;
+
+  @media screen and (max-width: $break-small) {
+    margin: 0 !important;
+  }
 }
 
 p {
   margin-bottom: $vertical-rhythm;
+
+  @media screen and (max-width: $break-small) {
+    margin-bottom: $vertical-rhythm / 2;
+  }
 }
 
 p, img {
@@ -181,10 +189,7 @@ section, .row {
   margin: $vertical-rhythm * 2 auto;
 
   @media screen and (max-width: $break-small) {
-    margin-bottom: $vertical-rhythm;
-  }
-
-  @media screen and (max-width: $break-medium) {
+    margin: 0 auto;
     margin-bottom: $vertical-rhythm / 2;
   }
 }
