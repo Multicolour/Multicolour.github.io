@@ -137,13 +137,9 @@
 
         <p>Where <code>search_payload</code> appears as an argument to any of the below functions, where you are only going to search based on id can omit the usage of an object. I.E change <code>{ id: 1 }</code> into simply just <code>1</code> and Flow will make it an object for you.</p>
 
-
-
         <h3 id="createstring-modelname-object-payload"><code>.create(String model_name, Object payload)</code></h3>
 
         <p>Creates a new <code>Task</code> to create a new row on the <code>model_name</code> collection with the <code>payload</code> values.</p>
-
-
 
         <h3 id="readstring-modelname-object-searchpayload"><code>.read(String model_name, Object search_payload)</code></h3>
 
@@ -157,27 +153,19 @@
 
         <p><code>/gadget/1?type=tablet</code></p>
 
-
-
         <h3 id="updatestring-modelname-object-searchpayload-object-payload"><code>.update(String model_name, Object search_payload, Object payload)</code></h3>
 
         <p>Creates a new <code>Task</code> to update a row on the <code>model_name</code> collection based on the <code>search_payload</code> with the <code>payload</code> values.</p>
 
-
-
         <h3 id="deletestring-modelname-object-searchpayload"><code>.delete(String model_name, Object search_payload)</code></h3>
 
         <p>Creates a new <code>Task</code> to delete a row on the <code>model_name</code> collection based on the <code>search_payload</code>.</p>
-
-
 
         <h3 id="thenstring-lexableverb-string-modelname-object-searchpayload-object-payload"><code>.then(String lexable_verb, String model_name, [Object search_payload, Object payload])</code></h3>
 
         <p><code>.then</code> is an expressive helper function that allows any of the above documented functions to run using any of the “lex-able” tokens found in the <a href="https://github.com/Multicolour/multicolour/blob/master/flow/lex.js">lexicon</a></p>
 
         <p>Example usage of <code>.then</code></p>
-
-
 
         <pre><code class="language-javascript">my_flow.then(
             // <span class="hljs-operator"><span class="hljs-keyword">Update</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">create</span> a <span class="hljs-keyword">row</span>
