@@ -62,7 +62,7 @@
         <ul>
           <li>
             <a href="" class="no-border">
-              <img class="nav-logo" src="images/logo-stamp.png" alt="Multicolour - REST API generator.">
+              <img class="nav-logo" src="../../images/logo-stamp.png" alt="Multicolour - REST API generator.">
             </a>
           </li>
           <li>
@@ -95,7 +95,7 @@
 
         <p>A simple, example Multicolour blueprint might look something like this.</p>
 
-        <pre class="prettyprint"><code class="language-js hljs "><span class="hljs-pi">"use strict"</span>
+        <pre><code class="language-javascript"><span class="hljs-pi">"use strict"</span>
 
         module.exports = {
           attributes: {
@@ -156,7 +156,7 @@
 
 
 
-        <pre class="prettyprint"><code class="language-js hljs ">projects.findOne(request.payload, (err, project) =&gt; {
+        <pre><code class="language-javascript">projects.findOne(request.payload, (err, project) =&gt; {
           <span class="hljs-keyword">if</span> (row.user.toString() !== request.auth.credentials.user.id.toString()
             || row.public === <span class="hljs-literal">false</span>) {
             reply(<span class="hljs-string">"You aren't allowed to do this."</span>).code(<span class="hljs-number">412</span>)
@@ -208,7 +208,7 @@
 
 
 
-        <pre class="prettyprint"><code class="language-js hljs ">...
+        <pre><code class="language-javascript">...
         attributes: {
           <span class="hljs-comment">// One-to-one</span>
           user: {
@@ -240,7 +240,7 @@
 
 
 
-        <pre class="prettyprint"><code class="language-js hljs "><span class="hljs-comment">// app.js</span>
+        <pre><code class="language-javascript"><span class="hljs-comment">// app.js</span>
         my_service.get(<span class="hljs-string">"database"</span>)
           .add_relation_to_collection(<span class="hljs-string">"team"</span>, <span class="hljs-string">"multicolour_user"</span>, <span class="hljs-string">"team"</span>)
           .add_relation_to_collection(<span class="hljs-string">"users"</span>, <span class="hljs-string">"team"</span>, <span class="hljs-string">"multicolour_user"</span>)</code></pre>
@@ -249,7 +249,7 @@
 
 
 
-        <pre class="prettyprint"><code class="language-js hljs ">my_service.get(<span class="hljs-string">"database"</span>)
+        <pre><code class="language-javascript">my_service.get(<span class="hljs-string">"database"</span>)
           .join({
             as: <span class="hljs-string">"team"</span>,
             from: <span class="hljs-string">"multicolour_user"</span>,
@@ -275,7 +275,7 @@
 
 
 
-        <pre class="prettyprint"><code class="language-js hljs ">attributes: {
+        <pre><code class="language-javascript">attributes: {
           <span class="hljs-comment">// Your model...</span>
 
           toJSON: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>

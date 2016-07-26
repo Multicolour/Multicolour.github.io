@@ -62,7 +62,7 @@
         <ul>
           <li>
             <a href="" class="no-border">
-              <img class="nav-logo" src="images/logo-stamp.png" alt="Multicolour - REST API generator.">
+              <img class="nav-logo" src="../../images/logo-stamp.png" alt="Multicolour - REST API generator.">
             </a>
           </li>
           <li>
@@ -99,7 +99,7 @@
 
 
 
-        <pre class="prettyprint"><code class="language-text hljs applescript"><span class="hljs-keyword">if</span> there are constraints
+        <pre><code class="language-textapplescript"><span class="hljs-keyword">if</span> there are constraints
           <span class="hljs-keyword">does</span> <span class="hljs-keyword">it</span> have a compile option?
             <span class="hljs-keyword">if</span> <span class="hljs-keyword">it</span>'s <span class="hljs-constant">false</span>, use <span class="hljs-keyword">the</span> value <span class="hljs-keyword">as</span> <span class="hljs-keyword">it</span> appears, e.g <span class="hljs-constant">false</span>, <span class="hljs-string">"awesome"</span>
             <span class="hljs-keyword">if</span> <span class="hljs-keyword">it</span>'s <span class="hljs-constant">true</span>, access <span class="hljs-keyword">the</span> <span class="hljs-keyword">property</span> <span class="hljs-keyword">as</span> <span class="hljs-keyword">it</span> appears <span class="hljs-keyword">from</span> <span class="hljs-keyword">the</span> request object
@@ -111,7 +111,7 @@
 
 
 
-        <pre class="prettyprint"><code class="language-js hljs ">{
+        <pre><code class="language-javascript">{
           user: <span class="hljs-string">"auth.credentials.user.id"</span>
         }</code></pre>
 
@@ -127,7 +127,7 @@
 
 
 
-        <pre class="prettyprint"><code class="language-js hljs ">...
+        <pre><code class="language-javascript">...
         constraints: {
           get: { public: { compile: <span class="hljs-literal">false</span>, value: <span class="hljs-literal">true</span> } },
           post: { user: <span class="hljs-string">"auth.credentials.user.id"</span> },
