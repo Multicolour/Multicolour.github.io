@@ -35,7 +35,6 @@ body {
   background: linear-gradient(to bottom,  #7423b5 0%,#ab21b4 27%,#ff9999 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7423b5', endColorstr='#ff9999',GradientType=0 );
 
-
   @media screen and (max-width: $break-small) {
     font-size: $base-font-size * 2;
     line-height: ($base-font-size * 2) * 1.5;
@@ -327,7 +326,26 @@ nav {
 }
 
 .home .sponsors {
+  width: 100%;
+  color: #FFF;
   text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #EA82AA;
+  background: -moz-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
+  background: -webkit-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
+  background: linear-gradient(to bottom, #EA82AA 0%, #ff9999 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA82AA', endColorstr='#ff9999',GradientType=0 );
+
+  h3 {
+    color: #FFF;
+  }
+
+  .left, .right {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1.5em;
+    width: 42%;
+  }
 }
 
 .transparency .list {
@@ -360,4 +378,14 @@ nav {
   h2, h3 {
     border-bottom: 1px dashed #272822;
   }
+}
+
+.sponsor-logos {
+  text-align: center;
+}
+
+footer {
+  padding: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .8em;
 }
