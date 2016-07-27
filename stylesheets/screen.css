@@ -414,10 +414,16 @@ nav li {
 }
 
 /* line 328, ../sass/screen.scss */
+.home main {
+  padding-bottom: 0;
+}
+
+/* line 332, ../sass/screen.scss */
 .home .sponsors {
   width: 100%;
   color: #FFF;
   text-align: center;
+  margin-bottom: 0;
   font-family: 'Source Sans Pro', sans-serif;
   background: #EA82AA;
   background: -moz-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
@@ -425,11 +431,11 @@ nav li {
   background: linear-gradient(to bottom, #ea82aa 0%, #ff9999 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA82AA', endColorstr='#ff9999',GradientType=0 );
 }
-/* line 339, ../sass/screen.scss */
+/* line 344, ../sass/screen.scss */
 .home .sponsors h3 {
   color: #FFF;
 }
-/* line 343, ../sass/screen.scss */
+/* line 348, ../sass/screen.scss */
 .home .sponsors .left, .home .sponsors .right {
   display: inline-block;
   vertical-align: top;
@@ -437,44 +443,44 @@ nav li {
   width: 42%;
 }
 
-/* line 351, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 .transparency .list {
   clear: both;
 }
-/* line 354, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 .transparency .list a {
   font-weight: 700;
   font-family: 'Source Sans Pro', sans-serif;
 }
-/* line 359, ../sass/screen.scss */
+/* line 364, ../sass/screen.scss */
 .transparency .list, .transparency .list li {
   list-style: none;
 }
-/* line 363, ../sass/screen.scss */
+/* line 368, ../sass/screen.scss */
 .transparency .list .left {
   width: 30%;
 }
-/* line 367, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 .transparency .list .right {
   width: 68%;
 }
-/* line 371, ../sass/screen.scss */
+/* line 376, ../sass/screen.scss */
 .transparency .list .left, .transparency .list .right {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 378, ../sass/screen.scss */
+/* line 383, ../sass/screen.scss */
 .docs h2, .docs h3 {
   border-bottom: 1px dashed #272822;
 }
 
-/* line 383, ../sass/screen.scss */
+/* line 388, ../sass/screen.scss */
 .sponsor-logos {
   text-align: center;
 }
 
-/* line 387, ../sass/screen.scss */
+/* line 392, ../sass/screen.scss */
 footer {
   padding: 1em;
   font-family: 'Source Sans Pro', sans-serif;

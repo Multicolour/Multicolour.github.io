@@ -325,10 +325,15 @@ nav {
   }
 }
 
+.home main {
+  padding-bottom: 0;
+}
+
 .home .sponsors {
   width: 100%;
   color: #FFF;
   text-align: center;
+  margin-bottom: 0;
   font-family: 'Source Sans Pro', sans-serif;
   background: #EA82AA;
   background: -moz-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
