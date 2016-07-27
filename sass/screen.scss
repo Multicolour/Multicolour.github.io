@@ -15,55 +15,25 @@ $break-small: 414px;
 $break-medium: 768px;
 $break-large: 1200px;
 
-// @link https://css-tricks.com/striped-background-gradients/
-// @credit Hugo Giraudel http://hugogiraudel.com/
-// Thanks dude, amazing work.
-@mixin stripes($colors, $direction: "to bottom") {
-    $stripe-width: 100% / length($colors);
-    $auto:         if( type-of(nth($colors, 1)) == list, false, true );
-    $gradient:     ();
-
-    @for $i from 1 through length($colors) {
-      $item: nth($colors, $i);
-      $dump: ();
-
-      @if $auto == true {
-        $dump: $item $stripe-width * ($i - 1), $item $stripe-width * $i;
-      }
-
-      @else {
-        @if $i > 1 {
-          $previous-item: nth($colors, $i - 1);
-          $dump: append($dump, nth($item, 1) nth($previous-item, 2));
-        }
-        $dump: append($dump, $item);
-      }
-
-      $gradient: join($gradient, $dump, comma);
-    }
-
-    @include background-image(linear-gradient($direction, $gradient));
-}
-
 // Global element styles //
-html {
-  margin: 0;
-  padding: $vertical-rhythm $horizontal-rhythm;
-  @include stripes($stripe-colours, 45deg)
+
+* + * {
+  margin-bottom: $vertical-rhythm;
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "georgia", Times, sans-serif;
   font-size: $base-font-size;
-  line-height: $base-font-size * 1.5;
+  line-height: $base-font-size * 1.4;
   -webkit-font-smoothing: antialiased;
-  padding: $vertical-rhythm $horizontal-rhythm * 5;
+  padding: 1rem;
+  color: #3D3E3F;
 
-  // Permalink - use to edit and share this gradient:
-  // http://colorzilla.com/gradient-editor/#ededed+0,f6f6f6+53,ffffff+100
-  background-color: #ededed; // Old browsers
-  @include filter-gradient(#ededed, #ffffff, vertical); // IE6-9
-  @include background-image(linear-gradient(top, #ededed 0%, #f6f6f6 25%, #ffffff 100%));
+  background: #7423b5;
+  background: -moz-linear-gradient(top,  #7423b5 0%, #ab21b4 27%, #ff9999 100%);
+  background: -webkit-linear-gradient(top,  #7423b5 0%,#ab21b4 27%,#ff9999 100%);
+  background: linear-gradient(to bottom,  #7423b5 0%,#ab21b4 27%,#ff9999 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7423b5', endColorstr='#ff9999',GradientType=0 );
 
   @media screen and (max-width: $break-small) {
     font-size: $base-font-size * 2;
@@ -71,9 +41,26 @@ body {
   }
 }
 
+main {
+  padding: $vertical-rhythm 0;
+  background-color: #FFF;
+}
+
 h1, h2, h3 {
+  code {
+    background-color: transparent !important;
+    color: #3D3E3F !important;
+    font-size: 1.2em !important;
+    text-shadow: none !important;
+  }
+}
+
+nav a,
+h1, h2, h3,
+.point-header {
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
-  color: #333;
+  color: #3D3E3F;
   margin: 1.4em 0;
 }
 
@@ -94,45 +81,92 @@ ol {
   padding-bottom: 2em;
 }
 
-li {
+ul > li {
   list-style-type: square;
+}
+
+li li {
+  list-style-type: circle;
+  margin-left: $horizontal-rhythm;
 }
 
 strong {
   font-weight: 700;
 }
 
-code {
-  font-family: Courier, Times, sans-serif;
-}
-
-p, img {
-  vertical-align: top;
-}
-
-a {
-  color: #C13C8C;
-}
-
-* + * {
-  margin-bottom: $vertical-rhythm;
-}
-
-// Our styles.
-section, .row {
-  margin-bottom: $vertical-rhythm * 2;
+pre {
+  // Icky important here because Prism.
+  margin: $vertical-rhythm 0 !important;
 
   @media screen and (max-width: $break-small) {
-    margin-bottom: $vertical-rhythm;
+    margin: 0 !important;
   }
+}
 
-  @media screen and (max-width: $break-medium) {
+p {
+  margin-bottom: $vertical-rhythm;
+
+  @media screen and (max-width: $break-small) {
     margin-bottom: $vertical-rhythm / 2;
   }
 }
 
-.top p {
-  margin-bottom: $vertical-rhythm;
+p, img {
+  vertical-align: top;
+  line-height: 1.7em;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  img {
+    border: 0;
+    outline: 0;
+  }
+
+  &:not(.no-border) {
+    padding-bottom: .1em;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+  }
+}
+
+code:not([class]) {
+  background-color: #272822;
+  color: #f8f8f2;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  padding: .4em;
+  font-size: .8em;
+  border-radius: 0.3em;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+.simplified-example {
+  text-align: center;
+
+  pre {
+    font-size: .65em;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 2vw;
+  }
+}
+
+// Our styles.
+section, .row {
+  width: 70vw;
+  margin: $vertical-rhythm * 2 auto;
+
+  @media screen and (max-width: $break-small) {
+    margin: 0 auto;
+    margin-bottom: $vertical-rhythm / 2;
+  }
 }
 
 .small {
@@ -146,6 +180,7 @@ section, .row {
 }
 
 .really-small {
+  margin-top: .5em;
   font-size: $base-font-size / 2;
 
   @media screen and (max-width: $break-small) {
@@ -158,8 +193,7 @@ section, .row {
 .logo {
   display: block;
   width: 30vw;
-  margin: $vertical-rhythm auto;
-  margin-top: 0;
+  margin: $vertical-rhythm * 3 auto;
 
   @media screen and (max-width: $break-small) {
     width: 60vw;
@@ -173,10 +207,10 @@ section, .row {
   img, .text {
     display: inline-block;
     vertical-align: top;
-    width: 45%;
+    width: 48%;
 
     &:first-child {
-      margin-right: 9%;
+      margin-right: 3%;
     }
 
     @media screen and (max-width: $break-small) {
@@ -194,10 +228,10 @@ section, .row {
 
 .email-signup {
   text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
 
   fieldset {
     display: block;
-    width: 75vw;
     margin: 0 auto;
     clear: both;
     height: 4em;
@@ -235,6 +269,7 @@ section, .row {
     text-transform: uppercase;
     border: 1px solid #333;
 
+
     @media screen and (max-width: $break-small) {
       padding: $vertical-rhythm / 4 $horizontal-rhythm;
     }
@@ -243,4 +278,119 @@ section, .row {
       cursor: pointer;
     }
   }
+}
+
+nav {
+  padding: 0;
+  display: block;
+  text-align: center;
+  margin: $vertical-rhythm auto;
+
+  &.general-nav {
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 1rem;
+    right: 1rem;
+    background: #FFF;
+    padding: $vertical-rhythm / 2 $horizontal-rhythm;
+    border-bottom: 2px solid #00DEAF;
+  }
+
+  a {
+    font-weight: 500;
+  }
+
+  li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0 $horizontal-rhythm;
+  }
+}
+
+.point-header {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.nav-logo {
+  width: 5vw;
+  display: inline;
+}
+
+.examples {
+  .getting-started {
+    margin-top: $vertical-rhythm * 3;
+  }
+}
+
+.home main {
+  padding-bottom: 0;
+}
+
+.home .sponsors {
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #EA82AA;
+  background: -moz-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
+  background: -webkit-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
+  background: linear-gradient(to bottom, #EA82AA 0%, #ff9999 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA82AA', endColorstr='#ff9999',GradientType=0 );
+
+  h3 {
+    color: #FFF;
+  }
+
+  .left, .right {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1.5em;
+    width: 42%;
+  }
+}
+
+.transparency .list {
+  clear: both;
+
+  a {
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  &, li {
+    list-style: none;
+  }
+
+  .left {
+    width: 30%;
+  }
+
+  .right {
+    width: 68%;
+  }
+
+  .left, .right {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.docs {
+  h2, h3 {
+    border-bottom: 1px dashed #272822;
+  }
+}
+
+.sponsor-logos {
+  text-align: center;
+}
+
+footer {
+  padding: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .8em;
 }
