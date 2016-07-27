@@ -15,36 +15,6 @@ $break-small: 414px;
 $break-medium: 768px;
 $break-large: 1200px;
 
-// @link https://css-tricks.com/striped-background-gradients/
-// @credit Hugo Giraudel http://hugogiraudel.com/
-// Thanks dude, amazing work.
-@mixin stripes($colors, $direction: "to bottom") {
-    $stripe-width: 100% / length($colors);
-    $auto:         if( type-of(nth($colors, 1)) == list, false, true );
-    $gradient:     ();
-
-    @for $i from 1 through length($colors) {
-      $item: nth($colors, $i);
-      $dump: ();
-
-      @if $auto == true {
-        $dump: $item $stripe-width * ($i - 1), $item $stripe-width * $i;
-      }
-
-      @else {
-        @if $i > 1 {
-          $previous-item: nth($colors, $i - 1);
-          $dump: append($dump, nth($item, 1) nth($previous-item, 2));
-        }
-        $dump: append($dump, $item);
-      }
-
-      $gradient: join($gradient, $dump, comma);
-    }
-
-    @include background-image(linear-gradient($direction, $gradient));
-}
-
 // Global element styles //
 
 * + * {
@@ -58,7 +28,13 @@ body {
   -webkit-font-smoothing: antialiased;
   padding: 1rem;
   color: #3D3E3F;
-  @include stripes($stripe-colours, 45deg);
+
+  background: #7423b5;
+  background: -moz-linear-gradient(top,  #7423b5 0%, #ab21b4 27%, #ff9999 100%);
+  background: -webkit-linear-gradient(top,  #7423b5 0%,#ab21b4 27%,#ff9999 100%);
+  background: linear-gradient(to bottom,  #7423b5 0%,#ab21b4 27%,#ff9999 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7423b5', endColorstr='#ff9999',GradientType=0 );
+
 
   @media screen and (max-width: $break-small) {
     font-size: $base-font-size * 2;
