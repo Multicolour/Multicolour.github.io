@@ -10,12 +10,17 @@ for file in content/*.md; do
 
     # Compile the template.
     FILE="${TEMPLATE/CONTENT_HERE/$CONTENT}"
+
+    # Pandoc just puts the language in there, we want language-{language}.
     FILE="${FILE/class=\"javascript\"/class=\"language-javascript\"}"
+
+    # Get the base name.
     WRITE_TO=$(basename $file | cut -d. -f1)
 
     # Create the path for it.
     mkdir -p $WRITE_TO
 
+    # Write the file contents like a baws.
     echo "$FILE" > "./$WRITE_TO/index.html"
   fi
 done
