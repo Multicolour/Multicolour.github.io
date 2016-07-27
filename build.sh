@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Don't need no CMS. Just markdown and a bash script 👌
+
+# Loop over a pattern of files and render them to html using template.html
+# @param {string} $1 Pattern to use to find markdown files.
+# @param {string} $2 Optional directory to specifically write files to.
+# @returns {void}
 loop_templates () {
   if [ -z "$1" ] ; then
     echo "Incorrect number of arguments to loop_templates <glob pattern>."
@@ -18,14 +24,28 @@ loop_templates () {
       FILE="${TEMPLATE/CONTENT_HERE/$CONTENT}"
 
       # Pandoc just puts the language in there, we want language-{language}.
-      FILE="${FILE/class=\"javascript\"/class=\"language-javascript\"}"
+      FILE="${FILE//class=\"javascript\"/class=\"language-javascript\"}"
+      # FILE=$(echo $FILE | sed -e s/class=\"javascript\"/class=\"language-javascript\"/g)
 
-      # If we passed in a target directory, use that.
-      if [ $# == 2 ] ; then
-        WRITE_TO="$2$(basename $file | cut -d. -f1 | tr '[:upper:]' '[:lower:]')"
+      BASENAME="$(basename $file | cut -d. -f1 | tr '[:upper:]' '[:lower:]')"
+
+      if [ "$BASENAME" == "index" ] ; then
+        # If we passed in a target directory, use that.
+        if [ $# == 2 ] ; then
+          WRITE_TO="$2"
+        else
+          WRITE_TO=$(echo $BASENAME | sed 's,^[^/]*/,,')
+        fi
       else
-        WRITE_TO=$(echo $file | cut -d. -f1 | sed 's,^[^/]*/,,' | tr '[:upper:]' '[:lower:]')
+        # If we passed in a target directory, use that.
+        if [ $# == 2 ] ; then
+          WRITE_TO="$2/$BASENAME"
+        else
+          WRITE_TO=$(echo $BASENAME | sed 's,^[^/]*/,,')
+        fi
       fi
+
+      echo "./$WRITE_TO/index.html"
 
       # Create the path for it.
       mkdir -p "$WRITE_TO"
@@ -36,5 +56,6 @@ loop_templates () {
   done
 }
 
+# Render our templates.
 loop_templates "content/*.md"
-loop_templates "content/docs/*.md" docs/0.4.0/
+loop_templates "content/docs/*.md" docs/0.4.0

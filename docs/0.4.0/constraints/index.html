@@ -79,18 +79,40 @@
       </nav>
 
       <section class="content">
-        <h1 id="transparency">Transparency</h1>
-<p>Multicolour is an open source product, surviving on the good will of the companies and individuals that sponsor it's development.</p>
-<p><strong>Current sponsors are:</strong></p>
+        <h1 id="constraints">Constraints</h1>
+<p>Constraints are a simple, &quot;logic free&quot; way to limit behaviour on your database without writing any code or custom routes.</p>
+<p>Constraints come in 3 formats:</p>
 <ul>
-<li><div class="left">
-<a href="https://newworld.codes"><img src="images/sponsors/nwc.svg" alt="New World Code – NodeJS and Swift agency." /></a>
-</div>
-<div class="right">
-<a href="https://newworld.codes?source=https://getmulticolour.com">New World Code</a></li>
+<li><code>key: String</code></li>
+<li><code>key: { compile: Boolean, value: Any }</code></li>
+<li><code>key: Function(request, constraints) -&gt; Object</code></li>
 </ul>
-New World Code are a NodeJS and Swift agency that create scalable, usable apps and APIs for clients of all sizes.
-</div>
+<p>When constraints are found on your blueprint, it will by default check a few things to calculate best what you want to do.</p>
+<p>A simple way to view what checks occur is:</p>
+<pre class="text"><code>if there are constraints
+  does it have a compile option?
+    if it&#39;s false, use the value as it appears, e.g false, &quot;awesome&quot;
+    if it&#39;s true, access the property as it appears from the request object
+  if the constraint is a function, run the function; bound to the collection, with the request and return the constraint.
+  if the constraint doesn&#39;t have a compile option
+    access the property as it appears from the request object</code></pre>
+<p>The most common constraint is ensuring a user has sufficient privileges to read|write something and would come in the form of</p>
+<pre class="language-javascript"><code>{
+  user: &quot;auth.credentials.user.id&quot;
+}</code></pre>
+<p>The way this works is the <code>String</code> is a path to an object on the <code>request</code> object, this is in-fact setting the constraint to <code>request.auth.credentials.user.id</code>.</p>
+<h2 id="verbs-and-constraints">Verbs and constraints</h2>
+<p>You must specify your constraints on all the http verbs you wish to constrain. The verbs must appear as lowercase.</p>
+<p>Example:</p>
+<pre class="language-javascript"><code>...
+constraints: {
+  get: { public: { compile: false, value: true } },
+  post: { user: &quot;auth.credentials.user.id&quot; },
+  put: { user: &quot;auth.credentials.user.id&quot; },
+  delete: { user: &quot;auth.credentials.user.id&quot; },
+  patch: { user: &quot;auth.credentials.user.id&quot; }
+},
+...</code></pre>
       </section>
 
       <section class="email-signup">

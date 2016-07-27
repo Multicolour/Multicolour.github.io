@@ -378,8 +378,8 @@ nav.general-nav {
   margin-top: 0;
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 1rem;
+  right: 1rem;
   background: #FFF;
   padding: 2.5vh 2vw;
   border-bottom: 2px solid #00DEAF;

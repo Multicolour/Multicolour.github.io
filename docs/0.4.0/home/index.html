@@ -2,22 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Multicolour - NodeJS REST API generator.</title>
+    <title>Multicolour - NodeJS NodeJS REST API generator.</title>
 
     <!-- @TODO REMOVE BEFORE GOING LIVE. IS FOR RAWGIT -->
     <script>
-      if (window.location.host === "cdn.rawgit.com" || window.location.host === "rawgit.com")
+      if (window.location.host === "cdn.rawgit.com" || window.location.host === "rawgit.com") {
         document.write("<base href=\"" + window.location.protocol + "//" + window.location.host + "/Multicolour/Multicolour.github.io/0.4.0/\" />")
-      else
+      } else {
         document.write("<base href=\"" + window.location.protocol + "//" + window.location.host + "/\" />")
+      }
     </script>
 
     <!-- Base meta. -->
     <meta name="identifier-url" content="https://getmulticolour.com" />
-    <meta name="title" content="Multicolour - REST API &amp; single page app generator." />
-    <meta name="description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline." />
-    <meta name="abstract" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline." />
-    <meta name="keywords" content="multicolour, rest api, polymer, generator, nodejs" />
+    <meta name="title" content="Multicolour - NodeJS REST API generator." />
+    <meta name="description" content="Multicolour - NodeJS REST API generator using just JSON." />
+    <meta name="abstract" content="Multicolour - NodeJS REST API generator using just JSON." />
+    <meta name="keywords" content="multicolour, rest api, generator, nodejs" />
     <meta name="author" content="New World Code Ltd" />
     <meta name="revisit-after" content="15" />
     <meta name="language" content="EN" />
@@ -25,25 +26,25 @@
     <meta name="robots" content="Index" />
 
     <!-- Google+ -->
-    <meta itemprop="name" content="Multicolour - REST API &amp; single page app generator.">
-    <meta itemprop="description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline.">
+    <meta itemprop="name" content="Multicolour - NodeJS REST API generator.">
+    <meta itemprop="description" content="Multicolour - NodeJS REST API generator using just JSON.">
     <meta itemprop="image" content="https://getmulticolour.com/images/logo-text-outlined.png">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@getmulticolour">
-    <meta name="twitter:title" content="Multicolour - REST API &amp; single page app generator.">
-    <meta name="twitter:description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline.">
+    <meta name="twitter:title" content="Multicolour - NodeJS REST API generator.">
+    <meta name="twitter:description" content="Multicolour - NodeJS REST API generator using just JSON.">
     <meta name="twitter:creator" content="@getmulticolour">
     <meta name="twitter:image" content="https://getmulticolour.com/images/logo-text-outlined.png">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Multicolour - REST API &amp; single page app generator." />
+    <meta property="og:title" content="Multicolour - NodeJS REST API generator." />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://getmulticolour.com" />
     <meta property="og:image" content="https://getmulticolour.com/images/logo-text-outlined.png" />
-    <meta property="og:description" content="Multicolour - REST API &amp; single page app generator using just JSON and Waterline." />
-    <meta property="og:site_name" content="Multicolour - REST API &amp; single page app generator." />
+    <meta property="og:description" content="Multicolour - NodeJS REST API generator using just JSON." />
+    <meta property="og:site_name" content="Multicolour - NodeJS REST API generator." />
 
     <!-- Browser behaviour -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,13 +57,13 @@
     <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body class="docs">
+  <body class="examples">
     <main>
       <nav class="general-nav">
         <ul>
           <li>
             <a href="" class="no-border">
-              <img class="nav-logo" src="images/logo-stamp.png" alt="Multicolour - REST API generator.">
+              <img class="nav-logo" src="images/logo-stamp.png" alt="Multicolour - NodeJS REST API generator.">
             </a>
           </li>
           <li>
@@ -77,32 +78,24 @@
         </ul>
       </nav>
 
-      <section class="docs">
-        <h1 id="cli">CLI</h1>
-
-        <p>Multicolour comes with a CLI to help you get started with your projects, currently only with one command to create the basics of your app.</p>
-
-        <p>The <code>init</code> wizard will guide you through some common options and create content for you.</p>
-
-        <p>Run <code>multicolour init [target]</code> where target is optional or where you want to generate your project.</p>
-
-        <p>You’ll be warned that it will bash (overwrite) any existing app in that directory and do you want to continue.</p>
-
-        <p>You’ll then be asked for a few technology choices, use enter and space to select and progress.</p>
-
-        <p>Once you’ve answered the authentication question, it will spend a few seconds generating 3 files for you and display a message saying it has finished generating basic content for you and to install the dependencies of the project. You do this by running</p>
-
-        <p><code>cd [target] &amp;&amp; npm i</code></p>
-
-        <p><img src="https://www.dropbox.com/s/6qlxag25rwy5wg6/cli.gif?dl=1" alt="CLI Tool in action" title=""></p>
-
-        <p>The <code>npm i</code> might take a minute to install all dependencies but once it is complete you can start your service by running <code>node app.js</code> and visiting <a href="http://localhost:1811/docs">http://localhost:1811/docs</a> to view your new API’s documentation.</p>
-
-
-
-        <h3 id="next-step">Next step?</h3>
-
-        <p>Open your [target] in your favourite editor and get to the interesting part of your development.</p>
+      <section class="content">
+        <h1 id="multicolour">Multicolour</h1>
+<p><a href="https://gitter.im/newworldcode/multicolour?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/newworldcode/multicolour" /></a> <a href="https://travis-ci.org/Multicolour/multicolour"><img src="https://travis-ci.org/Multicolour/multicolour.svg?branch=master" alt="Build Status" /></a> <a href="https://coveralls.io/github/Multicolour/multicolour?branch=master"><img src="https://coveralls.io/repos/Multicolour/multicolour/badge.svg?branch=master&amp;service=github" alt="Coverage Status" /></a> <a href="https://codeclimate.com/github/newworldcode/multicolour"><img src="https://codeclimate.com/github/newworldcode/multicolour/badges/gpa.svg" alt="Code Climate" /></a> <a href="https://david-dm.org/Multicolour/multicolour"><img src="https://david-dm.org/Multicolour/multicolour.svg" alt="Dependency Status" /></a> <a href="https://snyk.io/test/github/Multicolour/multicolour"><img src="https://snyk.io/test/github/Multicolour/multicolour/badge.svg" alt="Known Vulnerabilities" /></a></p>
+<p>Multicolour is your tool for getting straight to the interesting solutions for your clients. Multicolour does as much of the repetitive work you do day to day for you and better yet, it does it in seconds with nothing more than JSON.</p>
+<p><a href="./Getting-started">Getting Started</a><br />
+<a href="./Api-reference">API Reference</a></p>
+<p><strong>Multicolour has support for:</strong></p>
+<ul>
+<li>Multiple database technologies, concurrently and independently for your models.</li>
+<li>Choice of server framework, choose a plugin or create your own.</li>
+<li>Custom plugins.</li>
+<li>JSONAPI compliancy</li>
+<li>OAuth &amp; JWT</li>
+</ul>
+<p>Follow the next milestone task list, contributions encouraged. <a href="https://github.com/Multicolour/multicolour/issues">here</a><br />
+Get news by <a href="https://twitter.com/getmulticolour">following us on Twitter</a></p>
+<p>MIT license<br />
+<a href="/Multicolour/multicolour/blob/master/CONTRIBUTING.md">Contributing</a></p>
       </section>
 
       <section class="email-signup">

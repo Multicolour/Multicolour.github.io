@@ -79,18 +79,58 @@
       </nav>
 
       <section class="content">
-        <h1 id="transparency">Transparency</h1>
-<p>Multicolour is an open source product, surviving on the good will of the companies and individuals that sponsor it's development.</p>
-<p><strong>Current sponsors are:</strong></p>
+        <h1 id="routing">Routing</h1>
+<p>Multicolour generates a lot of routes for you but your business logic is exactly that, it's yours and yours only. Multicolour doesn't try to handle that for you but saves you the time getting there.</p>
+<p>By default Multicolour generates your CRUD interface and configures your auth, validations and Swagger documentation.</p>
+<p>Multicolour generates the following for you.</p>
 <ul>
-<li><div class="left">
-<a href="https://newworld.codes"><img src="images/sponsors/nwc.svg" alt="New World Code – NodeJS and Swift agency." /></a>
-</div>
-<div class="right">
-<a href="https://newworld.codes?source=https://getmulticolour.com">New World Code</a></li>
+<li><code>POST /{identity}</code> Create a new <code>{identity}</code></li>
+<li><code>PUT /{identity}</code> Update or create a <code>{identity}</code></li>
+<li><code>GET /{identity}?page={page}</code> Get a paginated list of <code>{identity}</code></li>
+<li><code>GET /{identity}/{id}</code> Get a single <code>{identity}</code> by <code>{id}</code></li>
+<li><code>GET /{identity}?{query}&amp;page={page}</code> Get a paginated list of <code>{identity}</code> where <code>{query}</code></li>
+<li><code>PATCH /{identity}</code> Update a <code>{identity}</code></li>
+<li><code>DELETE /{identity}</code> Permanently remove a <code>{identity}</code></li>
 </ul>
-New World Code are a NodeJS and Swift agency that create scalable, usable apps and APIs for clients of all sizes.
-</div>
+<p>Creating your own routes is simple, currently custom routes are not transportable between server technologies but may be in the future.</p>
+<h2 id="creating-custom-routes">Creating custom routes</h2>
+<p>You have had a request from the client asking for something Multicolour hasn't already given you, it's time to write a custom route and handler.</p>
+<p>Add a <code>custom_route</code> property to your blueprint:</p>
+<pre class="language-javascript"><code>{
+  attributes: {...},
+  custom_routes: function custom_routes(server, multicolour) {
+    // Route based on your server technology here.
+  }
+}</code></pre>
+<p>Multicolour does not interfere, know about or modify anything you do inside of this function. This is your domain and you are free to do what you will.</p>
+<p>An example route using the <code>hapi</code> server technology might look like this.</p>
+<pre class="language-javascript"><code>{
+  attributes: {...},
+  custom_routes: function custom_routes(server, multicolour) {
+    // this === this blueprint
+    server.route({
+      method: &quot;GET&quot;,
+      path: &quot;/project/count&quot;,
+      handler: (request, reply) =&gt; {
+        this
+          .count({})
+          .exec((err, count) =&gt; reply[multicolour.request(&quot;decorator&quot;)](err || count))
+      }
+    })
+  }
+}</code></pre>
+<h2 id="gotchas-while-writing-custom-routes">Gotchas while writing custom routes</h2>
+<p>As mentioned above, Multicolour makes no effort to watch, change or interfere with your custom routes as we consider <code>custom_routes</code> to contain business critical logic.</p>
+<h3 id="decorators">Decorators</h3>
+<p>In order to &quot;decorate&quot; your reply, you should request the <code>decorator</code> property stored on Multicolour, <code>multicolour.request(&quot;decorator&quot;)</code>.</p>
+<h3 id="auth">Auth</h3>
+<p>If you wish to authenticate your custom routes in the same way that Multicolour authenticates your CRUD routes, you must do this manually.</p>
+<h3 id="validation">Validation</h3>
+<p>Payload and response validations are not created for you and you should implement this yourself.</p>
+<h3 id="path-clashes">Path clashes</h3>
+<p>If you need to write a custom handler for one of the CRUD operations, currently you need to flag to Multicolour that you don't want to generate routes at all for this blueprint with the <code>NO_AUTO_GEN_ROUTES</code> property and write handlers for all the verbs you wish to support.</p>
+<h3 id="associations">Associations</h3>
+<p>You will not see associations automatically populated, Multicolour has however already fixed and made the associations to other blueprints for you so <code>.populateAll()</code> will work for your queries and any decorator plugin should automatically call this for you.</p>
       </section>
 
       <section class="email-signup">

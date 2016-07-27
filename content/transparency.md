@@ -1,3 +1,5 @@
+# Transparency
+
 Multicolour is an open source product, surviving on the good will of the companies and individuals that sponsor it's development.
 
 **Current sponsors are:**
