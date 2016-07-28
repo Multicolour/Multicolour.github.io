@@ -73,22 +73,25 @@
       </nav>
 
       <section class="content">
-        <h1 id="docs-0.4.0">Docs 0.4.0</h1>
-<ul>
-<li><a href="examples">Getting started</a></li>
-<li><a href="docs/0.4.0/cli">CLI</a></li>
-<li><a href="docs/0.4.0/configuration">Configuration</a></li>
-<li><a href="docs/0.4.0/flow">Flow</a></li>
-<li><a href="docs/0.4.0/collections">Collections</a>
-<ul>
-<li><a href="docs/0.4.0/constraints">Constraints</a></li>
-</ul></li>
-<li><a href="docs/0.4.0/routing">Routing</a>
-<ul>
-<li><a href="docs/0.4.0/uploads">File Uploads</a></li>
-</ul></li>
-<li><a href="docs/0.4.0/javascript-sdk">JavaScript SDK</a></li>
-</ul>
+        <h1 id="javascript-sdk-generation">JavaScript SDK generation</h1>
+<p>Multicolour comes with an JavaScript SDK generator, it will generate both ES6/ES2015 classes for use with modern libraries like React as well as a standard ES5 library for use anywhere else. It is handwritten code used as templates and Babel transpiles it to today's standard ES5.</p>
+<p>To get started with the JavaScript SDK generator, you need configuration in your config file to decide where to put it and whether you want the ES5 code or not.</p>
+<p>There is also blueprint level configuration to prevent generation of parts of the SDK.</p>
+<p>The config.js should contain an object such as this</p>
+<pre class="language-javascript"><code>settings: {
+    ... other config
+
+    javascript_sdk: {
+      destination: `${__dirname}/content/frontend/build/api_sdk`,
+      module_name: &quot;API_SDK&quot;,
+      es5: true
+    }
+    
+    ... other config
+  },</code></pre>
+<p>This tells the generator to put the generated code into the <code>content/frontend/build/api_sdk</code> folder and name the ES5 module <code>API_SDK</code>. The ES5 module is a UMD module so can be <code>require</code>d or if no module loader is found is added to <code>window</code>.</p>
+<h3 id="i-dont-want-all-blueprints-generated">I don't want all blueprints generated</h3>
+<p>The generator respects the <code>NO_AUTO_GEN_ROUTES</code> variable used to prevent creation of endpoints for certain models so if you don't want the model generated for a blueprint that has no endpoints, add this option to your blueprint.</p>
       </section>
 
       <section class="email-signup">
