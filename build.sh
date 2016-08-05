@@ -25,9 +25,10 @@ loop_templates () {
 
       # Pandoc just puts the language in there, we want language-{language}.
       FILE="${FILE//class=\"javascript\"/class=\"language-javascript\"}"
-      # FILE=$(echo $FILE | sed -e s/class=\"javascript\"/class=\"language-javascript\"/g)
 
       BASENAME="$(basename $file | cut -d. -f1 | tr '[:upper:]' '[:lower:]')"
+
+      FILE="${FILE/CLASS_HERE/$BASENAME}"
 
       if [ "$BASENAME" == "index" ] ; then
         # If we passed in a target directory, use that.

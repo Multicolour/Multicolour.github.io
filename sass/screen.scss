@@ -356,29 +356,36 @@ nav {
   }
 }
 
-.transparency .list {
-  clear: both;
+.transparency {
+  ul {
+    clear: both;
 
-  a {
-    font-weight: 700;
-    font-family: 'Source Sans Pro', sans-serif;
-  }
+    &, li {
+      list-style: none;
+    }
 
-  &, li {
-    list-style: none;
-  }
+    .left {
+      width: 25%;
 
-  .left {
-    width: 30%;
-  }
+      a {
+        border-bottom: 0;
+      }
+    }
 
-  .right {
-    width: 68%;
-  }
+    .right {
+      width: 60%;
 
-  .left, .right {
-    display: inline-block;
-    vertical-align: top;
+      a {
+        display: block;
+        margin-bottom: 1em;
+      }
+    }
+
+    .left, .right {
+      display: inline-block;
+      vertical-align: top;
+      padding: 1em;
+    }
   }
 }
 
