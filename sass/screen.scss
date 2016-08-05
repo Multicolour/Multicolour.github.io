@@ -54,6 +54,10 @@ h1, h2, h3 {
   }
 }
 
+pre code {
+  font-size: .7em;
+}
+
 nav a,
 h1, h2, h3,
 .point-header {
@@ -393,4 +397,12 @@ footer {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: .8em;
   color: #FFF;
+
+  ul {
+    margin-bottom: 1em;
+
+    &, li {
+      list-style: none !important;
+    }
+  }
 }
