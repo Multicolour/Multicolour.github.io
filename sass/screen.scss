@@ -7,7 +7,7 @@
 // Vars and mixins //
 $vertical-rhythm: 5vh;
 $horizontal-rhythm: 2vw;
-$base-font-size: 2vw;
+$base-font-size: 1.7vw;
 
 // Media query vars.
 $break-small: 414px;
@@ -47,15 +47,16 @@ main {
 
 h1, h2, h3 {
   code {
-    background-color: transparent !important;
+    background-color: rgba(150, 150, 150, .1) !important;
     color: #3D3E3F !important;
     font-size: 1.2em !important;
     text-shadow: none !important;
+    word-break: break-word;
   }
 }
 
 pre code {
-  font-size: .7em;
+  font-size: .8em;
 }
 
 nav a,
@@ -68,11 +69,11 @@ h1, h2, h3,
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 em {
@@ -86,6 +87,13 @@ ol {
 
 ul > li {
   list-style-type: square;
+  padding-bottom: 1em;
+}
+
+.index {
+  ul > li {
+    padding-bottom: initial;
+  }
 }
 
 li li {
