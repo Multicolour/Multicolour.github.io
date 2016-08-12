@@ -51,7 +51,7 @@
     <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body class="docs">
+  <body class="configuration">
     <main>
       <nav class="general-nav">
         <ul>
@@ -73,9 +73,150 @@
       </nav>
 
       <section class="content">
-        <h1 id="docs-index">Docs index</h1>
-<p><a href="docs/0.4.2">Current/Latest</a></p>
-<p><a href="docs/0.4.0">0.4.0</a></p>
+        <h1 id="configuration">Configuration</h1>
+<p>Multicolour is config driven, it's not a library or a framework but a tool that links all your favourite libraries together to make a restful API.</p>
+<p>The config can seem a bit convoluted if all kept in one file and this is why it's a <code>.js</code> file and not a <code>.json</code> file.</p>
+<p>A typical <code>config.js</code> might look something like the below and it configures:</p>
+<ul>
+<li>a default timeout on the server of 30 seconds</li>
+<li>the pagination results limit of 20</li>
+<li>a prefix on the API routes of <code>/api</code></li>
+<li>where to write the JavaScript SDK to.</li>
+<li>Where the server should list and on what port, etc (standard Hapi config)</li>
+<li>and two database connections, one for when <code>NODE_ENV</code> is development and for production.</li>
+</ul>
+<pre class="language-javascript"><code>&quot;use strict&quot;
+
+const PORT = parseInt(process.env.PORT) || 1811
+
+module.exports = {
+  content: `${__dirname}/content`,
+
+  settings: {
+    timeout: 3e4,
+
+    results: {
+      per_page: 20
+    },
+
+    route_prefix: &quot;/api&quot;,
+
+    javascript_sdk: {
+      destination: `${__dirname}/content/frontend/build/api_sdk`,
+      module_name: &quot;API_SDK&quot;
+    }
+  },
+  api_connections: {
+    port: PORT,
+    routes: {
+      cors: {
+        origin: [ `http://localhost:${PORT}` ]
+      }
+    },
+    router: { stripTrailingSlash: true }
+  },
+
+  api_server: {
+    connections: {
+      routes: {
+        security: true
+      }
+    },
+    debug: { request: [&quot;error&quot;] }
+  },
+
+  db: {
+    adapters: {
+      mongo: require(&quot;sails-mongo&quot;)
+    },
+    connections: {
+      development: {
+        adapter: &quot;mongo&quot;,
+        database: &quot;multicolour&quot;
+      },
+      production: {
+        adapter: &quot;mongo&quot;,
+        host: &quot;some-mongo-host.com&quot;,
+        port: 27017,
+        database: &quot;multicolour&quot;
+      }
+    }
+  }
+}</code></pre>
+<p>A full config file may contain any of the following options:</p>
+<pre class="language-javascript"><code>&quot;use strict&quot;
+
+module.exports = {
+  content: String
+
+  settings: {
+    timeout: Number,
+
+    results: {
+      per_page: Number
+    },
+
+    route_prefix: String,
+
+    javascript_sdk: {
+      destination: String,
+      module_name: String
+    }
+  },
+
+  auth: {
+    password: String,
+    providers: [
+      {
+        provider: String,
+        clientId: String,
+        clientSecret: String,
+        isSecure: Boolean
+      }
+    ]
+  },
+
+  // As HAPI is the only available server plugin currently
+  // it&#39;s config options are shown below in briefand you 
+  // should consult the Hapijs docs for the full configuration
+  // documentation.
+  api_connections: {
+    port: Number,
+    host: String,
+    routes: {
+      cors: Boolean or {
+        origin: [ String ]
+      }
+    },
+    router: { stripTrailingSlash: true }
+  },
+
+  api_server: {
+    connections: {
+      routes: {
+        security: Boolean
+      }
+    },
+    debug: { request: [ String ] }
+  },
+
+  db: {
+    adapters: {
+      String: require(String)
+    },
+    connections: {
+      String: {
+        adapter: String,
+        host: String,
+        port: Number,
+        username: String,
+        password: String,
+        ssl: Boolean,
+        database: String
+      }
+    }
+  }
+}</code></pre>
       </section>
 
       <section class="email-signup">

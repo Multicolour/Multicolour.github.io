@@ -51,7 +51,7 @@
     <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body class="docs">
+  <body class="cli">
     <main>
       <nav class="general-nav">
         <ul>
@@ -73,9 +73,21 @@
       </nav>
 
       <section class="content">
-        <h1 id="docs-index">Docs index</h1>
-<p><a href="docs/0.4.2">Current/Latest</a></p>
-<p><a href="docs/0.4.0">0.4.0</a></p>
+        <h1 id="cli">CLI</h1>
+<p>Multicolour comes with a CLI to help you get started with your projects, currently only with one command to create the basics of your app.</p>
+<p>The <code>init</code> wizard will guide you through some common options and create content for you.</p>
+<p>Run <code>multicolour init [target]</code> where target is optional or where you want to generate your project.</p>
+<p>You'll be warned that it will bash (overwrite) any existing app in that directory and do you want to continue.</p>
+<p>You'll then be asked for a few technology choices, use enter and space to select and progress.</p>
+<p>Once you've answered the authentication question, it will spend a few seconds generating 3 files for you and display a message saying it has finished generating basic content for you and to install the dependencies of the project. You do this by running</p>
+<p><code>cd [target] &amp;&amp; npm i</code></p>
+<div class="figure">
+<img src="https://www.dropbox.com/s/6qlxag25rwy5wg6/cli.gif?dl=1" alt="CLI Tool in action" />
+<p class="caption">CLI Tool in action</p>
+</div>
+<p>The <code>npm i</code> might take a minute to install all dependencies but once it is complete you can start your service by running <code>node app.js</code> and visiting <a href="http://localhost:1811/docs" class="uri">http://localhost:1811/docs</a> to view your new API's documentation.</p>
+<h3 id="next-step">Next step?</h3>
+<p>Open your [target] in your favourite editor and get to the interesting part of your development.</p>
       </section>
 
       <section class="email-signup">

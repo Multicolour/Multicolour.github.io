@@ -51,7 +51,7 @@
     <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body class="docs">
+  <body class="flow">
     <main>
       <nav class="general-nav">
         <ul>
@@ -73,9 +73,77 @@
       </nav>
 
       <section class="content">
-        <h1 id="docs-index">Docs index</h1>
-<p><a href="docs/0.4.2">Current/Latest</a></p>
-<p><a href="docs/0.4.0">0.4.0</a></p>
+        <h1 id="flow">Flow</h1>
+<p>Flows are a simple way to test the way your API functionality in a way your user or developer might interact with it.</p>
+<p>These are called flows, as the user flows through the API to perform their desired actions, it's our job as developers to ensure it all goes smoothly.</p>
+<h2 id="getting-started-with-multicolour-flows">Getting started with Multicolour Flows</h2>
+<p>There are two ways to create your flows, the Multicolour example app exports our service in it's <code>app.js</code> file and we simply pass that to the <code>Flow</code> constructor.</p>
+<p>I.E</p>
+<pre class="language-javascript"><code>// tests/simple-flow.js
+&quot;use strict&quot;
+
+const Flow = require(&quot;multicolour/flow&quot;)
+const service = require(&quot;../app&quot;)
+
+new Flow(service)
+  .create(&quot;person&quot;, {
+    name: &quot;Multicolour Flow&quot;,
+    age: 1,
+    secret: &quot;super private awesome secret&quot;
+  })
+  .read(&quot;person&quot;, 1)
+  .create(&quot;gadget&quot;, {
+    type: &quot;laptop&quot;,
+    cost: 1200,
+    brand: &quot;Apple&quot;,
+    owner: &quot;1&quot;
+  })
+  .read(&quot;gadget&quot;, 1)
+
+  // Run the flow.
+  .run()</code></pre>
+<p>The alternative way to write your flows is to use the <code>.flow</code> function on Multicolour</p>
+<h2 id="api">API</h2>
+<p>Flows should read easily, they're written by developers for developers but they should still resemble our native language.</p>
+<p>Inside of <a href="https://github.com/Multicolour/multicolour/blob/master/flow/lex.js"><code>multicolour/flow/lex.js</code></a> you will see a list of the terminologies that Flows currently understand and translates them to HTTP verbs.</p>
+<p>I.E</p>
+<ul>
+<li><code>&quot;create&quot;</code> is turned into <code>&quot;post&quot;</code><br />
+</li>
+<li><code>&quot;update or create&quot;</code> is turned into <code>&quot;put&quot;</code></li>
+<li><code>&quot;destroy&quot;</code> is turned into <code>&quot;delete&quot;</code></li>
+</ul>
+<p>So on and so-forth, this lets us write expressive tests in an easy to understand way. There are several helper functions that go to aid this as well documented below.</p>
+<p>Where <code>search_payload</code> appears as an argument to any of the below functions, where you are only going to search based on id can omit the usage of an object. I.E change <code>{ id: 1 }</code> into simply just <code>1</code> and Flow will make it an object for you.</p>
+<h3 id="createstring-model_name-object-payload"><code>.create(String model_name, Object payload)</code></h3>
+<p>Creates a new <code>Task</code> to create a new row on the <code>model_name</code> collection with the <code>payload</code> values.</p>
+<h3 id="readstring-model_name-object-search_payload"><code>.read(String model_name, Object search_payload)</code></h3>
+<p>Creates a new <code>Task</code> to read a row on the <code>model_name</code>.</p>
+<p>If an <code>id</code> attribute is present within <code>search_payload</code> it is plucked from the search payload and appended to the url, for instance.</p>
+<p><code>.read(&quot;gadget&quot;, { id: 1, type: &quot;tablet&quot; })</code></p>
+<p>Will be turned into a get request to this uri:</p>
+<p><code>/gadget/1?type=tablet</code></p>
+<h3 id="updatestring-model_name-object-search_payload-object-payload"><code>.update(String model_name, Object search_payload, Object payload)</code></h3>
+<p>Creates a new <code>Task</code> to update a row on the <code>model_name</code> collection based on the <code>search_payload</code> with the <code>payload</code> values.</p>
+<h3 id="deletestring-model_name-object-search_payload"><code>.delete(String model_name, Object search_payload)</code></h3>
+<p>Creates a new <code>Task</code> to delete a row on the <code>model_name</code> collection based on the <code>search_payload</code>.</p>
+<h3 id="thenstring-lexable_verb-string-model_name-object-search_payload-object-payload"><code>.then(String lexable_verb, String model_name, [Object search_payload, Object payload])</code></h3>
+<p><code>.then</code> is an expressive helper function that allows any of the above documented functions to run using any of the &quot;lex-able&quot; tokens found in the <a href="https://github.com/Multicolour/multicolour/blob/master/flow/lex.js">lexicon</a></p>
+<p>Example usage of <code>.then</code></p>
+<pre class="language-javascript"><code>my_flow.then(
+    // Update or create a row
+    &quot;update or create&quot;,
+
+    // In the &quot;gadget&quot; collection.
+    &quot;gadget&quot;,
+
+    // Either find or create a row with id: 2
+    { id: 2 },
+
+    // And these values.
+    { name: &quot;https://getmulticolour.com&quot; })</code></pre>
+<h3 id="run"><code>.run()</code></h3>
+<p>Simply runs your flow as a test suite.</p>
       </section>
 
       <section class="email-signup">

@@ -51,7 +51,7 @@
     <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body class="docs">
+  <body class="getting-started">
     <main>
       <nav class="general-nav">
         <ul>
@@ -73,9 +73,18 @@
       </nav>
 
       <section class="content">
-        <h1 id="docs-index">Docs index</h1>
-<p><a href="docs/0.4.2">Current/Latest</a></p>
-<p><a href="docs/0.4.0">0.4.0</a></p>
+        <h1 id="getting-started">Getting Started</h1>
+<p>Multicolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.</p>
+<p><code>multicolour init .</code></p>
+<p>in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, <code>config.js</code>, <code>app.js</code> and <code>content/blueprints/example.js</code></p>
+<h2 id="blueprints">Blueprints</h2>
+<p>Multicolour stands on the shoulders of giants, our ORM is the popular <a href="https://github.com/balderdashy/waterline">Waterline ORM</a>. It has a rich api for creating database schemas without losing control of the underlying technology.</p>
+<p>Multicolour uses this to allow you to write JSON and get a whole collection of software. If you've run <code>multicolour init</code> you'll see a <code>content/</code> folder which also contains a <code>blueprints/</code> folder where you'll see <code>example.js</code>.</p>
+<blockquote>
+<p>You said I write JSON to get my stuff</p>
+</blockquote>
+<p>We're not lying, you write JSON and you get your API and frontend but you get <code>.js</code> files because you can expand the generated <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> with your business logic by using the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/lifecycle-callbacks.md">lifecycle</a> events and <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/instance-class-methods.md">custom functions</a> by writing normal JavaScript.</p>
+<p>Read more about writing blueprints and extending behaviour in the <a href="./Blueprints">Blueprints API reference</a> and on the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/models.md">Waterline Blueprints documentation</a>.</p>
       </section>
 
       <section class="email-signup">

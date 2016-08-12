@@ -51,7 +51,7 @@
     <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body class="docs">
+  <body class="uploads">
     <main>
       <nav class="general-nav">
         <ul>
@@ -73,9 +73,127 @@
       </nav>
 
       <section class="content">
-        <h1 id="docs-index">Docs index</h1>
-<p><a href="docs/0.4.2">Current/Latest</a></p>
-<p><a href="docs/0.4.0">0.4.0</a></p>
+        <h1 id="uploading-files">Uploading files</h1>
+<p>If you want to upload files, Multicolour has your back. To support uploading files on your blueprints you simply need to add <code>can_upload_file: String</code> to your blueprint.</p>
+<pre class="language-javascript"><code>{
+  attributes: {
+    location: &quot;string&quot;
+  },
+  can_upload_file: &quot;location&quot;
+}</code></pre>
+<p>The value of <code>can_upload_file</code> should be the name of the key on the record to store the location of the uploaded file, if it is <code>true</code> &quot;file&quot; will be used.</p>
+<p>The upload endpoint will be added to your blueprint as <code>POST /{identity}/upload</code> and requires that you create a record before uploading, this endpoint follows the <code>POST constraint</code>s</p>
+<p>By default Multicolour will upload files to a temporary location as dictated by Node's <code>os.tmpdir()</code> function.</p>
+<p>We encourage you to create your own storage plugin to set a more permanent storage location or use the <code>multicolour-storage-S3</code> plugin.</p>
+<h2 id="creating-a-storage-plugin.">Creating a storage plugin.</h2>
+<p>The default storage plugin will store any files uploaded to the operating system's temp directory. We encourage you to choose a more permanent place for your files by creating your own storage plugin.</p>
+<p>Below is a storage plugin that stores files in <code>/uploads</code></p>
+<pre class="language-javascript"><code>&quot;use strict&quot;
+
+// Get the tools we need.
+const fs = require(&quot;fs&quot;)
+
+class Multicolour_Disk_Storage {
+
+  /**
+   * Create default options and values.
+   * @return {Multicolour_Disk_Storage} Object for chaining.
+   */
+  constructor() {
+    // Set up the default options.
+    this.options = {
+      path: &quot;/uploads&quot;
+    }
+
+    return this
+  }
+
+  register(multicolour) {
+    multicolour.reply(&quot;storage&quot;, this)
+  }
+
+  /**
+   * Upload a file to disk and return a writable stream.
+   * @param  {multicolour/File} file to upload to S3.
+   * @param  {String} destination to write the file to.
+   * @return {fs.WritableStream} object to listen for events.
+   */
+  upload(file, destination) {
+    // Check we got a destination.
+    if (!destination) {
+      throw new ReferenceError(&quot;No destination for uploaded file&quot;)
+    }
+    // Upload the file.
+    else {
+      // We&#39;ll return the writable stream.
+      const stream = fs.createWriteStream(`${this.options.path}/${destination}`)
+
+      // Check if we got a readable stream, in.
+      if (file.pipe) {
+        file.pipe(stream)
+      }
+      // Otherwise, read the file out.
+      else {
+        fs.createReadStream(file).pipe(stream)
+      }
+
+      // Return the stream.
+      return stream
+    }
+  }
+
+  /**
+   * Download a file from disk and return
+   * an EventEmitter to listen for data events.
+   * @param  {multicolour/File} file to get from disk.
+   * @return {fs.ReadableStream} object to listen for event
+   */
+  get(file) {
+    return fs.createReadStream(`${this.options.path}/${file}`)
+  }
+}
+
+// Export the required config for Multicolour to register.
+module.exports = Multicolour_Disk_Storage</code></pre>
+<p>To use your newly created plugin, edit your <code>app.js</code> to include it, E.G</p>
+<pre class="language-javascript"><code>require(&quot;multicolour&quot;)
+  // Configure the service core and scan for content.
+  .new_from_config_file_path(&quot;./config.js&quot;)
+  .scan()
+
+  // Register the server plugin.
+  .use(require(&quot;multicolour-server-hapi&quot;))
+
+  // Register our storage plugin.
+  .use(require(&quot;multicolour-disk-storage&quot;))</code></pre>
+<h2 id="advanced-storage-plugin-configuration.">Advanced storage plugin configuration.</h2>
+<p>If you want to keep your plugin configurable via the current blueprint's properties storage plugins support <code>storage_config_keys</code> resolution.</p>
+<p>Inside your <code>register(multicolour)</code> function set up a <code>reply(&quot;storage_config_keys&quot;)</code> with an array of the keys you wish to fetch from the blueprint.</p>
+<p>Example:</p>
+<pre class="language-javascript"><code>// blueprints/upload.js
+{
+  attributes: {
+    location: &quot;string&quot;,
+    pending: &quot;boolean&quot;
+  },
+  
+  can_upload_file: &quot;location&quot;,
+  custom_param: 1234567890
+}</code></pre>
+<hr />
+<pre class="language-javascript"><code>// my-storage-plugin.js
+...
+  /**
+   * Set the storage name on our host.
+   * @param  {Multicolour} multicolour host instance.
+   * @return {void}
+   */
+  register(multicolour) {
+    multicolour
+      .reply(&quot;storage&quot;, this)
+      .reply(&quot;storage_config_keys&quot;, [ &quot;custom_param&quot; ])
+  }
+...</code></pre>
       </section>
 
       <section class="email-signup">
