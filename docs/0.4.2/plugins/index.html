@@ -78,7 +78,7 @@
 <p>You need a plugin, plugins make sharing and using your custom functionality easy.</p>
 <h2 id="what-is-a-multicolour-plugin">What is a Multicolour plugin?</h2>
 <p>A Muticolour plugin is simply a class that encapsulates your custom behaviour, there aren't any limitations or locks or blocks to the rest of Multicolour or any other plugins you're using so you can do what you need to do unincumbered.</p>
-<p>All plugins are automatically extended with the talkie interface giving and is assigned a <code>host</code> as well as a unique (unique every time) id.</p>
+<p>All plugins are automatically extended with the talkie interface and is assigned a <code>host</code> as well as a unique (unique every time) id. Both can be <code>.request()</code>-ed directly from your plugin. I.E <code>this.request(&quot;host&quot;)</code> or <code>this.request(&quot;id&quot;)</code>.</p>
 <h2 id="example-multicolour-plugin">Example Multicolour plugin</h2>
 <p>An example Multicolour plugin that adds a new route to the route table looks like this:</p>
 <pre class="language-javascript"><code>// This file is called ./plugins/awesome/index.js
