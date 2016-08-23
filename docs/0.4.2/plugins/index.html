@@ -51,7 +51,7 @@
     <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body class="index">
+  <body class="plugins">
     <main>
       <nav class="general-nav">
         <ul>
@@ -73,25 +73,37 @@
       </nav>
 
       <section class="content">
-        <h1 id="docs-0.4.2">Docs 0.4.2</h1>
-<ul>
-<li><a href="examples">Getting started</a></li>
-<li><a href="docs/0.4.2/api-reference">API Reference</a></li>
-<li><a href="docs/0.4.2/debugging">Debugging</a></li>
-<li><a href="docs/0.4.2/cli">CLI</a></li>
-<li><a href="docs/0.4.2/configuration">Configuration</a></li>
-<li><a href="docs/0.4.2/flow">Flow</a></li>
-<li><a href="docs/0.4.2/plugins">Plugins</a></li>
-<li><a href="docs/0.4.2/collections">Collections</a>
-<ul>
-<li><a href="docs/0.4.2/constraints">Constraints</a></li>
-</ul></li>
-<li><a href="docs/0.4.2/routing">Routing</a>
-<ul>
-<li><a href="docs/0.4.2/uploads">File Uploads</a></li>
-</ul></li>
-<li><a href="docs/0.4.2/javascript-sdk">JavaScript SDK</a></li>
-</ul>
+        <h1 id="writing-multicolour-plugins">Writing Multicolour Plugins</h1>
+<p>You've written loads of awesome new functionality in your <code>custom_routes</code> callback and are thinking &quot;I'd like to distribute my awesome code as a package&quot;, either internally or on npm.</p>
+<p>You need a plugin, plugins make sharing and using your custom functionality easy.</p>
+<h2 id="what-is-a-multicolour-plugin">What is a Multicolour plugin?</h2>
+<p>A Muticolour plugin is simply a class that encapsulates your custom behaviour, there aren't any limitations or locks or blocks to the rest of Multicolour or any other plugins you're using so you can do what you need to do unincumbered.</p>
+<p>All plugins are automatically extended with the talkie interface giving and is assigned a <code>host</code> as well as a unique (unique every time) id.</p>
+<h2 id="example-multicolour-plugin">Example Multicolour plugin</h2>
+<p>An example Multicolour plugin that adds a new route to the route table looks like this:</p>
+<pre class="language-javascript"><code>// This file is called ./plugins/awesome/index.js
+module.exports = class {
+  // Register is the only required member function.
+  register(multicolour) {
+    const server = multicolour.get(&quot;server&quot;).request(&quot;raw&quot;)
+
+    server.route({
+      path: &quot;/hello/{name}&quot;,
+      config: {
+        handler: (request, reply) =&gt; {
+          reply(`Hey there, ${requet.params.name}`)
+        },
+        validate: {
+          params: {
+            name: require(&quot;joi&quot;).string().required()
+          }
+        }
+      }
+    })
+  }
+}</code></pre>
+<p>Once you've saved your plugin, to use it simply add <code>.use(require(&quot;./plugins/awesome&quot;))</code> to your main <code>app.js</code> (Use the other <code>.use()</code>-es as reference to where, your <code>app.js</code> might be different.)</p>
+<p>Run your service and your plugin will register and run. Easy as that.</p>
       </section>
 
       <section class="email-signup">
