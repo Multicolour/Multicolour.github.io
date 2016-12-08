@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Multicolour - REST API &amp; single page app generator.</title>
+    <title>Multicolour - NodeJS NodeJS REST API generator.</title>
 
     <base href="https://getmulticolour.com" />
     <!-- <base href="http://getmulticolour.local" /> -->
@@ -70,10 +70,15 @@
     <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body class="home">
+  <body class="plugins">
     <main>
-      <nav>
-        <ul class="home-nav">
+      <nav class="general-nav">
+        <ul>
+          <li>
+            <a href="" class="no-border">
+              <img class="nav-logo" src="images/logo-stamp.svg" alt="Multicolour - NodeJS REST API generator.">
+            </a>
+          </li>
           <li>
             <a href="examples">examples</a>
           </li>
@@ -85,102 +90,39 @@
           </li>
         </ul>
       </nav>
-      <img class="logo" src="./images/logo.svg" alt="Multicolour - REST API generator.">
-      <section class="top">
-        <p>
-          Multicolour is a free, open source, NodeJS tool that automatically and effortlessly creates REST APIs for your code.
-        </p>
-        <p>
-          Multicolour is perfectly designed to perform repetitive development tasks so you can use your insight and  expertise to solve real problems for your clients.
-        </p>
-        <p>
-          Just write JSON and see what
-          <a
-            href="https://github.com/Multicolour/multicolour-example"
-            target="_blank"
-            rel="nofollow"
-            title="Multicolour example app repo to get you started">
-            Multicolour can do for you
-          </a>
-          today.
-        </p>
-      </section>
 
-      <section class="simplified-example">
-        <h3>Getting started couldn't be easier</h3>
-        <pre><code class="language-none">npm install -g multicolour</code></pre>
-        +
-        <pre><code class="language-none">multicolour init .</code></pre>
-        +
-        <pre><code class="language-none">node app.js</code></pre>
-        =
-        <pre><code class="language-none">👌💸 profit!</code></pre>
-      </section>
+      <section class="content">
+        <h1 id="writing-multicolour-plugins">Writing Multicolour Plugins</h1>
+<p>You've written loads of awesome new functionality in your <code>custom_routes</code> callback and are thinking &quot;I'd like to distribute my awesome code as a package&quot;, either internally or on npm.</p>
+<p>You need a plugin, plugins make sharing and using your custom functionality easy.</p>
+<h2 id="what-is-a-multicolour-plugin">What is a Multicolour plugin?</h2>
+<p>A Muticolour plugin is simply a class that encapsulates your custom behaviour, there aren't any limitations or locks or blocks to the rest of Multicolour or any other plugins you're using so you can do what you need to do unincumbered.</p>
+<p>All plugins are automatically extended with the talkie interface and is assigned a <code>host</code> as well as a unique (unique every time) id. Both can be <code>.request()</code>-ed directly from your plugin. I.E <code>this.request(&quot;host&quot;)</code> or <code>this.request(&quot;id&quot;)</code>.</p>
+<h2 id="example-multicolour-plugin">Example Multicolour plugin</h2>
+<p>An example Multicolour plugin that adds a new route to the route table looks like this:</p>
+<pre class="language-javascript"><code>// This file is called ./plugins/awesome/index.js
+module.exports = class {
+  // Register is the only required member function.
+  register(multicolour) {
+    const server = multicolour.get(&quot;server&quot;).request(&quot;raw&quot;)
 
-      <section class="features">
-        <div class="row">
-          <img
-            src="./images/rows/swagger.jpg"
-            alt="REST API generation with Swagger UI documentation."
-            srcset="./images/rows/swagger.jpg 1x, ./images/rows/swagger@2x.jpg 2x">
-
-          <div class="text">
-            <p class="point-header">
-              <strong>Fast, simple, effortless REST API creation.</strong>
-            </p>
-            <ul class="small">
-              <li>Powerful REST APIs for apps, games, and websites.</li>
-              <li>Easy, automatic REST API generation.</li>
-              <li>Self-documenting via Swagger UI.</li>
-              <li>OAuth support for Facebook, Twitter, LinkedIn, Nest, and many more. </li>
-              <li>JSON API support to keep you focused.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="text">
-            <p class="point-header">
-              <strong>Command Line Interface and wizard tools</strong>
-            </p>
-            <ul class="small">
-              <li>Easily get started, add new features, support, and maintain your app.</li>
-              <li>Hit the ground running with the &ldquo;init&rdquo; command.</li>
-              <li>Built in wizard to save you time and effort.</li>
-              <li>Do more with less coding.</li>
-            </ul>
-          </div>
-          <img
-            src="./images/rows/cli.jpg"
-            alt="CLI tools that make your life easier."
-            srcset="./images/rows/cli.jpg 1x, ./images/rows/cli@2x.jpg 2x">
-        </div>
-
-        <div class="row">
-          <img
-            src="./images/rows/plugins.jpg"
-            alt="REST API generation with Swagger UI documentation."
-            srcset="./images/rows/plugins.jpg 1x, ./images/rows/plugins@2x.jpg 2x">
-          <div class="text">
-            <p class="point-header">
-              <strong>Plugins, for everything!</strong>
-            </p>
-            <ul class="small">
-              <li>Extend Multicolour quickly and easily using plugins.</li>
-              <li>Enhance your REST API compatibility.</li>
-              <li>No special syntax, just .use your code!</li>
-              <li>Designed to be simple and flexible.</li>
-              <li>Customize Multicolour to your exact needs.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="sponsor-logos">
-        <h3>Current Sponsors</h3>
-        <a href="https://newworld.codes" rel="nofollow" class="no-border">
-          <img src="images/sponsors/nwc.svg" width="150" alt="New World Code – NodeJS and Swift agency." />
-        </a>
+    server.route({
+      path: &quot;/hello/{name}&quot;,
+      config: {
+        handler: (request, reply) =&gt; {
+          reply(`Hey there, ${requet.params.name}`)
+        },
+        validate: {
+          params: {
+            name: require(&quot;joi&quot;).string().required()
+          }
+        }
+      }
+    })
+  }
+}</code></pre>
+<p>Once you've saved your plugin, to use it simply add <code>.use(require(&quot;./plugins/awesome&quot;))</code> to your main <code>app.js</code> (Use the other <code>.use()</code>-es as reference to where, your <code>app.js</code> might be different.)</p>
+<p>Run your service and your plugin will register and run. Easy as that.</p>
       </section>
 
       <section class="email-signup">
@@ -202,23 +144,10 @@
           </fieldset>
         </form>
         <p class="really-small">
-          Your email address is safe with us &mdash; We’ll only send you occasional news and will never share your data. &hearts;
+          Your email address is safe with us, you'll ONLY receive occasional news about Multicolour. Nothing and no one else, but us &hearts;
         </p>
       </section>
 
-      <section class="sponsors">
-        <div class="left">
-          <h3>Sponsorship</h3>
-          <p>
-            Multicolour is free, open source, REST API generation software that exists due to the generous support of amazing companies and individuals &hearts;
-          </p>
-          <p>Interested in sponsoring Multicolour's development? Please donate on <a href="http://patreon.com/getmulticolour" rel="nofollow">Patreon.</a></p>
-        </div>
-        <div class="right">
-          <h3>Transparency</h3>
-          <p>Your trust is really important to us, we'll always be completely transparent about the income and expenditure of Multicolour, just visit our <a href="transparency">transparency</a> page.</p>
-        </div>
-      </section>
     </main>
 
     <footer>
@@ -241,8 +170,6 @@
       </ul>
       <p>&copy; Copyright to Get Multicolour &amp; New World Code Ltd 2016</p>
     </footer>
-
-    <a href="https://github.com/Multicolour/multicolour"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
     <script async src="prism.js"></script>
     <script>

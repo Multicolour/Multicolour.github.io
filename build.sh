@@ -59,4 +59,4 @@ loop_templates () {
 
 # Render our templates.
 loop_templates "content/*.md"
-loop_templates "content/docs/*.md" docs/0.4.2
+loop_templates "content/docs/*.md" docs/0.5.0

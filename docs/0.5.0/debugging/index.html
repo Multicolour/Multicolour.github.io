@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Multicolour - REST API &amp; single page app generator.</title>
+    <title>Multicolour - NodeJS NodeJS REST API generator.</title>
 
     <base href="https://getmulticolour.com" />
     <!-- <base href="http://getmulticolour.local" /> -->
@@ -70,10 +70,15 @@
     <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
   </head>
 
-  <body class="home">
+  <body class="debugging">
     <main>
-      <nav>
-        <ul class="home-nav">
+      <nav class="general-nav">
+        <ul>
+          <li>
+            <a href="" class="no-border">
+              <img class="nav-logo" src="images/logo-stamp.svg" alt="Multicolour - NodeJS REST API generator.">
+            </a>
+          </li>
           <li>
             <a href="examples">examples</a>
           </li>
@@ -85,102 +90,27 @@
           </li>
         </ul>
       </nav>
-      <img class="logo" src="./images/logo.svg" alt="Multicolour - REST API generator.">
-      <section class="top">
-        <p>
-          Multicolour is a free, open source, NodeJS tool that automatically and effortlessly creates REST APIs for your code.
-        </p>
-        <p>
-          Multicolour is perfectly designed to perform repetitive development tasks so you can use your insight and  expertise to solve real problems for your clients.
-        </p>
-        <p>
-          Just write JSON and see what
-          <a
-            href="https://github.com/Multicolour/multicolour-example"
-            target="_blank"
-            rel="nofollow"
-            title="Multicolour example app repo to get you started">
-            Multicolour can do for you
-          </a>
-          today.
-        </p>
-      </section>
 
-      <section class="simplified-example">
-        <h3>Getting started couldn't be easier</h3>
-        <pre><code class="language-none">npm install -g multicolour</code></pre>
-        +
-        <pre><code class="language-none">multicolour init .</code></pre>
-        +
-        <pre><code class="language-none">node app.js</code></pre>
-        =
-        <pre><code class="language-none">👌💸 profit!</code></pre>
-      </section>
-
-      <section class="features">
-        <div class="row">
-          <img
-            src="./images/rows/swagger.jpg"
-            alt="REST API generation with Swagger UI documentation."
-            srcset="./images/rows/swagger.jpg 1x, ./images/rows/swagger@2x.jpg 2x">
-
-          <div class="text">
-            <p class="point-header">
-              <strong>Fast, simple, effortless REST API creation.</strong>
-            </p>
-            <ul class="small">
-              <li>Powerful REST APIs for apps, games, and websites.</li>
-              <li>Easy, automatic REST API generation.</li>
-              <li>Self-documenting via Swagger UI.</li>
-              <li>OAuth support for Facebook, Twitter, LinkedIn, Nest, and many more. </li>
-              <li>JSON API support to keep you focused.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="text">
-            <p class="point-header">
-              <strong>Command Line Interface and wizard tools</strong>
-            </p>
-            <ul class="small">
-              <li>Easily get started, add new features, support, and maintain your app.</li>
-              <li>Hit the ground running with the &ldquo;init&rdquo; command.</li>
-              <li>Built in wizard to save you time and effort.</li>
-              <li>Do more with less coding.</li>
-            </ul>
-          </div>
-          <img
-            src="./images/rows/cli.jpg"
-            alt="CLI tools that make your life easier."
-            srcset="./images/rows/cli.jpg 1x, ./images/rows/cli@2x.jpg 2x">
-        </div>
-
-        <div class="row">
-          <img
-            src="./images/rows/plugins.jpg"
-            alt="REST API generation with Swagger UI documentation."
-            srcset="./images/rows/plugins.jpg 1x, ./images/rows/plugins@2x.jpg 2x">
-          <div class="text">
-            <p class="point-header">
-              <strong>Plugins, for everything!</strong>
-            </p>
-            <ul class="small">
-              <li>Extend Multicolour quickly and easily using plugins.</li>
-              <li>Enhance your REST API compatibility.</li>
-              <li>No special syntax, just .use your code!</li>
-              <li>Designed to be simple and flexible.</li>
-              <li>Customize Multicolour to your exact needs.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="sponsor-logos">
-        <h3>Current Sponsors</h3>
-        <a href="https://newworld.codes" rel="nofollow" class="no-border">
-          <img src="images/sponsors/nwc.svg" width="150" alt="New World Code – NodeJS and Swift agency." />
-        </a>
+      <section class="content">
+        <h1 id="debugging">Debugging</h1>
+<p>Multicolour has a few different ways to debug your application, you can start your service with an environmental <code>DEBUG=multicolour:*</code> to see logs of internal objects and operations as they happen.</p>
+<p>You will see output similar to</p>
+<pre class="text"><code>multicolour:core Scanning /www/node/multicolour-app/content +2ms
+  multicolour:core Scanned and found: [
+  &quot;/www/node/multicolour-app/content/blueprints/abode.js&quot;,
+  &quot;/www/node/multicolour-app/content/blueprints/gadget.js&quot;,
+  &quot;/www/node/multicolour-app/content/blueprints/person.js&quot;,
+  &quot;/www/node/multicolour-app/node_modules/multicolour/lib/user-model.js&quot;
+] +0ms
+  multicolour:core Finished scanning +149ms</code></pre>
+<p>You can also install the <code>multicolour-hapi-vantage</code> plugin to see HTTP logs in real time using the <code>debug on</code> command in the repl.</p>
+<p>While you can use the <code>DEBUG</code> environmental in conjunction with the repl, the output may appear garbled as the two share the same stdout.</p>
+<p>Starting your service with the vantage plugin installed will take you to a repl (and start your service in the background)</p>
+<div class="figure">
+<img src="https://cloud.githubusercontent.com/assets/1430657/17627262/7f482b76-60a8-11e6-93eb-83f77c2458d9.png" alt="image" />
+<p class="caption">image</p>
+</div>
+<p>Running with the debug mode set to on will show every HTTP request and response in pair to help with debugging.</p>
       </section>
 
       <section class="email-signup">
@@ -202,23 +132,10 @@
           </fieldset>
         </form>
         <p class="really-small">
-          Your email address is safe with us &mdash; We’ll only send you occasional news and will never share your data. &hearts;
+          Your email address is safe with us, you'll ONLY receive occasional news about Multicolour. Nothing and no one else, but us &hearts;
         </p>
       </section>
 
-      <section class="sponsors">
-        <div class="left">
-          <h3>Sponsorship</h3>
-          <p>
-            Multicolour is free, open source, REST API generation software that exists due to the generous support of amazing companies and individuals &hearts;
-          </p>
-          <p>Interested in sponsoring Multicolour's development? Please donate on <a href="http://patreon.com/getmulticolour" rel="nofollow">Patreon.</a></p>
-        </div>
-        <div class="right">
-          <h3>Transparency</h3>
-          <p>Your trust is really important to us, we'll always be completely transparent about the income and expenditure of Multicolour, just visit our <a href="transparency">transparency</a> page.</p>
-        </div>
-      </section>
     </main>
 
     <footer>
@@ -241,8 +158,6 @@
       </ul>
       <p>&copy; Copyright to Get Multicolour &amp; New World Code Ltd 2016</p>
     </footer>
-
-    <a href="https://github.com/Multicolour/multicolour"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
     <script async src="prism.js"></script>
     <script>
