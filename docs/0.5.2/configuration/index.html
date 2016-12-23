@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Multicolour - NodeJS NodeJS REST API generator.</title>
+
+    <base href="https://getmulticolour.com" />
+    <!-- <base href="http://getmulticolour.local" /> -->
+
+    <!-- Base meta. -->
+    <meta name="identifier-url" content="https://getmulticolour.com" />
+    <meta name="title" content="Multicolour - NodeJS REST API generator." />
+    <meta name="description" content="Multicolour - NodeJS REST API generator using just JSON." />
+    <meta name="abstract" content="Multicolour - NodeJS REST API generator using just JSON." />
+    <meta name="keywords" content="multicolour, rest api, generator, nodejs" />
+    <meta name="author" content="New World Code Ltd" />
+    <meta name="revisit-after" content="7" />
+    <meta name="language" content="EN" />
+    <meta name="copyright" content="© 2016 New World Code Ltd" />
+    <meta name="robots" content="Index" />
+
+    <!-- Google+ -->
+    <meta itemprop="name" content="Multicolour - NodeJS REST API generator.">
+    <meta itemprop="description" content="Multicolour - NodeJS REST API generator using just JSON.">
+    <meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@getmulticolour">
+    <meta name="twitter:title" content="Multicolour - NodeJS REST API generator.">
+    <meta name="twitter:description" content="Multicolour - NodeJS REST API generator using just JSON.">
+    <meta name="twitter:creator" content="@getmulticolour">
+    <meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Multicolour - NodeJS REST API generator." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://getmulticolour.com" />
+    <meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+    <meta property="og:description" content="Multicolour - NodeJS REST API generator using just JSON." />
+    <meta property="og:site_name" content="Multicolour - NodeJS REST API generator." />
+
+    <!-- Browser behaviour -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Browser Iconography -->
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
+  </head>
+
+  <body class="configuration">
+    <main>
+      <nav class="general-nav">
+        <ul>
+          <li>
+            <a href="" class="no-border">
+              <img class="nav-logo" src="images/logo-stamp.svg" alt="Multicolour - NodeJS REST API generator.">
+            </a>
+          </li>
+          <li>
+            <a href="examples">examples</a>
+          </li>
+          <li>
+            <a href="docs/">docs</a>
+          </li>
+          <li>
+            <a href="https://medium.com/@getmulticolour" rel="nofollow">blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="content">
+        <h1 id="configuration">Configuration</h1>
+<p>Multicolour is config driven, it's not a library or a framework but a tool that links all your favourite libraries together to make a restful API.</p>
+<p>The config can seem a bit convoluted if all kept in one file and this is why it's a <code>.js</code> file and not a <code>.json</code> file.</p>
+<p>A typical <code>config.js</code> might look something like the below and it configures:</p>
+<ul>
+<li>a default timeout on the server of 30 seconds</li>
+<li>the pagination results limit of 20</li>
+<li>a prefix on the API routes of <code>/api</code></li>
+<li>where to write the JavaScript SDK to.</li>
+<li>Where the server should list and on what port, etc (standard Hapi config)</li>
+<li>and two database connections, one for when <code>NODE_ENV</code> is development and for production.</li>
+</ul>
+<pre class="language-javascript"><code>&quot;use strict&quot;
+
+const PORT = parseInt(process.env.PORT) || 1811
+
+module.exports = {
+  content: `${__dirname}/content`,
+
+  settings: {
+    timeout: 3e4,
+
+    results: {
+      per_page: 20
+    },
+
+    route_prefix: &quot;/api&quot;,
+
+    javascript_sdk: {
+      destination: `${__dirname}/content/frontend/build/api_sdk`,
+      module_name: &quot;API_SDK&quot;
+    }
+  },
+  api_connections: {
+    port: PORT,
+    routes: {
+      cors: {
+        origin: [ `http://localhost:${PORT}` ]
+      }
+    },
+    router: { stripTrailingSlash: true }
+  },
+
+  api_server: {
+    connections: {
+      routes: {
+        security: true
+      }
+    },
+    debug: { request: [&quot;error&quot;] }
+  },
+
+  db: {
+    adapters: {
+      mongo: require(&quot;sails-mongo&quot;)
+    },
+    connections: {
+      development: {
+        adapter: &quot;mongo&quot;,
+        database: &quot;multicolour&quot;
+      },
+      production: {
+        adapter: &quot;mongo&quot;,
+        host: &quot;some-mongo-host.com&quot;,
+        port: 27017,
+        database: &quot;multicolour&quot;
+      }
+    }
+  }
+}</code></pre>
+<p>A full config file may contain any of the following options:</p>
+<pre class="language-javascript"><code>&quot;use strict&quot;
+
+module.exports = {
+  content: String
+
+  settings: {
+    timeout: Number,
+
+    results: {
+      per_page: Number
+    },
+
+    route_prefix: String,
+
+    javascript_sdk: {
+      destination: String,
+      module_name: String
+    }
+  },
+
+  auth: {
+    password: String,
+    providers: [
+      {
+        provider: String,
+        clientId: String,
+        clientSecret: String,
+        isSecure: Boolean
+      }
+    ]
+  },
+
+  // As HAPI is the only available server plugin currently
+  // it&#39;s config options are shown below in briefand you 
+  // should consult the Hapijs docs for the full configuration
+  // documentation.
+  api_connections: {
+    port: Number,
+    host: String,
+    routes: {
+      cors: Boolean or {
+        origin: [ String ]
+      }
+    },
+    router: { stripTrailingSlash: true }
+  },
+
+  api_server: {
+    connections: {
+      routes: {
+        security: Boolean
+      }
+    },
+    debug: { request: [ String ] }
+  },
+
+  db: {
+    adapters: {
+      String: require(String)
+    },
+    connections: {
+      String: {
+        adapter: String,
+        host: String,
+        port: Number,
+        username: String,
+        password: String,
+        ssl: Boolean,
+        database: String
+      }
+    }
+  }
+}</code></pre>
+      </section>
+
+      <section class="email-signup">
+        <form
+          method="post"
+          enctype="multipart/form-data"
+          action="https://getmulticolour.us12.list-manage.com/subscribe/post?u=bec938217586432b04e1ea290&amp;id=e5a068eb80">
+          <fieldset name="email">
+            <input
+              name="EMAIL"
+              type="email"
+              alt="Enter your best email for news on Multicolour's development"
+              placeholder="Enter your best email for news on Multicolour's development">
+            <button
+              type="submit"
+              name="subscribe">
+              SIGN UP
+            </button>
+          </fieldset>
+        </form>
+        <p class="really-small">
+          Your email address is safe with us, you'll ONLY receive occasional news about Multicolour. Nothing and no one else, but us &hearts;
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      <ul>
+        <li>
+          <a href="https://github.com/Multicolour/multicolour/blob/master/CONTRIBUTING.md">
+            Code of Conduct/Contribution rules
+          </a>
+        </li>
+        <li>
+          <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow">
+            Branding guidelines
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Multicolour" target="_blank" rel="nofollow">
+            Github Organisation
+          </a>
+        </li>
+      </ul>
+      <p>&copy; Copyright to Get Multicolour &amp; New World Code Ltd 2016</p>
+    </footer>
+
+    <script async src="prism.js"></script>
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+        analytics.page()
+      }}();
+    </script>
+  </body>
+</html>

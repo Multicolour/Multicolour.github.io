@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Multicolour - NodeJS NodeJS REST API generator.</title>
+
+    <base href="https://getmulticolour.com" />
+    <!-- <base href="http://getmulticolour.local" /> -->
+
+    <!-- Base meta. -->
+    <meta name="identifier-url" content="https://getmulticolour.com" />
+    <meta name="title" content="Multicolour - NodeJS REST API generator." />
+    <meta name="description" content="Multicolour - NodeJS REST API generator using just JSON." />
+    <meta name="abstract" content="Multicolour - NodeJS REST API generator using just JSON." />
+    <meta name="keywords" content="multicolour, rest api, generator, nodejs" />
+    <meta name="author" content="New World Code Ltd" />
+    <meta name="revisit-after" content="7" />
+    <meta name="language" content="EN" />
+    <meta name="copyright" content="© 2016 New World Code Ltd" />
+    <meta name="robots" content="Index" />
+
+    <!-- Google+ -->
+    <meta itemprop="name" content="Multicolour - NodeJS REST API generator.">
+    <meta itemprop="description" content="Multicolour - NodeJS REST API generator using just JSON.">
+    <meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@getmulticolour">
+    <meta name="twitter:title" content="Multicolour - NodeJS REST API generator.">
+    <meta name="twitter:description" content="Multicolour - NodeJS REST API generator using just JSON.">
+    <meta name="twitter:creator" content="@getmulticolour">
+    <meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Multicolour - NodeJS REST API generator." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://getmulticolour.com" />
+    <meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+    <meta property="og:description" content="Multicolour - NodeJS REST API generator using just JSON." />
+    <meta property="og:site_name" content="Multicolour - NodeJS REST API generator." />
+
+    <!-- Browser behaviour -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Browser Iconography -->
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="stylesheets/prism.css" media="screen, projection" rel="stylesheet" type="text/css" async>
+  </head>
+
+  <body class="collections">
+    <main>
+      <nav class="general-nav">
+        <ul>
+          <li>
+            <a href="" class="no-border">
+              <img class="nav-logo" src="images/logo-stamp.svg" alt="Multicolour - NodeJS REST API generator.">
+            </a>
+          </li>
+          <li>
+            <a href="examples">examples</a>
+          </li>
+          <li>
+            <a href="docs/">docs</a>
+          </li>
+          <li>
+            <a href="https://medium.com/@getmulticolour" rel="nofollow">blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="content">
+        <h1 id="collections">Collections</h1>
+<p>Multicolour collections are built on the popular <a href="https://github.com/balderdashy/waterline">Waterline ORM</a>, this allowed us to minimise the amount of work that you do to get something you'd spend weeks or months doing.</p>
+<p>Multicolour expands on Blueprints slightly to give you some extra behavioural and timesaving tweaks as well as extra behaviour for Multicolour.</p>
+<p>A simple, example Multicolour blueprint might look something like this.</p>
+<pre class="language-javascript"><code>&quot;use strict&quot;
+
+module.exports = {
+  attributes: {
+    slug: &quot;string&quot;,
+
+    title: {
+      type: &quot;string&quot;,
+      required: true,
+      index: true
+    },
+
+    description: {
+      type: &quot;string&quot;,
+      required: true
+    },
+
+    public: {
+      type: &quot;boolean&quot;,
+      defaultsTo: true,
+      metadata: {
+        description: &quot;Some projects are private, this flag is the decider.&quot;
+      }
+    },
+
+    // Associations.
+    user: {
+      model: &quot;user&quot;
+    }
+  },
+
+  constraints: {
+    get: {
+      user: &quot;auth.credentials.user.id&quot;,
+      public: { compile: false, value: true }
+    },
+  }
+}</code></pre>
+<p>A few things are happening above, we're exporting an Object with a few keys. The first key is <code>attributes</code>, this is where you define the properties/columns/keys in your table/document.</p>
+<p>Each key of the <code>attributes</code> can be an object of properties or simply the type that key should be. Valid types are:</p>
+<ul>
+<li><code>&quot;string&quot;</code></li>
+<li><code>&quot;text&quot;</code></li>
+<li><code>&quot;email&quot;</code></li>
+<li><code>&quot;integer&quot;</code></li>
+<li><code>&quot;float&quot;</code></li>
+<li><code>&quot;date&quot;</code></li>
+<li><code>&quot;time&quot;</code></li>
+<li><code>&quot;datetime&quot;</code></li>
+<li><code>&quot;boolean&quot;</code></li>
+<li><code>&quot;binary&quot;</code></li>
+<li><code>&quot;array&quot;</code></li>
+<li><code>&quot;json&quot;</code></li>
+</ul>
+<p>Properties can also have a <code>metadata</code> key, this is where you can add descriptive and informative notes that will appear in the documentation generated by your chosen server framework.</p>
+<p>There is also a <code>constraints</code> key outside of the <code>attributes</code>, this serves as a simple &quot;logic free&quot; way to constrain actions on the database.</p>
+<p>If you were to write the JavaScript for that constraint, it might look something like this.</p>
+<pre class="language-javascript"><code>projects.findOne(request.payload, (err, project) =&gt; {
+  if (row.user.toString() !== request.auth.credentials.user.id.toString()
+    || row.public === false) {
+    reply(&quot;You aren&#39;t allowed to do this.&quot;).code(412)
+  }
+  else {
+    reply(project)
+  }
+})
+...</code></pre>
+<p>A value computed by a constraint will <strong><em>always</em></strong> overwrite any value sent to the server intended for a write request to the database.</p>
+<h2 id="naming-and-identity">Naming and identity</h2>
+<p>To be as predictable as possible, Multicolour takes the name of your <code>blueprint.js</code> and makes sure it is not pluralised in any way. If you have a blueprint named <code>projects.js</code> in your <code>blueprints</code> folder, Multicolour will name your collection <code>project</code> and your routes will all be <code>/project/</code>.</p>
+<h2 id="lifecycle-callbacks">Lifecycle callbacks</h2>
+<p>If constraints aren't for you, you can use lifecycle callbacks to prevent/check writes and reads from your database.</p>
+<p>Each model has the following available callbacks.</p>
+<ul>
+<li><code>beforeValidate(values, next)</code></li>
+<li><code>afterValidate(values, next)</code></li>
+<li><code>beforeCreate(values, next)</code></li>
+<li><code>afterCreatefn(newlyInsertedRecord, next)</code></li>
+<li><code>beforeUpdate(valuesToUpdate, next)</code></li>
+<li><code>afterUpdate(updatedRecord, next)</code></li>
+<li><code>beforeDestroy(criteria, next)</code></li>
+<li><code>afterDestroy(deletedRecord, next)</code></li>
+</ul>
+<p>To read more on lifecycle callbacks, read the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/lifecycle-callbacks.md">Waterline lifecycle documentation</a>.</p>
+<h2 id="associations">Associations</h2>
+<p>Your blueprints can have associations to other blueprints (even across database technologies) which are automatically populated by Multicolour. Your associations can be <code>one-to-one</code>, <code>one-to-many</code> or <code>many-to-many</code>.</p>
+<p>You make associations in your blueprint by specifying the property that should be associated and either a <code>model</code> or <code>collection</code> property within with an optional <code>via</code> value.</p>
+<p>Example:</p>
+<pre class="language-javascript"><code>...
+attributes: {
+  // One-to-one
+  user: {
+    model: &quot;user&quot;
+  },
+
+  // One-to-many
+  projects: {
+    collection: &quot;project&quot;,
+    via: &quot;user&quot;
+  }
+}
+...</code></pre>
+<h3 id="adding-associations-programatically.">Adding associations programatically.</h3>
+<p>There may be a time you need to add a relationship to another collection without modifying the blueprint. The <code>add_relation_to_collection(as, target_collection, related_collection, many)</code> function will do this for you.</p>
+<p>This function will add a relationship, either one to one or one to many to your collection. It will <em>not</em> overwrite any relationship by the same name It will throw if either collection does not exist. Passing true to <code>many</code> will make the relationship one to many.</p>
+<p><em>Example</em></p>
+<p>Adding a team relationship to the <code>multicolour_user</code> collection.</p>
+<pre class="language-javascript"><code>// app.js
+my_service.get(&quot;database&quot;)
+  .add_relation_to_collection(&quot;team&quot;, &quot;multicolour_user&quot;, &quot;team&quot;)
+  .add_relation_to_collection(&quot;users&quot;, &quot;team&quot;, &quot;multicolour_user&quot;)</code></pre>
+<p>A sugar function that does the same in a more terse way is the <code>.join</code> method.</p>
+<pre class="language-javascript"><code>my_service.get(&quot;database&quot;)
+  .join({
+    as: &quot;team&quot;,
+    from: &quot;multicolour_user&quot;,
+    to: &quot;team&quot;
+  })
+  .join({
+    as: &quot;team&quot;,
+    from: &quot;team&quot;,
+    to: &quot;multicolour_user&quot;
+  })</code></pre>
+<p>You can find more about how Waterline handles associations by <a href="https://github.com/balderdashy/waterline-docs/tree/master/models/associations">reading the documentation</a></p>
+<h2 id="tojson"><code>toJSON</code></h2>
+<p>Every model has a <code>toJSON</code> method, even if you don't supply one, Multicolour adds one for you which simply removes any <code>null</code> or <code>undefined</code> keys before conitnueing with the reply.</p>
+<p>If you supply a <code>toJSON</code> method, Multicolour wraps your <code>toJSON</code> in the default so behaviour stays predictable.</p>
+<p>Example removing a password and salt from a reply:</p>
+<pre class="language-javascript"><code>attributes: {
+  // Your model...
+
+  toJSON: function() {
+    const model = this.toObject()
+    delete model.password
+    delete model.salt
+    return model
+  }
+}</code></pre>
+<h2 id="flags">Flags</h2>
+<p>There are flags available to change Multicolour behaviour on your models, they are:</p>
+<ul>
+<li><code>NO_AUTO_GEN_ROUTES: Boolean</code> This tells Multicolour whether or not to generate CRUD endpoints for this model. <code>custom_routes</code> are still honoured.</li>
+<li><code>NO_AUTO_GEN_FRONTEND: Boolean</code> This tells Multicolour whether or not to generate a frontend (if you have enabled a frontend plugin).</li>
+</ul>
+<p>During the generation Multicolour also adds a new property to each model, <code>multicolour_instance</code> which is the current instance of Multicolour from which you can access your entire app.</p>
+      </section>
+
+      <section class="email-signup">
+        <form
+          method="post"
+          enctype="multipart/form-data"
+          action="https://getmulticolour.us12.list-manage.com/subscribe/post?u=bec938217586432b04e1ea290&amp;id=e5a068eb80">
+          <fieldset name="email">
+            <input
+              name="EMAIL"
+              type="email"
+              alt="Enter your best email for news on Multicolour's development"
+              placeholder="Enter your best email for news on Multicolour's development">
+            <button
+              type="submit"
+              name="subscribe">
+              SIGN UP
+            </button>
+          </fieldset>
+        </form>
+        <p class="really-small">
+          Your email address is safe with us, you'll ONLY receive occasional news about Multicolour. Nothing and no one else, but us &hearts;
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      <ul>
+        <li>
+          <a href="https://github.com/Multicolour/multicolour/blob/master/CONTRIBUTING.md">
+            Code of Conduct/Contribution rules
+          </a>
+        </li>
+        <li>
+          <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow">
+            Branding guidelines
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Multicolour" target="_blank" rel="nofollow">
+            Github Organisation
+          </a>
+        </li>
+      </ul>
+      <p>&copy; Copyright to Get Multicolour &amp; New World Code Ltd 2016</p>
+    </footer>
+
+    <script async src="prism.js"></script>
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+        analytics.page()
+      }}();
+    </script>
+  </body>
+</html>
