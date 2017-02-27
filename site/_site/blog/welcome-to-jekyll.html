@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Multicolour documentation constraints</title>
+  <title>Welcome to Jekyll!</title>
 
   <!-- Base -->
 <meta name="identifier-url" content="site.url" />
-<meta name="title" content="Multicolour documentation constraints" />
+<meta name="title" content="Welcome to Jekyll!" />
 <meta name="description" content="Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
 " />
-<meta name="abstract" content="Constraints" />
+<meta name="abstract" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa..." />
 <meta name="keywords" content="multicolour, rest api, generator, nodejs" />
 <meta name="author" content="New World Code Ltd" />
 <meta name="revisit-after" content="7" />
@@ -25,21 +25,21 @@
 <!-- Social -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@getmulticolour">
-<meta name="twitter:title" content="Multicolour documentation constraints">
-<meta name="twitter:description" content="Constraints">
+<meta name="twitter:title" content="Welcome to Jekyll!">
+<meta name="twitter:description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
 <meta name="twitter:creator" content="@getmulticolour">
 <meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta itemprop="name" content="Multicolour documentation constraints">
-<meta itemprop="description" content="Constraints">
+<meta itemprop="name" content="Welcome to Jekyll!">
+<meta itemprop="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
 <meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta property="og:title" content="Multicolour documentation constraints" />
+<meta property="og:title" content="Welcome to Jekyll!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://getmulticolour.com" />
 <meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
-<meta property="og:description" content="Constraints" />
-<meta property="og:site_name" content="Multicolour documentation constraints" />
+<meta property="og:description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa..." />
+<meta property="og:site_name" content="Welcome to Jekyll!" />
 
 <link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
@@ -63,136 +63,68 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://getmulticolour.com/docs/collections/constraints">
+  <link rel="canonical" href="https://getmulticolour.com/blog/welcome-to-jekyll">
   <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
 </head>
 
 
 <body>
     <main>
+      <nav class="general-nav">
+    <ul>
+        <li>
+            <a href="/" class="no-border">
+                <img class="nav-logo" src="/images/logo-stamp.svg" alt="Multicolour - NodeJS REST API generator.">
+            </a>
+        </li>
+        <li>
+            <a href="/examples" title="Multicolour rest api generator examples">examples</a>
+        </li>
+        <li>
+            <a href="/docs/" title="Multicolour docs">docs</a>
+        </li>
+        <li>
+            <a href="/blog" title="Multicolour blog">blog</a>
+        </li>
+    </ul>
+</nav>
+
       <section>
-        <aside>
-          <h2></h2>
-          <ul>
-          </ul>
-        </aside>
-        <article>
-          <h1 id="constraints">Constraints</h1>
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-<p>A constraint in Multicolour is a simple string in your models to define a limiting behaviour on for certain types of actions, such as making sure when something is created it gets assigned the logged in user’s identifier for ownership.</p>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Welcome to Jekyll!</h1>
+    <p class="post-meta"><time datetime="2017-02-27T08:42:51+00:00" itemprop="datePublished">Feb 27, 2017</time></p>
+  </header>
 
-<p>Constraints exist to replace simple, common business logic without having to write JavaScript and they come in a few formats that is described in the following spec.</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
-<h3 id="specification">Specification</h3>
+<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
-<p><code class="highlighter-rouge">javascript
-{
-  [verb String]: {
-    [key String]: Function|ComparativeString|ConstraintObject,
-  }
-}
-</code></p>
+<p>Jekyll also offers powerful support for code snippets:</p>
 
-<p>Where <code class="highlighter-rouge">ComparativeString</code> is a <code class="highlighter-rouge">String</code> with the following format:</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
-<p>```javascript
-const comparatives = new Map([
-  [”&lt;”, “&lt;”],
-  [”&gt;”, “&gt;”],
-  [”&lt;=”, “&lt;=”],
-  [”&gt;=”, “&gt;=”],
-  [”!”, “!”],
-  [”^”, “startsWith”],
-  [”$”, “endsWith”],
-  [”%”, “like”]
-])</p>
+<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
-<p>[Comparative?] path.to.data.in.request.object
-```</p>
 
-<p>and <code class="highlighter-rouge">ConstraintObject</code> is an <code class="highlighter-rouge">Object</code> with the following format:</p>
+  </div>
 
-<p><code class="highlighter-rouge">javascript
-{
-  [key String]: {
-    compile: Bool false,
-    value: compile ? ComparativeString : (String|Number|null)
-  },
-}
-</code></p>
+</article>
 
-<h3 id="example-and-common-uses">Example and common uses</h3>
-
-<table>
-  <tbody>
-    <tr>
-      <td>The most common constraint is ensuring a user has sufficient privileges to read</td>
-      <td>write something and would come in the form of</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><code class="highlighter-rouge">javascript
-{
-  user: "auth.credentials.user.id"
-}
-</code></p>
-
-<p>The way this works is the <code class="highlighter-rouge">String</code> is a path to an object on the <code class="highlighter-rouge">request</code> object, this is in-fact setting the constraint to the value of <code class="highlighter-rouge">request.auth.credentials.user.id</code> in the incoming request.</p>
-
-<h4 id="more-examples">More examples</h4>
-
-<p>```javascript
-{
-  role: “auth.session.role”
-}</p>
-
-<p>{
-  name: {
-    compile: false,
-    value: “Multicolour”
-  }
-}</p>
-
-<p>{
-  createdAt: “&gt;= “ + new Date(2015)
-}</p>
-
-<p>{
-  age: {
-    compile: false,
-    value: “&gt;= 18”
-  }
-}
-```</p>
-
-<h2 id="verbs-and-constraints">Verbs and constraints</h2>
-
-<p>You must specify your constraints on all the http verbs you wish to constrain. The verbs must appear as lowercase.</p>
-
-<p>Example:</p>
-
-<p><code class="highlighter-rouge">javascript
-...
-constraints: {
-  get: { public: { compile: false, value: true } },
-  post: { user: "auth.credentials.user.id" },
-  put: { user: "auth.credentials.user.id" },
-  delete: { user: "auth.credentials.user.id" },
-  patch: { user: "auth.credentials.user.id" }
-},
-...
-</code></p>
-
-        </article>
       </section>
     </main>
 
     <footer class="site-footer">
   <ul>
     <li>
-      <a href="https://github.com/Multicolour/multicolour/blob/master/CONTRIBUTING.md">
-        Code of Conduct/Contribution rules
+      <a href="/code-of-conduct">
+        Code of Conduct
       </a>
     </li>
     <li>
@@ -206,7 +138,7 @@ constraints: {
       </a>
     </li>
   </ul>
-  <p>&copy; Copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+  <p>&copy; All copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
 </footer>
 
 

@@ -6,7 +6,7 @@ permalink: /docs/
 
 # Docs {{ site.latest_version }}
 
-* [Getting started](//docs/examples)
+* [Getting started](/docs/quickstart)
 * [API Reference](/docs/api-reference)
 * [Debugging](/docs/debugging)
 * [CLI](/docs/cli)
