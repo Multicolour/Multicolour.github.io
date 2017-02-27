@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multicolour documentation configuration</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="Multicolour documentation configuration" />
+<meta name="description" content="Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
+" />
+<meta name="abstract" content="Configuration" />
+<meta name="keywords" content="multicolour, rest api, generator, nodejs" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="EN" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="Multicolour documentation configuration">
+<meta name="twitter:description" content="Configuration">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="Multicolour documentation configuration">
+<meta itemprop="description" content="Configuration">
+<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="Multicolour documentation configuration" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://getmulticolour.com" />
+<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="Configuration" />
+<meta property="og:site_name" content="Multicolour documentation configuration" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://getmulticolour.com/docs/configuration">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+</head>
+
+
+<body>
+    <main>
+      <section>
+        <aside>
+          <h2></h2>
+          <ul>
+          </ul>
+        </aside>
+        <article>
+          <h1 id="configuration">Configuration</h1>
+
+<p>Multicolour is config driven, it’s not a library or a framework but a tool that links all your favourite libraries together to make a restful API.</p>
+
+<p>The config can seem a bit convoluted if all kept in one file and this is why it’s a <code class="highlighter-rouge">.js</code> file and not a <code class="highlighter-rouge">.json</code> file.</p>
+
+<p>A typical <code class="highlighter-rouge">config.js</code> might look something like the below and it configures:</p>
+
+<ul>
+  <li>a default timeout on the server of 30 seconds</li>
+  <li>the pagination results limit of 20</li>
+  <li>a prefix on the API routes of <code class="highlighter-rouge">/api</code></li>
+  <li>where to write the JavaScript SDK to.</li>
+  <li>Where the server should list and on what port, etc (standard Hapi config)</li>
+  <li>and two database connections, one for when <code class="highlighter-rouge">NODE_ENV</code> is development and for production.</li>
+</ul>
+
+<p>```javascript
+“use strict”</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>const PORT = parseInt(process.env.PORT)</td>
+      <td> </td>
+      <td>1811</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>module.exports = {
+  content: <code class="highlighter-rouge">${__dirname}/content</code>,</p>
+
+<p>settings: {
+    timeout: 3e4,</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>results: {
+  per_page: 20
+},
+
+route_prefix: "/api",
+
+javascript_sdk: {
+  destination: `${__dirname}/content/frontend/build/api_sdk`,
+  module_name: "API_SDK"
+}   },   api_connections: {
+port: PORT,
+routes: {
+  cors: {
+    origin: [ `http://localhost:${PORT}` ]
+  }
+},
+router: { stripTrailingSlash: true }   },
+</code></pre>
+</div>
+
+<p>api_server: {
+    connections: {
+      routes: {
+        security: true
+      }
+    },
+    debug: { request: [“error”] }
+  },</p>
+
+<p>db: {
+    adapters: {
+      mongo: require(“sails-mongo”)
+    },
+    connections: {
+      development: {
+        adapter: “mongo”,
+        database: “multicolour”
+      },
+      production: {
+        adapter: “mongo”,
+        host: “some-mongo-host.com”,
+        port: 27017,
+        database: “multicolour”
+      }
+    }
+  }
+}
+```</p>
+
+<p>A full config file may contain any of the following options:</p>
+
+<p>```javascript
+“use strict”</p>
+
+<p>module.exports = {
+  content: String</p>
+
+<p>settings: {
+    timeout: Number,</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>results: {
+  per_page: Number
+},
+
+route_prefix: String,
+
+javascript_sdk: {
+  destination: String,
+  module_name: String
+}   },
+</code></pre>
+</div>
+
+<p>auth: {
+    password: String,
+    providers: [
+      {
+        provider: String,
+        clientId: String,
+        clientSecret: String,
+        isSecure: Boolean
+      }
+    ]
+  },</p>
+
+<p>// As HAPI is the only available server plugin currently
+  // it’s config options are shown below in briefand you
+  // should consult the Hapijs docs for the full configuration
+  // documentation.
+  api_connections: {
+    port: Number,
+    host: String,
+    routes: {
+      cors: Boolean or {
+        origin: [ String ]
+      }
+    },
+    router: { stripTrailingSlash: true }
+  },</p>
+
+<p>api_server: {
+    connections: {
+      routes: {
+        security: Boolean
+      }
+    },
+    debug: { request: [ String ] }
+  },</p>
+
+<p>db: {
+    adapters: {
+      String: require(String)
+    },
+    connections: {
+      String: {
+        adapter: String,
+        host: String,
+        port: Number,
+        username: String,
+        password: String,
+        ssl: Boolean,
+        database: String
+      }
+    }
+  }
+}
+```</p>
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+  <ul>
+    <li>
+      <a href="https://github.com/Multicolour/multicolour/blob/master/CONTRIBUTING.md">
+        Code of Conduct/Contribution rules
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; Copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+        analytics.page()
+      }}();
+    </script>
+</body>
+
+</html>

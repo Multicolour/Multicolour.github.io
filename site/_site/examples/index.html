@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multicolour Examples</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="Multicolour Examples" />
+<meta name="description" content="Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
+" />
+<meta name="abstract" content="Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
+" />
+<meta name="keywords" content="multicolour, rest api, generator, nodejs" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="EN" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="Multicolour Examples">
+<meta name="twitter:description" content="Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
+">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="Multicolour Examples">
+<meta itemprop="description" content="Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
+">
+<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="Multicolour Examples" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://getmulticolour.com" />
+<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
+" />
+<meta property="og:site_name" content="Multicolour Examples" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://getmulticolour.com/examples/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+</head>
+
+
+<body>
+    <main>
+      <section>
+        <nav>
+    <ul class="home-nav">
+        <li>
+            <a href="/examples" title="Multicolour rest api generator examples">examples</a>
+        </li>
+        <li>
+            <a href="/docs/" title="Multicolour docs">docs</a>
+        </li>
+        <li>
+            <a href="/blog" title="Multicolour blog">blog</a>
+        </li>
+    </ul>
+</nav>
+<img class="logo" src="/images/logo.svg" alt="Multicolour - REST API generator."> 
+
+
+        <h1 id="multicolour-examples">Multicolour examples</h1>
+
+<p>Multicolour tries to be as helpful as possible with creating and maintaining your REST APIs.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Multicolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.</p>
+
+<p><code class="highlighter-rouge">multicolour init .</code></p>
+
+<p>in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, <code class="highlighter-rouge">config.js</code>, <code class="highlighter-rouge">app.js</code> and <code class="highlighter-rouge">content/blueprints/example.js</code></p>
+
+<h2 id="blueprints">Blueprints</h2>
+
+<p>Multicolour stands on the shoulders of giants, our ORM is the popular <a href="https://github.com/balderdashy/waterline">Waterline ORM</a>. It has a rich api for creating database schemas without losing control of the underlying technology.</p>
+
+<p>Multicolour uses this to allow you to write JSON and get a whole collection of software. If you’ve run <code class="highlighter-rouge">multicolour init</code> you’ll see a <code class="highlighter-rouge">content/</code> folder which also contains a <code class="highlighter-rouge">blueprints/</code> folder where you’ll see <code class="highlighter-rouge">example.js</code>.</p>
+
+<h3 id="a-look-at-what-we-get">A look at what we get</h3>
+
+<p>Looking at what we get by running <code class="highlighter-rouge">multicolour init .</code> we can see a few files generated for us. We’ll see the following file structure.</p>
+
+<p><code class="highlighter-rouge">
+- your-project/
+  - content/
+    - blueprints/
+      - example.js
+  - config.js
+  - app.js
+</code></p>
+
+<p>Your <code class="highlighter-rouge">content/blueprints/example.js</code> is your first blueprint, lets look at it’s anatomy.</p>
+
+<p>```javascript
+“use strict”</p>
+
+<p>module.exports = {
+  attributes: {
+    name: {
+      required: true,
+      type: “string”
+    },
+    age: {
+      required: true,
+      type: “integer”,
+      min: 0,
+      max: 9000
+    },
+    password: {
+      required: true,
+      type: “string”,
+      minLength: 5
+    }
+  },</p>
+
+<p>// Before we create anything, make sure
+  // to hash the password for security.
+  beforeCreate: (values, next) =&gt; {
+    // Get the crypto library.
+    const crypto = require(“crypto”)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// Create a hash, we're going to encrypt the password.
+const password = crypto.createHash("sha1")
+password.update(values.password)
+
+// Apply the hash to the inbound values.
+values.password = password.digest("hex")
+
+// Move on.
+next()   } } ```
+</code></pre>
+</div>
+
+<p>The very first thing is the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"><code class="highlighter-rouge">"use strict"</code></a> pragma, this simply helps prevent silly syntactical errors in your code by catching them early.</p>
+
+<p><code class="highlighter-rouge">module.exports = {</code> this is the beginning of our <code class="highlighter-rouge">example</code> model definition. An object containing various keys and objects that configure both the database(s) and Multicolour.</p>
+
+<p><code class="highlighter-rouge">attributes: {</code> are the columns and keys used in our actual database tables and collections, each key represents a column in your table with the associated type.</p>
+
+<p><code class="highlighter-rouge">beforeCreate: (values, next) =&gt; {</code> is a special function called just before the actual creation of the row within the table/collection. This is your last chance to alter the values of the data being written to the database.</p>
+
+<p>There are many other configurations that you can add to your blueprints to make Multicolour and Waterline work in exactly the way you want but it’s important to know that Multicolour tries not to modify any definition in any way, Multicolour fixes some known bugs with Waterline but does not alter your model.</p>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+  <ul>
+    <li>
+      <a href="https://github.com/Multicolour/multicolour/blob/master/CONTRIBUTING.md">
+        Code of Conduct/Contribution rules
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; Copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+        analytics.page()
+      }}();
+    </script>
+</body>
+
+</html>

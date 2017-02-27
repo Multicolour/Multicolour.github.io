@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multicolour quickstart</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="Multicolour quickstart" />
+<meta name="description" content="Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
+" />
+<meta name="abstract" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with." />
+<meta name="keywords" content="multicolour, rest api, generator, nodejs" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="EN" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="Multicolour quickstart">
+<meta name="twitter:description" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="Multicolour quickstart">
+<meta itemprop="description" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.">
+<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="Multicolour quickstart" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://getmulticolour.com" />
+<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with." />
+<meta property="og:site_name" content="Multicolour quickstart" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://getmulticolour.com/docs/quickstart">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+</head>
+
+
+<body>
+    <main>
+      <section>
+        <aside>
+          <h2></h2>
+          <ul>
+          </ul>
+        </aside>
+        <article>
+          <h1 id="getting-started">Getting Started</h1>
+<p>Multicolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.</p>
+
+<p><code class="highlighter-rouge">multicolour init .</code></p>
+
+<p>in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, <code class="highlighter-rouge">config.js</code>, <code class="highlighter-rouge">app.js</code> and <code class="highlighter-rouge">content/blueprints/example.js</code></p>
+
+<h2 id="blueprints">Blueprints</h2>
+
+<p>Multicolour stands on the shoulders of giants, our ORM is the popular <a href="https://github.com/balderdashy/waterline">Waterline ORM</a>. It has a rich api for creating database schemas without losing control of the underlying technology.</p>
+
+<p>Multicolour uses this to allow you to write JSON and get a whole collection of software. If you’ve run <code class="highlighter-rouge">multicolour init</code> you’ll see a <code class="highlighter-rouge">content/</code> folder which also contains a <code class="highlighter-rouge">blueprints/</code> folder where you’ll see <code class="highlighter-rouge">example.js</code>.</p>
+
+<blockquote>
+  <p>You said I write JSON to get my stuff</p>
+</blockquote>
+
+<p>We’re not lying, you write JSON and you get your API and frontend but you get <code class="highlighter-rouge">.js</code> files because you can expand the generated <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> with your business logic by using the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/lifecycle-callbacks.md">lifecycle</a> events and <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/instance-class-methods.md">custom functions</a> by writing normal JavaScript.</p>
+
+<p>Read more about writing blueprints and extending behaviour in the <a href="./Blueprints">Blueprints API reference</a> and on the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/models.md">Waterline Blueprints documentation</a>.</p>
+
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+  <ul>
+    <li>
+      <a href="https://github.com/Multicolour/multicolour/blob/master/CONTRIBUTING.md">
+        Code of Conduct/Contribution rules
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; Copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+        analytics.page()
+      }}();
+    </script>
+</body>
+
+</html>

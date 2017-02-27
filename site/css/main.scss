@@ -1,0 +1,24 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Vars and mixins //
+$vertical-rhythm: 5vh;
+$horizontal-rhythm: 2vw;
+$base-font-size: 1.7vw;
+
+// Media query vars.
+$break-small: 414px;
+$break-medium: 768px;
+$break-large: 1200px;
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "normalize";
+@import "base";

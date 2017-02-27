@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multicolour documentation file uploads</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="Multicolour documentation file uploads" />
+<meta name="description" content="Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
+" />
+<meta name="abstract" content="Uploading files" />
+<meta name="keywords" content="multicolour, rest api, generator, nodejs" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="EN" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="Multicolour documentation file uploads">
+<meta name="twitter:description" content="Uploading files">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="Multicolour documentation file uploads">
+<meta itemprop="description" content="Uploading files">
+<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="Multicolour documentation file uploads" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://getmulticolour.com" />
+<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="Uploading files" />
+<meta property="og:site_name" content="Multicolour documentation file uploads" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://getmulticolour.com/docs/routing/file-uploads/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+</head>
+
+
+<body>
+    <main>
+      <section>
+        <aside>
+          <h2></h2>
+          <ul>
+          </ul>
+        </aside>
+        <article>
+          <h1 id="uploading-files">Uploading files</h1>
+
+<p>If you want to upload files, Multicolour has your back. To support uploading files on your blueprints you simply need to add <code class="highlighter-rouge">can_upload_file: String</code> to your blueprint.</p>
+
+<p><code class="highlighter-rouge">javascript
+{
+  attributes: {
+    location: "string"
+  },
+  can_upload_file: "location"
+}
+</code></p>
+
+<p>The value of <code class="highlighter-rouge">can_upload_file</code> should be the name of the key on the record to store the location of the uploaded file, if it is <code class="highlighter-rouge">true</code> “file” will be used.</p>
+
+<p>The upload endpoint will be added to your blueprint as <code class="highlighter-rouge">POST /{identity}/upload</code> and requires that you create a record before uploading, this endpoint follows the <code class="highlighter-rouge">POST constraint</code>s</p>
+
+<p>By default Multicolour will upload files to a temporary location as dictated by Node’s <code class="highlighter-rouge">os.tmpdir()</code> function.</p>
+
+<p>We encourage you to create your own storage plugin to set a more permanent storage location or use the <code class="highlighter-rouge">multicolour-storage-S3</code> plugin.</p>
+
+<h2 id="creating-a-storage-plugin">Creating a storage plugin.</h2>
+
+<p>The default storage plugin will store any files uploaded to the operating system’s temp directory. We encourage you to choose a more permanent place for your files by creating your own storage plugin.</p>
+
+<p>Below is a storage plugin that stores files in <code class="highlighter-rouge">/uploads</code></p>
+
+<p>```javascript
+“use strict”</p>
+
+<p>// Get the tools we need.
+const fs = require(“fs”)</p>
+
+<p>class Multicolour_Disk_Storage {</p>
+
+<p>/**
+   * Create default options and values.
+   * @return {Multicolour_Disk_Storage} Object for chaining.
+   */
+  constructor() {
+    // Set up the default options.
+    this.options = {
+      path: “/uploads”
+    }</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>return this   }
+</code></pre>
+</div>
+
+<p>register(multicolour) {
+    multicolour.reply(“storage”, this)
+  }</p>
+
+<p>/**
+   * Upload a file to disk and return a writable stream.
+   * @param  {multicolour/File} file to upload to S3.
+   * @param  {String} destination to write the file to.
+   * @return {fs.WritableStream} object to listen for events.
+   */
+  upload(file, destination) {
+    // Check we got a destination.
+    if (!destination) {
+      throw new ReferenceError(“No destination for uploaded file”)
+    }
+    // Upload the file.
+    else {
+      // We’ll return the writable stream.
+      const stream = fs.createWriteStream(<code class="highlighter-rouge">${this.options.path}/${destination}</code>)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  // Check if we got a readable stream, in.
+  if (file.pipe) {
+    file.pipe(stream)
+  }
+  // Otherwise, read the file out.
+  else {
+    fs.createReadStream(file).pipe(stream)
+  }
+
+  // Return the stream.
+  return stream
+}   }
+</code></pre>
+</div>
+
+<p>/**
+   * Download a file from disk and return
+   * an EventEmitter to listen for data events.
+   * @param  {multicolour/File} file to get from disk.
+   * @return {fs.ReadableStream} object to listen for event
+   */
+  get(file) {
+    return fs.createReadStream(<code class="highlighter-rouge">${this.options.path}/${file}</code>)
+  }
+}</p>
+
+<p>// Export the required config for Multicolour to register.
+module.exports = Multicolour_Disk_Storage
+```</p>
+
+<p>To use your newly created plugin, edit your <code class="highlighter-rouge">app.js</code> to include it, E.G</p>
+
+<p>```javascript
+require(“multicolour”)
+  // Configure the service core and scan for content.
+  .new_from_config_file_path(“./config.js”)
+  .scan()</p>
+
+<p>// Register the server plugin.
+  .use(require(“multicolour-server-hapi”))</p>
+
+<p>// Register our storage plugin.
+  .use(require(“multicolour-disk-storage”))
+```</p>
+
+<h2 id="advanced-storage-plugin-configuration">Advanced storage plugin configuration.</h2>
+
+<p>If you want to keep your plugin configurable via the current blueprint’s properties storage plugins support <code class="highlighter-rouge">storage_config_keys</code> resolution.</p>
+
+<p>Inside your <code class="highlighter-rouge">register(multicolour)</code> function set up a <code class="highlighter-rouge">reply("storage_config_keys")</code> with an array of the keys you wish to fetch from the blueprint.</p>
+
+<p>Example:</p>
+
+<p>```javascript
+// blueprints/upload.js
+{
+  attributes: {
+    location: “string”,
+    pending: “boolean”
+  },</p>
+
+<p>can_upload_file: “location”,
+  custom_param: 1234567890
+}
+```
+—</p>
+
+<p><code class="highlighter-rouge">javascript
+// my-storage-plugin.js
+...
+  /**
+   * Set the storage name on our host.
+   * @param  {Multicolour} multicolour host instance.
+   * @return {void}
+   */
+  register(multicolour) {
+    multicolour
+      .reply("storage", this)
+      .reply("storage_config_keys", [ "custom_param" ])
+  }
+...
+</code></p>
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+  <ul>
+    <li>
+      <a href="https://github.com/Multicolour/multicolour/blob/master/CONTRIBUTING.md">
+        Code of Conduct/Contribution rules
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; Copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+        analytics.page()
+      }}();
+    </script>
+</body>
+
+</html>
