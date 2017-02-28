@@ -20,5 +20,6 @@ $break-large: 1200px;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
+@import "syntax-highlighting";
 @import "normalize";
 @import "base";
