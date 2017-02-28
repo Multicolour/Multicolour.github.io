@@ -3,10 +3,11 @@
   {% for doc in docs %}
     <li
       data-keywords="{{ doc.keywords }}"
-      class="active">
       {% if page.permalink == doc.permalink %}
+      class="active">
         {{ doc.short_name }}
       {% else %}
+      >
       <a href="{{ doc.permalink }}" title="{{ doc.title }}">
         {{ doc.short_name }}
       </a>

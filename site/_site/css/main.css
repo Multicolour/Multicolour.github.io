@@ -797,8 +797,14 @@ footer {
     vertical-align: top; }
   .columns aside {
     width: 25%; }
-    .columns aside h2, .columns aside ul {
+    .columns aside h2, .columns aside li {
       padding-left: 2.5em; }
+    .columns aside li {
+      list-style: none;
+      border-left: 10px solid white;
+      padding: .7em 2em; }
+      .columns aside li.active {
+        border-left-color: #7423b5; }
   .columns article {
     width: 70%;
     padding: 2.5em; }
@@ -817,3 +823,11 @@ footer {
     border: 0;
     padding: 1em;
     outline: 0; }
+
+.docs-title {
+  display: block;
+  color: #FFF;
+  background-color: #7423b5;
+  margin: 0; }
+  .docs-title span {
+    font-size: 1.3em; }

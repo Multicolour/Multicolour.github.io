@@ -23,7 +23,7 @@
 
   if (search) {
     search.addEventListener("keyup", function(event) {
-      var value = event.target.value
+      var value = event.target.value.toLowerCase()
       var visibility = value.length === 0 ? "" : "none"
 
       filterable.forEach(function(element) {
