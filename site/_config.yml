@@ -10,7 +10,7 @@ twitter_username: getmulticolour
 facebook_username: getmulticolour
 publisher: New World Code Ltd
 mailchimp_uri: https://getmulticolour.us12.list-manage.com/subscribe/post?u=bec938217586432b04e1ea290&amp;id=e5a068eb80
-latest_version: 0.6.3
+latest_version: '0.6.3'
 analytics_key: Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i
 year: 2017
 
@@ -19,7 +19,11 @@ collections:
   docs:
     output: true
     output_ext: .html
-    permalink: /:collection/:title
+    permalink: /:collection/:path/:title
+
+# List of documented versions.
+versions:
+  - "0.6.3"
 
 # Build settings
 markdown: kramdown

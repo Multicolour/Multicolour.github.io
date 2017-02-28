@@ -1,0 +1,10 @@
+<ul>
+  {% assign docs = site.docs | where:'version', page.version %}
+  {% for doc in docs %}
+    <li
+      data-keywords="{{ doc.keywords }}"
+      {% if page.permalink == doc.permalink %}class="active"{% endif %}>
+      <a href="{{ doc.permalink }}" title="{{ doc.title }}">{{ doc.short_name }}</a>
+    </li>
+  {% endfor %}
+</ul>

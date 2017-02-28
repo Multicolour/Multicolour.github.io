@@ -496,6 +496,9 @@ th {
 * + * {
   margin-bottom: 5vh; }
 
+html, body {
+  height: 100%; }
+
 body {
   font-family: "georgia", Times, sans-serif;
   font-size: 1.7vw;
@@ -712,6 +715,14 @@ nav {
     background: #FFF;
     padding: 1.66667vh 2vw;
     border-bottom: 2px solid #00DEAF; }
+    nav.general-nav .logo-link,
+    nav.general-nav .menu {
+      vertical-align: top; }
+    nav.general-nav .logo-link {
+      float: left; }
+    nav.general-nav .menu {
+      float: right;
+      padding-top: 1em; }
   nav a {
     font-weight: 500; }
   nav li {
@@ -777,3 +788,13 @@ footer {
       display: inline-block; }
     footer ul li {
       padding: 0 2em; }
+
+.columns {
+  width: 100%; }
+  .columns aside, .columns article {
+    display: inline-block;
+    vertical-align: top; }
+  .columns aside {
+    width: 24%; }
+  .columns article {
+    width: 75%; }

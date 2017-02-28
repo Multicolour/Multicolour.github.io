@@ -1,19 +1,9 @@
 ---
 layout: docs
-title: Multicolour documentation contents page
+title: Multicolour documentation
 permalink: /docs/
 ---
 
-# Docs {{ site.latest_version }}
+# Multicolour documentation
 
-* [Getting started](/docs/quickstart)
-* [API Reference](/docs/api-reference)
-* [Debugging](/docs/debugging)
-* [CLI](/docs/cli)
-* [Configuration](/docs/configuration)
-* [Plugins](/docs/plugins)
-* [Collections](/docs/collections)
-    * [Constraints](/docs/collections/constraints)
-* [Routing](/docs/routing)
-    * [File Uploads](/docs/routing/file-uploads)
-* [JavaScript SDK](/docs/javascript-sdk)
+Choose the version of Multicolour you're using on the left to read the documentation or checkout the [latest Multicolour docs](/docs/{{ site.latest_version }}).

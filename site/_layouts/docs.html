@@ -6,11 +6,19 @@
 <body>
     <main>
       {% include inner-header.html %}
-      <section>
+      <section class="columns">
         <aside>
-          <h2></h2>
-          <ul>
-          </ul>
+            <section class="search">
+                <input type="search" name="search" placeholder="search the docs">
+            </section>
+
+            {% if page.version %}
+            <h2>{{ page.version }} docs</h2>
+            {% include docs-list.html version=page.version %}
+            {% else %}
+            <h2>Select version</h2>
+            {% include versions-list.html %}
+            {% endif %}
         </aside>
         <article>
           {{ content }}

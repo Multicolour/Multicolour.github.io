@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multicolour documentation file uploads</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="Multicolour documentation file uploads" />
+<meta name="description" content="Learn how to add a file upload endpoint to your models and REST API." />
+<meta name="abstract" content="Uploading files" />
+<meta name="keywords" content="file uploads, multicolour, rest api file uploads" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="EN" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="Multicolour documentation file uploads">
+<meta name="twitter:description" content="Uploading files">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="Multicolour documentation file uploads">
+<meta itemprop="description" content="Uploading files">
+<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="Multicolour documentation file uploads" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://getmulticolour.com" />
+<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="Uploading files" />
+<meta property="og:site_name" content="Multicolour documentation file uploads" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://getmulticolour.com/docs/0.6.3/routing/file-uploads/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+</head>
+
+
+<body>
+    <main>
+      <nav class="general-nav">
+    <a href="/" class="logo-link no-border">
+        <img class="nav-logo" src="/images/logo-stamp.svg" alt="Multicolour - NodeJS REST API generator.">
+    </a>
+    <ul class="menu">
+        <li>
+            <a href="/examples" title="Multicolour rest api generator examples">examples</a>
+        </li>
+        <li>
+            <a href="/docs/" title="Multicolour docs">docs</a>
+        </li>
+        <li>
+            <a href="/blog" title="Multicolour blog">blog</a>
+        </li>
+    </ul>
+</nav>
+
+      <section class="columns">
+        <aside>
+            <section class="search">
+                <input type="search" name="search" placeholder="search the docs">
+            </section>
+
+            
+            <h2>0.6.3 docs</h2>
+            <ul>
+  
+  
+    <li
+      data-keywords="multicolour API, API reference"
+      >
+      <a href="/docs/0.6.3/api-reference" title="Multicolour core API reference">API Reference</a>
+    </li>
+  
+    <li
+      data-keywords="multicolour, cli"
+      >
+      <a href="/docs/0.6.3/cli" title="Multicolour documentation CLI">CLI</a>
+    </li>
+  
+    <li
+      data-keywords="waterline blueprints, multicolour collection"
+      >
+      <a href="/docs/0.6.3/collections/" title="Multicolour documentation collections">Collections/Blueprints</a>
+    </li>
+  
+    <li
+      data-keywords="multicolour config, server configuration, rest api config"
+      >
+      <a href="/docs/0.6.3/configuration" title="Multicolour documentation configuration">Configuration</a>
+    </li>
+  
+    <li
+      data-keywords="codeless business logic, multicolour constraints"
+      >
+      <a href="/docs/0.6.3/collections/constraints/" title="Multicolour documentation constraints">Constraints</a>
+    </li>
+  
+    <li
+      data-keywords="multicolour, rest api, debugging"
+      >
+      <a href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">Debugging</a>
+    </li>
+  
+    <li
+      data-keywords=""
+      >
+      <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">Quickstart</a>
+    </li>
+  
+    <li
+      data-keywords="multicolour, documentation, contents page"
+      >
+      <a href="/docs/0.6.3/" title="Multicolour documentation contents page"></a>
+    </li>
+  
+    <li
+      data-keywords="multicolour, javascript sdk"
+      >
+      <a href="/docs/0.6.3/javascript-sdk" title="Multicolour documentation JavaScript SDK generator">JavaScript SDK</a>
+    </li>
+  
+    <li
+      data-keywords="multicolour, plugins, rest api business logic"
+      >
+      <a href="/docs/0.6.3/plugins" title="Multicolour documentation plugins">Writing plugins</a>
+    </li>
+  
+    <li
+      data-keywords="multicolour, REST API routes, routing"
+      >
+      <a href="/docs/0.6.3/routing/" title="Multicolour documentation routing">Routing</a>
+    </li>
+  
+    <li
+      data-keywords="file uploads, multicolour, rest api file uploads"
+      class="active">
+      <a href="/docs/0.6.3/routing/file-uploads/" title="Multicolour documentation file uploads">Uploading files</a>
+    </li>
+  
+</ul>
+
+            
+        </aside>
+        <article>
+          <h1 id="uploading-files">Uploading files</h1>
+
+<p>If you want to upload files, Multicolour has your back. To support uploading files on your blueprints you simply need to add <code class="highlighter-rouge">can_upload_file: String</code> to your blueprint.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">location</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">},</span>
+  <span class="nx">can_upload_file</span><span class="err">:</span> <span class="s2">"location"</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The value of <code class="highlighter-rouge">can_upload_file</code> should be the name of the key on the record to store the location of the uploaded file, if it is <code class="highlighter-rouge">true</code> “file” will be used.</p>
+
+<p>The upload endpoint will be added to your blueprint as <code class="highlighter-rouge">POST /{identity}/upload</code> and requires that you create a record before uploading, this endpoint follows the <code class="highlighter-rouge">POST constraint</code>s</p>
+
+<p>By default Multicolour will upload files to a temporary location as dictated by Node’s <code class="highlighter-rouge">os.tmpdir()</code> function.</p>
+
+<p>We encourage you to create your own storage plugin to set a more permanent storage location or use the <code class="highlighter-rouge">multicolour-storage-S3</code> plugin.</p>
+
+<h2 id="creating-a-storage-plugin">Creating a storage plugin.</h2>
+
+<p>The default storage plugin will store any files uploaded to the operating system’s temp directory. We encourage you to choose a more permanent place for your files by creating your own storage plugin.</p>
+
+<p>Below is a storage plugin that stores files in <code class="highlighter-rouge">/uploads</code></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span>
+
+<span class="c1">// Get the tools we need.</span>
+<span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">)</span>
+
+<span class="kr">class</span> <span class="nx">Multicolour_Disk_Storage</span> <span class="p">{</span>
+
+  <span class="cm">/**
+   * Create default options and values.
+   * @return {Multicolour_Disk_Storage} Object for chaining.
+   */</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Set up the default options.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">path</span><span class="p">:</span> <span class="s2">"/uploads"</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">this</span>
+  <span class="p">}</span>
+
+  <span class="nx">register</span><span class="p">(</span><span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">multicolour</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"storage"</span><span class="p">,</span> <span class="k">this</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**
+   * Upload a file to disk and return a writable stream.
+   * @param  {multicolour/File} file to upload to S3.
+   * @param  {String} destination to write the file to.
+   * @return {fs.WritableStream} object to listen for events.
+   */</span>
+  <span class="nx">upload</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">destination</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Check we got a destination.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">destination</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nx">ReferenceError</span><span class="p">(</span><span class="s2">"No destination for uploaded file"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c1">// Upload the file.</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// We'll return the writable stream.</span>
+      <span class="kr">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">path</span><span class="p">}</span><span class="sr">/${destination}`</span><span class="err">)
+</span>
+      <span class="c1">// Check if we got a readable stream, in.</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">pipe</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">file</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">stream</span><span class="p">)</span>
+      <span class="p">}</span>
+      <span class="c1">// Otherwise, read the file out.</span>
+      <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="nx">file</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">stream</span><span class="p">)</span>
+      <span class="p">}</span>
+
+      <span class="c1">// Return the stream.</span>
+      <span class="k">return</span> <span class="nx">stream</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**
+   * Download a file from disk and return
+   * an EventEmitter to listen for data events.
+   * @param  {multicolour/File} file to get from disk.
+   * @return {fs.ReadableStream} object to listen for event
+   */</span>
+  <span class="nx">get</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">path</span><span class="p">}</span><span class="sr">/${file}`</span><span class="err">)
+</span>  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Export the required config for Multicolour to register.</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Multicolour_Disk_Storage</span></code></pre></figure>
+
+<p>To use your newly created plugin, edit your <code class="highlighter-rouge">app.js</code> to include it, E.G</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="c1">// Configure the service core and scan for content.</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+
+  <span class="c1">// Register the server plugin.</span>
+  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour-server-hapi"</span><span class="p">))</span>
+
+  <span class="c1">// Register our storage plugin.</span>
+  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour-disk-storage"</span><span class="p">))</span></code></pre></figure>
+
+<h2 id="advanced-storage-plugin-configuration">Advanced storage plugin configuration.</h2>
+
+<p>If you want to keep your plugin configurable via the current blueprint’s properties storage plugins support <code class="highlighter-rouge">storage_config_keys</code> resolution.</p>
+
+<p>Inside your <code class="highlighter-rouge">register(multicolour)</code> function set up a <code class="highlighter-rouge">reply("storage_config_keys")</code> with an array of the keys you wish to fetch from the blueprint.</p>
+
+<p>Example:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// blueprints/upload.js</span>
+<span class="p">{</span>
+  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">location</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="nx">pending</span><span class="err">:</span> <span class="s2">"boolean"</span>
+  <span class="p">},</span>
+
+  <span class="nx">can_upload_file</span><span class="err">:</span> <span class="s2">"location"</span><span class="p">,</span>
+  <span class="nx">custom_param</span><span class="err">:</span> <span class="mi">1234567890</span>
+<span class="p">}</span></code></pre></figure>
+
+<hr />
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// my-storage-plugin.js</span>
+<span class="p">...</span>
+  <span class="cm">/**
+   * Set the storage name on our host.
+   * @param  {Multicolour} multicolour host instance.
+   * @return {void}
+   */</span>
+  <span class="nx">register</span><span class="p">(</span><span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">multicolour</span>
+      <span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"storage"</span><span class="p">,</span> <span class="k">this</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"storage_config_keys"</span><span class="p">,</span> <span class="p">[</span> <span class="s2">"custom_param"</span> <span class="p">])</span>
+  <span class="p">}</span>
+<span class="p">...</span></code></pre></figure>
+
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+
+  <ul>
+    <li>
+      <a href="/code-of-conduct" title="Multicolour code of conduct">
+        Code of Conduct
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow noopener noreferrer">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow noopener noreferrer">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; All copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+
+    <script src="/js/main.js" async defer></script>
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+        analytics.page()
+      }}();
+    </script>
+</body>
+
+</html>

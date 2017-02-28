@@ -4,6 +4,10 @@
   margin-bottom: $vertical-rhythm;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: "georgia", Times, sans-serif;
   font-size: $base-font-size;
@@ -287,6 +291,20 @@ nav {
     background: #FFF;
     padding: $vertical-rhythm / 3 $horizontal-rhythm;
     border-bottom: 2px solid #00DEAF;
+
+    .logo-link,
+    .menu {
+      vertical-align: top;
+    }
+
+    .logo-link {
+      float: left;
+    }
+
+    .menu {
+      float: right;
+      padding-top: 1em;
+    }
   }
 
   a {
@@ -379,5 +397,22 @@ footer {
     li {
       padding: 0 2em;
     }
+  }
+}
+
+.columns {
+  width: 100%;
+
+  aside, article {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  aside {
+    width: 24%;
+  }
+
+  article {
+    width: 75%;
   }
 }
