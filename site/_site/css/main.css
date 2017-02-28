@@ -4,6 +4,9 @@
   padding: .15em;
   color: #CFCFCF; }
 
+.language-text {
+  color: #f8f8f2; }
+
 .highlight pre {
   background-color: #272822;
   border-radius: 3px;
@@ -564,10 +567,7 @@ strong {
   font-weight: 700; }
 
 pre {
-  margin: 5vh 0 !important; }
-  @media screen and (max-width: 414px) {
-    pre {
-      margin: 0 !important; } }
+  margin: 0; }
 
 p {
   margin-bottom: 5vh; }
@@ -592,15 +592,6 @@ a {
     padding-bottom: .1em;
     border-style: solid;
     border-width: 0px 0px 1px 0px; }
-
-code:not([class]) {
-  background-color: #272822;
-  color: #f8f8f2;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  padding: .4em;
-  font-size: .8em;
-  border-radius: 0.3em;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; }
 
 ul {
   padding: 0; }
@@ -719,7 +710,7 @@ nav {
     left: 1rem;
     right: 1rem;
     background: #FFF;
-    padding: 2.5vh 2vw;
+    padding: 1.66667vh 2vw;
     border-bottom: 2px solid #00DEAF; }
   nav a {
     font-weight: 500; }

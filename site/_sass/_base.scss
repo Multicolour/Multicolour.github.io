@@ -95,12 +95,7 @@ strong {
 }
 
 pre {
-  // Icky important here because Prism.
-  margin: $vertical-rhythm 0 !important;
-
-  @media screen and (max-width: $break-small) {
-    margin: 0 !important;
-  }
+  margin: 0;
 }
 
 p {
@@ -134,16 +129,6 @@ a {
     border-style: solid;
     border-width: 0px 0px 1px 0px;
   }
-}
-
-code:not([class]) {
-  background-color: #272822;
-  color: #f8f8f2;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  padding: .4em;
-  font-size: .8em;
-  border-radius: 0.3em;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
 ul {
@@ -300,7 +285,7 @@ nav {
     left: 1rem;
     right: 1rem;
     background: #FFF;
-    padding: $vertical-rhythm / 2 $horizontal-rhythm;
+    padding: $vertical-rhythm / 3 $horizontal-rhythm;
     border-bottom: 2px solid #00DEAF;
   }
 

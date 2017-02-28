@@ -26,18 +26,18 @@ Multicolour uses this to allow you to write JSON and get a whole collection of s
 
 Looking at what we get by running `multicolour init .` we can see a few files generated for us. We'll see the following file structure.
 
-```
+{% highlight text %}
 - your-project/
   - content/
     - blueprints/
       - example.js
   - config.js
   - app.js
-```
+{% endhighlight %}
 
 Your `content/blueprints/example.js` is your first blueprint, lets look at it's anatomy.
 
-```javascript
+{% highlight js linenos %}
 "use strict"
 
 module.exports = {
@@ -76,7 +76,7 @@ module.exports = {
     next()
   }
 }
-```
+{% endhighlight %}
 
 The very first thing is the [`"use strict"`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) pragma, this simply helps prevent silly syntactical errors in your code by catching them early.
 
