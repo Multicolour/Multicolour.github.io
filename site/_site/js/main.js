@@ -16,4 +16,23 @@
 
   // Reactive adjustment.
   self.onhashchange = adjustScrollTop
+
+  // Try to find the search box.
+  var search = document.querySelector(".search input[type=search]")
+  var filterable = Array.from(document.querySelectorAll("li[data-keywords]"))
+
+  if (search) {
+    search.addEventListener("keyup", function(event) {
+      var value = event.target.value
+      var visibility = value.length === 0 ? "" : "none"
+
+      filterable.forEach(function(element) {
+        var search = (element.dataset.keywords + " " + element.innerText).toLowerCase()
+        if (search.search(value) <= 0)
+          element.style.display = visibility
+        else
+          element.style.display = ""
+      })
+    })
+  }
 })(window)

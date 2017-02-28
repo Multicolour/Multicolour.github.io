@@ -1,10 +1,22 @@
 <ul>
-  {% assign docs = site.docs | where:'version', page.version %}
+  {% assign docs = site.docs | where:'version', page.version | where:'contents', !true %}
   {% for doc in docs %}
     <li
       data-keywords="{{ doc.keywords }}"
-      {% if page.permalink == doc.permalink %}class="active"{% endif %}>
-      <a href="{{ doc.permalink }}" title="{{ doc.title }}">{{ doc.short_name }}</a>
+      class="active">
+      {% if page.permalink == doc.permalink %}
+        {{ doc.short_name }}
+      {% else %}
+      <a href="{{ doc.permalink }}" title="{{ doc.title }}">
+        {{ doc.short_name }}
+      </a>
+      {% endif %}
+
+      {% if include.content %}
+      <small>
+        {{ doc.description }}
+      </small>
+      {% endif %}
     </li>
   {% endfor %}
 </ul>

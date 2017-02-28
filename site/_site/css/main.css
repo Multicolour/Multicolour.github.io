@@ -494,10 +494,11 @@ th {
   padding: 0; }
 
 * + * {
-  margin-bottom: 5vh; }
+  margin-bottom: 5vh;
+  box-sizing: border-box; }
 
 html, body {
-  height: 100%; }
+  min-height: 100%; }
 
 body {
   font-family: "georgia", Times, sans-serif;
@@ -795,6 +796,24 @@ footer {
     display: inline-block;
     vertical-align: top; }
   .columns aside {
-    width: 24%; }
+    width: 25%; }
+    .columns aside h2, .columns aside ul {
+      padding-left: 2.5em; }
   .columns article {
-    width: 75%; }
+    width: 70%;
+    padding: 2.5em; }
+    .columns article small {
+      display: block;
+      color: #333;
+      margin: .3em 0 1em 0; }
+
+.search {
+  width: 100%;
+  margin: 0;
+  background: #333;
+  color: white; }
+  .search input {
+    background-color: transparent;
+    border: 0;
+    padding: 1em;
+    outline: 0; }
