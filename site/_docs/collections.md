@@ -12,7 +12,7 @@ Multicolour expands on Blueprints slightly to give you some extra behavioural an
 
 A simple, example Multicolour blueprint might look something like this.
 
-```javascript
+{% highlight js %}
 "use strict"
 
 module.exports = {
@@ -51,7 +51,7 @@ module.exports = {
     },
   }
 }
-```
+{% endhighlight %}
 
 A few things are happening above, we're exporting an Object with a few keys. The first key is `attributes`, this is where you define the properties/columns/keys in your table/document.
 
@@ -76,7 +76,7 @@ There is also a `constraints` key outside of the `attributes`, this serves as a 
 
 If you were to write the JavaScript for that constraint, it might look something like this.
 
-```javascript
+{% highlight js %}
 projects.findOne(request.payload, (err, project) => {
   if (row.user.toString() !== request.auth.credentials.user.id.toString()
     || row.public === false) {
@@ -87,7 +87,7 @@ projects.findOne(request.payload, (err, project) => {
   }
 })
 ...
-```
+{% endhighlight %}
 
 A value computed by a constraint will **_always_** overwrite any value sent to the server intended for a write request to the database.
 
@@ -119,7 +119,7 @@ You make associations in your blueprint by specifying the property that should b
 
 Example:
 
-```javascript
+{% highlight js %}
 ...
 attributes: {
   // One-to-one
@@ -134,7 +134,7 @@ attributes: {
   }
 }
 ...
-```
+{% endhighlight %}
 
 ### Adding associations programatically.
 
@@ -149,16 +149,16 @@ Passing true to `many` will make the relationship one to many.
 
 Adding a team relationship to the `multicolour_user` collection.
 
-```javascript
+{% highlight js %}
 // app.js
 my_service.get("database")
   .add_relation_to_collection("team", "multicolour_user", "team")
   .add_relation_to_collection("users", "team", "multicolour_user")
-```
+{% endhighlight %}
 
 A sugar function that does the same in a more terse way is the `.join` method.
 
-```javascript
+{% highlight js %}
 my_service.get("database")
   .join({
     as: "team",
@@ -170,7 +170,7 @@ my_service.get("database")
     from: "team",
     to: "multicolour_user"
   })
-```
+{% endhighlight %}
 
 You can find more about how Waterline handles associations by [reading the documentation][associations]
 
@@ -181,7 +181,7 @@ If you supply a `toJSON` method, Multicolour wraps your `toJSON` in the default 
 
 Example removing a password and salt from a reply:
 
-```javascript
+{% highlight js %}
 attributes: {
   // Your model...
 
@@ -192,7 +192,7 @@ attributes: {
     return model
   }
 }
-```
+{% endhighlight %}
 
 ## Flags
 

@@ -12,17 +12,17 @@ Constraints exist to replace simple, common business logic without having to wri
 
 ### Specification
 
-```javascript
+{% highlight js %}
 {
   [verb String]: {
     [key String]: Function|ComparativeString|ConstraintObject,
   }
 }
-```
+{% endhighlight %}
 
 Where `ComparativeString` is a `String` with the following format:
 
-```javascript
+{% highlight js %}
 const comparatives = new Map([
   ["<", "<"],
   [">", ">"],
@@ -35,34 +35,34 @@ const comparatives = new Map([
 ])
 
 [Comparative?] path.to.data.in.request.object
-```
+{% endhighlight %}
 
 and `ConstraintObject` is an `Object` with the following format:
 
-```javascript
+{% highlight js %}
 {
   [key String]: {
     compile: Bool false,
     value: compile ? ComparativeString : (String|Number|null)
   },
 }
-```
+{% endhighlight %}
 
 ### Example and common uses
 
 The most common constraint is ensuring a user has sufficient privileges to read|write something and would come in the form of
 
-```javascript
+{% highlight js %}
 {
   user: "auth.credentials.user.id"
 }
-```
+{% endhighlight %}
 
 The way this works is the `String` is a path to an object on the `request` object, this is in-fact setting the constraint to the value of `request.auth.credentials.user.id` in the incoming request.
 
 #### More examples
 
-```javascript
+{% highlight js %}
 {
   role: "auth.session.role"
 }
@@ -84,7 +84,7 @@ The way this works is the `String` is a path to an object on the `request` objec
     value: ">= 18"
   }
 }
-```
+{% endhighlight %}
 
 ## Verbs and constraints
 
@@ -92,7 +92,7 @@ You must specify your constraints on all the http verbs you wish to constrain. T
 
 Example:
 
-```javascript
+{% highlight js %}
 ...
 constraints: {
   get: { public: { compile: false, value: true } },
@@ -102,4 +102,4 @@ constraints: {
   patch: { user: "auth.credentials.user.id" }
 },
 ...
-```
+{% endhighlight %}

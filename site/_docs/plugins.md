@@ -20,7 +20,7 @@ All plugins are automatically extended with the talkie interface and is assigned
 
 An example Multicolour plugin that adds a new route to the route table looks like this:
 
-```javascript
+{% highlight js %}
 // This file is called ./plugins/awesome/index.js
 module.exports = class {
   // Register is the only required member function.
@@ -42,7 +42,7 @@ module.exports = class {
     })
   }
 }
-```
+{% endhighlight %}
 
 Once you've saved your plugin, to use it simply add `.use(require("./plugins/awesome"))` to your main `app.js` (Use the other `.use()`-es as reference to where, your `app.js` might be different.)
 

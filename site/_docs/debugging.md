@@ -9,7 +9,7 @@ Multicolour has a few different ways to debug your application, you can start yo
 
 You will see output similar to
 
-```text
+{% highlight text %}
 multicolour:core Scanning /www/node/multicolour-app/content +2ms
   multicolour:core Scanned and found: [
   "/www/node/multicolour-app/content/blueprints/abode.js",
@@ -18,7 +18,7 @@ multicolour:core Scanning /www/node/multicolour-app/content +2ms
   "/www/node/multicolour-app/node_modules/multicolour/lib/user-model.js"
 ] +0ms
   multicolour:core Finished scanning +149ms
-```
+{% endhighlight %}
 
 You can also install the `multicolour-hapi-vantage` plugin to see HTTP logs in real time using the `debug on` command in the repl.
 

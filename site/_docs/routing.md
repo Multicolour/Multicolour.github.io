@@ -26,11 +26,11 @@ Creating your own routes is simple, currently custom routes are not transportabl
 
 Multicolour core supplies handlers for pretty much all your verbs out of the box, you can access and use them anytime by `get`ting them from core like below.
 
-```javascript
+{% highlight js %}
 const handlers = my_service.get("handlers")
 
 // handlers -> Multicolour_Route_Templates
-```
+{% endhighlight %}
 
 ## `Multicolour_Route_Templates` class
 
@@ -40,14 +40,14 @@ This class contains all the handlers/route templates, they do the work on the da
 
 Where `[VERB]` is one of the following
 
-```
+{% highlight text %}
 POST - Create stuff.
 GET - Read stuff.
 PATCH - Update stuff.
 PUT - Update or create stuff.
 DELETE - Delete stuff.
 UPLOAD - Upload stuff.
-```
+{% endhighlight %}
 
 and where model is retrieved from `my_service.get("database").get("models")`
 
@@ -57,20 +57,20 @@ You have had a request from the client asking for something Multicolour hasn't a
 
 Add a `custom_route` property to your blueprint:
 
-```javascript
+{% highlight js %}
 {
   attributes: {...},
   custom_routes: function custom_routes(server, multicolour) {
     // Route based on your server technology here.
   }
 }
-```
+{% endhighlight %}
 
 Multicolour does not interfere, know about or modify anything you do inside of this function. This is your domain and you are free to do what you will.
 
 An example route using the `hapi` server technology might look like this.
 
-```javascript
+{% highlight js %}
 {
   attributes: {...},
   custom_routes: function custom_routes(server, multicolour) {
@@ -86,7 +86,7 @@ An example route using the `hapi` server technology might look like this.
     })
   }
 }
-```
+{% endhighlight %}
 
 ## Gotchas while writing custom routes
  As mentioned above, Multicolour makes no effort to watch, change or interfere with your custom routes as we consider `custom_routes` to contain business critical logic.

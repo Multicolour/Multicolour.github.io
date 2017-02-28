@@ -8,14 +8,14 @@ permalink: /docs/routing/file-uploads/
 
 If you want to upload files, Multicolour has your back. To support uploading files on your blueprints you simply need to add `can_upload_file: String` to your blueprint.
 
-```javascript
+{% highlight js %}
 {
   attributes: {
     location: "string"
   },
   can_upload_file: "location"
 }
-```
+{% endhighlight %}
 
 The value of `can_upload_file` should be the name of the key on the record to store the location of the uploaded file, if it is `true` "file" will be used.
 
@@ -31,7 +31,7 @@ The default storage plugin will store any files uploaded to the operating system
 
 Below is a storage plugin that stores files in `/uploads`
 
-```javascript
+{% highlight js %}
 "use strict"
 
 // Get the tools we need.
@@ -99,11 +99,11 @@ class Multicolour_Disk_Storage {
 
 // Export the required config for Multicolour to register.
 module.exports = Multicolour_Disk_Storage
-```
+{% endhighlight %}
 
 To use your newly created plugin, edit your `app.js` to include it, E.G
 
-```javascript
+{% highlight js %}
 require("multicolour")
   // Configure the service core and scan for content.
   .new_from_config_file_path("./config.js")
@@ -114,7 +114,7 @@ require("multicolour")
 
   // Register our storage plugin.
   .use(require("multicolour-disk-storage"))
-```
+{% endhighlight %}
 
 ## Advanced storage plugin configuration.
 
@@ -124,7 +124,7 @@ Inside your `register(multicolour)` function set up a `reply("storage_config_key
 
 Example:
 
-```javascript
+{% highlight js %}
 // blueprints/upload.js
 {
   attributes: {
@@ -135,10 +135,10 @@ Example:
   can_upload_file: "location",
   custom_param: 1234567890
 }
-```
+{% endhighlight %}
 ---
 
-```javascript
+{% highlight js %}
 // my-storage-plugin.js
 ...
   /**
@@ -152,4 +152,4 @@ Example:
       .reply("storage_config_keys", [ "custom_param" ])
   }
 ...
-```
+{% endhighlight %}

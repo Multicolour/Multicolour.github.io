@@ -19,7 +19,7 @@ A typical `config.js` might look something like the below and it configures:
 * Where the server should list and on what port, etc (standard Hapi config)
 * and two database connections, one for when `NODE_ENV` is development and for production.
 
-```javascript
+{% highlight js %}
 "use strict"
 
 const PORT = parseInt(process.env.PORT) || 1811
@@ -78,11 +78,11 @@ module.exports = {
     }
   }
 }
-```
+{% endhighlight %}
 
 A full config file may contain any of the following options:
 
-```javascript
+{% highlight js %}
 "use strict"
 
 module.exports = {
@@ -156,4 +156,4 @@ module.exports = {
     }
   }
 }
-```
+{% endhighlight %}

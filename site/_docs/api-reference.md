@@ -26,13 +26,13 @@ Create an instance of Multicolour, `config` should be a valid configuration obje
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 const Multicolour = require("multicolour")
 
 const my_service = new Multicolour({
   content: `${__dirname}/content`
 })
-```
+{% endhighlight %}
 
 ---
 
@@ -54,9 +54,9 @@ Get any of the following properties values from Multicolour core, some propertie
 Returns: `Any`  
 Example:
 
-```javascript
+{% highlight js %}
 console.log(my_service.get("env")) // development
-```
+{% endhighlight %}
 
 Getting core modules such as `database` and `server` will return full plugin instances.
 
@@ -119,9 +119,9 @@ Request a property from Multicolour, this is merely semantic sugar. Available pr
 Returns: `Any`  
 Example:
 
-```javascript
+{% highlight js %}
 console.log(my_service.request("new_uuid")) // 5d31d224-bf23-49ed-9db0-7a50ab924f4f
-```
+{% endhighlight %}
 
 ---
 
@@ -133,9 +133,9 @@ Create a new instance of Multicolour from a config file location.
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 const my_service = require("multicolour").new_from_config_file_path("./config.js")
-```
+{% endhighlight %}
 
 ---
 
@@ -147,13 +147,13 @@ Reset this instance of Multicolour with a config file location.
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 const Multicolour = require("multicolour")
 const my_service = Multicolour.new_from_config_file_path("./config.js")
 
 // Actually changed my mind.
 my_service.reset_from_config_path("./my-other-config.js")
-```
+{% endhighlight %}
 
 ---
 
@@ -165,7 +165,7 @@ Start the CLI tools and parse arguments.
 Returns: `CLI`  
 Example:
 
-```javascript
+{% highlight js %}
 #!/usr/bin/env node
 
 // Get Multicolour.
@@ -173,7 +173,7 @@ const Multicolour = require('multicolour')
 
 // Instantiate.
 new Multicolour().cli()
-```
+{% endhighlight %}
 
 ---
 
@@ -187,13 +187,13 @@ Will create a new table/collection in your database called `multicolour_user`.
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 // Get Multicolour.
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
   ._enable_user_model()
-```
+{% endhighlight %}
 
 ---
 
@@ -209,11 +209,11 @@ Once scan has completed a new property is made available via the `Multicolour.ge
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
-```
+{% endhighlight %}
 
 ---
 
@@ -225,7 +225,7 @@ Tell Multicolour to register and "use" the supplied plugin. Your plugin must hav
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 class my_plugin {
   register(Multicolour) {
     Multicolour.reply("ping", "pong")
@@ -239,7 +239,7 @@ const my_service = require("multicolour")
   .use(my_plugin)
 
 console.log(my_service.request("ping")) // pong
-```
+{% endhighlight %}
 
 ---
 
@@ -265,12 +265,12 @@ Also sets up a listener for `SIGINT` on the process so the services can be `.sto
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
   .start(() => console.log("Database server started"))
-```
+{% endhighlight %}
 
 ## multicolour.stop(callback)
 
@@ -290,7 +290,7 @@ events on the Multicolour instance and once services are stopped triggers
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
@@ -300,7 +300,7 @@ my_service.start(() => {
 
   my_service.stop(() => console.log("HTTP & Database server(s) stopped"))
 })
-```
+{% endhighlight %}
 
 ## Request and Reply arbitrary data
 
@@ -314,9 +314,9 @@ When `name` is `request`ed, it will receive the `data` unmodified.
 
 Example:
 
-```javascript
+{% highlight js %}
 multicolour.reply("my_awesome_plugin", new class {})
-```
+{% endhighlight %}
 
 ### `multicolour.request(name)`
 
@@ -324,9 +324,9 @@ Purely syntactic sugar, is no different in functionality than `.get(name)`.
 
 Example:
 
-```javascript
+{% highlight js %}
 const my_awesome_plugin = multicolour.request("my_awesome_plugin")
-```
+{% endhighlight %}
 
 ## EventEmitter
 
@@ -373,7 +373,7 @@ Listen for an event fired on Multicolour core.
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
@@ -383,7 +383,7 @@ my_service.on("database_started", () =>
 
 my_service.start()
 
-```
+{% endhighlight %}
 
 ### multicolour.trigger(event, data)
 
@@ -392,7 +392,7 @@ Trigger an event on Multicolour core.
 Returns: `Multicolour`  
 Example:
 
-```javascript
+{% highlight js %}
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
@@ -401,7 +401,7 @@ my_service.start(() => {
   my_service.trigger("service_up", { my_service })
 })
 
-```
+{% endhighlight %}
 
 Other methods can be read up on the [Talkie docs.][talkie]
 

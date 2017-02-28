@@ -14,7 +14,7 @@ There is also blueprint level configuration to prevent generation of parts of th
 
 The config.js should contain an object such as this
 
-```javascript
+{% highlight js %}
 settings: {
     ... other config
 
@@ -26,7 +26,7 @@ settings: {
 
     ... other config
   },
-```
+{% endhighlight %}
 
 This tells the generator to put the generated code into the `content/frontend/build/api_sdk` folder and name the ES5 module `API_SDK`. The ES5 module is a UMD module so can be `require`d or if no module loader is found is added to `window`.
 
