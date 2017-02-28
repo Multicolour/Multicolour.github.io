@@ -101,16 +101,14 @@
 
 <p>You will see output similar to</p>
 
-<p><code class="highlighter-rouge">text
-multicolour:core Scanning /www/node/multicolour-app/content +2ms
+<figure class="highlight"><pre><code class="language-text" data-lang="text">multicolour:core Scanning /www/node/multicolour-app/content +2ms
   multicolour:core Scanned and found: [
   "/www/node/multicolour-app/content/blueprints/abode.js",
   "/www/node/multicolour-app/content/blueprints/gadget.js",
   "/www/node/multicolour-app/content/blueprints/person.js",
   "/www/node/multicolour-app/node_modules/multicolour/lib/user-model.js"
 ] +0ms
-  multicolour:core Finished scanning +149ms
-</code></p>
+  multicolour:core Finished scanning +149ms</code></pre></figure>
 
 <p>You can also install the <code class="highlighter-rouge">multicolour-hapi-vantage</code> plugin to see HTTP logs in real time using the <code class="highlighter-rouge">debug on</code> command in the repl.</p>
 
@@ -148,6 +146,7 @@ multicolour:core Scanning /www/node/multicolour-app/content +2ms
 </footer>
 
 
+    <script src="/js/main.js" async defer></script>
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
         analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");

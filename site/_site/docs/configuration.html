@@ -113,152 +113,141 @@
   <li>and two database connections, one for when <code class="highlighter-rouge">NODE_ENV</code> is development and for production.</li>
 </ul>
 
-<p>```javascript
-“use strict”</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span>
 
-<table>
-  <tbody>
-    <tr>
-      <td>const PORT = parseInt(process.env.PORT)</td>
-      <td> </td>
-      <td>1811</td>
-    </tr>
-  </tbody>
-</table>
+<span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1811</span>
 
-<p>module.exports = {
-  content: <code class="highlighter-rouge">${__dirname}/content</code>,</p>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">content</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content`</span><span class="err">,
+</span>
+  <span class="nx">settings</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">timeout</span><span class="p">:</span> <span class="mi">3</span><span class="nx">e4</span><span class="p">,</span>
 
-<p>settings: {
-    timeout: 3e4,</p>
+    <span class="nx">results</span><span class="err">:</span> <span class="p">{</span>
+      <span class="nl">per_page</span><span class="p">:</span> <span class="mi">20</span>
+    <span class="p">},</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>results: {
-  per_page: 20
-},
+    <span class="nx">route_prefix</span><span class="err">:</span> <span class="s2">"/api"</span><span class="p">,</span>
 
-route_prefix: "/api",
+    <span class="nx">javascript_sdk</span><span class="err">:</span> <span class="p">{</span>
+      <span class="nl">destination</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content/</span><span class="nx">frontend</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">api_sdk</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">module_name</span><span class="err">:</span> <span class="s2">"API_SDK"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">api_connections</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">port</span><span class="p">:</span> <span class="nx">PORT</span><span class="p">,</span>
+    <span class="nx">routes</span><span class="err">:</span> <span class="p">{</span>
+      <span class="nl">cors</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">origin</span><span class="p">:</span> <span class="p">[</span> <span class="err">`</span><span class="nx">http</span><span class="err">:</span><span class="c1">//localhost:${PORT}` ]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">router</span><span class="err">:</span> <span class="p">{</span> <span class="nl">stripTrailingSlash</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+  <span class="p">},</span>
 
-javascript_sdk: {
-  destination: `${__dirname}/content/frontend/build/api_sdk`,
-  module_name: "API_SDK"
-}   },   api_connections: {
-port: PORT,
-routes: {
-  cors: {
-    origin: [ `http://localhost:${PORT}` ]
-  }
-},
-router: { stripTrailingSlash: true }   },
-</code></pre>
-</div>
+  <span class="nx">api_server</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">connections</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">routes</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">security</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">debug</span><span class="err">:</span> <span class="p">{</span> <span class="nl">request</span><span class="p">:</span> <span class="p">[</span><span class="s2">"error"</span><span class="p">]</span> <span class="p">}</span>
+  <span class="p">},</span>
 
-<p>api_server: {
-    connections: {
-      routes: {
-        security: true
-      }
-    },
-    debug: { request: [“error”] }
-  },</p>
-
-<p>db: {
-    adapters: {
-      mongo: require(“sails-mongo”)
-    },
-    connections: {
-      development: {
-        adapter: “mongo”,
-        database: “multicolour”
-      },
-      production: {
-        adapter: “mongo”,
-        host: “some-mongo-host.com”,
-        port: 27017,
-        database: “multicolour”
-      }
-    }
-  }
-}
-```</p>
+  <span class="nx">db</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">adapters</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">mongo</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"sails-mongo"</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="nx">connections</span><span class="err">:</span> <span class="p">{</span>
+      <span class="nl">development</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span>
+        <span class="nx">database</span><span class="err">:</span> <span class="s2">"multicolour"</span>
+      <span class="p">},</span>
+      <span class="nx">production</span><span class="err">:</span> <span class="p">{</span>
+        <span class="nl">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span>
+        <span class="nx">host</span><span class="err">:</span> <span class="s2">"some-mongo-host.com"</span><span class="p">,</span>
+        <span class="nx">port</span><span class="err">:</span> <span class="mi">27017</span><span class="p">,</span>
+        <span class="nx">database</span><span class="err">:</span> <span class="s2">"multicolour"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>A full config file may contain any of the following options:</p>
 
-<p>```javascript
-“use strict”</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span>
 
-<p>module.exports = {
-  content: String</p>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">content</span><span class="p">:</span> <span class="nb">String</span>
 
-<p>settings: {
-    timeout: Number,</p>
+  <span class="na">settings</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">timeout</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>results: {
-  per_page: Number
-},
+    <span class="na">results</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">per_page</span><span class="p">:</span> <span class="nb">Number</span>
+    <span class="p">},</span>
 
-route_prefix: String,
+    <span class="na">route_prefix</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
 
-javascript_sdk: {
-  destination: String,
-  module_name: String
-}   },
-</code></pre>
-</div>
+    <span class="na">javascript_sdk</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">destination</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+      <span class="na">module_name</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
 
-<p>auth: {
-    password: String,
-    providers: [
-      {
-        provider: String,
-        clientId: String,
-        clientSecret: String,
-        isSecure: Boolean
-      }
-    ]
-  },</p>
+  <span class="na">auth</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">password</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">provider</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+        <span class="na">clientId</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+        <span class="na">clientSecret</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+        <span class="na">isSecure</span><span class="p">:</span> <span class="nb">Boolean</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
 
-<p>// As HAPI is the only available server plugin currently
-  // it’s config options are shown below in briefand you
-  // should consult the Hapijs docs for the full configuration
-  // documentation.
-  api_connections: {
-    port: Number,
-    host: String,
-    routes: {
-      cors: Boolean or {
-        origin: [ String ]
-      }
-    },
-    router: { stripTrailingSlash: true }
-  },</p>
+  <span class="c1">// As HAPI is the only available server plugin currently</span>
+  <span class="c1">// it's config options are shown below in briefand you</span>
+  <span class="c1">// should consult the Hapijs docs for the full configuration</span>
+  <span class="c1">// documentation.</span>
+  <span class="na">api_connections</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">port</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span>
+    <span class="na">host</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">cors</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="nx">or</span> <span class="p">{</span>
+        <span class="nl">origin</span><span class="p">:</span> <span class="p">[</span> <span class="nb">String</span> <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">router</span><span class="p">:</span> <span class="p">{</span> <span class="na">stripTrailingSlash</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+  <span class="p">},</span>
 
-<p>api_server: {
-    connections: {
-      routes: {
-        security: Boolean
-      }
-    },
-    debug: { request: [ String ] }
-  },</p>
+  <span class="na">api_server</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">security</span><span class="p">:</span> <span class="nb">Boolean</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">debug</span><span class="p">:</span> <span class="p">{</span> <span class="na">request</span><span class="p">:</span> <span class="p">[</span> <span class="nb">String</span> <span class="p">]</span> <span class="p">}</span>
+  <span class="p">},</span>
 
-<p>db: {
-    adapters: {
-      String: require(String)
-    },
-    connections: {
-      String: {
-        adapter: String,
-        host: String,
-        port: Number,
-        username: String,
-        password: String,
-        ssl: Boolean,
-        database: String
-      }
-    }
-  }
-}
-```</p>
+  <span class="na">db</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">adapters</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">String</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">String</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">adapter</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+        <span class="na">host</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+        <span class="na">port</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span>
+        <span class="na">username</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+        <span class="na">password</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+        <span class="na">ssl</span><span class="p">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+        <span class="na">database</span><span class="p">:</span> <span class="nb">String</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
 
         </article>
       </section>
@@ -286,6 +275,7 @@ javascript_sdk: {
 </footer>
 
 
+    <script src="/js/main.js" async defer></script>
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
         analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");

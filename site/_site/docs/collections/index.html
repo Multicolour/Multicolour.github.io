@@ -104,47 +104,44 @@
 
 <p>A simple, example Multicolour blueprint might look something like this.</p>
 
-<p>```javascript
-“use strict”</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span>
 
-<p>module.exports = {
-  attributes: {
-    slug: “string”,</p>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">attributes</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">slug</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>title: {
-  type: "string",
-  required: true,
-  index: true
-},
+    <span class="na">title</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+      <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">index</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
 
-description: {
-  type: "string",
-  required: true
-},
+    <span class="na">description</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+      <span class="na">required</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
 
-public: {
-  type: "boolean",
-  defaultsTo: true,
-  metadata: {
-    description: "Some projects are private, this flag is the decider."
-  }
-},
+    <span class="na">public</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+      <span class="na">defaultsTo</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">metadata</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">description</span><span class="p">:</span> <span class="s2">"Some projects are private, this flag is the decider."</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
 
-// Associations.
-user: {
-  model: "user"
-}   },
-</code></pre>
-</div>
+    <span class="c1">// Associations.</span>
+    <span class="na">user</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">model</span><span class="p">:</span> <span class="s2">"user"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
 
-<p>constraints: {
-    get: {
-      user: “auth.credentials.user.id”,
-      public: { compile: false, value: true }
-    },
-  }
-}
-```</p>
+  <span class="na">constraints</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">get</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">user</span><span class="p">:</span> <span class="s2">"auth.credentials.user.id"</span><span class="p">,</span>
+      <span class="na">public</span><span class="p">:</span> <span class="p">{</span> <span class="na">compile</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>A few things are happening above, we’re exporting an Object with a few keys. The first key is <code class="highlighter-rouge">attributes</code>, this is where you define the properties/columns/keys in your table/document.</p>
 
@@ -171,18 +168,16 @@ user: {
 
 <p>If you were to write the JavaScript for that constraint, it might look something like this.</p>
 
-<p><code class="highlighter-rouge">javascript
-projects.findOne(request.payload, (err, project) =&gt; {
-  if (row.user.toString() !== request.auth.credentials.user.id.toString()
-    || row.public === false) {
-    reply("You aren't allowed to do this.").code(412)
-  }
-  else {
-    reply(project)
-  }
-})
-...
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">projects</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">payload</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">project</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">!==</span> <span class="nx">request</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">credentials</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+    <span class="o">||</span> <span class="nx">row</span><span class="p">.</span><span class="kr">public</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">reply</span><span class="p">(</span><span class="s2">"You aren't allowed to do this."</span><span class="p">).</span><span class="nx">code</span><span class="p">(</span><span class="mi">412</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">reply</span><span class="p">(</span><span class="nx">project</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+<span class="p">...</span></code></pre></figure>
 
 <p>A value computed by a constraint will <strong><em>always</em></strong> overwrite any value sent to the server intended for a write request to the database.</p>
 
@@ -216,22 +211,20 @@ projects.findOne(request.payload, (err, project) =&gt; {
 
 <p>Example:</p>
 
-<p>```javascript
-…
-attributes: {
-  // One-to-one
-  user: {
-    model: “user”
-  },</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">...</span>
+<span class="nl">attributes</span><span class="p">:</span> <span class="p">{</span>
+  <span class="c1">// One-to-one</span>
+  <span class="nl">user</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">model</span><span class="p">:</span> <span class="s2">"user"</span>
+  <span class="p">},</span>
 
-<p>// One-to-many
-  projects: {
-    collection: “project”,
-    via: “user”
-  }
-}
-…
-```</p>
+  <span class="c1">// One-to-many</span>
+  <span class="nx">projects</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">collection</span><span class="p">:</span> <span class="s2">"project"</span><span class="p">,</span>
+    <span class="nx">via</span><span class="err">:</span> <span class="s2">"user"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">...</span></code></pre></figure>
 
 <h3 id="adding-associations-programatically">Adding associations programatically.</h3>
 
@@ -246,28 +239,24 @@ Passing true to <code class="highlighter-rouge">many</code> will make the relati
 
 <p>Adding a team relationship to the <code class="highlighter-rouge">multicolour_user</code> collection.</p>
 
-<p><code class="highlighter-rouge">javascript
-// app.js
-my_service.get("database")
-  .add_relation_to_collection("team", "multicolour_user", "team")
-  .add_relation_to_collection("users", "team", "multicolour_user")
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// app.js</span>
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"database"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">add_relation_to_collection</span><span class="p">(</span><span class="s2">"team"</span><span class="p">,</span> <span class="s2">"multicolour_user"</span><span class="p">,</span> <span class="s2">"team"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">add_relation_to_collection</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="s2">"team"</span><span class="p">,</span> <span class="s2">"multicolour_user"</span><span class="p">)</span></code></pre></figure>
 
 <p>A sugar function that does the same in a more terse way is the <code class="highlighter-rouge">.join</code> method.</p>
 
-<p><code class="highlighter-rouge">javascript
-my_service.get("database")
-  .join({
-    as: "team",
-    from: "multicolour_user",
-    to: "team"
-  })
-  .join({
-    as: "team",
-    from: "team",
-    to: "multicolour_user"
-  })
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">my_service</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"database"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">join</span><span class="p">({</span>
+    <span class="na">as</span><span class="p">:</span> <span class="s2">"team"</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="s2">"multicolour_user"</span><span class="p">,</span>
+    <span class="na">to</span><span class="p">:</span> <span class="s2">"team"</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">join</span><span class="p">({</span>
+    <span class="na">as</span><span class="p">:</span> <span class="s2">"team"</span><span class="p">,</span>
+    <span class="na">from</span><span class="p">:</span> <span class="s2">"team"</span><span class="p">,</span>
+    <span class="na">to</span><span class="p">:</span> <span class="s2">"multicolour_user"</span>
+  <span class="p">})</span></code></pre></figure>
 
 <p>You can find more about how Waterline handles associations by <a href="https://github.com/balderdashy/waterline-docs/tree/master/models/associations">reading the documentation</a></p>
 
@@ -278,18 +267,16 @@ my_service.get("database")
 
 <p>Example removing a password and salt from a reply:</p>
 
-<p>```javascript
-attributes: {
-  // Your model…</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">attributes</span><span class="err">:</span> <span class="p">{</span>
+  <span class="c1">// Your model...</span>
 
-<p>toJSON: function() {
-    const model = this.toObject()
-    delete model.password
-    delete model.salt
-    return model
-  }
-}
-```</p>
+  <span class="nl">toJSON</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">toObject</span><span class="p">()</span>
+    <span class="k">delete</span> <span class="nx">model</span><span class="p">.</span><span class="nx">password</span>
+    <span class="k">delete</span> <span class="nx">model</span><span class="p">.</span><span class="nx">salt</span>
+    <span class="k">return</span> <span class="nx">model</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="flags">Flags</h2>
 
@@ -329,6 +316,7 @@ attributes: {
 </footer>
 
 
+    <script src="/js/main.js" async defer></script>
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
         analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");

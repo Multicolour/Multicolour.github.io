@@ -120,13 +120,11 @@
 <p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p>```javascript
-const Multicolour = require(“multicolour”)</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">Multicolour</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
 
-<p>const my_service = new Multicolour({
-  content: <code class="highlighter-rouge">${__dirname}/content</code>
-})
-```</p>
+<span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Multicolour</span><span class="p">({</span>
+  <span class="na">content</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content</span><span class="err">`
+</span><span class="p">})</span></code></pre></figure>
 
 <hr />
 
@@ -150,9 +148,7 @@ const Multicolour = require(“multicolour”)</p>
 <p>Returns: <code class="highlighter-rouge">Any</code><br />
 Example:</p>
 
-<p><code class="highlighter-rouge">javascript
-console.log(my_service.get("env")) // development
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">my_service</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"env"</span><span class="p">))</span> <span class="c1">// development</span></code></pre></figure>
 
 <p>Getting core modules such as <code class="highlighter-rouge">database</code> and <code class="highlighter-rouge">server</code> will return full plugin instances.</p>
 
@@ -217,9 +213,7 @@ console.log(my_service.get("env")) // development
 <p>Returns: <code class="highlighter-rouge">Any</code><br />
 Example:</p>
 
-<p><code class="highlighter-rouge">javascript
-console.log(my_service.request("new_uuid")) // 5d31d224-bf23-49ed-9db0-7a50ab924f4f
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">my_service</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"new_uuid"</span><span class="p">))</span> <span class="c1">// 5d31d224-bf23-49ed-9db0-7a50ab924f4f</span></code></pre></figure>
 
 <hr />
 
@@ -231,9 +225,7 @@ console.log(my_service.request("new_uuid")) // 5d31d224-bf23-49ed-9db0-7a50ab924
 Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p><code class="highlighter-rouge">javascript
-const my_service = require("multicolour").new_from_config_file_path("./config.js")
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">).</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span></code></pre></figure>
 
 <hr />
 
@@ -245,13 +237,11 @@ const my_service = require("multicolour").new_from_config_file_path("./config.js
 Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p>```javascript
-const Multicolour = require(“multicolour”)
-const my_service = Multicolour.new_from_config_file_path(“./config.js”)</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">Multicolour</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">Multicolour</span><span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
 
-<p>// Actually changed my mind.
-my_service.reset_from_config_path(“./my-other-config.js”)
-```</p>
+<span class="c1">// Actually changed my mind.</span>
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">reset_from_config_path</span><span class="p">(</span><span class="s2">"./my-other-config.js"</span><span class="p">)</span></code></pre></figure>
 
 <hr />
 
@@ -263,15 +253,13 @@ my_service.reset_from_config_path(“./my-other-config.js”)
 Returns: <code class="highlighter-rouge">CLI</code><br />
 Example:</p>
 
-<p>```javascript
-#!/usr/bin/env node</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cp">#!/usr/bin/env node
+</span>
+<span class="c1">// Get Multicolour.</span>
+<span class="kr">const</span> <span class="nx">Multicolour</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'multicolour'</span><span class="p">)</span>
 
-<p>// Get Multicolour.
-const Multicolour = require(‘multicolour’)</p>
-
-<p>// Instantiate.
-new Multicolour().cli()
-```</p>
+<span class="c1">// Instantiate.</span>
+<span class="k">new</span> <span class="nx">Multicolour</span><span class="p">().</span><span class="nx">cli</span><span class="p">()</span></code></pre></figure>
 
 <hr />
 
@@ -285,13 +273,11 @@ new Multicolour().cli()
 Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p><code class="highlighter-rouge">javascript
-// Get Multicolour.
-const my_service = require("multicolour")
-  .new_from_config_file_path("./config.js")
-  .scan()
-  ._enable_user_model()
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Get Multicolour.</span>
+<span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">_enable_user_model</span><span class="p">()</span></code></pre></figure>
 
 <hr />
 
@@ -309,11 +295,9 @@ const my_service = require("multicolour")
 Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p><code class="highlighter-rouge">javascript
-const my_service = require("multicolour")
-  .new_from_config_file_path("./config.js")
-  .scan()
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span></code></pre></figure>
 
 <hr />
 
@@ -325,21 +309,19 @@ const my_service = require("multicolour")
 Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p>```javascript
-class my_plugin {
-  register(Multicolour) {
-    Multicolour.reply(“ping”, “pong”)
-  }
-}</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">my_plugin</span> <span class="p">{</span>
+  <span class="nx">register</span><span class="p">(</span><span class="nx">Multicolour</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Multicolour</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"ping"</span><span class="p">,</span> <span class="s2">"pong"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<p>const my_service = require(“multicolour”)
-  .new_from_config_file_path(“./config.js”)
-  .scan()</p>
+<span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
 
-<p>.use(my_plugin)</p>
+  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">my_plugin</span><span class="p">)</span>
 
-<p>console.log(my_service.request(“ping”)) // pong
-```</p>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">my_service</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"ping"</span><span class="p">))</span> <span class="c1">// pong</span></code></pre></figure>
 
 <hr />
 
@@ -364,12 +346,10 @@ class my_plugin {
 Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p><code class="highlighter-rouge">javascript
-require("multicolour")
-  .new_from_config_file_path("./config.js")
-  .scan()
-  .start(() =&gt; console.log("Database server started"))
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">start</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Database server started"</span><span class="p">))</span></code></pre></figure>
 
 <h2 id="multicolourstopcallback">multicolour.stop(callback)</h2>
 
@@ -389,17 +369,15 @@ require("multicolour")
 Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p>```javascript
-const my_service = require(“multicolour”)
-  .new_from_config_file_path(“./config.js”)
-  .scan()</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
 
-<p>my_service.start(() =&gt; {
-  console.log(“HTTP &amp; Database server(s) started”)</p>
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">start</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP &amp; Database server(s) started"</span><span class="p">)</span>
 
-<p>my_service.stop(() =&gt; console.log(“HTTP &amp; Database server(s) stopped”))
-})
-```</p>
+  <span class="nx">my_service</span><span class="p">.</span><span class="nx">stop</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP &amp; Database server(s) stopped"</span><span class="p">))</span>
+<span class="p">})</span></code></pre></figure>
 
 <h2 id="request-and-reply-arbitrary-data">Request and Reply arbitrary data</h2>
 
@@ -413,9 +391,7 @@ const my_service = require(“multicolour”)
 
 <p>Example:</p>
 
-<p><code class="highlighter-rouge">javascript
-multicolour.reply("my_awesome_plugin", new class {})
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">multicolour</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"my_awesome_plugin"</span><span class="p">,</span> <span class="k">new</span> <span class="kr">class</span> <span class="p">{})</span></code></pre></figure>
 
 <h3 id="multicolourrequestname"><code class="highlighter-rouge">multicolour.request(name)</code></h3>
 
@@ -423,9 +399,7 @@ multicolour.reply("my_awesome_plugin", new class {})
 
 <p>Example:</p>
 
-<p><code class="highlighter-rouge">javascript
-const my_awesome_plugin = multicolour.request("my_awesome_plugin")
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">my_awesome_plugin</span> <span class="o">=</span> <span class="nx">multicolour</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"my_awesome_plugin"</span><span class="p">)</span></code></pre></figure>
 
 <h2 id="eventemitter">EventEmitter</h2>
 
@@ -472,17 +446,14 @@ const my_awesome_plugin = multicolour.request("my_awesome_plugin")
 <p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p>```javascript
-const my_service = require(“multicolour”)
-  .new_from_config_file_path(“./config.js”)
-  .scan()</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
 
-<p>my_service.on(“database_started”, () =&gt;
-  console.log(“Bewm, databases are up.”))</p>
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"database_started"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Bewm, databases are up."</span><span class="p">))</span>
 
-<p>my_service.start()</p>
-
-<p>```</p>
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span></code></pre></figure>
 
 <h3 id="multicolourtriggerevent-data">multicolour.trigger(event, data)</h3>
 
@@ -491,16 +462,13 @@ const my_service = require(“multicolour”)
 <p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
 Example:</p>
 
-<p>```javascript
-const my_service = require(“multicolour”)
-  .new_from_config_file_path(“./config.js”)
-  .scan()</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
 
-<p>my_service.start(() =&gt; {
-  my_service.trigger(“service_up”, { my_service })
-})</p>
-
-<p>```</p>
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">start</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">my_service</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">"service_up"</span><span class="p">,</span> <span class="p">{</span> <span class="nx">my_service</span> <span class="p">})</span>
+<span class="p">})</span></code></pre></figure>
 
 <p>Other methods can be read up on the <a href="https://www.npmjs.com/package/@newworldcode/talkie">Talkie docs.</a></p>
 
@@ -531,6 +499,7 @@ const my_service = require(“multicolour”)
 </footer>
 
 
+    <script src="/js/main.js" async defer></script>
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
         analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");

@@ -120,11 +120,9 @@
 
 <p>Multicolour core supplies handlers for pretty much all your verbs out of the box, you can access and use them anytime by <code class="highlighter-rouge">get</code>ting them from core like below.</p>
 
-<p>```javascript
-const handlers = my_service.get(“handlers”)</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">handlers</span> <span class="o">=</span> <span class="nx">my_service</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"handlers"</span><span class="p">)</span>
 
-<p>// handlers -&gt; Multicolour_Route_Templates
-```</p>
+<span class="c1">// handlers -&gt; Multicolour_Route_Templates</span></code></pre></figure>
 
 <h2 id="multicolourroutetemplates-class"><code class="highlighter-rouge">Multicolour_Route_Templates</code> class</h2>
 
@@ -134,14 +132,12 @@ const handlers = my_service.get(“handlers”)</p>
 
 <p>Where <code class="highlighter-rouge">[VERB]</code> is one of the following</p>
 
-<p><code class="highlighter-rouge">
-POST - Create stuff.
+<figure class="highlight"><pre><code class="language-text" data-lang="text">POST - Create stuff.
 GET - Read stuff.
 PATCH - Update stuff.
 PUT - Update or create stuff.
 DELETE - Delete stuff.
-UPLOAD - Upload stuff.
-</code></p>
+UPLOAD - Upload stuff.</code></pre></figure>
 
 <p>and where model is retrieved from <code class="highlighter-rouge">my_service.get("database").get("models")</code></p>
 
@@ -151,36 +147,32 @@ UPLOAD - Upload stuff.
 
 <p>Add a <code class="highlighter-rouge">custom_route</code> property to your blueprint:</p>
 
-<p><code class="highlighter-rouge">javascript
-{
-  attributes: {...},
-  custom_routes: function custom_routes(server, multicolour) {
-    // Route based on your server technology here.
-  }
-}
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{...},</span>
+  <span class="nx">custom_routes</span><span class="err">:</span> <span class="kd">function</span> <span class="nx">custom_routes</span><span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Route based on your server technology here.</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>Multicolour does not interfere, know about or modify anything you do inside of this function. This is your domain and you are free to do what you will.</p>
 
 <p>An example route using the <code class="highlighter-rouge">hapi</code> server technology might look like this.</p>
 
-<p><code class="highlighter-rouge">javascript
-{
-  attributes: {...},
-  custom_routes: function custom_routes(server, multicolour) {
-    // this === this blueprint
-    server.route({
-      method: "GET",
-      path: "/project/count",
-      handler: (request, reply) =&gt; {
-        this
-          .count({})
-          .exec((err, count) =&gt; reply[multicolour.request("decorator")](err || count))
-      }
-    })
-  }
-}
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{...},</span>
+  <span class="nx">custom_routes</span><span class="err">:</span> <span class="kd">function</span> <span class="nx">custom_routes</span><span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// this === this blueprint</span>
+    <span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span>
+      <span class="na">method</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+      <span class="na">path</span><span class="p">:</span> <span class="s2">"/project/count"</span><span class="p">,</span>
+      <span class="na">handler</span><span class="p">:</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span>
+          <span class="p">.</span><span class="nx">count</span><span class="p">({})</span>
+          <span class="p">.</span><span class="nx">exec</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">count</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reply</span><span class="p">[</span><span class="nx">multicolour</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"decorator"</span><span class="p">)](</span><span class="nx">err</span> <span class="o">||</span> <span class="nx">count</span><span class="p">))</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="gotchas-while-writing-custom-routes">Gotchas while writing custom routes</h2>
 <p>As mentioned above, Multicolour makes no effort to watch, change or interfere with your custom routes as we consider <code class="highlighter-rouge">custom_routes</code> to contain business critical logic.</p>
@@ -231,6 +223,7 @@ UPLOAD - Upload stuff.
 </footer>
 
 
+    <script src="/js/main.js" async defer></script>
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
         analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");

@@ -104,41 +104,35 @@
 
 <h3 id="specification">Specification</h3>
 
-<p><code class="highlighter-rouge">javascript
-{
-  [verb String]: {
-    [key String]: Function|ComparativeString|ConstraintObject,
-  }
-}
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="p">[</span><span class="nx">verb</span> <span class="nb">String</span><span class="p">]</span><span class="err">:</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">key</span> <span class="nb">String</span><span class="p">]</span><span class="err">:</span> <span class="nb">Function</span><span class="o">|</span><span class="nx">ComparativeString</span><span class="o">|</span><span class="nx">ConstraintObject</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>Where <code class="highlighter-rouge">ComparativeString</code> is a <code class="highlighter-rouge">String</code> with the following format:</p>
 
-<p>```javascript
-const comparatives = new Map([
-  [”&lt;”, “&lt;”],
-  [”&gt;”, “&gt;”],
-  [”&lt;=”, “&lt;=”],
-  [”&gt;=”, “&gt;=”],
-  [”!”, “!”],
-  [”^”, “startsWith”],
-  [”$”, “endsWith”],
-  [”%”, “like”]
-])</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">comparatives</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">([</span>
+  <span class="p">[</span><span class="s2">"&lt;"</span><span class="p">,</span> <span class="s2">"&lt;"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s2">"&gt;"</span><span class="p">,</span> <span class="s2">"&gt;"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s2">"&lt;="</span><span class="p">,</span> <span class="s2">"&lt;="</span><span class="p">],</span>
+  <span class="p">[</span><span class="s2">"&gt;="</span><span class="p">,</span> <span class="s2">"&gt;="</span><span class="p">],</span>
+  <span class="p">[</span><span class="s2">"!"</span><span class="p">,</span> <span class="s2">"!"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s2">"^"</span><span class="p">,</span> <span class="s2">"startsWith"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s2">"$"</span><span class="p">,</span> <span class="s2">"endsWith"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s2">"%"</span><span class="p">,</span> <span class="s2">"like"</span><span class="p">]</span>
+<span class="p">])</span>
 
-<p>[Comparative?] path.to.data.in.request.object
-```</p>
+<span class="p">[</span><span class="nx">Comparative</span><span class="p">?]</span> <span class="nx">path</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="k">in</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">object</span></code></pre></figure>
 
 <p>and <code class="highlighter-rouge">ConstraintObject</code> is an <code class="highlighter-rouge">Object</code> with the following format:</p>
 
-<p><code class="highlighter-rouge">javascript
-{
-  [key String]: {
-    compile: Bool false,
-    value: compile ? ComparativeString : (String|Number|null)
-  },
-}
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="p">[</span><span class="nx">key</span> <span class="nb">String</span><span class="p">]</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">compile</span><span class="p">:</span> <span class="nx">Bool</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">value</span><span class="err">:</span> <span class="nx">compile</span> <span class="p">?</span> <span class="nx">ComparativeString</span> <span class="p">:</span> <span class="p">(</span><span class="nb">String</span><span class="o">|</span><span class="nb">Number</span><span class="o">|</span><span class="kc">null</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="example-and-common-uses">Example and common uses</h3>
 
@@ -151,39 +145,35 @@ const comparatives = new Map([
   </tbody>
 </table>
 
-<p><code class="highlighter-rouge">javascript
-{
-  user: "auth.credentials.user.id"
-}
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="nl">user</span><span class="p">:</span> <span class="s2">"auth.credentials.user.id"</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>The way this works is the <code class="highlighter-rouge">String</code> is a path to an object on the <code class="highlighter-rouge">request</code> object, this is in-fact setting the constraint to the value of <code class="highlighter-rouge">request.auth.credentials.user.id</code> in the incoming request.</p>
 
 <h4 id="more-examples">More examples</h4>
 
-<p>```javascript
-{
-  role: “auth.session.role”
-}</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="nl">role</span><span class="p">:</span> <span class="s2">"auth.session.role"</span>
+<span class="p">}</span>
 
-<p>{
-  name: {
-    compile: false,
-    value: “Multicolour”
-  }
-}</p>
+<span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">compile</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">value</span><span class="err">:</span> <span class="s2">"Multicolour"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<p>{
-  createdAt: “&gt;= “ + new Date(2015)
-}</p>
+<span class="p">{</span>
+  <span class="nl">createdAt</span><span class="p">:</span> <span class="s2">"&gt;= "</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2015</span><span class="p">)</span>
+<span class="p">}</span>
 
-<p>{
-  age: {
-    compile: false,
-    value: “&gt;= 18”
-  }
-}
-```</p>
+<span class="p">{</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">compile</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">value</span><span class="err">:</span> <span class="s2">"&gt;= 18"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="verbs-and-constraints">Verbs and constraints</h2>
 
@@ -191,17 +181,16 @@ const comparatives = new Map([
 
 <p>Example:</p>
 
-<p><code class="highlighter-rouge">javascript
-...
-constraints: {
-  get: { public: { compile: false, value: true } },
-  post: { user: "auth.credentials.user.id" },
-  put: { user: "auth.credentials.user.id" },
-  delete: { user: "auth.credentials.user.id" },
-  patch: { user: "auth.credentials.user.id" }
-},
-...
-</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">...</span>
+<span class="nl">constraints</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">get</span><span class="p">:</span> <span class="p">{</span> <span class="nl">public</span><span class="p">:</span> <span class="p">{</span> <span class="nl">compile</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">value</span><span class="err">:</span> <span class="kc">true</span> <span class="p">}</span> <span class="p">},</span>
+  <span class="nx">post</span><span class="err">:</span> <span class="p">{</span> <span class="nl">user</span><span class="p">:</span> <span class="s2">"auth.credentials.user.id"</span> <span class="p">},</span>
+  <span class="nx">put</span><span class="err">:</span> <span class="p">{</span> <span class="nl">user</span><span class="p">:</span> <span class="s2">"auth.credentials.user.id"</span> <span class="p">},</span>
+  <span class="k">delete</span><span class="err">:</span> <span class="p">{</span> <span class="nl">user</span><span class="p">:</span> <span class="s2">"auth.credentials.user.id"</span> <span class="p">},</span>
+  <span class="nx">patch</span><span class="err">:</span> <span class="p">{</span> <span class="nl">user</span><span class="p">:</span> <span class="s2">"auth.credentials.user.id"</span> <span class="p">}</span>
+<span class="p">},</span>
+<span class="p">...</span></code></pre></figure>
+
 
         </article>
       </section>
@@ -229,6 +218,7 @@ constraints: {
 </footer>
 
 
+    <script src="/js/main.js" async defer></script>
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
         analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");

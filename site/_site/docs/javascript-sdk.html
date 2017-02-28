@@ -106,19 +106,17 @@
 
 <p>The config.js should contain an object such as this</p>
 
-<p>```javascript
-settings: {
-    … other config</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">settings</span><span class="err">:</span> <span class="p">{</span>
+    <span class="p">...</span> <span class="nx">other</span> <span class="nx">config</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>javascript_sdk: {
-  destination: `${__dirname}/content/frontend/build/api_sdk`,
-  module_name: "API_SDK",
-  es5: true
-}
+    <span class="nl">javascript_sdk</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">destination</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content/</span><span class="nx">frontend</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">api_sdk</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">module_name</span><span class="err">:</span> <span class="s2">"API_SDK"</span><span class="p">,</span>
+      <span class="nx">es5</span><span class="err">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
 
-... other config   }, ```
-</code></pre>
-</div>
+    <span class="p">...</span> <span class="nx">other</span> <span class="nx">config</span>
+  <span class="p">},</span></code></pre></figure>
 
 <p>This tells the generator to put the generated code into the <code class="highlighter-rouge">content/frontend/build/api_sdk</code> folder and name the ES5 module <code class="highlighter-rouge">API_SDK</code>. The ES5 module is a UMD module so can be <code class="highlighter-rouge">require</code>d or if no module loader is found is added to <code class="highlighter-rouge">window</code>.</p>
 
@@ -152,6 +150,7 @@ settings: {
 </footer>
 
 
+    <script src="/js/main.js" async defer></script>
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
         analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
