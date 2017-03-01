@@ -5,6 +5,7 @@ description: Add logic to your REST API without writing code
 keywords: codeless business logic, multicolour constraints
 version: '0.6.3'
 short_name: Constraints
+contents: false
 permalink: /docs/0.6.3/collections/constraints/
 ---
 

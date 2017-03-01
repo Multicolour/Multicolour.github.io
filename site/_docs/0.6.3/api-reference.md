@@ -5,6 +5,7 @@ description: Multicolour core API reference.
 keywords: multicolour API, API reference
 version: '0.6.3'
 short_name: API Reference
+contents: false
 permalink: /docs/0.6.3/api-reference
 ---
 

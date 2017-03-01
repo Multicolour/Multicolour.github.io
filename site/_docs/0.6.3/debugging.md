@@ -5,6 +5,7 @@ description: Learn how to use the built in debugging tools to debug your REST AP
 keywords: multicolour, rest api, debugging
 version: '0.6.3'
 short_name: Debugging
+contents: false
 permalink: /docs/0.6.3/debugging
 ---
 

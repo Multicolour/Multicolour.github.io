@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation configuration">
 <meta name="twitter:description" content="Configuration">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation configuration">
 <meta itemprop="description" content="Configuration">
-<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation configuration" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://getmulticolour.com" />
-<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Configuration" />
 <meta property="og:site_name" content="Multicolour documentation configuration" />
 
@@ -62,8 +62,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://getmulticolour.com/docs/0.6.3/configuration">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/configuration">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
 
@@ -258,53 +258,53 @@
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">content</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content`</span><span class="err">,
 </span>
-  <span class="nx">settings</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nl">timeout</span><span class="p">:</span> <span class="mi">3</span><span class="nx">e4</span><span class="p">,</span>
+  <span class="na">settings</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">timeout</span><span class="p">:</span> <span class="mi">3</span><span class="nx">e4</span><span class="p">,</span>
 
-    <span class="nx">results</span><span class="err">:</span> <span class="p">{</span>
-      <span class="nl">per_page</span><span class="p">:</span> <span class="mi">20</span>
+    <span class="na">results</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">per_page</span><span class="p">:</span> <span class="mi">20</span>
     <span class="p">},</span>
 
-    <span class="nx">route_prefix</span><span class="err">:</span> <span class="s2">"/api"</span><span class="p">,</span>
+    <span class="na">route_prefix</span><span class="p">:</span> <span class="s2">"/api"</span><span class="p">,</span>
 
-    <span class="nx">javascript_sdk</span><span class="err">:</span> <span class="p">{</span>
-      <span class="nl">destination</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content/</span><span class="nx">frontend</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">api_sdk</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">module_name</span><span class="err">:</span> <span class="s2">"API_SDK"</span>
+    <span class="na">javascript_sdk</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">destination</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content/</span><span class="nx">frontend</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">api_sdk</span><span class="err">`</span><span class="p">,</span>
+      <span class="na">module_name</span><span class="p">:</span> <span class="s2">"API_SDK"</span>
     <span class="p">}</span>
   <span class="p">},</span>
-  <span class="nx">api_connections</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nl">port</span><span class="p">:</span> <span class="nx">PORT</span><span class="p">,</span>
-    <span class="nx">routes</span><span class="err">:</span> <span class="p">{</span>
-      <span class="nl">cors</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">origin</span><span class="p">:</span> <span class="p">[</span> <span class="err">`</span><span class="nx">http</span><span class="err">:</span><span class="c1">//localhost:${PORT}` ]</span>
+  <span class="na">api_connections</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">port</span><span class="p">:</span> <span class="nx">PORT</span><span class="p">,</span>
+    <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">cors</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">origin</span><span class="p">:</span> <span class="p">[</span> <span class="err">`</span><span class="na">http</span><span class="p">:</span><span class="c1">//localhost:${PORT}` ]</span>
       <span class="p">}</span>
     <span class="p">},</span>
-    <span class="nx">router</span><span class="err">:</span> <span class="p">{</span> <span class="nl">stripTrailingSlash</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+    <span class="na">router</span><span class="p">:</span> <span class="p">{</span> <span class="na">stripTrailingSlash</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
   <span class="p">},</span>
 
-  <span class="nx">api_server</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nl">connections</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nl">routes</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">security</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="na">api_server</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">security</span><span class="p">:</span> <span class="kc">true</span>
       <span class="p">}</span>
     <span class="p">},</span>
-    <span class="nx">debug</span><span class="err">:</span> <span class="p">{</span> <span class="nl">request</span><span class="p">:</span> <span class="p">[</span><span class="s2">"error"</span><span class="p">]</span> <span class="p">}</span>
+    <span class="na">debug</span><span class="p">:</span> <span class="p">{</span> <span class="na">request</span><span class="p">:</span> <span class="p">[</span><span class="s2">"error"</span><span class="p">]</span> <span class="p">}</span>
   <span class="p">},</span>
 
-  <span class="nx">db</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nl">adapters</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nl">mongo</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"sails-mongo"</span><span class="p">)</span>
+  <span class="na">db</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">adapters</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">mongo</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"sails-mongo"</span><span class="p">)</span>
     <span class="p">},</span>
-    <span class="nx">connections</span><span class="err">:</span> <span class="p">{</span>
-      <span class="nl">development</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span>
-        <span class="nx">database</span><span class="err">:</span> <span class="s2">"multicolour"</span>
+    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">development</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span>
+        <span class="na">database</span><span class="p">:</span> <span class="s2">"multicolour"</span>
       <span class="p">},</span>
-      <span class="nx">production</span><span class="err">:</span> <span class="p">{</span>
-        <span class="nl">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span>
-        <span class="nx">host</span><span class="err">:</span> <span class="s2">"some-mongo-host.com"</span><span class="p">,</span>
-        <span class="nx">port</span><span class="err">:</span> <span class="mi">27017</span><span class="p">,</span>
-        <span class="nx">database</span><span class="err">:</span> <span class="s2">"multicolour"</span>
+      <span class="na">production</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span>
+        <span class="na">host</span><span class="p">:</span> <span class="s2">"some-mongo-host.com"</span><span class="p">,</span>
+        <span class="na">port</span><span class="p">:</span> <span class="mi">27017</span><span class="p">,</span>
+        <span class="na">database</span><span class="p">:</span> <span class="s2">"multicolour"</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -353,7 +353,7 @@
     <span class="na">host</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
     <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">cors</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="nx">or</span> <span class="p">{</span>
-        <span class="nl">origin</span><span class="p">:</span> <span class="p">[</span> <span class="nb">String</span> <span class="p">]</span>
+        <span class="na">origin</span><span class="p">:</span> <span class="p">[</span> <span class="nb">String</span> <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">},</span>
     <span class="na">router</span><span class="p">:</span> <span class="p">{</span> <span class="na">stripTrailingSlash</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>

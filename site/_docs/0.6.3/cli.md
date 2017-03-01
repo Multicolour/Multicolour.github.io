@@ -5,6 +5,7 @@ description: Documentation for the Multicolour CLI tool.
 keywords: multicolour, cli
 version: '0.6.3'
 short_name: CLI
+contents: false
 permalink: /docs/0.6.3/cli
 ---
 

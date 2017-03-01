@@ -5,6 +5,7 @@ description: Documentation on how to create and use Multicolour collections and 
 keywords: waterline blueprints, multicolour collection
 version: '0.6.3'
 short_name: Collections/Blueprints
+contents: false
 permalink: /docs/0.6.3/collections/
 ---
 

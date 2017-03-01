@@ -4,6 +4,7 @@ title: Multicolour quickstart
 description: Get started with Multicolour instantly, create a REST API in less than 5 minutes.
 version: '0.6.3'
 short_name: Quickstart
+contents: false
 permalink: /docs/0.6.3/quickstart
 ---
 

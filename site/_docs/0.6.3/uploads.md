@@ -5,6 +5,7 @@ description: Learn how to add a file upload endpoint to your models and REST API
 keywords: file uploads, multicolour, rest api file uploads
 version: '0.6.3'
 short_name: Uploading files
+contents: false
 permalink: /docs/0.6.3/routing/file-uploads/
 ---
 

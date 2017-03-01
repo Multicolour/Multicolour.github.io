@@ -5,6 +5,7 @@ description: Multicolour documentation on generated routes and creating custom r
 keywords: multicolour, REST API routes, routing
 version: '0.6.3'
 short_name: Routing
+contents: false
 permalink: /docs/0.6.3/routing/
 ---
 

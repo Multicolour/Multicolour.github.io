@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour core API reference">
 <meta name="twitter:description" content="Multicolour">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour core API reference">
 <meta itemprop="description" content="Multicolour">
-<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour core API reference" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://getmulticolour.com" />
-<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Multicolour" />
 <meta property="og:site_name" content="Multicolour core API reference" />
 
@@ -62,8 +62,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://getmulticolour.com/docs/0.6.3/api-reference">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/api-reference">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
 
@@ -318,7 +318,7 @@ Example:</p>
 
 <p>Raw server tech, be it Hapi or Express or whatever plugin you chose to use.</p>
 
-<h4 id="multicolourgetservergetapiroot"><code class="highlighter-rouge">multicolour.get("server").get("api_root")</code></h4>
+<h4 id="multicolourgetservergetapi_root"><code class="highlighter-rouge">multicolour.get("server").get("api_root")</code></h4>
 
 <p>The final resolved url the API can be reached at, is 100% truth once the server has started and only a “guess” before the <code class="highlighter-rouge">server_started</code> event is emitted.</p>
 
@@ -326,13 +326,13 @@ Example:</p>
 
 <p>To read about what more is available to <code class="highlighter-rouge">.get</code> or .<code class="highlighter-rouge">request</code></p>
 
-<h4 id="multicolourgetserverrequestcsrfenabled"><code class="highlighter-rouge">multicolour.get("server").request("csrf_enabled")</code></h4>
+<h4 id="multicolourgetserverrequestcsrf_enabled"><code class="highlighter-rouge">multicolour.get("server").request("csrf_enabled")</code></h4>
 
 <p>All endorsed server plugins are required to implement a way of enabling or disabling CSRF tokens for security reasons.</p>
 
 <p>This will return a <code class="highlighter-rouge">Boolean</code> as to whether CSRF token generation is enabled or not (defaults to false.)</p>
 
-<h4 id="multicolourgetservergetflowrunner"><code class="highlighter-rouge">multicolour.get("server").get("flow_runner")</code></h4>
+<h4 id="multicolourgetservergetflow_runner"><code class="highlighter-rouge">multicolour.get("server").get("flow_runner")</code></h4>
 
 <p>Server plugins should implement a <code class="highlighter-rouge">flow_runner</code> used by Multicolour core as part of it’s built in integration testing framework. This should return an executable function.</p>
 
@@ -355,7 +355,7 @@ Example:</p>
 
 <hr />
 
-<h2 id="static-newfromconfigfilepathconfiglocation"><code class="highlighter-rouge">static new_from_config_file_path(config_location)</code></h2>
+<h2 id="static-new_from_config_file_pathconfig_location"><code class="highlighter-rouge">static new_from_config_file_path(config_location)</code></h2>
 
 <p>Create a new instance of Multicolour from a config file location.</p>
 
@@ -367,7 +367,7 @@ Example:</p>
 
 <hr />
 
-<h2 id="multicolourresetfromconfigpathconfiglocation"><code class="highlighter-rouge">multicolour.reset_from_config_path(config_location)</code></h2>
+<h2 id="multicolourreset_from_config_pathconfig_location"><code class="highlighter-rouge">multicolour.reset_from_config_path(config_location)</code></h2>
 
 <p>Reset this instance of Multicolour with a config file location.</p>
 
@@ -401,7 +401,7 @@ Example:</p>
 
 <hr />
 
-<h2 id="multicolourenableusermodel"><code class="highlighter-rouge">multicolour._enable_user_model()</code></h2>
+<h2 id="multicolour_enable_user_model"><code class="highlighter-rouge">multicolour._enable_user_model()</code></h2>
 
 <p>Enable the core user model, usually done so by official authentication plugins.</p>
 
@@ -553,27 +553,27 @@ Example:</p>
 
 <p>These events are fired from core and emit no data.</p>
 
-<h4 id="databasestarting"><code class="highlighter-rouge">database_starting</code></h4>
+<h4 id="database_starting"><code class="highlighter-rouge">database_starting</code></h4>
 
 <p>Emitted with no data when a database startup has been started.</p>
 
-<h4 id="databasestarted"><code class="highlighter-rouge">database_started</code></h4>
+<h4 id="database_started"><code class="highlighter-rouge">database_started</code></h4>
 
 <p>Emitted with no data when a database startup has completed.</p>
 
-<h4 id="databasestopping"><code class="highlighter-rouge">database_stopping</code></h4>
+<h4 id="database_stopping"><code class="highlighter-rouge">database_stopping</code></h4>
 
 <p>Emitted with no data when a database shutdown has been started.</p>
 
-<h4 id="databasestopped"><code class="highlighter-rouge">database_stopped</code></h4>
+<h4 id="database_stopped"><code class="highlighter-rouge">database_stopped</code></h4>
 
 <p>Emitted with no data when a database shutdown has completed.</p>
 
-<h4 id="serverstopping"><code class="highlighter-rouge">server_stopping</code></h4>
+<h4 id="server_stopping"><code class="highlighter-rouge">server_stopping</code></h4>
 
 <p>Emitted with no data when a HTTP server shutdown has been started.</p>
 
-<h4 id="serverstopped"><code class="highlighter-rouge">server_stopped</code></h4>
+<h4 id="server_stopped"><code class="highlighter-rouge">server_stopped</code></h4>
 
 <p>Emitted with no data when a HTTP shutdown has completed.</p>
 

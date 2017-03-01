@@ -1,5 +1,5 @@
 <ul>
-  {% assign docs = site.docs | where:'version', page.version | where:'contents', !true %}
+  {% assign docs = site.docs | where:'version', page.version | where:'contents', false %}
   {% for doc in docs %}
     <li
       data-keywords="{{ doc.keywords }}"
