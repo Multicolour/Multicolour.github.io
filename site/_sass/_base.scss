@@ -10,18 +10,14 @@ html, body {
 }
 
 body {
-  font-family: "georgia", Times, sans-serif;
+  font-family: $primary_font_face;
   font-size: $base-font-size;
   line-height: $base-font-size * 1.4;
   -webkit-font-smoothing: antialiased;
   padding: 1rem;
   color: #3D3E3F;
 
-  background: #7423b5;
-  background: -moz-linear-gradient(top, #ff9999  0%, #ab21b4 27%, #7423b5 100%);
-  background: -webkit-linear-gradient(top,  #ff9999  0%, #ab21b4 27%, #7423b5 100%);
-  background: linear-gradient(to bottom,  #ff9999  0%, #ab21b4 27%, #7423b5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9999', endColorstr='#7423b5',GradientType=0 );
+  @include gradient-background();
 
   @media screen and (max-width: $break-small) {
     font-size: $base-font-size * 2;
@@ -51,7 +47,7 @@ pre code {
 nav a,
 h1, h2, h3,
 .point-header {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $secondary_font_face;
   font-weight: 700;
   color: #3D3E3F;
   margin: 1.4em 0;
@@ -155,7 +151,7 @@ ul {
 // Our styles.
 section, .row, .content {
   width: 70vw;
-  margin: $vertical-rhythm * 2 auto;
+  margin: 7vh auto;
 
   @media screen and (max-width: $break-small) {
     margin: 0 auto;
@@ -222,7 +218,7 @@ section, .row, .content {
 
 .email-signup {
   text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $secondary_font_face;
 
   fieldset {
     display: block;
@@ -277,36 +273,78 @@ section, .row, .content {
   }
 }
 
+.home-nav {
+  text-align: center;
+  margin: $vertical-rhythm auto;
+}
+
+.general-nav {
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 1rem;
+  right: 1rem;
+  background: #FFF;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+
+  .logo-link,
+  .menu {
+    vertical-align: top;
+  }
+
+  .logo-link {
+    float: left;
+  }
+
+  .menu {
+    float: right;
+    padding-top: 1em;
+    margin-bottom: 0;
+  }
+
+  nav, menu {
+    padding: $vertical-rhythm / 3 $horizontal-rhythm;
+    margin: 0;
+  }
+}
+
+.breadcrumb-menu {
+  border-top: 1px solid #CFCFCF;
+  overflow: hidden;
+
+  h1, .breadcrumbs {
+    display: block;
+    vertical-align: top;
+  }
+
+  h1 {
+    margin: .5em;
+    float: left;
+  }
+
+  .breadcrumbs {
+    float: right;
+    text-align: right;
+    margin-bottom: 0;
+    font-family: $secondary_font_face;
+
+    a {
+      font-family: inherit;
+      text-decoration: none;
+      border: 0;
+
+      &.current {
+        font-weight: 700;
+        color: $colour_purple_base;
+      }
+    }
+  }
+}
+
 nav {
   padding: 0;
   display: block;
-  text-align: center;
-  margin: $vertical-rhythm auto;
-
-  &.general-nav {
-    margin-top: 0;
-    position: fixed;
-    top: 0;
-    left: 1rem;
-    right: 1rem;
-    background: #FFF;
-    padding: $vertical-rhythm / 3 $horizontal-rhythm;
-    border-bottom: 2px solid #00DEAF;
-
-    .logo-link,
-    .menu {
-      vertical-align: top;
-    }
-
-    .logo-link {
-      float: left;
-    }
-
-    .menu {
-      float: right;
-      padding-top: 1em;
-    }
-  }
+  overflow: hidden;
 
   a {
     font-weight: 500;
@@ -350,12 +388,12 @@ nav {
   color: #FFF;
   text-align: center;
   margin-bottom: 0;
-  font-family: 'Source Sans Pro', sans-serif;
-  background: #EA82AA;
-  background: -moz-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
-  background: -webkit-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
-  background: linear-gradient(to bottom, #EA82AA 0%, #ff9999 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA82AA', endColorstr='#ff9999',GradientType=0 );
+  font-family: $secondary_font_face;
+  background: $colour_purple_middle;
+  background: -moz-linear-gradient(top, $colour_purple_middle 0%, $colour_pink_base 100%);
+  background: -webkit-linear-gradient(top, $colour_purple_middle 0%, $colour_pink_base 100%);
+  background: linear-gradient(to bottom, $colour_purple_middle 0%, $colour_pink_base 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colour_purple_middle', endColorstr='$colour_pink_base',GradientType=0 );
 
   h3 {
     color: #FFF;
@@ -381,7 +419,7 @@ nav {
 
 footer {
   padding: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $secondary_font_face;
   font-size: .8em;
   color: #FFF;
   text-align: center;
@@ -411,6 +449,8 @@ footer {
 
   aside {
     width: 25%;
+    height: 90vh;
+    background-color: #F9F9F9;
 
     h2, li {
       padding-left: 2.5em;
@@ -418,11 +458,19 @@ footer {
 
     li {
       list-style: none;
-      border-left: 10px solid white;
+      border-left: 10px solid transparent;
       padding: .7em 2em;
+      font-family: $secondary_font_face;
 
       &.active {
-        border-left-color: #7423b5;
+        border-left-color: $colour_purple_base;
+        background-color: #FFF;
+      }
+
+      a {
+        font-family: inherit;
+        text-decoration: none;
+        border: 0;
       }
     }
   }
@@ -430,6 +478,10 @@ footer {
   article {
     width: 70%;
     padding: 2.5em;
+
+    h1 {
+      margin-top: 0;
+    }
 
     small {
       display: block;
@@ -444,11 +496,12 @@ footer {
   margin: 0;
   background: #333;
   color: white;
+  font-family: $secondary_font_face;
 
   input {
     background-color: transparent;
     border: 0;
-    padding: 1em;
+    padding: 1em 1em 1em 2.5em;
     outline: 0;
   }
 }
@@ -456,10 +509,14 @@ footer {
 .docs-title {
   display: block;
   color: #FFF;
-  background-color: #7423b5;
   margin: 0;
+  padding: 1.5em 0;
+  font-family: $primary_font_face;
+  font-weight: 100;
+  background-color: $colour_purple_middle;
 
   span {
     font-size: 1.3em;
+    font-family: 700;
   }
 }

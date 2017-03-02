@@ -7,6 +7,11 @@ version: '0.6.3'
 short_name: Routing
 contents: false
 permalink: /docs/0.6.3/routing/
+breadcrumbs:
+  - permalink: /docs/
+    name: docs
+  - permalink: /docs/0.6.3/
+    name: 0.6.3
 ---
 
 # Routing

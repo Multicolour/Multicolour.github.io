@@ -7,6 +7,13 @@ version: '0.6.3'
 short_name: Constraints
 contents: false
 permalink: /docs/0.6.3/collections/constraints/
+breadcrumbs:
+  - permalink: /docs/
+    name: docs
+  - permalink: /docs/0.6.3/
+    name: 0.6.3
+  - permalink: /docs/0.6.3/collections/
+    name: collections
 ---
 
 # Constraints

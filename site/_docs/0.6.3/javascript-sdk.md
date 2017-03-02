@@ -7,6 +7,11 @@ version: '0.6.3'
 short_name: JavaScript SDK
 contents: false
 permalink: /docs/0.6.3/javascript-sdk
+breadcrumbs:
+  - permalink: /docs/
+    name: docs
+  - permalink: /docs/0.6.3/
+    name: 0.6.3
 ---
 
 # JavaScript SDK generation

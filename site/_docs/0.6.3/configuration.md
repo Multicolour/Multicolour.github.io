@@ -7,6 +7,11 @@ version: '0.6.3'
 short_name: Configuration
 contents: false
 permalink: /docs/0.6.3/configuration
+breadcrumbs:
+  - permalink: /docs/
+    name: docs
+  - permalink: /docs/0.6.3/
+    name: 0.6.3
 ---
 
 # Configuration

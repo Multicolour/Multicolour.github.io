@@ -7,6 +7,11 @@ version: '0.6.3'
 short_name: API Reference
 contents: false
 permalink: /docs/0.6.3/api-reference
+breadcrumbs:
+  - permalink: /docs/
+    name: docs
+  - permalink: /docs/0.6.3/
+    name: 0.6.3
 ---
 
 ## Multicolour

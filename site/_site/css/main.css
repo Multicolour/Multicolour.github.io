@@ -511,7 +511,7 @@ body {
   background: -moz-linear-gradient(top, #ff9999 0%, #ab21b4 27%, #7423b5 100%);
   background: -webkit-linear-gradient(top, #ff9999 0%, #ab21b4 27%, #7423b5 100%);
   background: linear-gradient(to bottom, #ff9999 0%, #ab21b4 27%, #7423b5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9999', endColorstr='#7423b5',GradientType=0 ); }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colour_pink_base', endColorstr='$colour_purple_base',GradientType=0 ); }
   @media screen and (max-width: 414px) {
     body {
       font-size: 3.4vw;
@@ -534,7 +534,7 @@ pre code {
 nav a,
 h1, h2, h3,
 .point-header {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 700;
   color: #3D3E3F;
   margin: 1.4em 0; }
@@ -611,7 +611,7 @@ ul {
 
 section, .row, .content {
   width: 70vw;
-  margin: 10vh auto; }
+  margin: 7vh auto; }
   @media screen and (max-width: 414px) {
     section, .row, .content {
       margin: 0 auto;
@@ -661,7 +661,7 @@ section, .row, .content {
 
 .email-signup {
   text-align: center;
-  font-family: 'Source Sans Pro', sans-serif; }
+  font-family: "Source Sans Pro", sans-serif; }
   .email-signup fieldset {
     display: block;
     margin: 0 auto;
@@ -702,28 +702,57 @@ section, .row, .content {
     .email-signup button:hover {
       cursor: pointer; }
 
+.home-nav {
+  text-align: center;
+  margin: 5vh auto; }
+
+.general-nav {
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 1rem;
+  right: 1rem;
+  background: #FFF;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1); }
+  .general-nav .logo-link,
+  .general-nav .menu {
+    vertical-align: top; }
+  .general-nav .logo-link {
+    float: left; }
+  .general-nav .menu {
+    float: right;
+    padding-top: 1em;
+    margin-bottom: 0; }
+  .general-nav nav, .general-nav menu {
+    padding: 1.66667vh 2vw;
+    margin: 0; }
+
+.breadcrumb-menu {
+  border-top: 1px solid #CFCFCF;
+  overflow: hidden; }
+  .breadcrumb-menu h1, .breadcrumb-menu .breadcrumbs {
+    display: block;
+    vertical-align: top; }
+  .breadcrumb-menu h1 {
+    margin: .5em;
+    float: left; }
+  .breadcrumb-menu .breadcrumbs {
+    float: right;
+    text-align: right;
+    margin-bottom: 0;
+    font-family: "Source Sans Pro", sans-serif; }
+    .breadcrumb-menu .breadcrumbs a {
+      font-family: inherit;
+      text-decoration: none;
+      border: 0; }
+      .breadcrumb-menu .breadcrumbs a.current {
+        font-weight: 700;
+        color: #7423b5; }
+
 nav {
   padding: 0;
   display: block;
-  text-align: center;
-  margin: 5vh auto; }
-  nav.general-nav {
-    margin-top: 0;
-    position: fixed;
-    top: 0;
-    left: 1rem;
-    right: 1rem;
-    background: #FFF;
-    padding: 1.66667vh 2vw;
-    border-bottom: 2px solid #00DEAF; }
-    nav.general-nav .logo-link,
-    nav.general-nav .menu {
-      vertical-align: top; }
-    nav.general-nav .logo-link {
-      float: left; }
-    nav.general-nav .menu {
-      float: right;
-      padding-top: 1em; }
+  overflow: hidden; }
   nav a {
     font-weight: 500; }
   nav li {
@@ -755,12 +784,12 @@ nav {
   color: #FFF;
   text-align: center;
   margin-bottom: 0;
-  font-family: 'Source Sans Pro', sans-serif;
-  background: #EA82AA;
-  background: -moz-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
-  background: -webkit-linear-gradient(top, #EA82AA 0%, #ff9999 100%);
-  background: linear-gradient(to bottom, #EA82AA 0%, #ff9999 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA82AA', endColorstr='#ff9999',GradientType=0 ); }
+  font-family: "Source Sans Pro", sans-serif;
+  background: #ab21b4;
+  background: -moz-linear-gradient(top, #ab21b4 0%, #ff9999 100%);
+  background: -webkit-linear-gradient(top, #ab21b4 0%, #ff9999 100%);
+  background: linear-gradient(to bottom, #ab21b4 0%, #ff9999 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colour_purple_middle', endColorstr='$colour_pink_base',GradientType=0 ); }
   .home .sponsors h3 {
     color: #FFF; }
   .home .sponsors .left, .home .sponsors .right {
@@ -777,7 +806,7 @@ nav {
 
 footer {
   padding: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: .8em;
   color: #FFF;
   text-align: center; }
@@ -796,18 +825,28 @@ footer {
     display: inline-block;
     vertical-align: top; }
   .columns aside {
-    width: 25%; }
+    width: 25%;
+    height: 90vh;
+    background-color: #F9F9F9; }
     .columns aside h2, .columns aside li {
       padding-left: 2.5em; }
     .columns aside li {
       list-style: none;
-      border-left: 10px solid white;
-      padding: .7em 2em; }
+      border-left: 10px solid transparent;
+      padding: .7em 2em;
+      font-family: "Source Sans Pro", sans-serif; }
       .columns aside li.active {
-        border-left-color: #7423b5; }
+        border-left-color: #7423b5;
+        background-color: #FFF; }
+      .columns aside li a {
+        font-family: inherit;
+        text-decoration: none;
+        border: 0; }
   .columns article {
     width: 70%;
     padding: 2.5em; }
+    .columns article h1 {
+      margin-top: 0; }
     .columns article small {
       display: block;
       color: #333;
@@ -817,17 +856,22 @@ footer {
   width: 100%;
   margin: 0;
   background: #333;
-  color: white; }
+  color: white;
+  font-family: "Source Sans Pro", sans-serif; }
   .search input {
     background-color: transparent;
     border: 0;
-    padding: 1em;
+    padding: 1em 1em 1em 2.5em;
     outline: 0; }
 
 .docs-title {
   display: block;
   color: #FFF;
-  background-color: #7423b5;
-  margin: 0; }
+  margin: 0;
+  padding: 1.5em 0;
+  font-family: "georgia", Times, sans-serif;
+  font-weight: 100;
+  background-color: #ab21b4; }
   .docs-title span {
-    font-size: 1.3em; }
+    font-size: 1.3em;
+    font-family: 700; }

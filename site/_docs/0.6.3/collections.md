@@ -1,12 +1,17 @@
 ---
 layout: docs
 title: Multicolour documentation collections
-description: Documentation on how to create and use Multicolour collections and blueprints to build your REST API.
-keywords: waterline blueprints, multicolour collection
+description: Documentation on how to create and use Multicolour collections, blueprints and the Endpoint class to define the database structure for your rest api and how to handle database migrations.
+keywords: waterline blueprints, multicolour collection, database, table, define, migration
 version: '0.6.3'
 short_name: Collections/Blueprints
 contents: false
 permalink: /docs/0.6.3/collections/
+breadcrumbs:
+  - permalink: /docs/
+    name: docs
+  - permalink: /docs/0.6.3/
+    name: 0.6.3
 ---
 
 # Collections
