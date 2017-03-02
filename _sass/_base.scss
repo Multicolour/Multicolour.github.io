@@ -149,7 +149,7 @@ ul {
 }
 
 // Our styles.
-section, .row, .content {
+.row, .content {
   width: 70vw;
   margin: 7vh auto;
 
@@ -216,63 +216,6 @@ section, .row, .content {
   }
 }
 
-.email-signup {
-  text-align: center;
-  font-family: $secondary_font_face;
-
-  fieldset {
-    display: block;
-    margin: 0 auto;
-    clear: both;
-    height: 4em;
-    overflow: hidden;
-    border: 0;
-  }
-
-  input, button {
-    height: 100%;
-    margin: 0;
-    font-family: inherit;
-    font-size: $base-font-size;
-    float: left;
-    padding: 0 $horizontal-rhythm;
-    border-radius: 0;
-    -webkit-appearance: none;
-	  -moz-appearance: none;
-    appearance: none;
-    box-sizing: border-box;
-
-    @media screen and (max-width: $break-small) {
-      padding: $vertical-rhythm / 2.25 $horizontal-rhythm;
-      font-size: $base-font-size * 1.5;
-    }
-  }
-
-  input {
-    width: 80%;
-    border: 1px solid #979797;
-  }
-
-  button {
-    border: 0;
-    width: 20%;
-    background: #333;
-    color: #FFF;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 1px solid #333;
-
-
-    @media screen and (max-width: $break-small) {
-      padding: $vertical-rhythm / 4 $horizontal-rhythm;
-    }
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
-
 .home-nav {
   text-align: center;
   margin: $vertical-rhythm auto;
@@ -305,39 +248,6 @@ section, .row, .content {
   nav, menu {
     padding: $vertical-rhythm / 3 $horizontal-rhythm;
     margin: 0;
-  }
-}
-
-.breadcrumb-menu {
-  border-top: 1px solid #CFCFCF;
-  overflow: hidden;
-
-  h1, .breadcrumbs {
-    display: block;
-    vertical-align: top;
-  }
-
-  h1 {
-    margin: .5em;
-    float: left;
-  }
-
-  .breadcrumbs {
-    float: right;
-    text-align: right;
-    margin-bottom: 0;
-    font-family: $secondary_font_face;
-
-    a {
-      font-family: inherit;
-      text-decoration: none;
-      border: 0;
-
-      &.current {
-        font-weight: 700;
-        color: $colour_purple_base;
-      }
-    }
   }
 }
 
@@ -415,108 +325,4 @@ nav {
 
 .sponsor-logos {
   text-align: center;
-}
-
-footer {
-  padding: 1em;
-  font-family: $secondary_font_face;
-  font-size: .8em;
-  color: #FFF;
-  text-align: center;
-
-  ul {
-    margin-bottom: 1em;
-    width: 100%;
-
-    &, li {
-      list-style: none !important;
-      display: inline-block;
-    }
-
-    li {
-      padding: 0 2em;
-    }
-  }
-}
-
-.columns {
-  width: 100%;
-
-  aside, article {
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  aside {
-    width: 25%;
-    height: 90vh;
-    background-color: #F9F9F9;
-
-    h2, li {
-      padding-left: 2.5em;
-    }
-
-    li {
-      list-style: none;
-      border-left: 10px solid transparent;
-      padding: .7em 2em;
-      font-family: $secondary_font_face;
-
-      &.active {
-        border-left-color: $colour_purple_base;
-        background-color: #FFF;
-      }
-
-      a {
-        font-family: inherit;
-        text-decoration: none;
-        border: 0;
-      }
-    }
-  }
-
-  article {
-    width: 70%;
-    padding: 2.5em;
-
-    h1 {
-      margin-top: 0;
-    }
-
-    small {
-      display: block;
-      color: #333;
-      margin: .3em 0 1em 0;
-    }
-  }
-}
-
-.search {
-  width: 100%;
-  margin: 0;
-  background: #333;
-  color: white;
-  font-family: $secondary_font_face;
-
-  input {
-    background-color: transparent;
-    border: 0;
-    padding: 1em 1em 1em 2.5em;
-    outline: 0;
-  }
-}
-
-.docs-title {
-  display: block;
-  color: #FFF;
-  margin: 0;
-  padding: 1.5em 0;
-  font-family: $primary_font_face;
-  font-weight: 100;
-  background-color: $colour_purple_middle;
-
-  span {
-    font-size: 1.3em;
-    font-family: 700;
-  }
 }

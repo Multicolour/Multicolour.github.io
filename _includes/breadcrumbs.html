@@ -16,6 +16,10 @@
   {% endif %}
 
   <a class="current" href="{{ page.permalink }}" title="{{ page.title }}">
+    {% if page.short_name %}
     {{ page.short_name }}
+    {% else %}
+    {{ page.title }}
+    {% endif %}
   </a>
 </div>

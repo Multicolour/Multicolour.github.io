@@ -21,8 +21,8 @@ $break-small: 414px;
 $break-medium: 768px;
 $break-large: 1200px;
 
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
+@mixin media-query($width) {
+    @media screen and (max-width: $width) {
         @content;
     }
 }
@@ -38,4 +38,11 @@ $break-large: 1200px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "syntax-highlighting";
 @import "normalize";
+
+@import "columns";
+@import "email-signup";
+@import "breadcrumbs";
+@import "docs";
+@import "blog";
+@import "footer";
 @import "base";

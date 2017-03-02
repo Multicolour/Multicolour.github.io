@@ -1,8 +1,7 @@
 # Site settings
 title: Multicolour - Rest API generator
 email: hello@newworld.codes
-description: > #
-  Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
+description: Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.
 keywords: multicolour, rest api, generator, nodejs
 baseurl: ""
 url: "https://getmulticolour.com"
@@ -16,6 +15,9 @@ year: 2017
 
 # Custom collections like docs.
 collections:
+  examples:
+    output: true
+    output_ext: .html
   docs:
     output: true
     output_ext: .html

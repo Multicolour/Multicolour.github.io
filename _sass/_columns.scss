@@ -1,0 +1,52 @@
+.columns {
+  width: 100%;
+
+  aside,
+  article {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  aside {
+    width: 25%;
+    height: 90vh;
+    background-color: #F9F9F9;
+
+    h2, li {
+      padding-left: 2.5em;
+    }
+
+    li {
+      list-style: none;
+      border-left: 10px solid transparent;
+      padding: .7em 2em;
+      font-family: $secondary_font_face;
+
+      &.active {
+        border-left-color: $colour_purple_base;
+        background-color: #FFF;
+      }
+
+      a {
+        font-family: inherit;
+        text-decoration: none;
+        border: 0;
+      }
+    }
+
+    .title {
+      display: block;
+      color: #FFF;
+      margin: 0;
+      padding: 1.5em 0;
+      font-family: $primary_font_face;
+      font-weight: 100;
+      background-color: $colour_purple_middle;
+
+      span {
+        font-size: 1.3em;
+        font-family: 700;
+      }
+    }
+  }
+}

@@ -1,6 +1,9 @@
 ---
 layout: example
-title: Multicolour Examples
+title: Multicolour init example
+description: A deep look into the output of the init command's output.
+keywords: multicolour, init, cli, example app
+search_terms: init, quickstart, basic
 permalink: /examples/
 ---
 

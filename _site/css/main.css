@@ -493,6 +493,144 @@ td,
 th {
   padding: 0; }
 
+.columns {
+  width: 100%; }
+  .columns aside,
+  .columns article {
+    display: inline-block;
+    vertical-align: top; }
+  .columns aside {
+    width: 25%;
+    height: 90vh;
+    background-color: #F9F9F9; }
+    .columns aside h2, .columns aside li {
+      padding-left: 2.5em; }
+    .columns aside li {
+      list-style: none;
+      border-left: 10px solid transparent;
+      padding: .7em 2em;
+      font-family: "Source Sans Pro", sans-serif; }
+      .columns aside li.active {
+        border-left-color: #7423b5;
+        background-color: #FFF; }
+      .columns aside li a {
+        font-family: inherit;
+        text-decoration: none;
+        border: 0; }
+    .columns aside .title {
+      display: block;
+      color: #FFF;
+      margin: 0;
+      padding: 1.5em 0;
+      font-family: "georgia", Times, sans-serif;
+      font-weight: 100;
+      background-color: #ab21b4; }
+      .columns aside .title span {
+        font-size: 1.3em;
+        font-family: 700; }
+
+.email-signup {
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif; }
+  .email-signup fieldset {
+    display: block;
+    margin: 0 auto;
+    clear: both;
+    height: 4em;
+    overflow: hidden;
+    border: 0; }
+  .email-signup input, .email-signup button {
+    height: 100%;
+    margin: 0;
+    font-family: inherit;
+    font-size: 1.7vw;
+    float: left;
+    padding: 0 2vw;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box; }
+    @media screen and (max-width: 414px) {
+      .email-signup input, .email-signup button {
+        padding: 2.22222vh 2vw;
+        font-size: 2.55vw; } }
+  .email-signup input {
+    width: 80%;
+    border: 1px solid #979797; }
+  .email-signup button {
+    border: 0;
+    width: 20%;
+    background: #333;
+    color: #FFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #333; }
+    @media screen and (max-width: 414px) {
+      .email-signup button {
+        padding: 1.25vh 2vw; } }
+    .email-signup button:hover {
+      cursor: pointer; }
+
+.breadcrumb-menu {
+  border-top: 1px solid #CFCFCF;
+  overflow: hidden; }
+  .breadcrumb-menu h1, .breadcrumb-menu .breadcrumbs {
+    display: block;
+    vertical-align: top; }
+  .breadcrumb-menu h1 {
+    margin: .5em;
+    float: left; }
+  .breadcrumb-menu .breadcrumbs {
+    float: right;
+    text-align: right;
+    margin-bottom: 0;
+    font-family: "Source Sans Pro", sans-serif; }
+    .breadcrumb-menu .breadcrumbs a {
+      font-family: inherit;
+      text-decoration: none;
+      border: 0; }
+      .breadcrumb-menu .breadcrumbs a.current {
+        font-weight: 700;
+        color: #7423b5; }
+
+article {
+  width: 70%;
+  padding: 2.5em; }
+  article h1 {
+    margin-top: 0; }
+  article small {
+    display: block;
+    color: #333;
+    margin: .3em 0 1em 0; }
+
+.search {
+  width: 100%;
+  margin: 0;
+  background: #333;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif; }
+  .search input {
+    background-color: transparent;
+    border: 0;
+    padding: 1em 1em 1em 2.5em;
+    outline: 0; }
+
+footer {
+  padding: 1em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: .8em;
+  color: #FFF;
+  text-align: center; }
+  footer ul {
+    margin-bottom: 1em;
+    width: 100%; }
+    footer ul, footer ul li {
+      list-style: none !important;
+      display: inline-block; }
+    footer ul li {
+      padding: 0 2em; }
+
 * + * {
   margin-bottom: 5vh;
   box-sizing: border-box; }
@@ -609,11 +747,11 @@ ul {
     text-align: center;
     margin: 0 2vw; }
 
-section, .row, .content {
+.row, .content {
   width: 70vw;
   margin: 7vh auto; }
   @media screen and (max-width: 414px) {
-    section, .row, .content {
+    .row, .content {
       margin: 0 auto;
       margin-bottom: 2.5vh; } }
 
@@ -659,49 +797,6 @@ section, .row, .content {
     .row img {
       display: none; } }
 
-.email-signup {
-  text-align: center;
-  font-family: "Source Sans Pro", sans-serif; }
-  .email-signup fieldset {
-    display: block;
-    margin: 0 auto;
-    clear: both;
-    height: 4em;
-    overflow: hidden;
-    border: 0; }
-  .email-signup input, .email-signup button {
-    height: 100%;
-    margin: 0;
-    font-family: inherit;
-    font-size: 1.7vw;
-    float: left;
-    padding: 0 2vw;
-    border-radius: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    box-sizing: border-box; }
-    @media screen and (max-width: 414px) {
-      .email-signup input, .email-signup button {
-        padding: 2.22222vh 2vw;
-        font-size: 2.55vw; } }
-  .email-signup input {
-    width: 80%;
-    border: 1px solid #979797; }
-  .email-signup button {
-    border: 0;
-    width: 20%;
-    background: #333;
-    color: #FFF;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 1px solid #333; }
-    @media screen and (max-width: 414px) {
-      .email-signup button {
-        padding: 1.25vh 2vw; } }
-    .email-signup button:hover {
-      cursor: pointer; }
-
 .home-nav {
   text-align: center;
   margin: 5vh auto; }
@@ -726,28 +821,6 @@ section, .row, .content {
   .general-nav nav, .general-nav menu {
     padding: 1.66667vh 2vw;
     margin: 0; }
-
-.breadcrumb-menu {
-  border-top: 1px solid #CFCFCF;
-  overflow: hidden; }
-  .breadcrumb-menu h1, .breadcrumb-menu .breadcrumbs {
-    display: block;
-    vertical-align: top; }
-  .breadcrumb-menu h1 {
-    margin: .5em;
-    float: left; }
-  .breadcrumb-menu .breadcrumbs {
-    float: right;
-    text-align: right;
-    margin-bottom: 0;
-    font-family: "Source Sans Pro", sans-serif; }
-    .breadcrumb-menu .breadcrumbs a {
-      font-family: inherit;
-      text-decoration: none;
-      border: 0; }
-      .breadcrumb-menu .breadcrumbs a.current {
-        font-weight: 700;
-        color: #7423b5; }
 
 nav {
   padding: 0;
@@ -803,75 +876,3 @@ nav {
 
 .sponsor-logos {
   text-align: center; }
-
-footer {
-  padding: 1em;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: .8em;
-  color: #FFF;
-  text-align: center; }
-  footer ul {
-    margin-bottom: 1em;
-    width: 100%; }
-    footer ul, footer ul li {
-      list-style: none !important;
-      display: inline-block; }
-    footer ul li {
-      padding: 0 2em; }
-
-.columns {
-  width: 100%; }
-  .columns aside, .columns article {
-    display: inline-block;
-    vertical-align: top; }
-  .columns aside {
-    width: 25%;
-    height: 90vh;
-    background-color: #F9F9F9; }
-    .columns aside h2, .columns aside li {
-      padding-left: 2.5em; }
-    .columns aside li {
-      list-style: none;
-      border-left: 10px solid transparent;
-      padding: .7em 2em;
-      font-family: "Source Sans Pro", sans-serif; }
-      .columns aside li.active {
-        border-left-color: #7423b5;
-        background-color: #FFF; }
-      .columns aside li a {
-        font-family: inherit;
-        text-decoration: none;
-        border: 0; }
-  .columns article {
-    width: 70%;
-    padding: 2.5em; }
-    .columns article h1 {
-      margin-top: 0; }
-    .columns article small {
-      display: block;
-      color: #333;
-      margin: .3em 0 1em 0; }
-
-.search {
-  width: 100%;
-  margin: 0;
-  background: #333;
-  color: white;
-  font-family: "Source Sans Pro", sans-serif; }
-  .search input {
-    background-color: transparent;
-    border: 0;
-    padding: 1em 1em 1em 2.5em;
-    outline: 0; }
-
-.docs-title {
-  display: block;
-  color: #FFF;
-  margin: 0;
-  padding: 1.5em 0;
-  font-family: "georgia", Times, sans-serif;
-  font-weight: 100;
-  background-color: #ab21b4; }
-  .docs-title span {
-    font-size: 1.3em;
-    font-family: 700; }

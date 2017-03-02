@@ -1,0 +1,32 @@
+.breadcrumb-menu {
+  border-top: 1px solid #CFCFCF;
+  overflow: hidden;
+
+  h1, .breadcrumbs {
+    display: block;
+    vertical-align: top;
+  }
+
+  h1 {
+    margin: .5em;
+    float: left;
+  }
+
+  .breadcrumbs {
+    float: right;
+    text-align: right;
+    margin-bottom: 0;
+    font-family: $secondary_font_face;
+
+    a {
+      font-family: inherit;
+      text-decoration: none;
+      border: 0;
+
+      &.current {
+        font-weight: 700;
+        color: $colour_purple_base;
+      }
+    }
+  }
+}

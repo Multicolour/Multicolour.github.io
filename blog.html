@@ -7,16 +7,34 @@ permalink: /blog/
 short_name: multicolour blog
 ---
 
-{% assign posts = site.posts | limit: 4 %}
-{% for post in posts %}
-    {% assign author = site.data.authors[post.author] %}
+<section class="blog">
+  {% assign posts = site.posts | limit: 4 %}
+  {% for post in posts %}
+      {% assign author = site.data.authors[post.author] %}
 
-    {% if forloop.first %}
-    <article class="post post-wide">
-      <div class="left">
-        <time datetime="{{ post.date | date_to_xmlschema }}">
-          {{ post.date | date_to_long_string }}
-        </time>
+      {% if forloop.first %}
+      <article class="post post-wide">
+        <div class="left">
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date_to_long_string }}
+          </time>
+          <div class="author" itemscope itemtype="http://schema.org/Person">
+              <img src="{{ author.image }}" alt="{{ post.author }}">
+              <small>written by:</small>
+              <p class="author-name">{{ post.author }}</p>
+          </div>
+
+          <a href="{{ post.permalink }}">
+              {{ post.title }}
+          </a>
+        </div>
+      </article>
+
+      <p>More posts</p>
+
+      {% else %}
+
+      <article class="post">
         <div class="author" itemscope itemtype="http://schema.org/Person">
             <img src="{{ author.image }}" alt="{{ post.author }}">
             <small>written by:</small>
@@ -26,25 +44,9 @@ short_name: multicolour blog
         <a href="{{ post.permalink }}">
             {{ post.title }}
         </a>
-      </div>
-    </article>
-
-    <p>More posts</p>
-
-    {% else %}
-
-    <article class="post">
-      <div class="author" itemscope itemtype="http://schema.org/Person">
-          <img src="{{ author.image }}" alt="{{ post.author }}">
-          <small>written by:</small>
-          <p class="author-name">{{ post.author }}</p>
-      </div>
-
-      <a href="{{ post.permalink }}">
-          {{ post.title }}
-      </a>
-    </article>
-    {% endif %}
+      </article>
+      {% endif %}
 
 
-{% endfor %}
+  {% endfor %}
+</section>
