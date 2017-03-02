@@ -1,13 +1,50 @@
 ---
-layout: post
-title:  "Welcome to Jekyll!"
-date:   2017-02-27 08:42:51 +0000
-categories: jekyll update
+layout: page
+title:  Multicolour blog
+description: Read Multicolour's latest news, hints, tips and learn more about REST APIs.
+keywords: blog, multicolour, rest api
 permalink: /blog/
+short_name: multicolour blog
 ---
 
-{% for post in site.posts %}
-    <a href="{{ post.permalink }}">
-        {{ post.title }}
-    </a>
+{% assign posts = site.posts | limit: 4 %}
+{% for post in posts %}
+    {% assign author = site.data.authors[post.author] %}
+
+    {% if forloop.first %}
+    <article class="post post-wide">
+      <div class="left">
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date_to_long_string }}
+        </time>
+        <div class="author" itemscope itemtype="http://schema.org/Person">
+            <img src="{{ author.image }}" alt="{{ post.author }}">
+            <small>written by:</small>
+            <p class="author-name">{{ post.author }}</p>
+        </div>
+
+        <a href="{{ post.permalink }}">
+            {{ post.title }}
+        </a>
+      </div>
+    </article>
+
+    <p>More posts</p>
+
+    {% else %}
+
+    <article class="post">
+      <div class="author" itemscope itemtype="http://schema.org/Person">
+          <img src="{{ author.image }}" alt="{{ post.author }}">
+          <small>written by:</small>
+          <p class="author-name">{{ post.author }}</p>
+      </div>
+
+      <a href="{{ post.permalink }}">
+          {{ post.title }}
+      </a>
+    </article>
+    {% endif %}
+
+
 {% endfor %}

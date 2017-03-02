@@ -5,14 +5,16 @@
 
   <span class="arrow">&rarr;</span>
 
+  {% if !!page.breadcrumbs %}
   {% for breadcrumb in page.breadcrumbs %}
   <a href="{{ breadcrumb.permalink }}" title="{{ breadcrumb.name }}">
     {{ breadcrumb.name }}
   </a>
 
   <span class="arrow">&rarr;</span>
-
   {% endfor %}
+  {% endif %}
+
   <a class="current" href="{{ page.permalink }}" title="{{ page.title }}">
     {{ page.short_name }}
   </a>
