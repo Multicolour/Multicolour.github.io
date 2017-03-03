@@ -68,7 +68,7 @@
 
 
 <body>
-    <main>
+    <main class="docs">
       <div class="general-nav">
     <nav>
         <a href="/" class="logo-link no-border" title="Multicolour - Rest API generator">
@@ -119,7 +119,18 @@
 </div>
 
 
-      
+      <section class="columns">
+        <aside>
+          
+          <div class="author" itemscope itemtype="http://schema.org/Person">
+              <img class="author-image" src="https://pbs.twimg.com/profile_images/829333833015296001/L4V4Qc4c.jpg" alt="Dave Mackintosh">
+              <small>written by:</small>
+              <p class="author-name">Dave Mackintosh</p>
+          </div>
+
+        </aside>
+        <article>
+          
 
 <script type="application/ld+json">
     {
@@ -139,7 +150,7 @@
             ]
         },
         "publisher": {
-            "@type": "Person",
+            "@type": "Organization",
             "name": "Multicolour",
             "sameAs": [
                 "https://twitter.com/getmulticolour",
@@ -151,6 +162,13 @@
                 "url": "http://0.0.0.0:4000"
             }
         },
+        "image":{
+            "@type":"ImageObject",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
+            "height":"500",
+            "width":"1500"
+         },
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http://0.0.0.0:4000/blog/introducing-multicolour"
@@ -160,22 +178,17 @@
 </script>
 
 
-<article class="post content" itemscope itemtype="http://schema.org/BlogPosting">
+          <article class="post content" itemscope itemtype="http://schema.org/BlogPosting">
+              <header class="post-header">
+                  <p class="post-meta">
+                      <time datetime="2016-02-27T08:42:51+00:00" itemprop="datePublished">
+                        27 February 2016
+                      </time>
+                  </p>
+              </header>
 
-    <header class="post-header">
-        <p class="post-meta">
-            <time datetime="2016-02-27T08:42:51+00:00" itemprop="datePublished">
-              27 February 2016
-            </time>
-            
-            • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <span itemprop="name">Dave Mackintosh</span>
-              </span>
-            </p>
-    </header>
-
-    <div class="post-content" itemprop="articleBody">
-        <h1 id="introducing-multicolour">Introducing Multicolour</h1>
+              <div class="post-content" itemprop="articleBody">
+                  <h1 id="introducing-multicolour">Introducing Multicolour</h1>
 
 <p>Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those years ago has blossomed into a truly wonderful and expressive tool.</p>
 
@@ -207,10 +220,11 @@
 
 <p>Dave Mackintosh ~ Creator of Multicolour.</p>
 
-    </div>
+              </div>
 
-</article>
-
+          </article>
+        </article>
+      </section>
     </main>
 
     <footer class="site-footer">

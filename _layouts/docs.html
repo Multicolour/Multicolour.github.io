@@ -21,6 +21,7 @@
             {% if page.version %}
             {%
               include structured-data/documentation.html
+              headline=page.title
               version=page.version
               keywords=page.keywords
               content=page.content

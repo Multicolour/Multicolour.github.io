@@ -1,33 +1,53 @@
----
-layout: page
----
-{%
-  include structured-data/blog-post.html
-  title=page.title
-  category=page.category
-  keywords=page.keywords
-  content=page.content
-  link=page.permalink
-  date=page.date
-  author=page.author
-%}
+<!DOCTYPE html>
+<html>
 
-<article class="post content" itemscope itemtype="http://schema.org/BlogPosting">
+{% include head.html %}
 
-    <header class="post-header">
-        <p class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.date | date_to_long_string }}
-            </time>
-            {% if page.author %}
-            • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <span itemprop="name">{{ page.author }}</span>
-              </span>
-            {% endif %}</p>
-    </header>
+<body>
+    <main class="docs">
+      {% include inner-header.html %}
 
-    <div class="post-content" itemprop="articleBody">
-        {{ content }}
-    </div>
+      <section class="columns">
+        <aside>
+          {% assign author = site.data.authors[page.author] %}
+          <div class="author" itemscope itemtype="http://schema.org/Person">
+              <img class="author-image" src="{{ author.image }}" alt="{{ page.author }}">
+              <small>written by:</small>
+              <p class="author-name">{{ page.author }}</p>
+          </div>
 
-</article>
+        </aside>
+        <article>
+          {%
+            include structured-data/blog-post.html
+            title=page.title
+            category=page.category
+            keywords=page.keywords
+            content=page.content
+            link=page.permalink
+            date=page.date
+            author=page.author
+          %}
+
+          <article class="post content" itemscope itemtype="http://schema.org/BlogPosting">
+              <header class="post-header">
+                  <p class="post-meta">
+                      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                        {{ page.date | date_to_long_string }}
+                      </time>
+                  </p>
+              </header>
+
+              <div class="post-content" itemprop="articleBody">
+                  {{ content }}
+              </div>
+
+          </article>
+        </article>
+      </section>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>

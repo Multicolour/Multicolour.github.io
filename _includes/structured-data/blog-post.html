@@ -18,7 +18,7 @@
             ]
         },
         "publisher": {
-            "@type": "Person",
+            "@type": "Organization",
             "name": "Multicolour",
             "sameAs": [
                 "https://twitter.com/getmulticolour",
@@ -30,6 +30,13 @@
                 "url": "{{ site.url }}"
             }
         },
+        "image":{
+            "@type":"ImageObject",
+            "contentUrl":"{{ site.url }}/images/social-header.jpg",
+            "url":"{{ site.url }}",
+            "height":"500",
+            "width":"1500"
+         },
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "{{ include.link | prepend: site.url }}"
