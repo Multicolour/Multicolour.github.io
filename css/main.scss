@@ -2,7 +2,7 @@
 ---
 @charset "utf-8";
 
-// Vars and mixins //
+// Vars and mixins
 $vertical-rhythm: 5vh;
 $horizontal-rhythm: 2vw;
 $base-font-size: 1.7vw;
@@ -11,6 +11,12 @@ $base-font-size: 1.7vw;
 $colour_purple_base: #7423b5;
 $colour_purple_middle: #ab21b4;
 $colour_pink_base: #ff9999;
+
+$colour_primary_background: #FFF;
+$colour_alternative_background: #F6F6F6;
+
+$colour_primary_font: #000;
+$colour_secondary_font: #888;
 
 // Fonts.
 $primary_font_face: "georgia", Times, sans-serif;
@@ -22,9 +28,9 @@ $break-medium: 768px;
 $break-large: 1200px;
 
 @mixin media-query($width) {
-    @media screen and (max-width: $width) {
-        @content;
-    }
+  @media screen and (max-width: $width) {
+    @content;
+  }
 }
 
 @mixin gradient-background() {
@@ -38,7 +44,7 @@ $break-large: 1200px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "syntax-highlighting";
 @import "normalize";
-
+@import "navigation";
 @import "columns";
 @import "email-signup";
 @import "breadcrumbs";

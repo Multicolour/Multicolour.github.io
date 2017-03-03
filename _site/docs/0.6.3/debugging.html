@@ -68,7 +68,7 @@
 
 
 <body>
-    <main>
+    <main class="docs">
       <div class="general-nav">
     <nav>
         <a href="/" class="logo-link no-border" title="Multicolour - Rest API generator">
@@ -128,13 +128,48 @@
       <section class="columns">
         <aside>
             
-            <h2 class="docs-title">Docs <span>0.6.3</span></h2>
+            <h2 class="title">Docs <span>0.6.3</span></h2>
             
             <section class="search">
                 <input type="search" name="search" placeholder="search the docs">
             </section>
 
             
+            
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "assemblyVersion": "0.6.3",
+        "executableLibraryName": "multicolour",
+        "targetPlatform": "NodeJS",
+        "keywords": "multicolour, rest api, debugging",
+        "learningResourceType": ["learning activity"],
+        "wordCount": "156",
+        "url": "/docs/0.6.3/debugging",
+        "publisher": {
+            "@type": "Person",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/debugging"
+        },
+        "articleBody": "DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of internal objects and operations as they happen.You will see output similar tomulticolour:core Scanning /www/node/multicolour-app/content +2ms  multicolour:core Scanned and found: [  &quot;/www/node/multicolour-app/content/blueprints/abode.js&quot;,  &quot;/www/node/multicolour-app/content/blueprints/gadget.js&quot;,  &quot;/www/node/multicolour-app/content/blueprints/person.js&quot;,  &quot;/www/node/multicolour-app/node_modules/multicolour/lib/user-model.js&quot;] +0ms  multicolour:core Finished scanning +149msYou can also install the multicolour-hapi-vantage plugin to see HTTP logs in real time using the debug on command in the repl.While you can use the DEBUG environmental in conjunction with the repl, the output may appear garbled as the two share the same stdout.Starting your service with the vantage plugin installed will take you to a repl (and start your service in the background)Running with the debug mode set to on will show every HTTP request and response in pair to help with debugging."
+    }
+</script>
+
+
             <ul>
   
   

@@ -493,22 +493,58 @@ td,
 th {
   padding: 0; }
 
+.general-nav {
+  margin-top: 0;
+  background: #FFF;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1); }
+  .general-nav .logo-link,
+  .general-nav .menu {
+    vertical-align: top; }
+  .general-nav .logo-link {
+    float: left; }
+  .general-nav .menu {
+    float: right;
+    padding-top: 1em;
+    margin-bottom: 0; }
+  .general-nav nav,
+  .general-nav menu {
+    padding: 1.66667vh 2vw;
+    margin: 0; }
+
+nav {
+  padding: 0;
+  display: block;
+  overflow: hidden; }
+  nav a {
+    font-weight: 500; }
+  nav li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0 2vw; }
+
 .columns {
   width: 100%; }
   .columns aside,
   .columns article {
     display: inline-block;
     vertical-align: top; }
+  .columns article {
+    width: 70%;
+    padding: 2.5em; }
   .columns aside {
     width: 25%;
     height: 90vh;
-    background-color: #F9F9F9; }
+    background-color: #F6F6F6; }
     .columns aside h2, .columns aside li {
       padding-left: 2.5em; }
+    .columns aside small {
+      display: block;
+      font-family: "georgia", Times, sans-serif; }
     .columns aside li {
       list-style: none;
       border-left: 10px solid transparent;
-      padding: .7em 2em;
+      padding: .7em 1em .7em 2em;
       font-family: "Source Sans Pro", sans-serif; }
       .columns aside li.active {
         border-left-color: #7423b5;
@@ -521,13 +557,24 @@ th {
       display: block;
       color: #FFF;
       margin: 0;
-      padding: 1.5em 0;
+      padding: 1.5em 2.5em;
       font-family: "georgia", Times, sans-serif;
       font-weight: 100;
       background-color: #ab21b4; }
       .columns aside .title span {
         font-size: 1.3em;
         font-family: 700; }
+  .columns .search {
+    width: 100%;
+    margin: 0;
+    background: #333;
+    color: white;
+    font-family: "Source Sans Pro", sans-serif; }
+    .columns .search input {
+      background-color: transparent;
+      border: 0;
+      padding: 1em 1em 1em 2.5em;
+      outline: 0; }
 
 .email-signup {
   text-align: center;
@@ -580,12 +627,16 @@ th {
     vertical-align: top; }
   .breadcrumb-menu h1 {
     margin: .5em;
-    float: left; }
+    float: left;
+    font-family: "georgia", Times, sans-serif;
+    color: #888;
+    font-weight: 400; }
   .breadcrumb-menu .breadcrumbs {
     float: right;
     text-align: right;
     margin-bottom: 0;
-    font-family: "Source Sans Pro", sans-serif; }
+    font-family: "Source Sans Pro", sans-serif;
+    padding-top: 0.6em; }
     .breadcrumb-menu .breadcrumbs a {
       font-family: inherit;
       text-decoration: none;
@@ -594,27 +645,47 @@ th {
         font-weight: 700;
         color: #7423b5; }
 
-article {
+.docs article {
   width: 70%;
   padding: 2.5em; }
-  article h1 {
+  .docs article h1 {
     margin-top: 0; }
-  article small {
+  .docs article small {
     display: block;
     color: #333;
     margin: .3em 0 1em 0; }
 
-.search {
-  width: 100%;
-  margin: 0;
-  background: #333;
-  color: white;
-  font-family: "Source Sans Pro", sans-serif; }
-  .search input {
-    background-color: transparent;
-    border: 0;
-    padding: 1em 1em 1em 2.5em;
-    outline: 0; }
+.blog {
+  clear: both;
+  overflow: hidden; }
+  .blog .post {
+    padding: 1em;
+    width: 33.3333%; }
+    .blog .post .author-image {
+      border-radius: 50%;
+      max-width: 4em; }
+    .blog .post.post-narrow {
+      float: left;
+      background-color: #F6F6F6; }
+      .blog .post.post-narrow:nth-child(even) {
+        background-color: #fafafa; }
+    .blog .post.post-wide {
+      width: 100%;
+      display: block; }
+      .blog .post.post-wide .left,
+      .blog .post.post-wide .right {
+        display: inline-block;
+        vertical-align: top;
+        width: 47%;
+        padding: 1em; }
+      .blog .post.post-wide .right {
+        background-color: #F6F6F6; }
+  .blog .more-posts {
+    width: 100%;
+    text-align: center;
+    font-size: 1.7em;
+    font-family: "georgia", Times, sans-serif;
+    clear: both; }
 
 footer {
   padding: 1em;
@@ -656,11 +727,10 @@ body {
       line-height: 5.1vw; } }
 
 main {
-  padding: 5vh 0;
   background-color: #FFF; }
 
 h1 code, h2 code, h3 code {
-  background-color: rgba(150, 150, 150, 0.1) !important;
+  background-color: #F6F6F6 !important;
   color: #3D3E3F !important;
   font-size: 1.2em !important;
   text-shadow: none !important;
@@ -673,7 +743,6 @@ nav a,
 h1, h2, h3,
 .point-header {
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 700;
   color: #3D3E3F;
   margin: 1.4em 0; }
 
@@ -800,39 +869,6 @@ ul {
 .home-nav {
   text-align: center;
   margin: 5vh auto; }
-
-.general-nav {
-  margin-top: 0;
-  position: fixed;
-  top: 0;
-  left: 1rem;
-  right: 1rem;
-  background: #FFF;
-  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1); }
-  .general-nav .logo-link,
-  .general-nav .menu {
-    vertical-align: top; }
-  .general-nav .logo-link {
-    float: left; }
-  .general-nav .menu {
-    float: right;
-    padding-top: 1em;
-    margin-bottom: 0; }
-  .general-nav nav, .general-nav menu {
-    padding: 1.66667vh 2vw;
-    margin: 0; }
-
-nav {
-  padding: 0;
-  display: block;
-  overflow: hidden; }
-  nav a {
-    font-weight: 500; }
-  nav li {
-    display: inline;
-    list-style: none;
-    margin: 0;
-    padding: 0 2vw; }
 
 .point-header {
   margin-top: 0;

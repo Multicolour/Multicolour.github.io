@@ -7,19 +7,29 @@
     vertical-align: top;
   }
 
+  article {
+    width: 70%;
+    padding: 2.5em;
+  }
+
   aside {
     width: 25%;
     height: 90vh;
-    background-color: #F9F9F9;
+    background-color: $colour_alternative_background;
 
     h2, li {
       padding-left: 2.5em;
     }
 
+    small {
+      display: block;
+      font-family: $primary_font_face;
+    }
+
     li {
       list-style: none;
       border-left: 10px solid transparent;
-      padding: .7em 2em;
+      padding: .7em 1em .7em 2em;
       font-family: $secondary_font_face;
 
       &.active {
@@ -38,7 +48,7 @@
       display: block;
       color: #FFF;
       margin: 0;
-      padding: 1.5em 0;
+      padding: 1.5em 2.5em;
       font-family: $primary_font_face;
       font-weight: 100;
       background-color: $colour_purple_middle;
@@ -47,6 +57,21 @@
         font-size: 1.3em;
         font-family: 700;
       }
+    }
+  }
+
+  .search {
+    width: 100%;
+    margin: 0;
+    background: #333;
+    color: white;
+    font-family: $secondary_font_face;
+
+    input {
+      background-color: transparent;
+      border: 0;
+      padding: 1em 1em 1em 2.5em;
+      outline: 0;
     }
   }
 }

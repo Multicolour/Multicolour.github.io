@@ -26,13 +26,12 @@ body {
 }
 
 main {
-  padding: $vertical-rhythm 0;
-  background-color: #FFF;
+  background-color: $colour_primary_background;
 }
 
 h1, h2, h3 {
   code {
-    background-color: rgba(150, 150, 150, .1) !important;
+    background-color: $colour_alternative_background !important;
     color: #3D3E3F !important;
     font-size: 1.2em !important;
     text-shadow: none !important;
@@ -48,7 +47,6 @@ nav a,
 h1, h2, h3,
 .point-header {
   font-family: $secondary_font_face;
-  font-weight: 700;
   color: #3D3E3F;
   margin: 1.4em 0;
 }
@@ -219,53 +217,6 @@ ul {
 .home-nav {
   text-align: center;
   margin: $vertical-rhythm auto;
-}
-
-.general-nav {
-  margin-top: 0;
-  position: fixed;
-  top: 0;
-  left: 1rem;
-  right: 1rem;
-  background: #FFF;
-  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
-
-  .logo-link,
-  .menu {
-    vertical-align: top;
-  }
-
-  .logo-link {
-    float: left;
-  }
-
-  .menu {
-    float: right;
-    padding-top: 1em;
-    margin-bottom: 0;
-  }
-
-  nav, menu {
-    padding: $vertical-rhythm / 3 $horizontal-rhythm;
-    margin: 0;
-  }
-}
-
-nav {
-  padding: 0;
-  display: block;
-  overflow: hidden;
-
-  a {
-    font-weight: 500;
-  }
-
-  li {
-    display: inline;
-    list-style: none;
-    margin: 0;
-    padding: 0 $horizontal-rhythm;
-  }
 }
 
 .point-header {

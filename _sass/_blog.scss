@@ -1,0 +1,49 @@
+.blog {
+  clear: both;
+  overflow: hidden;
+
+  .post {
+    padding: 1em;
+    width: 33.3333%;
+
+    .author-image {
+      border-radius: 50%;
+      max-width: 4em;
+    }
+
+    &.post-narrow {
+      float: left;
+      background-color: $colour_alternative_background;
+
+      &:nth-child(even) {
+        background-color: lighten($colour_alternative_background, 1.75%);
+      }
+    }
+
+    &.post-wide {
+      width: 100%;
+      display: block;
+
+      .left,
+      .right {
+        display: inline-block;
+        vertical-align: top;
+        width: 47%;
+        padding: 1em;
+      }
+
+      .right {
+        background-color: $colour_alternative_background;
+      }
+    }
+  }
+
+  .more-posts {
+    width: 100%;
+    text-align: center;
+    font-size: 1.7em;
+    font-family: $primary_font_face;
+    clear: both;
+  }
+
+}

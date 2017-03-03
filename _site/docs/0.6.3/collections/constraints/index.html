@@ -68,7 +68,7 @@
 
 
 <body>
-    <main>
+    <main class="docs">
       <div class="general-nav">
     <nav>
         <a href="/" class="logo-link no-border" title="Multicolour - Rest API generator">
@@ -134,13 +134,48 @@
       <section class="columns">
         <aside>
             
-            <h2 class="docs-title">Docs <span>0.6.3</span></h2>
+            <h2 class="title">Docs <span>0.6.3</span></h2>
             
             <section class="search">
                 <input type="search" name="search" placeholder="search the docs">
             </section>
 
             
+            
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "assemblyVersion": "0.6.3",
+        "executableLibraryName": "multicolour",
+        "targetPlatform": "NodeJS",
+        "keywords": "codeless business logic, multicolour constraints",
+        "learningResourceType": ["learning activity"],
+        "wordCount": "529",
+        "url": "/docs/0.6.3/collections/constraints/",
+        "publisher": {
+            "@type": "Person",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/collections/constraints/"
+        },
+        "articleBody": "ConstraintsA constraint in Multicolour is a simple string in your models to define a limiting behaviour on for certain types of actions, such as making sure when something is created it gets assigned the logged in user’s identifier for ownership.Constraints exist to replace simple, common business logic without having to write JavaScript and they come in a few formats that is described in the following spec.Specification{  [verb String]: {    [key String]: Function|ComparativeString|ConstraintObject,  }}Where ComparativeString is a String with the following format:const comparatives = new Map([  [&quot;&amp;lt;&quot;, &quot;&amp;lt;&quot;],  [&quot;&amp;gt;&quot;, &quot;&amp;gt;&quot;],  [&quot;&amp;lt;=&quot;, &quot;&amp;lt;=&quot;],  [&quot;&amp;gt;=&quot;, &quot;&amp;gt;=&quot;],  [&quot;!&quot;, &quot;!&quot;],  [&quot;^&quot;, &quot;startsWith&quot;],  [&quot;$&quot;, &quot;endsWith&quot;],  [&quot;%&quot;, &quot;like&quot;]])[Comparative?] path.to.data.in.request.objectand ConstraintObject is an Object with the following format:{  [key String]: {    compile: Bool false,    value: compile ? ComparativeString : (String|Number|null)  },}Example and common uses            The most common constraint is ensuring a user has sufficient privileges to read      write something and would come in the form of      {  user: &quot;auth.credentials.user.id&quot;}The way this works is the String is a path to an object on the request object, this is in-fact setting the constraint to the value of request.auth.credentials.user.id in the incoming request.More examples{  role: &quot;auth.session.role&quot;}{  name: {    compile: false,    value: &quot;Multicolour&quot;  }}{  createdAt: &quot;&amp;gt;= &quot; + new Date(2015)}{  age: {    compile: false,    value: &quot;&amp;gt;= 18&quot;  }}Verbs and constraintsYou must specify your constraints on all the http verbs you wish to constrain. The verbs must appear as lowercase.Example:...constraints: {  get: { public: { compile: false, value: true } },  post: { user: &quot;auth.credentials.user.id&quot; },  put: { user: &quot;auth.credentials.user.id&quot; },  delete: { user: &quot;auth.credentials.user.id&quot; },  patch: { user: &quot;auth.credentials.user.id&quot; }},..."
+    }
+</script>
+
+
             <ul>
   
   

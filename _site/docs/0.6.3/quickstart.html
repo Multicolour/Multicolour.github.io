@@ -68,7 +68,7 @@
 
 
 <body>
-    <main>
+    <main class="docs">
       <div class="general-nav">
     <nav>
         <a href="/" class="logo-link no-border" title="Multicolour - Rest API generator">
@@ -128,13 +128,48 @@
       <section class="columns">
         <aside>
             
-            <h2 class="docs-title">Docs <span>0.6.3</span></h2>
+            <h2 class="title">Docs <span>0.6.3</span></h2>
             
             <section class="search">
                 <input type="search" name="search" placeholder="search the docs">
             </section>
 
             
+            
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "assemblyVersion": "0.6.3",
+        "executableLibraryName": "multicolour",
+        "targetPlatform": "NodeJS",
+        "keywords": "",
+        "learningResourceType": ["learning activity"],
+        "wordCount": "214",
+        "url": "/docs/0.6.3/quickstart",
+        "publisher": {
+            "@type": "Person",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/quickstart"
+        },
+        "articleBody": "Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.multicolour init .in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, config.js, app.js and content/blueprints/example.jsBlueprintsMulticolour stands on the shoulders of giants, our ORM is the popular Waterline ORM. It has a rich api for creating database schemas without losing control of the underlying technology.Multicolour uses this to allow you to write JSON and get a whole collection of software. If you’ve run multicolour init you’ll see a content/ folder which also contains a blueprints/ folder where you’ll see example.js.  You said I write JSON to get my stuffWe’re not lying, you write JSON and you get your API and frontend but you get .js files because you can expand the generated CRUD with your business logic by using the lifecycle events and custom functions by writing normal JavaScript.Read more about writing blueprints and extending behaviour in the Blueprints API reference and on the Waterline Blueprints documentation."
+    }
+</script>
+
+
             <ul>
   
   

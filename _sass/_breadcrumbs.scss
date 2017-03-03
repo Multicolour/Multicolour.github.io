@@ -10,6 +10,9 @@
   h1 {
     margin: .5em;
     float: left;
+    font-family: $primary_font_face;
+    color: $colour_secondary_font;
+    font-weight: 400;
   }
 
   .breadcrumbs {
@@ -17,6 +20,7 @@
     text-align: right;
     margin-bottom: 0;
     font-family: $secondary_font_face;
+    padding-top: 0.6em;
 
     a {
       font-family: inherit;

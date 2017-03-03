@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Introducing Multicolour
-date: 2016-02-27 08:42:51 +0000
+title: Branding and voice of Multicolour
+date: 2017-02-27 08:42:51 +0000
 keywords: branding, logo, company, startup
 author: Dave Mackintosh
-permalink: /blog/introducing-multicolour
+permalink: /blog/:title
 breadcrumbs:
   - permalink: /blog/
     name: multicolour blog
 ---
 
-# Introducing Multicolour
+# Branding and voice of Multicolour
 
 Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those years ago has blossomed into a truly wonderful and expressive tool.
 

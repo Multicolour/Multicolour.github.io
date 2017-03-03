@@ -5,13 +5,13 @@
     <description>Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Mar 2017 22:48:14 +0000</pubDate>
-    <lastBuildDate>Thu, 02 Mar 2017 22:48:14 +0000</lastBuildDate>
+    <pubDate>Fri, 03 Mar 2017 15:50:42 +0000</pubDate>
+    <lastBuildDate>Fri, 03 Mar 2017 15:50:42 +0000</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
-        <title>Introducing Multicolour</title>
-        <description>&lt;h1 id=&quot;introducing-multicolour&quot;&gt;Introducing Multicolour&lt;/h1&gt;
+        <title>Branding and voice of Multicolour</title>
+        <description>&lt;h1 id=&quot;branding-and-voice-of-multicolour&quot;&gt;Branding and voice of Multicolour&lt;/h1&gt;
 
 &lt;p&gt;Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those years ago has blossomed into a truly wonderful and expressive tool.&lt;/p&gt;
 
@@ -44,8 +44,8 @@
 &lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Feb 2017 08:42:51 +0000</pubDate>
-        <link>http://0.0.0.0:4000/blog/introducing-multicolour</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/blog/introducing-multicolour</guid>
+        <link>http://0.0.0.0:4000/blog/multicolour-voice</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/multicolour-voice</guid>
         
         
       </item>
@@ -85,8 +85,131 @@
 &lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Feb 2017 08:42:51 +0000</pubDate>
-        <link>http://0.0.0.0:4000/blog/multicolour-branding-voice</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/blog/multicolour-branding-voice</guid>
+        <link>http://0.0.0.0:4000/blog/multicolour-branding-voice-(copy)</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/multicolour-branding-voice-(copy)</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Branding and voice of Multicolour</title>
+        <description>&lt;h1 id=&quot;branding-and-voice-of-multicolour&quot;&gt;Branding and voice of Multicolour&lt;/h1&gt;
+
+&lt;p&gt;Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those years ago has blossomed into a truly wonderful and expressive tool.&lt;/p&gt;
+
+&lt;p&gt;That’s where I started with the branding and the voice of Multicolour, technically it’s 7 years old and one of my first NodeJS projects and it was a solution in problem space to a usual blocker to mine and many colleagues workflow. I decided I’d build it out, to replace the “temporary” part of it with “permanent”.&lt;/p&gt;
+
+&lt;p&gt;The first version of the product was a big mash of code into one file and lo and behold it worked first time. Was fast, simple and a totally viable product. I had made a generator and that’s where I started with the logo.&lt;/p&gt;
+
+&lt;p&gt;The old logo, a modified generator symbol commonly seen in electronic designs. That’s where I started, adding colour that represented the night time dedication I had to building the project out and the fact it was a generator.&lt;/p&gt;
+
+&lt;p&gt;The logo stayed the same for about a year but now, with the 0.4.0 release of Multicolour it was time for a change that matched the product.&lt;/p&gt;
+
+&lt;p&gt;This logo no longer worked for what was no longer a purely technical solution to a technical problem but rather a simple solution to a complex problem.&lt;/p&gt;
+
+&lt;p&gt;I tried to create a new logo many, many times and failed. What I had in my mind simply couldn’t come out. I wanted to communicate the simple, trustworthy and production ready aspect of Multicolour and with that I created a &lt;a href=&quot;https://getmulticolour.com/branding-brief&quot;&gt;simple brief&lt;/a&gt;, set some cash aside and put the feelers out for a &lt;strong&gt;proper&lt;/strong&gt; designer to do the branding.&lt;/p&gt;
+
+&lt;p&gt;I had an overwhelming response from some of the designers I’ve admired in the industry for years but in the end I decided to go with Dan Edwards at No Divide. I’ve followed No Divide for a couple of years and &lt;strong&gt;always&lt;/strong&gt; loved their work and never heard a bad thing about them. I was like a smitten puppy when I sent the email asking if they’d help me create a vocal brand.&lt;/p&gt;
+
+&lt;p&gt;Within 2 weeks, I had seen sketches, experiments, ideas built upon and earlier this week I got the final version.&lt;/p&gt;
+
+&lt;p&gt;😍 it’s a beauty, it communicates everything I wanted the logo to communicate. It has depth in 2d and 3D space. It works in just about every colour, in just about every place. Just like Multicolour does.&lt;/p&gt;
+
+&lt;p&gt;This is the next chapter of Multicolour, an already production ready API generator in use by several companies around the world. With a legitimate logo.&lt;/p&gt;
+
+&lt;p&gt;Multicolour 0.4.0 is a massive release for the project. With many new features, bug fixes, performance and security fixes it’s by far the coolest release yet and it makes total sense that it comes with a new logo and new website to reflect the generation of this product.&lt;/p&gt;
+
+&lt;p&gt;If you need branding done, I spent 2 weeks constantly thrilled by &lt;a href=&quot;https://nodividestudio.com&quot;&gt;No Divide&lt;/a&gt;’s work and presentation. I can’t recommend them and their work enough ❤️&lt;/p&gt;
+
+&lt;p&gt;Onto the next chapter of Multicolour,&lt;/p&gt;
+
+&lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Feb 2017 08:42:51 +0000</pubDate>
+        <link>http://0.0.0.0:4000/blog/multicolour-branding-voice-(another-copy)</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/multicolour-branding-voice-(another-copy)</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Branding and voice of Multicolour</title>
+        <description>&lt;h1 id=&quot;branding-and-voice-of-multicolour&quot;&gt;Branding and voice of Multicolour&lt;/h1&gt;
+
+&lt;p&gt;Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those years ago has blossomed into a truly wonderful and expressive tool.&lt;/p&gt;
+
+&lt;p&gt;That’s where I started with the branding and the voice of Multicolour, technically it’s 7 years old and one of my first NodeJS projects and it was a solution in problem space to a usual blocker to mine and many colleagues workflow. I decided I’d build it out, to replace the “temporary” part of it with “permanent”.&lt;/p&gt;
+
+&lt;p&gt;The first version of the product was a big mash of code into one file and lo and behold it worked first time. Was fast, simple and a totally viable product. I had made a generator and that’s where I started with the logo.&lt;/p&gt;
+
+&lt;p&gt;The old logo, a modified generator symbol commonly seen in electronic designs. That’s where I started, adding colour that represented the night time dedication I had to building the project out and the fact it was a generator.&lt;/p&gt;
+
+&lt;p&gt;The logo stayed the same for about a year but now, with the 0.4.0 release of Multicolour it was time for a change that matched the product.&lt;/p&gt;
+
+&lt;p&gt;This logo no longer worked for what was no longer a purely technical solution to a technical problem but rather a simple solution to a complex problem.&lt;/p&gt;
+
+&lt;p&gt;I tried to create a new logo many, many times and failed. What I had in my mind simply couldn’t come out. I wanted to communicate the simple, trustworthy and production ready aspect of Multicolour and with that I created a &lt;a href=&quot;https://getmulticolour.com/branding-brief&quot;&gt;simple brief&lt;/a&gt;, set some cash aside and put the feelers out for a &lt;strong&gt;proper&lt;/strong&gt; designer to do the branding.&lt;/p&gt;
+
+&lt;p&gt;I had an overwhelming response from some of the designers I’ve admired in the industry for years but in the end I decided to go with Dan Edwards at No Divide. I’ve followed No Divide for a couple of years and &lt;strong&gt;always&lt;/strong&gt; loved their work and never heard a bad thing about them. I was like a smitten puppy when I sent the email asking if they’d help me create a vocal brand.&lt;/p&gt;
+
+&lt;p&gt;Within 2 weeks, I had seen sketches, experiments, ideas built upon and earlier this week I got the final version.&lt;/p&gt;
+
+&lt;p&gt;😍 it’s a beauty, it communicates everything I wanted the logo to communicate. It has depth in 2d and 3D space. It works in just about every colour, in just about every place. Just like Multicolour does.&lt;/p&gt;
+
+&lt;p&gt;This is the next chapter of Multicolour, an already production ready API generator in use by several companies around the world. With a legitimate logo.&lt;/p&gt;
+
+&lt;p&gt;Multicolour 0.4.0 is a massive release for the project. With many new features, bug fixes, performance and security fixes it’s by far the coolest release yet and it makes total sense that it comes with a new logo and new website to reflect the generation of this product.&lt;/p&gt;
+
+&lt;p&gt;If you need branding done, I spent 2 weeks constantly thrilled by &lt;a href=&quot;https://nodividestudio.com&quot;&gt;No Divide&lt;/a&gt;’s work and presentation. I can’t recommend them and their work enough ❤️&lt;/p&gt;
+
+&lt;p&gt;Onto the next chapter of Multicolour,&lt;/p&gt;
+
+&lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Feb 2017 08:42:51 +0000</pubDate>
+        <link>http://0.0.0.0:4000/blog/multicolour-branding-voice-(3rd-copy)</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/multicolour-branding-voice-(3rd-copy)</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Introducing Multicolour</title>
+        <description>&lt;h1 id=&quot;introducing-multicolour&quot;&gt;Introducing Multicolour&lt;/h1&gt;
+
+&lt;p&gt;Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those years ago has blossomed into a truly wonderful and expressive tool.&lt;/p&gt;
+
+&lt;p&gt;That’s where I started with the branding and the voice of Multicolour, technically it’s 7 years old and one of my first NodeJS projects and it was a solution in problem space to a usual blocker to mine and many colleagues workflow. I decided I’d build it out, to replace the “temporary” part of it with “permanent”.&lt;/p&gt;
+
+&lt;p&gt;The first version of the product was a big mash of code into one file and lo and behold it worked first time. Was fast, simple and a totally viable product. I had made a generator and that’s where I started with the logo.&lt;/p&gt;
+
+&lt;p&gt;The old logo, a modified generator symbol commonly seen in electronic designs. That’s where I started, adding colour that represented the night time dedication I had to building the project out and the fact it was a generator.&lt;/p&gt;
+
+&lt;p&gt;The logo stayed the same for about a year but now, with the 0.4.0 release of Multicolour it was time for a change that matched the product.&lt;/p&gt;
+
+&lt;p&gt;This logo no longer worked for what was no longer a purely technical solution to a technical problem but rather a simple solution to a complex problem.&lt;/p&gt;
+
+&lt;p&gt;I tried to create a new logo many, many times and failed. What I had in my mind simply couldn’t come out. I wanted to communicate the simple, trustworthy and production ready aspect of Multicolour and with that I created a &lt;a href=&quot;https://getmulticolour.com/branding-brief&quot;&gt;simple brief&lt;/a&gt;, set some cash aside and put the feelers out for a &lt;strong&gt;proper&lt;/strong&gt; designer to do the branding.&lt;/p&gt;
+
+&lt;p&gt;I had an overwhelming response from some of the designers I’ve admired in the industry for years but in the end I decided to go with Dan Edwards at No Divide. I’ve followed No Divide for a couple of years and &lt;strong&gt;always&lt;/strong&gt; loved their work and never heard a bad thing about them. I was like a smitten puppy when I sent the email asking if they’d help me create a vocal brand.&lt;/p&gt;
+
+&lt;p&gt;Within 2 weeks, I had seen sketches, experiments, ideas built upon and earlier this week I got the final version.&lt;/p&gt;
+
+&lt;p&gt;😍 it’s a beauty, it communicates everything I wanted the logo to communicate. It has depth in 2d and 3D space. It works in just about every colour, in just about every place. Just like Multicolour does.&lt;/p&gt;
+
+&lt;p&gt;This is the next chapter of Multicolour, an already production ready API generator in use by several companies around the world. With a legitimate logo.&lt;/p&gt;
+
+&lt;p&gt;Multicolour 0.4.0 is a massive release for the project. With many new features, bug fixes, performance and security fixes it’s by far the coolest release yet and it makes total sense that it comes with a new logo and new website to reflect the generation of this product.&lt;/p&gt;
+
+&lt;p&gt;If you need branding done, I spent 2 weeks constantly thrilled by &lt;a href=&quot;https://nodividestudio.com&quot;&gt;No Divide&lt;/a&gt;’s work and presentation. I can’t recommend them and their work enough ❤️&lt;/p&gt;
+
+&lt;p&gt;Onto the next chapter of Multicolour,&lt;/p&gt;
+
+&lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Feb 2016 08:42:51 +0000</pubDate>
+        <link>http://0.0.0.0:4000/blog/introducing-multicolour</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/introducing-multicolour</guid>
         
         
       </item>
