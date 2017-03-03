@@ -15,6 +15,18 @@
     font-weight: 400;
   }
 
+  .breadcrumbs-logo {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      border: 0;
+    }
+  }
+
   .breadcrumbs {
     float: right;
     text-align: right;
@@ -22,13 +34,20 @@
     font-family: $secondary_font_face;
     padding-top: 0.6em;
 
+    a,
+    .arrow {
+      color: lighten($colour_secondary_font, 5%);
+      font-size: .8em;
+    }
+
     a {
       font-family: inherit;
       text-decoration: none;
       border: 0;
+      padding: 0 1em;
 
       &.current {
-        font-weight: 700;
+        font-weight: 600;
         color: $colour_purple_base;
       }
     }
