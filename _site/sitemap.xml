@@ -105,6 +105,12 @@
      </url>
   
     <url>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/collections/migration/</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+     </url>
+  
+    <url>
       <loc>http://0.0.0.0:4000/docs/0.6.3/debugging</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
@@ -136,6 +142,12 @@
   
     <url>
       <loc>http://0.0.0.0:4000/docs/0.6.3/routing/</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+     </url>
+  
+    <url>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/routing/results/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>

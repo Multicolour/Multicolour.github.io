@@ -145,6 +145,14 @@ ul {
   padding: 0;
 }
 
+table {
+  th,
+  td {
+    padding: .7em;
+    border: 1px solid lighten($colour_secondary_font, 33%);
+  }
+}
+
 .simplified-example {
   text-align: center;
 

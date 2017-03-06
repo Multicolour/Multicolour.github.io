@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Multicolour quickstart</title>
+  <title>Multicolour documentation database migration</title>
 
   <!-- Base -->
 <meta name="identifier-url" content="site.url" />
-<meta name="title" content="Multicolour quickstart" />
-<meta name="description" content="Get started with Multicolour instantly, create a REST API in less than 5 minutes." />
-<meta name="abstract" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with." />
-<meta name="keywords" content="multicolour, rest api, generator, nodejs" />
+<meta name="title" content="Multicolour documentation database migration" />
+<meta name="description" content="Documentation on the database migration logic, caveats of automatic data migration and how to connect Multicolour to an existing database." />
+<meta name="abstract" content="Migrating data is difficult, unsafe and generally not recommended but in a development environment it’s very helpful while you’re changing data types, column..." />
+<meta name="keywords" content="database, migration, data, existing database, automatic" />
 <meta name="author" content="New World Code Ltd" />
 <meta name="revisit-after" content="7" />
 <meta name="language" content="en" />
@@ -24,21 +24,21 @@
 <!-- Social -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@getmulticolour">
-<meta name="twitter:title" content="Multicolour quickstart">
-<meta name="twitter:description" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.">
+<meta name="twitter:title" content="Multicolour documentation database migration">
+<meta name="twitter:description" content="Migrating data is difficult, unsafe and generally not recommended but in a development environment it’s very helpful while you’re changing data types, column...">
 <meta name="twitter:creator" content="@getmulticolour">
 <meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta itemprop="name" content="Multicolour quickstart">
-<meta itemprop="description" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.">
+<meta itemprop="name" content="Multicolour documentation database migration">
+<meta itemprop="description" content="Migrating data is difficult, unsafe and generally not recommended but in a development environment it’s very helpful while you’re changing data types, column...">
 <meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta property="og:title" content="Multicolour quickstart" />
+<meta property="og:title" content="Multicolour documentation database migration" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
-<meta property="og:description" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with." />
-<meta property="og:site_name" content="Multicolour quickstart" />
+<meta property="og:description" content="Migrating data is difficult, unsafe and generally not recommended but in a development environment it’s very helpful while you’re changing data types, column..." />
+<meta property="og:site_name" content="Multicolour documentation database migration" />
 
 <link rel="icon" href="/images/iconography/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
@@ -63,7 +63,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/quickstart">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/collections/migration/">
   <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
@@ -90,7 +90,7 @@
     </nav>
 
     <menu class="breadcrumb-menu">
-        <h1>Multicolour quickstart</h1>
+        <h1>Multicolour documentation database migration</h1>
 
         <div class="breadcrumbs">
   <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
@@ -113,11 +113,17 @@
 
   <span class="arrow">&rarr;</span>
   
+  <a href="/docs/0.6.3/collections/" title="collections">
+    collections
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
   
 
-  <a class="current" href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
+  <a class="current" href="/docs/0.6.3/collections/migration/" title="Multicolour documentation database migration">
     
-    Quickstart
+    Database migration
     
   </a>
 </div>
@@ -142,15 +148,15 @@
     {
         "@context": "http://schema.org",
         "@type": "APIReference",
-        "headline": "Multicolour quickstart",
+        "headline": "Multicolour documentation database migration",
         "assemblyVersion": "0.6.3",
         "executableLibraryName": "multicolour",
         "targetPlatform": "NodeJS",
-        "keywords": "",
+        "keywords": "database, migration, data, existing database, automatic",
         "learningResourceType": ["learning activity"],
-        "wordCount": "214",
+        "wordCount": "64",
         "datePublished": "2017-03-06 22:04:24 +0000",
-        "url": "/docs/0.6.3/quickstart",
+        "url": "/docs/0.6.3/collections/migration/",
         "publisher": {
             "@type": "Organization",
             "name": "Multicolour",
@@ -173,9 +179,9 @@
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://0.0.0.0:4000/docs/0.6.3/quickstart"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/collections/migration/"
         },
-        "articleBody": "Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.multicolour init .in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, config.js, app.js and content/blueprints/example.jsBlueprintsMulticolour stands on the shoulders of giants, our ORM is the popular Waterline ORM. It has a rich api for creating database schemas without losing control of the underlying technology.Multicolour uses this to allow you to write JSON and get a whole collection of software. If you’ve run multicolour init you’ll see a content/ folder which also contains a blueprints/ folder where you’ll see example.js.  You said I write JSON to get my stuffWe’re not lying, you write JSON and you get your API and frontend but you get .js files because you can expand the generated CRUD with your business logic by using the lifecycle events and custom functions by writing normal JavaScript.Read more about writing blueprints and extending behaviour in the Blueprints API reference and on the Waterline Blueprints documentation."
+        "articleBody": "Migrating data is difficult, unsafe and generally not recommended but in a development environment it’s very helpful while you’re changing data types, columns names, adding new collections, etc.This is why Multicolour has automatic data migration built in, when your environment permits your database changes will be automatically rolled out.To enable database migration simply set your NODE_ENV environmental variable to development."
     }
 </script>
 
@@ -246,10 +252,8 @@
     <li
       data-keywords="database, migration, data, existing database, automatic"
       
-      >
-      <a href="/docs/0.6.3/collections/migration/" title="Multicolour documentation database migration">
+      class="active">
         Database migration
-      </a>
       
 
       
@@ -270,8 +274,10 @@
     <li
       data-keywords=""
       
-      class="active">
+      >
+      <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
         Quickstart
+      </a>
       
 
       
@@ -342,27 +348,11 @@
             
         </aside>
         <article>
-          <h1 id="getting-started">Getting Started</h1>
-<p>Multicolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.</p>
+          <p>Migrating data is difficult, unsafe and generally not recommended but in a development environment it’s very helpful while you’re changing data types, columns names, adding new collections, etc.</p>
 
-<p><code class="highlighter-rouge">multicolour init .</code></p>
+<p>This is why Multicolour has automatic data migration built in, when your environment permits your database changes will be automatically rolled out.</p>
 
-<p>in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, <code class="highlighter-rouge">config.js</code>, <code class="highlighter-rouge">app.js</code> and <code class="highlighter-rouge">content/blueprints/example.js</code></p>
-
-<h2 id="blueprints">Blueprints</h2>
-
-<p>Multicolour stands on the shoulders of giants, our ORM is the popular <a href="https://github.com/balderdashy/waterline">Waterline ORM</a>. It has a rich api for creating database schemas without losing control of the underlying technology.</p>
-
-<p>Multicolour uses this to allow you to write JSON and get a whole collection of software. If you’ve run <code class="highlighter-rouge">multicolour init</code> you’ll see a <code class="highlighter-rouge">content/</code> folder which also contains a <code class="highlighter-rouge">blueprints/</code> folder where you’ll see <code class="highlighter-rouge">example.js</code>.</p>
-
-<blockquote>
-  <p>You said I write JSON to get my stuff</p>
-</blockquote>
-
-<p>We’re not lying, you write JSON and you get your API and frontend but you get <code class="highlighter-rouge">.js</code> files because you can expand the generated <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> with your business logic by using the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/lifecycle-callbacks.md">lifecycle</a> events and <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/instance-class-methods.md">custom functions</a> by writing normal JavaScript.</p>
-
-<p>Read more about writing blueprints and extending behaviour in the <a href="./Blueprints">Blueprints API reference</a> and on the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/models.md">Waterline Blueprints documentation</a>.</p>
-
+<p>To enable database migration simply set your <code class="highlighter-rouge">NODE_ENV</code> environmental variable to <code class="highlighter-rouge">development</code>.</p>
 
         </article>
       </section>

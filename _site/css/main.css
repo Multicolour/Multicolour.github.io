@@ -778,7 +778,7 @@ body {
   line-height: 2.38vw;
   -webkit-font-smoothing: antialiased;
   padding: 1rem;
-  color: #000;
+  color: #444;
   background: #7423b5;
   background: -moz-linear-gradient(top, #ff9999 0%, #ab21b4 27%, #7423b5 100%);
   background: -webkit-linear-gradient(top, #ff9999 0%, #ab21b4 27%, #7423b5 100%);
@@ -804,7 +804,7 @@ time {
 
 h1 code, h2 code, h3 code {
   background-color: #F6F6F6 !important;
-  color: #000 !important;
+  color: #444 !important;
   font-size: 1.2em !important;
   text-shadow: none !important;
   word-break: break-word; }
@@ -816,7 +816,7 @@ nav a,
 h1, h2, h3,
 .point-header {
   font-family: "Source Sans Pro", sans-serif;
-  color: #000;
+  color: #444;
   margin: 1.4em 0; }
 
 h1 {
@@ -878,6 +878,11 @@ a {
 
 ul {
   padding: 0; }
+
+table th,
+table td {
+  padding: .7em;
+  border: 1px solid gainsboro; }
 
 .simplified-example {
   text-align: center; }
