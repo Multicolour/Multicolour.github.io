@@ -1,6 +1,12 @@
-<section class="sponsor-logos">
+<section class="sponsors-logos row">
     <h3>Current Sponsors</h3>
-    <a href="https://newworld.codes" rel="nofollow noopener noreferrer" class="no-border">
-        <img src="images/sponsors/nwc.svg" width="150" alt="New World Code – NodeJS and JavaScript agency." />
-    </a>
+    <div class="sponsors">
+      {% for sponsor in site.data.sponsors %}
+      <div class="sponsor">
+        <a href="{{ sponsor.link }}" rel="nofollow noopener noreferrer" class="no-border">
+            <img src="{{ sponsor.logo }}" alt="{{ sponsor.description }}" />
+        </a>
+      </div>
+      {% endfor %}
+    </div>
 </section>

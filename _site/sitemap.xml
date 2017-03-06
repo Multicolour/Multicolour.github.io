@@ -39,6 +39,12 @@
 
   
     <url>
+      <loc>http://0.0.0.0:4000/404.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+     </url>
+  
+    <url>
       <loc>http://0.0.0.0:4000/blog/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>

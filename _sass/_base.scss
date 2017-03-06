@@ -15,12 +15,12 @@ body {
   line-height: $base-font-size * 1.4;
   -webkit-font-smoothing: antialiased;
   padding: 1rem;
-  color: #3D3E3F;
+  color: $colour_primary_font;
 
   @include gradient-background();
 
   @media screen and (max-width: $break-small) {
-    font-size: $base-font-size * 2;
+    font-size: $base-font-size * 3;
     line-height: ($base-font-size * 2) * 1.5;
   }
 }
@@ -32,7 +32,7 @@ main {
 h1, h2, h3 {
   code {
     background-color: $colour_alternative_background !important;
-    color: #3D3E3F !important;
+    color: $colour_primary_font !important;
     font-size: 1.2em !important;
     text-shadow: none !important;
     word-break: break-word;
@@ -47,7 +47,7 @@ nav a,
 h1, h2, h3,
 .point-header {
   font-family: $secondary_font_face;
-  color: #3D3E3F;
+  color: $colour_primary_font;
   margin: 1.4em 0;
 }
 
@@ -151,29 +151,9 @@ ul {
   margin: 7vh auto;
 
   @media screen and (max-width: $break-small) {
+    width: 90%;
     margin: 0 auto;
     margin-bottom: $vertical-rhythm / 2;
-  }
-}
-
-.small {
-  font-size: $base-font-size / 1.5;
-  line-height: ($base-font-size / 1.5) * 1.7;
-
-  @media screen and (max-width: $break-small) {
-    font-size: $base-font-size * 1.4;
-    line-height: ($base-font-size * 1.4) * 1.7;
-  }
-}
-
-.really-small {
-  margin-top: .5em;
-  font-size: $base-font-size / 2;
-
-  @media screen and (max-width: $break-small) {
-    margin-top: 1vh;
-    font-size: $base-font-size;
-    line-height: $base-font-size * 1.5;
   }
 }
 
@@ -185,37 +165,6 @@ ul {
   @media screen and (max-width: $break-small) {
     width: 60vw;
   }
-}
-
-.row {
-  clear: both;
-  overflow: hidden;
-
-  img, .text {
-    display: inline-block;
-    vertical-align: top;
-    width: 48%;
-
-    &:first-child {
-      margin-right: 3%;
-    }
-
-    @media screen and (max-width: $break-small) {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-  img {
-    @media screen and (max-width: $break-small) {
-      display: none;
-    }
-  }
-}
-
-.home-nav {
-  text-align: center;
-  margin: $vertical-rhythm auto;
 }
 
 .point-header {
@@ -232,47 +181,4 @@ ul {
   .getting-started {
     margin-top: $vertical-rhythm * 3;
   }
-}
-
-.home ul.small {
-  margin-left: 1em;
-  padding: 0;
-}
-
-.home main {
-  padding-bottom: 0;
-}
-
-.home .sponsors {
-  width: 100%;
-  color: #FFF;
-  text-align: center;
-  margin-bottom: 0;
-  font-family: $secondary_font_face;
-  background: $colour_purple_middle;
-  background: -moz-linear-gradient(top, $colour_purple_middle 0%, $colour_pink_base 100%);
-  background: -webkit-linear-gradient(top, $colour_purple_middle 0%, $colour_pink_base 100%);
-  background: linear-gradient(to bottom, $colour_purple_middle 0%, $colour_pink_base 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colour_purple_middle', endColorstr='$colour_pink_base',GradientType=0 );
-
-  h3 {
-    color: #FFF;
-  }
-
-  .left, .right {
-    display: inline-block;
-    vertical-align: top;
-    padding: 1.5em;
-    width: 42%;
-  }
-}
-
-.docs {
-  h2, h3 {
-    border-bottom: 1px dashed #272822;
-  }
-}
-
-.sponsor-logos {
-  text-align: center;
 }

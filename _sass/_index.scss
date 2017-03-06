@@ -1,0 +1,76 @@
+.home-nav {
+  text-align: center;
+  margin: $vertical-rhythm auto;
+  padding: $vertical-rhythm * 2 0;
+}
+
+.home {
+  .home ul.small {
+    margin-left: 1em;
+    padding: 0;
+  }
+
+  .home main {
+    padding-bottom: 0;
+  }
+
+  .sponsors {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .sponsor {
+      width: 30%;
+    }
+  }
+
+  .row {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: $vertical-rhythm;
+
+    img, .text {
+      display: inline-block;
+      vertical-align: top;
+      width: 48%;
+
+      &:first-child {
+        margin-right: 3%;
+      }
+
+      @media screen and (max-width: $break-small) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    img {
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
+    }
+  }
+
+  .small {
+    font-size: $base-font-size / 1.5;
+    line-height: ($base-font-size / 1.5) * 1.7;
+
+    @media screen and (max-width: $break-small) {
+      font-size: $base-font-size * 1.4;
+      line-height: ($base-font-size * 1.4) * 1.7;
+    }
+  }
+
+  .really-small {
+    margin-top: .5em;
+    font-size: $base-font-size / 2;
+
+    @media screen and (max-width: $break-small) {
+      margin-top: 1vh;
+      font-size: $base-font-size;
+      line-height: $base-font-size * 1.5;
+    }
+  }
+}
