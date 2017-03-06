@@ -524,17 +524,18 @@ nav {
     padding: 0 2vw; }
 
 .columns {
-  width: 100%; }
+  width: 100%;
+  display: flex; }
   .columns aside,
   .columns article {
     display: inline-block;
-    vertical-align: top; }
+    vertical-align: top;
+    align-items: stretch; }
   .columns article {
     width: 70%;
     padding: 2.5em; }
   .columns aside {
     width: 25%;
-    height: 90vh;
     background-color: #F6F6F6; }
     .columns aside h2, .columns aside li {
       padding-left: 2.5em; }

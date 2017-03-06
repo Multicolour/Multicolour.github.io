@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Branding and voice of Multicolour
+description: Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those…
 date: 2017-02-27 08:42:51 +0000
 keywords: branding, logo, company, startup
 author: Dave Mackintosh
-permalink: /blog/multicolour-voice
+permalink: /blog/multicolour-branding-voice
 lang: en
 breadcrumbs:
   - permalink: /blog/
@@ -17,6 +18,8 @@ That’s where I started with the branding and the voice of Multicolour, technic
 
 The first version of the product was a big mash of code into one file and lo and behold it worked first time. Was fast, simple and a totally viable product. I had made a generator and that’s where I started with the logo.
 
+![The old logo, a modified generator symbol commonly seen in electronic designs](/uploads/old-logo.jpeg)
+
 The old logo, a modified generator symbol commonly seen in electronic designs. That’s where I started, adding colour that represented the night time dedication I had to building the project out and the fact it was a generator.
 
 The logo stayed the same for about a year but now, with the 0.4.0 release of Multicolour it was time for a change that matched the product.
@@ -28,6 +31,8 @@ I tried to create a new logo many, many times and failed. What I had in my mind 
 I had an overwhelming response from some of the designers I’ve admired in the industry for years but in the end I decided to go with Dan Edwards at No Divide. I’ve followed No Divide for a couple of years and **always** loved their work and never heard a bad thing about them. I was like a smitten puppy when I sent the email asking if they’d help me create a vocal brand.
 
 Within 2 weeks, I had seen sketches, experiments, ideas built upon and earlier this week I got the final version.
+
+![it communicates everything I wanted the logo to communicate](/uploads/new-logo.jpeg)
 
 😍 it’s a beauty, it communicates everything I wanted the logo to communicate. It has depth in 2d and 3D space. It works in just about every colour, in just about every place. Just like Multicolour does.
 

@@ -2,29 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>http://0.0.0.0:4000/blog/multicolour-voice</loc>
+      <loc>http://0.0.0.0:4000/blog/multicolour-branding-voice</loc>
       <lastmod>2017-02-27T08:42:51+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
     </url>
   
     <url>
-      <loc>http://0.0.0.0:4000/blog/multicolour-branding-voice-(copy)</loc>
-      <lastmod>2017-02-27T08:42:51+00:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-    </url>
-  
-    <url>
-      <loc>http://0.0.0.0:4000/blog/multicolour-branding-voice-(another-copy)</loc>
-      <lastmod>2017-02-27T08:42:51+00:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-    </url>
-  
-    <url>
-      <loc>http://0.0.0.0:4000/blog/multicolour-branding-voice-(3rd-copy)</loc>
-      <lastmod>2017-02-27T08:42:51+00:00</lastmod>
+      <loc>http://0.0.0.0:4000/blog/introducing-multicolour</loc>
+      <lastmod>2016-03-26T08:42:51+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
     </url>
