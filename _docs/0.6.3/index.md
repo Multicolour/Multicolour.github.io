@@ -7,6 +7,7 @@ version: '0.6.3'
 contents: true
 permalink: /docs/0.6.3/
 short_name: 0.6.3
+lang: en
 breadcrumbs:
   - permalink: /docs/
     name: docs

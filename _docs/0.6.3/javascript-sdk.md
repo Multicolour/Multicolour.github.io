@@ -7,6 +7,7 @@ version: '0.6.3'
 short_name: JavaScript SDK
 contents: false
 permalink: /docs/0.6.3/javascript-sdk
+lang: en
 breadcrumbs:
   - permalink: /docs/
     name: docs

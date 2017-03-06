@@ -7,6 +7,7 @@ version: '0.6.3'
 short_name: API Reference
 contents: false
 permalink: /docs/0.6.3/api-reference
+lang: en
 breadcrumbs:
   - permalink: /docs/
     name: docs

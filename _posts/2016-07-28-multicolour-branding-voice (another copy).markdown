@@ -5,6 +5,7 @@ date: 2017-02-27 08:42:51 +0000
 keywords: branding, logo, company, startup
 author: Dave Mackintosh
 permalink: /blog/:title
+lang: en
 breadcrumbs:
   - permalink: /blog/
     name: multicolour blog

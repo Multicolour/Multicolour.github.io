@@ -7,6 +7,7 @@ version: '0.6.3'
 short_name: Collections/Blueprints
 contents: false
 permalink: /docs/0.6.3/collections/
+lang: en
 breadcrumbs:
   - permalink: /docs/
     name: docs

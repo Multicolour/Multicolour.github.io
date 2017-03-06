@@ -6,6 +6,7 @@ version: '0.6.3'
 short_name: Quickstart
 contents: false
 permalink: /docs/0.6.3/quickstart
+lang: en
 breadcrumbs:
   - permalink: /docs/
     name: docs

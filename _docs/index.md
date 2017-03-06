@@ -4,6 +4,7 @@ title: Multicolour documentation
 description: Multicolour documentation contents page.
 keywords: multicolour, documentation
 contents: true
+lang: en
 permalink: /docs/
 ---
 

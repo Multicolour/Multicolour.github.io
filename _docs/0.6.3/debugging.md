@@ -7,6 +7,7 @@ version: '0.6.3'
 short_name: Debugging
 contents: false
 permalink: /docs/0.6.3/debugging
+lang: en
 breadcrumbs:
   - permalink: /docs/
     name: docs
