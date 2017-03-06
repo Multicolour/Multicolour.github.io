@@ -576,6 +576,26 @@ nav {
       padding: 1em 1em 1em 2.5em;
       outline: 0; }
 
+.author {
+  margin: 0; }
+  .author .author-image,
+  .author .author-name {
+    display: inline-block;
+    vertical-align: top; }
+  .author .author-image {
+    border-radius: 50%;
+    max-width: 3em; }
+  .author .author-name {
+    color: #888;
+    padding-left: .5em;
+    margin: 0;
+    font-size: .9em;
+    font-family: "Source Sans Pro", sans-serif; }
+    .author .author-name .name {
+      margin: 0;
+      line-height: .85em;
+      font-family: "georgia", Times, sans-serif; }
+
 .email-signup {
   text-align: center;
   font-family: "Source Sans Pro", sans-serif; }
@@ -671,13 +691,43 @@ nav {
 .blog {
   clear: both;
   overflow: hidden; }
+  .blog hr {
+    border: 0;
+    background: transparent;
+    border-top: 1px solid #e1e1e1; }
+  .blog time {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: .8em;
+    color: #a2a2a2; }
+  .blog .read-more {
+    display: block;
+    text-align: right;
+    color: #ab21b4;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: .9em;
+    line-height: 1em;
+    margin-top: 2.5em; }
+    .blog .read-more small {
+      display: block;
+      color: #888;
+      font-size: .8em;
+      padding-right: 1.5em;
+      font-weight: normal; }
   .blog .post {
     padding: 1em;
     width: 33.3333%; }
-    .blog .post .author-image {
-      border-radius: 50%;
-      max-width: 4em; }
+    .blog .post .post-title {
+      display: block;
+      line-height: 1.3em;
+      font-size: 2em;
+      color: #888; }
+      .blog .post .post-title:hover {
+        text-decoration: underline;
+        cursor: pointer; }
     .blog .post.post-narrow {
+      padding: 3em 1.5em;
       float: left;
       background-color: #F6F6F6; }
       .blog .post.post-narrow:nth-child(even) {
@@ -691,6 +741,9 @@ nav {
         vertical-align: top;
         width: 47%;
         padding: 1em; }
+        .blog .post.post-wide .left .post-title,
+        .blog .post.post-wide .right .post-title {
+          margin-bottom: 2.5em; }
       .blog .post.post-wide .right {
         background-color: #F6F6F6; }
   .blog .more-posts {
@@ -813,7 +866,6 @@ a {
     border: 0;
     outline: 0; }
   a:not(.no-border) {
-    padding-bottom: .1em;
     border-style: solid;
     border-width: 0px 0px 1px 0px; }
 

@@ -10,8 +10,6 @@ breadcrumbs:
     name: multicolour blog
 ---
 
-# Branding and voice of Multicolour
-
 Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those years ago has blossomed into a truly wonderful and expressive tool.
 
 That’s where I started with the branding and the voice of Multicolour, technically it’s 7 years old and one of my first NodeJS projects and it was a solution in problem space to a usual blocker to mine and many colleagues workflow. I decided I’d build it out, to replace the “temporary” part of it with “permanent”.

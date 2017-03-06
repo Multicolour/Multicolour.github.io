@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation file uploads">
 <meta name="twitter:description" content="Uploading files">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation file uploads">
 <meta itemprop="description" content="Uploading files">
-<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation file uploads" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://0.0.0.0:4000" />
-<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://localhost:4000" />
+<meta property="og:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Uploading files" />
 <meta property="og:site_name" content="Multicolour documentation file uploads" />
 
@@ -62,8 +62,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/routing/file-uploads/">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/docs/0.6.3/routing/file-uploads/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://localhost:4000/feed.xml">
 </head>
 
 
@@ -154,7 +154,7 @@
         "keywords": "file uploads, multicolour, rest api file uploads",
         "learningResourceType": ["learning activity"],
         "wordCount": "790",
-        "datePublished": "2017-03-03 17:04:15 +0000",
+        "datePublished": "2017-03-06 12:33:44 +0000",
         "url": "/docs/0.6.3/routing/file-uploads/",
         "publisher": {
             "@type": "Organization",
@@ -165,20 +165,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
-                "url": "http://0.0.0.0:4000"
+                "contentUrl": "http://localhost:4000/images/logo.png",
+                "url": "http://localhost:4000"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
-            "url":"http://0.0.0.0:4000",
+            "contentUrl":"http://localhost:4000/images/social-header.jpg",
+            "url":"http://localhost:4000",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://0.0.0.0:4000/docs/0.6.3/routing/file-uploads/"
+            "@id": "http://localhost:4000/docs/0.6.3/routing/file-uploads/"
         },
         "articleBody": "Uploading filesIf you want to upload files, Multicolour has your back. To support uploading files on your blueprints you simply need to add can_upload_file: String to your blueprint.{  attributes: {    location: &quot;string&quot;  },  can_upload_file: &quot;location&quot;}The value of can_upload_file should be the name of the key on the record to store the location of the uploaded file, if it is true “file” will be used.The upload endpoint will be added to your blueprint as POST /{identity}/upload and requires that you create a record before uploading, this endpoint follows the POST constraintsBy default Multicolour will upload files to a temporary location as dictated by Node’s os.tmpdir() function.We encourage you to create your own storage plugin to set a more permanent storage location or use the multicolour-storage-S3 plugin.Creating a storage plugin.The default storage plugin will store any files uploaded to the operating system’s temp directory. We encourage you to choose a more permanent place for your files by creating your own storage plugin.Below is a storage plugin that stores files in /uploads&quot;use strict&quot;// Get the tools we need.const fs = require(&quot;fs&quot;)class Multicolour_Disk_Storage {  /**   * Create default options and values.   * @return {Multicolour_Disk_Storage} Object for chaining.   */  constructor() {    // Set up the default options.    this.options = {      path: &quot;/uploads&quot;    }    return this  }  register(multicolour) {    multicolour.reply(&quot;storage&quot;, this)  }  /**   * Upload a file to disk and return a writable stream.   * @param  {multicolour/File} file to upload to S3.   * @param  {String} destination to write the file to.   * @return {fs.WritableStream} object to listen for events.   */  upload(file, destination) {    // Check we got a destination.    if (!destination) {      throw new ReferenceError(&quot;No destination for uploaded file&quot;)    }    // Upload the file.    else {      // We'll return the writable stream.      const stream = fs.createWriteStream(`${this.options.path}/${destination}`)      // Check if we got a readable stream, in.      if (file.pipe) {        file.pipe(stream)      }      // Otherwise, read the file out.      else {        fs.createReadStream(file).pipe(stream)      }      // Return the stream.      return stream    }  }  /**   * Download a file from disk and return   * an EventEmitter to listen for data events.   * @param  {multicolour/File} file to get from disk.   * @return {fs.ReadableStream} object to listen for event   */  get(file) {    return fs.createReadStream(`${this.options.path}/${file}`)  }}// Export the required config for Multicolour to register.module.exports = Multicolour_Disk_StorageTo use your newly created plugin, edit your app.js to include it, E.Grequire(&quot;multicolour&quot;)  // Configure the service core and scan for content.  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()  // Register the server plugin.  .use(require(&quot;multicolour-server-hapi&quot;))  // Register our storage plugin.  .use(require(&quot;multicolour-disk-storage&quot;))Advanced storage plugin configuration.If you want to keep your plugin configurable via the current blueprint’s properties storage plugins support storage_config_keys resolution.Inside your register(multicolour) function set up a reply(&quot;storage_config_keys&quot;) with an array of the keys you wish to fetch from the blueprint.Example:// blueprints/upload.js{  attributes: {    location: &quot;string&quot;,    pending: &quot;boolean&quot;  },  can_upload_file: &quot;location&quot;,  custom_param: 1234567890}// my-storage-plugin.js...  /**   * Set the storage name on our host.   * @param  {Multicolour} multicolour host instance.   * @return {void}   */  register(multicolour) {    multicolour      .reply(&quot;storage&quot;, this)      .reply(&quot;storage_config_keys&quot;, [ &quot;custom_param&quot; ])  }..."
     }

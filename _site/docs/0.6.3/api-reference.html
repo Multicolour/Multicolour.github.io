@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour core API reference">
 <meta name="twitter:description" content="Multicolour">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour core API reference">
 <meta itemprop="description" content="Multicolour">
-<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour core API reference" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://0.0.0.0:4000" />
-<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://localhost:4000" />
+<meta property="og:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Multicolour" />
 <meta property="og:site_name" content="Multicolour core API reference" />
 
@@ -62,8 +62,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/api-reference">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/docs/0.6.3/api-reference">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://localhost:4000/feed.xml">
 </head>
 
 
@@ -148,7 +148,7 @@
         "keywords": "multicolour API, API reference",
         "learningResourceType": ["learning activity"],
         "wordCount": "1739",
-        "datePublished": "2017-03-03 17:04:15 +0000",
+        "datePublished": "2017-03-06 12:33:44 +0000",
         "url": "/docs/0.6.3/api-reference",
         "publisher": {
             "@type": "Organization",
@@ -159,20 +159,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
-                "url": "http://0.0.0.0:4000"
+                "contentUrl": "http://localhost:4000/images/logo.png",
+                "url": "http://localhost:4000"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
-            "url":"http://0.0.0.0:4000",
+            "contentUrl":"http://localhost:4000/images/social-header.jpg",
+            "url":"http://localhost:4000",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://0.0.0.0:4000/docs/0.6.3/api-reference"
+            "@id": "http://localhost:4000/docs/0.6.3/api-reference"
         },
         "articleBody": "MulticolourMulticolour aims to make your life simpler, smarter and quicker by generating the boilerplate code for you including authentication and data representation layer.Multicolour core is a message bus, using the Talkie package.This allows Multicolour to act as two things:  An EventEmitter  a request and reply interfaceThe difference between the two is merely semantic, it allows us to make reading the code more natural and simplify certain aspects of the code resolution process (“What does this do?” .. “Oh, that.”)Multicolour “extends” all plugins with it’s message bus so all plugins have a predictable interface.new Multicolour({ config })Create an instance of Multicolour, config should be a valid configuration object for multicolour to scan for blueprints and connect to your databases.Returns: MulticolourExample:const Multicolour = require(&quot;multicolour&quot;)const my_service = new Multicolour({  content: `${__dirname}/content`})multicolour.get(key String)Get any of the following properties values from Multicolour core, some properties are only available once the service has been .start()-ed.  &quot;cli&quot; - Object Uninitialised CLI module.  &quot;config&quot; - Map The config as a Map, top level properties are also Maps.  &quot;env&quot; - String the process.env.NODE_ENV value at startup and &quot;development&quot; by default.  &quot;has_scanned&quot; - Boolean whether Multicolour has .scan()ned for blueprints.  &quot;package&quot; - Object The contents of the app’s package.json if any.  &quot;blueprints&quot; - Object Only available after .scan() has run.  &quot;validators&quot; - Multicolour_Default_Validation class instance for payload and response validation.  &quot;handlers&quot; - Multicolour_Route_Templates class instance which contain the default handlers for the database work.  &quot;database&quot; - Map Only available after .start() has completed, the database plugin.  &quot;server&quot; - Object Only available after .start() has completed, the server plugin.Returns: AnyExample:console.log(my_service.get(&quot;env&quot;)) // developmentGetting core modules such as database and server will return full plugin instances.–multicolour.get(&quot;database&quot;)Will return the full Multicolour_Waterline_Generator instance including the full waterline object and another Talkie interface.Available to .getmulticolour.get(&quot;database&quot;).get(&quot;models&quot;)An object of each, raw waterline collection registered.multicolour.get(&quot;database&quot;).get(&quot;waterline&quot;)The raw Waterline object underneath.–multicolour.get(&quot;server&quot;)A requirement of each server plugin is that it register as &quot;server&quot; on Multicolour coreAvailable to read:multicolour.get(&quot;server&quot;).request(&quot;raw&quot;)Raw server tech, be it Hapi or Express or whatever plugin you chose to use.multicolour.get(&quot;server&quot;).get(&quot;api_root&quot;)The final resolved url the API can be reached at, is 100% truth once the server has started and only a “guess” before the server_started event is emitted.The guess is 95% correct as it is derived from your configuration file but is not 100%.To read about what more is available to .get or .requestmulticolour.get(&quot;server&quot;).request(&quot;csrf_enabled&quot;)All endorsed server plugins are required to implement a way of enabling or disabling CSRF tokens for security reasons.This will return a Boolean as to whether CSRF token generation is enabled or not (defaults to false.)multicolour.get(&quot;server&quot;).get(&quot;flow_runner&quot;)Server plugins should implement a flow_runner used by Multicolour core as part of it’s built in integration testing framework. This should return an executable function.multicolour.request(key)Request a property from Multicolour, this is merely semantic sugar. Available properties are:  &quot;cli&quot; - CLI newly initialised CLI module.  &quot;new_uuid&quot; - String a unique v4 uuid.  &quot;storage&quot; - Get the current storage plugin.Returns: AnyExample:console.log(my_service.request(&quot;new_uuid&quot;)) // 5d31d224-bf23-49ed-9db0-7a50ab924f4fstatic new_from_config_file_path(config_location)Create a new instance of Multicolour from a config file location.Source CodeReturns: MulticolourExample:const my_service = require(&quot;multicolour&quot;).new_from_config_file_path(&quot;./config.js&quot;)multicolour.reset_from_config_path(config_location)Reset this instance of Multicolour with a config file location.Source CodeReturns: MulticolourExample:const Multicolour = require(&quot;multicolour&quot;)const my_service = Multicolour.new_from_config_file_path(&quot;./config.js&quot;)// Actually changed my mind.my_service.reset_from_config_path(&quot;./my-other-config.js&quot;)multicolour.cli()Start the CLI tools and parse arguments.Source CodeReturns: CLIExample:#!/usr/bin/env node// Get Multicolour.const Multicolour = require('multicolour')// Instantiate.new Multicolour().cli()multicolour._enable_user_model()Enable the core user model, usually done so by official authentication plugins.Will create a new table/collection in your database called multicolour_user.Source CodeReturns: MulticolourExample:// Get Multicolour.const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()  ._enable_user_model()multicolour.scan()Tells Multicolour that you and the server are ready to be scanned for blueprints. The search path is dictated by the config.content property.Once scan has completed a new property is made available via the Multicolour.get() interface. These are  &quot;blueprints&quot;Source CodeReturns: MulticolourExample:const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()multicolour.use(Plugin)Tell Multicolour to register and “use” the supplied plugin. Your plugin must have a register method on it.Source CodeReturns: MulticolourExample:class my_plugin {  register(Multicolour) {    Multicolour.reply(&quot;ping&quot;, &quot;pong&quot;)  }}const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()  .use(my_plugin)console.log(my_service.request(&quot;ping&quot;)) // pongmulticolour.start(callback)Start the database server(s) and the http server and start listening for requests. When both services are ready callback is called.Triggersserver_startingdatabase_startingevents on the Multicolour instance and once services are started triggersserver_started database_started events.Also sets up a listener for SIGINT on the process so the services can be .stop()ped gracefullySource CodeReturns: MulticolourExample:require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()  .start(() =&amp;gt; console.log(&quot;Database server started&quot;))multicolour.stop(callback)Stop the database server(s) and the http server and stop listening for requests. When both services are stopped callback is called.Triggersdatabase_stoppingserver_stoppingevents on the Multicolour instance and once services are stopped triggersdatabase_stoppedserver_stoppedSource CodeReturns: MulticolourExample:const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()my_service.start(() =&amp;gt; {  console.log(&quot;HTTP &amp;amp; Database server(s) started&quot;)  my_service.stop(() =&amp;gt; console.log(&quot;HTTP &amp;amp; Database server(s) stopped&quot;))})Request and Reply arbitrary dataTalkie enables Multicolour to act both as an EventEmitter and as a messaging bus to send arbitrary data to multiple places at once and on the object it extends.Talkie adds request and reply functions to all extended objects.multicolour.reply(name, data)When name is requested, it will receive the data unmodified.Example:multicolour.reply(&quot;my_awesome_plugin&quot;, new class {})multicolour.request(name)Purely syntactic sugar, is no different in functionality than .get(name).Example:const my_awesome_plugin = multicolour.request(&quot;my_awesome_plugin&quot;)EventEmitterMulticolour is an EventEmitter, events can be triggered and listened to using the standard interface for inter-plugin communication.At any point an event can be triggered and listened to in your app’s lifetime.All events are asyncronous, results from a trigger cannot be attained without providing a callback in the data sent.All plugins that used by Multicolour are also made into message busses with the exact same interface as Multicolour and access to all the Multicolour events.EventsThese events are fired from core and emit no data.database_startingEmitted with no data when a database startup has been started.database_startedEmitted with no data when a database startup has completed.database_stoppingEmitted with no data when a database shutdown has been started.database_stoppedEmitted with no data when a database shutdown has completed.server_stoppingEmitted with no data when a HTTP server shutdown has been started.server_stoppedEmitted with no data when a HTTP shutdown has completed.multicolour.on(event, callback(event))Listen for an event fired on Multicolour core.Returns: MulticolourExample:const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()my_service.on(&quot;database_started&quot;, () =&amp;gt;  console.log(&quot;Bewm, databases are up.&quot;))my_service.start()multicolour.trigger(event, data)Trigger an event on Multicolour core.Returns: MulticolourExample:const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()my_service.start(() =&amp;gt; {  my_service.trigger(&quot;service_up&quot;, { my_service })})Other methods can be read up on the Talkie docs."
     }

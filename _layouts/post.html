@@ -10,14 +10,30 @@
       <section class="columns">
         <aside>
           {% assign author = site.data.authors[page.author] %}
-          <div class="author" itemscope itemtype="http://schema.org/Person">
-              <img class="author-image" src="{{ author.image }}" alt="{{ page.author }}">
-              <small>written by:</small>
-              <p class="author-name">{{ page.author }}</p>
-          </div>
+
+          {%
+            include author.html
+            image=author.image
+            author=page.author
+          %}
+
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ page.date | date_to_long_string }}
+          </time>
+
+          <hr>
+
+          <a href="https://twitter.com/share?text={{ page.title | url_encode }}&via=getmulticolour&dnt=true" class="twitter-share-button" rel="nofollow noopener noreferrer">
+            <img src="/images/icons/twitter-lines.svg" alt="Share {{ page.title }} on Twitter">
+          </a>
+
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="facebook-share-button" rel="nofollow noopener noreferrer">
+            <img src="/images/icons/facebook-lines.svg" alt="Share {{ page.title }} on Facebook">
+          </a>
 
         </aside>
-        <article>
+
+        <article class="post content" itemprop="articleBody" itemtype="http://schema.org/BlogPosting">
           {%
             include structured-data/blog-post.html
             title=page.title
@@ -29,25 +45,13 @@
             author=page.author
           %}
 
-          <article class="post content" itemscope itemtype="http://schema.org/BlogPosting">
-              <header class="post-header">
-                  <p class="post-meta">
-                      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                        {{ page.date | date_to_long_string }}
-                      </time>
-                  </p>
-              </header>
-
-              <div class="post-content" itemprop="articleBody">
-                  {{ content }}
-              </div>
-
-          </article>
+          {{ content }}
         </article>
       </section>
     </main>
 
     {% include footer.html %}
+    <!-- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 </body>
 
 </html>

@@ -18,27 +18,30 @@ short_name: multicolour blog
             {{ post.date | date_to_long_string }}
           </time>
 
-          <a href="{{ post.permalink }}">
+          <a class="post-title no-border" title="{{ post.title }}" href="{{ post.permalink }}">
               {{ post.title }}
           </a>
 
           <hr>
 
-          <div class="author" itemscope itemtype="http://schema.org/Person">
-              <img class="author-image" src="{{ author.image }}" alt="{{ post.author }}">
-              <small>written by:</small>
-              <p class="author-name">{{ post.author }}</p>
-          </div>
+          {%
+            include author.html
+            image=author.image
+            author=post.author
+          %}
         </div>
 
         <div class="right">
           {% if !!page.excerpt %}
-          {{ post.excerpt | truncatewords: 40 }}
+          {{ post.excerpt | truncatewords: 45 }}
           {% else %}
-          {{ post.content | truncatewords: 40 }}
+          {{ post.content | truncatewords: 45 }}
           {% endif %}
 
-          <a href="{{ post.permalink }}" title="{{ post.title }}">Read more &rarr;</a>
+          <a class="no-border read-more" href="{{ post.permalink }}" title="{{ post.title }}">
+            Read the full article &rarr;
+            <small>{{ post.content | strip_html | number_of_words | divided_by: 200 }} minutes</small>
+          </a>
         </div>
       </article>
 
@@ -52,15 +55,15 @@ short_name: multicolour blog
           {{ post.date | date_to_long_string }}
         </time>
 
-        <a href="{{ post.permalink }}">
+        <a class="post-title no-border" href="{{ post.permalink }}" title="{{ post.title }}">
             {{ post.title }}
         </a>
 
-        <div class="author" itemscope itemtype="http://schema.org/Person">
-            <img class="author-image" src="{{ author.image }}" alt="{{ post.author }}">
-            <small>written by:</small>
-            <p class="author-name">{{ post.author }}</p>
-        </div>
+        {%
+          include author.html
+          image=author.image
+          author=post.author
+        %}
 
         <hr>
 
@@ -70,7 +73,10 @@ short_name: multicolour blog
         {{ post.content | truncatewords: 40 }}
         {% endif %}
 
-        <a href="{{ post.permalink }}" title="{{ post.title }}">Read more &rarr;</a>
+        <a class="no-border read-more" href="{{ post.permalink }}" title="{{ post.title }}">
+          Read more &rarr;
+          <small>{{ post.content | strip_html | number_of_words | divided_by: 200 }} minutes</small>
+        </a>
       </article>
       {% endif %}
 
