@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation constraints">
 <meta name="twitter:description" content="Constraints">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation constraints">
 <meta itemprop="description" content="Constraints">
-<meta itemprop="image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation constraints" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:4000" />
-<meta property="og:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Constraints" />
 <meta property="og:site_name" content="Multicolour documentation constraints" />
 
@@ -62,8 +62,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/docs/0.6.3/collections/constraints/">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://localhost:4000/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/collections/constraints/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
 
@@ -154,7 +154,7 @@
         "keywords": "codeless business logic, multicolour constraints",
         "learningResourceType": ["learning activity"],
         "wordCount": "529",
-        "datePublished": "2017-03-06 12:36:43 +0000",
+        "datePublished": "2017-03-06 14:03:59 +0000",
         "url": "/docs/0.6.3/collections/constraints/",
         "publisher": {
             "@type": "Organization",
@@ -165,20 +165,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "http://localhost:4000/images/logo.png",
-                "url": "http://localhost:4000"
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"http://localhost:4000/images/social-header.jpg",
-            "url":"http://localhost:4000",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://localhost:4000/docs/0.6.3/collections/constraints/"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/collections/constraints/"
         },
         "articleBody": "ConstraintsA constraint in Multicolour is a simple string in your models to define a limiting behaviour on for certain types of actions, such as making sure when something is created it gets assigned the logged in user’s identifier for ownership.Constraints exist to replace simple, common business logic without having to write JavaScript and they come in a few formats that is described in the following spec.Specification{  [verb String]: {    [key String]: Function|ComparativeString|ConstraintObject,  }}Where ComparativeString is a String with the following format:const comparatives = new Map([  [&quot;&amp;lt;&quot;, &quot;&amp;lt;&quot;],  [&quot;&amp;gt;&quot;, &quot;&amp;gt;&quot;],  [&quot;&amp;lt;=&quot;, &quot;&amp;lt;=&quot;],  [&quot;&amp;gt;=&quot;, &quot;&amp;gt;=&quot;],  [&quot;!&quot;, &quot;!&quot;],  [&quot;^&quot;, &quot;startsWith&quot;],  [&quot;$&quot;, &quot;endsWith&quot;],  [&quot;%&quot;, &quot;like&quot;]])[Comparative?] path.to.data.in.request.objectand ConstraintObject is an Object with the following format:{  [key String]: {    compile: Bool false,    value: compile ? ComparativeString : (String|Number|null)  },}Example and common uses            The most common constraint is ensuring a user has sufficient privileges to read      write something and would come in the form of      {  user: &quot;auth.credentials.user.id&quot;}The way this works is the String is a path to an object on the request object, this is in-fact setting the constraint to the value of request.auth.credentials.user.id in the incoming request.More examples{  role: &quot;auth.session.role&quot;}{  name: {    compile: false,    value: &quot;Multicolour&quot;  }}{  createdAt: &quot;&amp;gt;= &quot; + new Date(2015)}{  age: {    compile: false,    value: &quot;&amp;gt;= 18&quot;  }}Verbs and constraintsYou must specify your constraints on all the http verbs you wish to constrain. The verbs must appear as lowercase.Example:...constraints: {  get: { public: { compile: false, value: true } },  post: { user: &quot;auth.credentials.user.id&quot; },  put: { user: &quot;auth.credentials.user.id&quot; },  delete: { user: &quot;auth.credentials.user.id&quot; },  patch: { user: &quot;auth.credentials.user.id&quot; }},..."
     }

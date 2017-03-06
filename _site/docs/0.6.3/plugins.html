@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation plugins">
 <meta name="twitter:description" content="Writing Multicolour Plugins">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation plugins">
 <meta itemprop="description" content="Writing Multicolour Plugins">
-<meta itemprop="image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation plugins" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:4000" />
-<meta property="og:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Writing Multicolour Plugins" />
 <meta property="og:site_name" content="Multicolour documentation plugins" />
 
@@ -62,8 +62,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/docs/0.6.3/plugins">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://localhost:4000/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/plugins">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
 
@@ -148,7 +148,7 @@
         "keywords": "multicolour, plugins, rest api business logic",
         "learningResourceType": ["learning activity"],
         "wordCount": "336",
-        "datePublished": "2017-03-06 12:36:43 +0000",
+        "datePublished": "2017-03-06 14:03:59 +0000",
         "url": "/docs/0.6.3/plugins",
         "publisher": {
             "@type": "Organization",
@@ -159,20 +159,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "http://localhost:4000/images/logo.png",
-                "url": "http://localhost:4000"
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"http://localhost:4000/images/social-header.jpg",
-            "url":"http://localhost:4000",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://localhost:4000/docs/0.6.3/plugins"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/plugins"
         },
         "articleBody": "Writing Multicolour PluginsYou’ve written loads of awesome new functionality in your custom_routes callback and are thinking “I’d like to distribute my awesome code as a package”, either internally or on npm.You need a plugin, plugins make sharing and using your custom functionality easy.What is a Multicolour plugin?A Muticolour plugin is simply a class that encapsulates your custom behaviour, there aren’t any limitations or locks or blocks to the rest of Multicolour or any other plugins you’re using so you can do what you need to do unincumbered.All plugins are automatically extended with the talkie interface and is assigned a host as well as a unique (unique every time) id. Both can be .request()-ed directly from your plugin. I.E this.request(&quot;host&quot;) or this.request(&quot;id&quot;).Example Multicolour pluginAn example Multicolour plugin that adds a new route to the route table looks like this:// This file is called ./plugins/awesome/index.jsmodule.exports = class {  // Register is the only required member function.  register(multicolour) {    const server = multicolour.get(&quot;server&quot;).request(&quot;raw&quot;)    server.route({      path: &quot;/hello/{name}&quot;,      config: {        handler: (request, reply) =&amp;gt; {          reply(`Hey there, ${requet.params.name}`)        },        validate: {          params: {            name: require(&quot;joi&quot;).string().required()          }        }      }    })  }}Once you’ve saved your plugin, to use it simply add .use(require(&quot;./plugins/awesome&quot;)) to your main app.js (Use the other .use()-es as reference to where, your app.js might be different.)Run your service and your plugin will register and run. Easy as that."
     }

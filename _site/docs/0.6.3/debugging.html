@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation debugging tips">
 <meta name="twitter:description" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ...">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation debugging tips">
 <meta itemprop="description" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ...">
-<meta itemprop="image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation debugging tips" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:4000" />
-<meta property="og:image" content="http://localhost:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ..." />
 <meta property="og:site_name" content="Multicolour documentation debugging tips" />
 
@@ -62,8 +62,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/docs/0.6.3/debugging">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://localhost:4000/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/debugging">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
 
@@ -148,7 +148,7 @@
         "keywords": "multicolour, rest api, debugging",
         "learningResourceType": ["learning activity"],
         "wordCount": "156",
-        "datePublished": "2017-03-06 12:36:43 +0000",
+        "datePublished": "2017-03-06 14:03:59 +0000",
         "url": "/docs/0.6.3/debugging",
         "publisher": {
             "@type": "Organization",
@@ -159,20 +159,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "http://localhost:4000/images/logo.png",
-                "url": "http://localhost:4000"
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"http://localhost:4000/images/social-header.jpg",
-            "url":"http://localhost:4000",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://localhost:4000/docs/0.6.3/debugging"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/debugging"
         },
         "articleBody": "DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of internal objects and operations as they happen.You will see output similar tomulticolour:core Scanning /www/node/multicolour-app/content +2ms  multicolour:core Scanned and found: [  &quot;/www/node/multicolour-app/content/blueprints/abode.js&quot;,  &quot;/www/node/multicolour-app/content/blueprints/gadget.js&quot;,  &quot;/www/node/multicolour-app/content/blueprints/person.js&quot;,  &quot;/www/node/multicolour-app/node_modules/multicolour/lib/user-model.js&quot;] +0ms  multicolour:core Finished scanning +149msYou can also install the multicolour-hapi-vantage plugin to see HTTP logs in real time using the debug on command in the repl.While you can use the DEBUG environmental in conjunction with the repl, the output may appear garbled as the two share the same stdout.Starting your service with the vantage plugin installed will take you to a repl (and start your service in the background)Running with the debug mode set to on will show every HTTP request and response in pair to help with debugging."
     }

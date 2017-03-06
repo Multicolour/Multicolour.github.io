@@ -2,35 +2,35 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>http://localhost:4000/blog/multicolour-voice</loc>
+      <loc>http://0.0.0.0:4000/blog/multicolour-voice</loc>
       <lastmod>2017-02-27T08:42:51+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/blog/multicolour-branding-voice-(copy)</loc>
+      <loc>http://0.0.0.0:4000/blog/multicolour-branding-voice-(copy)</loc>
       <lastmod>2017-02-27T08:42:51+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/blog/multicolour-branding-voice-(another-copy)</loc>
+      <loc>http://0.0.0.0:4000/blog/multicolour-branding-voice-(another-copy)</loc>
       <lastmod>2017-02-27T08:42:51+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/blog/multicolour-branding-voice-(3rd-copy)</loc>
+      <loc>http://0.0.0.0:4000/blog/multicolour-branding-voice-(3rd-copy)</loc>
       <lastmod>2017-02-27T08:42:51+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/blog/introducing-multicolour</loc>
+      <loc>http://0.0.0.0:4000/blog/introducing-multicolour</loc>
       <lastmod>2016-02-27T08:42:51+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
@@ -39,43 +39,43 @@
 
   
     <url>
-      <loc>http://localhost:4000/blog/</loc>
+      <loc>http://0.0.0.0:4000/blog/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/code-of-conduct</loc>
+      <loc>http://0.0.0.0:4000/code-of-conduct</loc>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/examples/</loc>
+      <loc>http://0.0.0.0:4000/examples/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/feed.xml</loc>
+      <loc>http://0.0.0.0:4000/feed.xml</loc>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/</loc>
+      <loc>http://0.0.0.0:4000/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/css/main.css</loc>
+      <loc>http://0.0.0.0:4000/css/main.css</loc>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/sitemap.xml</loc>
+      <loc>http://0.0.0.0:4000/sitemap.xml</loc>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
      </url>
@@ -83,79 +83,79 @@
 
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/api-reference</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/api-reference</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/cli</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/cli</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/collections/</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/collections/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/configuration</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/configuration</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/collections/constraints/</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/collections/constraints/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/debugging</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/debugging</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/quickstart</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/quickstart</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/javascript-sdk</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/javascript-sdk</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/plugins</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/plugins</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/routing/</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/routing/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/0.6.3/routing/file-uploads/</loc>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/routing/file-uploads/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
   
     <url>
-      <loc>http://localhost:4000/docs/</loc>
+      <loc>http://0.0.0.0:4000/docs/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
@@ -163,7 +163,7 @@
 
   
     <url>
-      <loc>http://localhost:4000/examples/</loc>
+      <loc>http://0.0.0.0:4000/examples/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
      </url>
