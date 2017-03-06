@@ -1,0 +1,39 @@
+.blog-post {
+  aside {
+    padding: 4em 2em;
+
+    .author {
+      margin-bottom: 2em;
+    }
+
+    time {
+      padding-left: 4.8em;
+      margin-bottom: 2em;
+      display: block;
+    }
+
+    strong {
+      display: block;
+      padding-left: 4em;
+      color: $colour_secondary_font;
+    }
+
+    .share-buttons {
+      text-align: center;
+
+      a {
+        padding: 0 1em;
+      }
+
+      img {
+        width: auto;
+        height: 2em;
+      }
+    }
+  }
+
+  article {
+    width: 67%;
+    margin-top: 0;
+  }
+}

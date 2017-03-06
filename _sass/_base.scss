@@ -29,6 +29,18 @@ main {
   background-color: $colour_primary_background;
 }
 
+hr {
+  border: 0;
+  background: transparent;
+  border-top: 1px solid lighten($colour_secondary_font, 35%);
+}
+
+time {
+  font-family: $secondary_font_face;
+  font-size: .8em;
+  color: lighten($colour_secondary_font, 10%);
+}
+
 h1, h2, h3 {
   code {
     background-color: $colour_alternative_background !important;

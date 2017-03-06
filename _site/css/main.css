@@ -695,14 +695,6 @@ nav {
 .blog {
   clear: both;
   overflow: hidden; }
-  .blog hr {
-    border: 0;
-    background: transparent;
-    border-top: 1px solid #e1e1e1; }
-  .blog time {
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: .8em;
-    color: #a2a2a2; }
   .blog .read-more {
     display: block;
     text-align: right;
@@ -798,6 +790,16 @@ body {
 
 main {
   background-color: #FFF; }
+
+hr {
+  border: 0;
+  background: transparent;
+  border-top: 1px solid #e1e1e1; }
+
+time {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: .8em;
+  color: #a2a2a2; }
 
 h1 code, h2 code, h3 code {
   background-color: #F6F6F6 !important;
@@ -912,6 +914,29 @@ ul {
 
 .examples .getting-started {
   margin-top: 15vh; }
+
+.blog-post aside {
+  padding: 4em 2em; }
+  .blog-post aside .author {
+    margin-bottom: 2em; }
+  .blog-post aside time {
+    padding-left: 4.8em;
+    margin-bottom: 2em;
+    display: block; }
+  .blog-post aside strong {
+    display: block;
+    padding-left: 4em;
+    color: #888; }
+  .blog-post aside .share-buttons {
+    text-align: center; }
+    .blog-post aside .share-buttons a {
+      padding: 0 1em; }
+    .blog-post aside .share-buttons img {
+      width: auto;
+      height: 2em; }
+.blog-post article {
+  width: 67%;
+  margin-top: 0; }
 
 .home-nav {
   text-align: center;
