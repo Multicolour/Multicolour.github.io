@@ -699,6 +699,10 @@ nav {
     font-size: 1.5em;
     color: #888;
     font-weight: 400; }
+    @media screen and (max-width: 414px) {
+      .breadcrumb-menu h1 {
+        width: 100%;
+        max-width: 100%; } }
   .breadcrumb-menu .breadcrumbs-logo {
     display: inline-block !important;
     width: 28px;
@@ -790,6 +794,19 @@ nav {
           margin-bottom: 2.5em; }
       .blog .post.post-wide .right {
         background-color: #F6F6F6; }
+      @media screen and (max-width: 414px) {
+        .blog .post.post-wide {
+          width: auto; }
+          .blog .post.post-wide .left,
+          .blog .post.post-wide .right {
+            width: 100%;
+            float: none; } }
+    @media screen and (max-width: 414px) {
+      .blog .post {
+        width: auto; }
+        .blog .post .left,
+        .blog .post .right {
+          width: 100%; } }
   .blog .more-posts {
     width: 100%;
     text-align: center;
@@ -970,6 +987,23 @@ table td {
 .examples .getting-started {
   margin-top: 15vh; }
 
+@media screen and (max-width: 414px) {
+  .blog-post .columns {
+    display: flex;
+    flex-direction: column-reverse; }
+    .blog-post .columns aside,
+    .blog-post .columns article {
+      width: auto; }
+    .blog-post .columns aside {
+      text-align: center; }
+      .blog-post .columns aside .author-image,
+      .blog-post .columns aside .author-name {
+        display: block; }
+      .blog-post .columns aside .author-image {
+        margin: 1em auto; }
+      .blog-post .columns aside strong,
+      .blog-post .columns aside time {
+        padding: 0; } }
 .blog-post aside {
   padding: 4em 2em; }
   .blog-post aside .author {
@@ -1011,6 +1045,8 @@ table td {
   justify-content: center; }
   .home .sponsors .sponsor {
     width: 30%; }
+    .home .sponsors .sponsor img {
+      display: block !important; }
 .home .row {
   clear: both;
   overflow: hidden;
@@ -1029,12 +1065,12 @@ table td {
     .home .row img {
       display: none; } }
 .home .small {
-  font-size: 1.13333vw;
+  font-size: 1.7vw;
   line-height: 1.92667vw; }
   @media screen and (max-width: 414px) {
     .home .small {
-      font-size: 2.38vw;
-      line-height: 4.046vw; } }
+      font-size: 4.25vw;
+      line-height: 7.225vw; } }
 .home .really-small {
   margin-top: .5em;
   font-size: 0.85vw; }

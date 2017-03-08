@@ -19,11 +19,11 @@
 
   // Try to find the search box.
   var search = document.querySelector(".search input[type=search]")
-  var search_results = document.querySelector(".search-results")
-  var filterable = Array.from(search_results.querySelectorAll("li[data-keywords]"))
 
   if (search) {
-    const pos = search.getBoundingClientRect()
+    var pos = search.getBoundingClientRect()
+    var search_results = document.querySelector(".search-results")
+    var filterable = Array.from(search_results.querySelectorAll("li[data-keywords]"))
 
     search.addEventListener("focus", function() {
       search_results.classList.add("intent")

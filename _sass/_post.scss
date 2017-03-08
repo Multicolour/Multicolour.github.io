@@ -1,4 +1,34 @@
 .blog-post {
+  @media screen and (max-width: $break-small) {
+    .columns {
+      display: flex;
+      flex-direction: column-reverse;
+
+      aside,
+      article {
+        width: auto;
+      }
+
+      aside {
+        text-align: center;
+
+        .author-image,
+        .author-name {
+          display: block;
+        }
+
+        .author-image {
+          margin: 1em auto;
+        }
+
+        strong,
+        time {
+          padding: 0;
+        }
+      }
+    }
+  }
+
   aside {
     padding: 4em 2em;
 
