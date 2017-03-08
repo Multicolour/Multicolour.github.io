@@ -1,12 +1,13 @@
-<ul>
+<ul class="search-results">
   {% assign docs = site.docs | where:'version', page.version | where:'contents', false %}
   {% for doc in docs %}
     <li
       data-keywords="{{ doc.keywords }}"
       {% if page.permalink == doc.permalink %}
-      class="active">
+      class="active visible">
         {{ doc.short_name }}
       {% else %}
+      class="visible"
       >
       <a href="{{ doc.permalink }}" title="{{ doc.title }}">
         {{ doc.short_name }}

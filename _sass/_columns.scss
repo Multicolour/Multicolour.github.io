@@ -27,15 +27,46 @@
       font-family: $primary_font_face;
     }
 
+    .search-results {
+      @media screen and (max-width: $break-small) {
+        display: none;
+
+        .visible {
+          display: none;
+        }
+
+        &.searched,
+        &.intent {
+          display: block;
+          position: absolute;
+          top: 32vh;
+          left: 1rem;
+          right: 1rem;
+          bottom: 0;
+          background: rgba(255, 255, 255, .95);
+          margin-bottom: 0;
+
+          .visible {
+            display: block;
+          }
+        }
+      }
+    }
+
     li {
       list-style: none;
       border-left: 10px solid transparent;
       padding: .7em 1em .7em 2em;
       font-family: $secondary_font_face;
+      display: none;
 
       &.active {
         border-left-color: $colour_purple_base;
         background-color: #FFF;
+      }
+
+      &.visible {
+        display: block;
       }
 
       a {
@@ -64,7 +95,7 @@
   .search {
     width: 100%;
     margin: 0;
-    background: #333;
+    background: $colour_primary_font;
     color: white;
     font-family: $secondary_font_face;
 
@@ -73,6 +104,22 @@
       border: 0;
       padding: 1em 1em 1em 2.5em;
       outline: 0;
+    }
+  }
+
+  @media screen and (max-width: $break-small) {
+    display: block;
+
+    aside,
+    article {
+      display: block;
+      width: 100%;
+    }
+
+    aside {
+      .title {
+        display: none;
+      }
     }
   }
 }

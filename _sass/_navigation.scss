@@ -10,18 +10,39 @@
 
   .logo-link {
     float: left;
+
+    @media screen and (max-width: $break-small) {
+      margin: 1em 0;
+    }
+  }
+
+  .nav-logo {
+    width: 5vw;
+    display: inline;
+
+    @media screen and (max-width: $break-small) {
+      width: 13vw;
+    }
   }
 
   .menu {
     float: right;
     padding-top: 1em;
     margin-bottom: 0;
+
+    @media screen and (max-width: $break-small) {
+      margin: 0;
+    }
   }
 
   nav,
   menu {
     padding: $vertical-rhythm / 3 $horizontal-rhythm;
     margin: 0;
+
+    @media screen and (max-width: $break-small) {
+      padding: $vertical-rhythm / 3 $horizontal-rhythm * 2;
+    }
   }
 }
 

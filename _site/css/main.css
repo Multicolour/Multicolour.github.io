@@ -502,14 +502,30 @@ th {
     vertical-align: top; }
   .general-nav .logo-link {
     float: left; }
+    @media screen and (max-width: 414px) {
+      .general-nav .logo-link {
+        margin: 1em 0; } }
+  .general-nav .nav-logo {
+    width: 5vw;
+    display: inline; }
+    @media screen and (max-width: 414px) {
+      .general-nav .nav-logo {
+        width: 13vw; } }
   .general-nav .menu {
     float: right;
     padding-top: 1em;
     margin-bottom: 0; }
+    @media screen and (max-width: 414px) {
+      .general-nav .menu {
+        margin: 0; } }
   .general-nav nav,
   .general-nav menu {
     padding: 1.66667vh 2vw;
     margin: 0; }
+    @media screen and (max-width: 414px) {
+      .general-nav nav,
+      .general-nav menu {
+        padding: 1.66667vh 4vw; } }
 
 nav {
   padding: 0;
@@ -542,14 +558,33 @@ nav {
     .columns aside small {
       display: block;
       font-family: "georgia", Times, sans-serif; }
+    @media screen and (max-width: 414px) {
+      .columns aside .search-results {
+        display: none; }
+        .columns aside .search-results .visible {
+          display: none; }
+        .columns aside .search-results.searched, .columns aside .search-results.intent {
+          display: block;
+          position: absolute;
+          top: 32vh;
+          left: 1rem;
+          right: 1rem;
+          bottom: 0;
+          background: rgba(255, 255, 255, 0.95);
+          margin-bottom: 0; }
+          .columns aside .search-results.searched .visible, .columns aside .search-results.intent .visible {
+            display: block; } }
     .columns aside li {
       list-style: none;
       border-left: 10px solid transparent;
       padding: .7em 1em .7em 2em;
-      font-family: "Source Sans Pro", sans-serif; }
+      font-family: "Source Sans Pro", sans-serif;
+      display: none; }
       .columns aside li.active {
         border-left-color: #7423b5;
         background-color: #FFF; }
+      .columns aside li.visible {
+        display: block; }
       .columns aside li a {
         font-family: inherit;
         text-decoration: none;
@@ -568,7 +603,7 @@ nav {
   .columns .search {
     width: 100%;
     margin: 0;
-    background: #333;
+    background: #444;
     color: white;
     font-family: "Source Sans Pro", sans-serif; }
     .columns .search input {
@@ -576,6 +611,15 @@ nav {
       border: 0;
       padding: 1em 1em 1em 2.5em;
       outline: 0; }
+  @media screen and (max-width: 414px) {
+    .columns {
+      display: block; }
+      .columns aside,
+      .columns article {
+        display: block;
+        width: 100%; }
+      .columns aside .title {
+        display: none; } }
 
 .author {
   margin: 0; }
@@ -913,10 +957,6 @@ table td {
 .point-header {
   margin-top: 0;
   line-height: 1.5em; }
-
-.nav-logo {
-  width: 5vw;
-  display: inline; }
 
 .examples .getting-started {
   margin-top: 15vh; }
