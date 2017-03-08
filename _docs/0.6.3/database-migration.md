@@ -4,7 +4,7 @@ title: Multicolour documentation database migration
 description: Documentation on the database migration logic, caveats of automatic data migration and how to connect Multicolour to an existing database.
 keywords: database, migration, data, existing database, automatic
 version: '0.6.3'
-short_name: Database migration
+short_name: Migration
 contents: false
 permalink: /docs/0.6.3/collections/migration/
 lang: en

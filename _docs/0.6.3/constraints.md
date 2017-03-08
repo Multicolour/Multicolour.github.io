@@ -63,7 +63,7 @@ and `ConstraintObject` is an `Object` with the following format:
 
 ### Example and common uses
 
-The most common constraint is ensuring a user has sufficient privileges to read|write something and would come in the form of
+The most common constraint is ensuring a user has sufficient privileges to read/write something and would come in the form of
 
 {% highlight js %}
 {

@@ -12,7 +12,7 @@ html, body {
 body {
   font-family: $primary_font_face;
   font-size: $base-font-size;
-  line-height: $base-font-size * 1.4;
+  line-height: $base-font-size * 2;
   -webkit-font-smoothing: antialiased;
   padding: 1rem;
   color: $colour_primary_font;
@@ -21,8 +21,18 @@ body {
 
   @media screen and (max-width: $break-small) {
     font-size: $base-font-size * 3;
-    line-height: ($base-font-size * 2) * 1.5;
+    line-height: ($base-font-size * 2) * 2.5;
   }
+}
+
+@media screen and (max-width: $break-small) {
+  figure {
+    margin: 0;
+  }
+}
+
+figure table td {
+  border: 0;
 }
 
 main {

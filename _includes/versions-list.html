@@ -1,6 +1,6 @@
-<ul>
+<ul class="search-results">
   {% for version in site.versions %}
-    <li>
+    <li class="visible">
       {% if version == site.latest_version %}
       <a href="/docs/{{ version }}" title="Multicolour {{ version }} documentation.">latest/{{ version }}</a>
       {% else %}

@@ -154,8 +154,8 @@
         "targetPlatform": "NodeJS",
         "keywords": "codeless business logic, multicolour constraints",
         "learningResourceType": ["learning activity"],
-        "wordCount": "529",
-        "datePublished": "2017-03-08 10:25:01 +0000",
+        "wordCount": "522",
+        "datePublished": "2017-03-08 11:05:23 +0000",
         "url": "/docs/0.6.3/collections/constraints/",
         "publisher": {
             "@type": "Organization",
@@ -181,7 +181,7 @@
             "@type": "WebPage",
             "@id": "http://0.0.0.0:4000/docs/0.6.3/collections/constraints/"
         },
-        "articleBody": "ConstraintsA constraint in Multicolour is a simple string in your models to define a limiting behaviour on for certain types of actions, such as making sure when something is created it gets assigned the logged in user’s identifier for ownership.Constraints exist to replace simple, common business logic without having to write JavaScript and they come in a few formats that is described in the following spec.Specification{  [verb String]: {    [key String]: Function|ComparativeString|ConstraintObject,  }}Where ComparativeString is a String with the following format:const comparatives = new Map([  [&quot;&amp;lt;&quot;, &quot;&amp;lt;&quot;],  [&quot;&amp;gt;&quot;, &quot;&amp;gt;&quot;],  [&quot;&amp;lt;=&quot;, &quot;&amp;lt;=&quot;],  [&quot;&amp;gt;=&quot;, &quot;&amp;gt;=&quot;],  [&quot;!&quot;, &quot;!&quot;],  [&quot;^&quot;, &quot;startsWith&quot;],  [&quot;$&quot;, &quot;endsWith&quot;],  [&quot;%&quot;, &quot;like&quot;]])[Comparative?] path.to.data.in.request.objectand ConstraintObject is an Object with the following format:{  [key String]: {    compile: Bool false,    value: compile ? ComparativeString : (String|Number|null)  },}Example and common uses            The most common constraint is ensuring a user has sufficient privileges to read      write something and would come in the form of      {  user: &quot;auth.credentials.user.id&quot;}The way this works is the String is a path to an object on the request object, this is in-fact setting the constraint to the value of request.auth.credentials.user.id in the incoming request.More examples{  role: &quot;auth.session.role&quot;}{  name: {    compile: false,    value: &quot;Multicolour&quot;  }}{  createdAt: &quot;&amp;gt;= &quot; + new Date(2015)}{  age: {    compile: false,    value: &quot;&amp;gt;= 18&quot;  }}Verbs and constraintsYou must specify your constraints on all the http verbs you wish to constrain. The verbs must appear as lowercase.Example:...constraints: {  get: { public: { compile: false, value: true } },  post: { user: &quot;auth.credentials.user.id&quot; },  put: { user: &quot;auth.credentials.user.id&quot; },  delete: { user: &quot;auth.credentials.user.id&quot; },  patch: { user: &quot;auth.credentials.user.id&quot; }},..."
+        "articleBody": "ConstraintsA constraint in Multicolour is a simple string in your models to define a limiting behaviour on for certain types of actions, such as making sure when something is created it gets assigned the logged in user’s identifier for ownership.Constraints exist to replace simple, common business logic without having to write JavaScript and they come in a few formats that is described in the following spec.Specification{  [verb String]: {    [key String]: Function|ComparativeString|ConstraintObject,  }}Where ComparativeString is a String with the following format:const comparatives = new Map([  [&quot;&amp;lt;&quot;, &quot;&amp;lt;&quot;],  [&quot;&amp;gt;&quot;, &quot;&amp;gt;&quot;],  [&quot;&amp;lt;=&quot;, &quot;&amp;lt;=&quot;],  [&quot;&amp;gt;=&quot;, &quot;&amp;gt;=&quot;],  [&quot;!&quot;, &quot;!&quot;],  [&quot;^&quot;, &quot;startsWith&quot;],  [&quot;$&quot;, &quot;endsWith&quot;],  [&quot;%&quot;, &quot;like&quot;]])[Comparative?] path.to.data.in.request.objectand ConstraintObject is an Object with the following format:{  [key String]: {    compile: Bool false,    value: compile ? ComparativeString : (String|Number|null)  },}Example and common usesThe most common constraint is ensuring a user has sufficient privileges to read/write something and would come in the form of{  user: &quot;auth.credentials.user.id&quot;}The way this works is the String is a path to an object on the request object, this is in-fact setting the constraint to the value of request.auth.credentials.user.id in the incoming request.More examples{  role: &quot;auth.session.role&quot;}{  name: {    compile: false,    value: &quot;Multicolour&quot;  }}{  createdAt: &quot;&amp;gt;= &quot; + new Date(2015)}{  age: {    compile: false,    value: &quot;&amp;gt;= 18&quot;  }}Verbs and constraintsYou must specify your constraints on all the http verbs you wish to constrain. The verbs must appear as lowercase.Example:...constraints: {  get: { public: { compile: false, value: true } },  post: { user: &quot;auth.credentials.user.id&quot; },  put: { user: &quot;auth.credentials.user.id&quot; },  delete: { user: &quot;auth.credentials.user.id&quot; },  patch: { user: &quot;auth.credentials.user.id&quot; }},..."
     }
 </script>
 
@@ -192,8 +192,7 @@
     <li
       data-keywords="multicolour API, API reference"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/api-reference" title="Multicolour core API reference">
         API Reference
       </a>
@@ -205,8 +204,7 @@
     <li
       data-keywords="multicolour, cli"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/cli" title="Multicolour documentation CLI">
         CLI
       </a>
@@ -218,8 +216,7 @@
     <li
       data-keywords="waterline blueprints, multicolour collection, database, table, define, migration"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/collections/" title="Multicolour documentation collections">
         Collections/Blueprints
       </a>
@@ -231,8 +228,7 @@
     <li
       data-keywords="multicolour config, server configuration, rest api config"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/configuration" title="Multicolour documentation configuration">
         Configuration
       </a>
@@ -254,10 +250,9 @@
     <li
       data-keywords="database, migration, data, existing database, automatic"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/collections/migration/" title="Multicolour documentation database migration">
-        Database migration
+        Migration
       </a>
       
 
@@ -267,8 +262,7 @@
     <li
       data-keywords="multicolour, rest api, debugging"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
         Debugging
       </a>
@@ -280,8 +274,7 @@
     <li
       data-keywords=""
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
         Quickstart
       </a>
@@ -293,8 +286,7 @@
     <li
       data-keywords="multicolour, javascript sdk"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/javascript-sdk" title="Multicolour documentation JavaScript SDK generator">
         JavaScript SDK
       </a>
@@ -306,8 +298,7 @@
     <li
       data-keywords="multicolour, plugins, rest api business logic"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/plugins" title="Multicolour documentation plugins">
         Writing plugins
       </a>
@@ -319,8 +310,7 @@
     <li
       data-keywords="multicolour, REST API routes, routing"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/routing/" title="Multicolour documentation routing">
         Routing
       </a>
@@ -332,8 +322,7 @@
     <li
       data-keywords="rest api query, results filtering, searching"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/routing/results/" title="Multicolour documentation result filtering">
         Results Filtering
       </a>
@@ -345,8 +334,7 @@
     <li
       data-keywords="file uploads, multicolour, rest api file uploads"
       
-      class="visible"
-      >
+      class="visible">
       <a href="/docs/0.6.3/routing/file-uploads/" title="Multicolour documentation file uploads">
         Uploading files
       </a>
@@ -400,14 +388,7 @@
 
 <h3 id="example-and-common-uses">Example and common uses</h3>
 
-<table>
-  <tbody>
-    <tr>
-      <td>The most common constraint is ensuring a user has sufficient privileges to read</td>
-      <td>write something and would come in the form of</td>
-    </tr>
-  </tbody>
-</table>
+<p>The most common constraint is ensuring a user has sufficient privileges to read/write something and would come in the form of</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="nl">user</span><span class="p">:</span> <span class="s2">"auth.credentials.user.id"</span>
