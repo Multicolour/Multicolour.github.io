@@ -123,6 +123,12 @@
      </url>
   
     <url>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/handlers/</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+     </url>
+  
+    <url>
       <loc>http://0.0.0.0:4000/docs/0.6.3/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>

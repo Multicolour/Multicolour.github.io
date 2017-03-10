@@ -26,7 +26,7 @@ The logo stayed the same for about a year but now, with the 0.4.0 release of Mul
 
 This logo no longer worked for what was no longer a purely technical solution to a technical problem but rather a simple solution to a complex problem.
 
-I tried to create a new logo many, many times and failed. What I had in my mind simply couldn’t come out. I wanted to communicate the simple, trustworthy and production ready aspect of Multicolour and with that I created a [simple brief](https://getmulticolour.com/branding-brief), set some cash aside and put the feelers out for a **proper** designer to do the branding.
+I tried to create a new logo many, many times and failed. What I had in my mind simply couldn’t come out. I wanted to communicate the simple, trustworthy and production ready aspect of Multicolour and with that I created a simple brief, set some cash aside and put the feelers out for a **proper** designer to do the branding.
 
 I had an overwhelming response from some of the designers I’ve admired in the industry for years but in the end I decided to go with Dan Edwards at No Divide. I’ve followed No Divide for a couple of years and **always** loved their work and never heard a bad thing about them. I was like a smitten puppy when I sent the email asking if they’d help me create a vocal brand.
 
