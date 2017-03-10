@@ -6,7 +6,7 @@ keywords: multicolour API, API reference
 version: '0.6.3'
 short_name: API Reference
 contents: false
-permalink: /docs/0.6.3/api-reference
+permalink: /docs/0.6.3/api-reference/
 lang: en
 breadcrumbs:
   - permalink: /docs/
@@ -60,7 +60,7 @@ Get any of the following properties values from Multicolour core, some propertie
 | `package`  | `Object`  | The contents of the app's `package.json` if any  |
 | `blueprints`  | [`Object`]({{ site.url }}/docs/0.6.3/collections/#blueprints)  | Only available after `.scan()` has run.  |
 | `validators`  | `Map<Object>`  | Map of validators.  |
-| `database`  | [`Object`]({{ site.url }}/docs/0.6.3/database)  | Only available after `.start()` has completed, the database plugin.  |
+| `database`  | [`Object`]({{ site.url }}/docs/0.6.3/collections)  | Only available after `.start()` has completed, the database plugin.  |
 | `server`  | `Object`  | Only available after `.start()` has completed, the server plugin.  |
 | `handlers`  | [`Object`]({{ site.url }}/docs/0.6.3/handlers)  | object with the handlers used by the server plugins and throughout code.  |
 
@@ -83,8 +83,8 @@ Much like the `Multicolour.get` interface the database has a number of `.get()`-
 
 | name  | type  | notes  |
 |---|---|---|
-| `models`  | [`Object`](/docs/0.6.3/database/#models)  | An object of each, raw waterline collection registered. |
-| `waterline`  | [`Object`](/docs/0.6.3/database/#waterline)  | The raw Waterline object underneath. |
+| `models`  | [`Object`](/docs/0.6.3/collections/#models)  | An object of each, raw waterline collection registered. |
+| `waterline`  | [`Object`](/docs/0.6.3/collections/#waterline)  | The raw Waterline object underneath. |
 
 ---
 

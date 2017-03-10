@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Multicolour documentation debugging tips</title>
+  <title>Multicolour documentation CLI</title>
 
   <!-- Base -->
 <meta name="identifier-url" content="site.url" />
-<meta name="title" content="Multicolour documentation debugging tips" />
-<meta name="description" content="Learn how to use the built in debugging tools to debug your REST API faster." />
-<meta name="abstract" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ..." />
-<meta name="keywords" content="multicolour, rest api, debugging" />
+<meta name="title" content="Multicolour documentation CLI" />
+<meta name="description" content="Documentation for the Multicolour CLI tool." />
+<meta name="abstract" content="CLI" />
+<meta name="keywords" content="multicolour, cli" />
 <meta name="author" content="New World Code Ltd" />
 <meta name="revisit-after" content="7" />
 <meta name="language" content="en" />
@@ -24,21 +24,21 @@
 <!-- Social -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@getmulticolour">
-<meta name="twitter:title" content="Multicolour documentation debugging tips">
-<meta name="twitter:description" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ...">
+<meta name="twitter:title" content="Multicolour documentation CLI">
+<meta name="twitter:description" content="CLI">
 <meta name="twitter:creator" content="@getmulticolour">
 <meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta itemprop="name" content="Multicolour documentation debugging tips">
-<meta itemprop="description" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ...">
+<meta itemprop="name" content="Multicolour documentation CLI">
+<meta itemprop="description" content="CLI">
 <meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta property="og:title" content="Multicolour documentation debugging tips" />
+<meta property="og:title" content="Multicolour documentation CLI" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
-<meta property="og:description" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ..." />
-<meta property="og:site_name" content="Multicolour documentation debugging tips" />
+<meta property="og:description" content="CLI" />
+<meta property="og:site_name" content="Multicolour documentation CLI" />
 
 <link rel="icon" href="/images/iconography/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
@@ -63,7 +63,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/debugging">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/cli/">
   <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
@@ -90,7 +90,7 @@
     </nav>
 
     <menu class="breadcrumb-menu">
-        <h1>Multicolour documentation debugging tips</h1>
+        <h1>Multicolour documentation CLI</h1>
 
         <div class="breadcrumbs">
   <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
@@ -115,9 +115,9 @@
   
   
 
-  <a class="current" href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
+  <a class="current" href="/docs/0.6.3/cli/" title="Multicolour documentation CLI">
     
-    Debugging
+    CLI
     
   </a>
 </div>
@@ -142,15 +142,15 @@
     {
         "@context": "http://schema.org",
         "@type": "APIReference",
-        "headline": "Multicolour documentation debugging tips",
+        "headline": "Multicolour documentation CLI",
         "assemblyVersion": "0.6.3",
         "executableLibraryName": "multicolour",
         "targetPlatform": "NodeJS",
-        "keywords": "multicolour, rest api, debugging",
+        "keywords": "multicolour, cli",
         "learningResourceType": ["learning activity"],
-        "wordCount": "156",
-        "datePublished": "2017-03-10 17:23:51 +0000",
-        "url": "/docs/0.6.3/debugging",
+        "wordCount": "420",
+        "datePublished": "2017-03-10 17:38:01 +0000",
+        "url": "/docs/0.6.3/cli/",
         "publisher": {
             "@type": "Organization",
             "name": "Multicolour",
@@ -173,9 +173,9 @@
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://0.0.0.0:4000/docs/0.6.3/debugging"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/cli/"
         },
-        "articleBody": "DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of internal objects and operations as they happen.You will see output similar tomulticolour:core Scanning /www/node/multicolour-app/content +2ms  multicolour:core Scanned and found: [  &quot;/www/node/multicolour-app/content/blueprints/abode.js&quot;,  &quot;/www/node/multicolour-app/content/blueprints/gadget.js&quot;,  &quot;/www/node/multicolour-app/content/blueprints/person.js&quot;,  &quot;/www/node/multicolour-app/node_modules/multicolour/lib/user-model.js&quot;] +0ms  multicolour:core Finished scanning +149msYou can also install the multicolour-hapi-vantage plugin to see HTTP logs in real time using the debug on command in the repl.While you can use the DEBUG environmental in conjunction with the repl, the output may appear garbled as the two share the same stdout.Starting your service with the vantage plugin installed will take you to a repl (and start your service in the background)Running with the debug mode set to on will show every HTTP request and response in pair to help with debugging."
+        "articleBody": "CLIMulticolour comes with a CLI to help you get started with your projects.The init wizard will guide you through some common options to create some basic, example content for you.Run multicolour init [target], where target is optional or where you want to generate your project.You’ll be warned that it will bash (overwrite) any existing app in that directory and then ask if you wish to continue.You will then be asked for a few technology choices, use enter and space to select and progress.Once you’ve answered the questions, the wizard will spend a few seconds generating some files for you and when it has finished creating basic content for you and installing the dependencies of the project, it will display a message.You can start your service by running multicolour start and visiting http://localhost:1811/docs to view your new API’s documentation.Next steps?Open your [target] in your favourite editor and get to the interesting part of your development.multicolour versionReturns the version string for Multicolour, E.G 0.5.2multicolour plugin-add [plugin]Add a plugin to this install of Multicolour. This will install and save the plugin to your package.json. By default, it will only search for official plugins but passing the --no_prefix|-np argument will install non-officially supported plugins as well.Does not currently update your plugins config in the package.json as some plugins are plugins for the server.multicolour startStart your services, this command is really only useful if you are using the package.json based configuration as generated by the init command. Below is the default package.json for posterity.{  &quot;version&quot;: &quot;1.0.0&quot;,  &quot;scripts&quot;: {    &quot;start&quot;: &quot;multicolour start&quot;  },  &quot;engineStrict&quot;: true,  &quot;engines&quot;: {    &quot;node&quot;: &quot;&amp;gt;= 4.0.0&quot;  },  &quot;dependencies&quot;: {    &quot;joi&quot;: &quot;^10.2.2&quot;,    &quot;multicolour&quot;: &quot;^0.6.3&quot;,    &quot;multicolour-server-hapi&quot;: &quot;^1.4.0&quot;,    &quot;sails-postgresql&quot;: &quot;0.11.4&quot;  },  &quot;multicolour&quot;: {    &quot;config&quot;: &quot;./config&quot;,    &quot;plugins&quot;: [      {        &quot;as&quot;: &quot;server&quot;,        &quot;name&quot;: &quot;multicolour-server-hapi&quot;,        &quot;plugins&quot;: []      }    ]  },  &quot;name&quot;: &quot;test&quot;,  &quot;description&quot;: &quot;test&quot;}"
     }
 </script>
 
@@ -187,7 +187,7 @@
       data-keywords="multicolour API, API reference"
       
       class="visible">
-      <a href="/docs/0.6.3/api-reference" title="Multicolour core API reference">
+      <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
         API Reference
       </a>
       
@@ -198,10 +198,8 @@
     <li
       data-keywords="multicolour, cli"
       
-      class="visible">
-      <a href="/docs/0.6.3/cli" title="Multicolour documentation CLI">
+      class="active visible">
         CLI
-      </a>
       
 
       
@@ -223,7 +221,7 @@
       data-keywords="multicolour config, server configuration, rest api config"
       
       class="visible">
-      <a href="/docs/0.6.3/configuration" title="Multicolour documentation configuration">
+      <a href="/docs/0.6.3/configuration/" title="Multicolour documentation configuration">
         Configuration
       </a>
       
@@ -258,8 +256,10 @@
     <li
       data-keywords="multicolour, rest api, debugging"
       
-      class="active visible">
+      class="visible">
+      <a href="/docs/0.6.3/debugging/" title="Multicolour documentation debugging tips">
         Debugging
+      </a>
       
 
       
@@ -269,7 +269,7 @@
       data-keywords=""
       
       class="visible">
-      <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
+      <a href="/docs/0.6.3/quickstart/" title="Multicolour quickstart">
         Quickstart
       </a>
       
@@ -281,7 +281,7 @@
       data-keywords="multicolour, javascript sdk"
       
       class="visible">
-      <a href="/docs/0.6.3/javascript-sdk" title="Multicolour documentation JavaScript SDK generator">
+      <a href="/docs/0.6.3/javascript-sdk/" title="Multicolour documentation JavaScript SDK generator">
         JavaScript SDK
       </a>
       
@@ -293,7 +293,7 @@
       data-keywords="multicolour, plugins, rest api business logic"
       
       class="visible">
-      <a href="/docs/0.6.3/plugins" title="Multicolour documentation plugins">
+      <a href="/docs/0.6.3/plugins/" title="Multicolour documentation plugins">
         Writing plugins
       </a>
       
@@ -354,29 +354,72 @@
             
         </aside>
         <article>
-          <h1 id="debugging">Debugging</h1>
-<p>Multicolour has a few different ways to debug your application, you can start your service with an environmental <code class="highlighter-rouge">DEBUG=multicolour:*</code> to see logs of internal objects and operations as they happen.</p>
+          <h1 id="cli">CLI</h1>
 
-<p>You will see output similar to</p>
+<p>Multicolour comes with a CLI to help you get started with your projects.</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">multicolour:core Scanning /www/node/multicolour-app/content +2ms
-  multicolour:core Scanned and found: [
-  "/www/node/multicolour-app/content/blueprints/abode.js",
-  "/www/node/multicolour-app/content/blueprints/gadget.js",
-  "/www/node/multicolour-app/content/blueprints/person.js",
-  "/www/node/multicolour-app/node_modules/multicolour/lib/user-model.js"
-] +0ms
-  multicolour:core Finished scanning +149ms</code></pre></figure>
+<p>The <code class="highlighter-rouge">init</code> wizard will guide you through some common options to create some basic, example content for you.</p>
 
-<p>You can also install the <code class="highlighter-rouge">multicolour-hapi-vantage</code> plugin to see HTTP logs in real time using the <code class="highlighter-rouge">debug on</code> command in the repl.</p>
+<p>Run <code class="highlighter-rouge">multicolour init [target]</code>, where target is optional or where you want to generate your project.</p>
 
-<p>While you can use the <code class="highlighter-rouge">DEBUG</code> environmental in conjunction with the repl, the output may appear garbled as the two share the same stdout.</p>
+<p>You’ll be warned that it will bash (overwrite) any existing app in that directory and then ask if you wish to continue.</p>
 
-<p>Starting your service with the vantage plugin installed will take you to a repl (and start your service in the background)</p>
+<p>You will then be asked for a few technology choices, use enter and space to select and progress.</p>
 
-<p><img src="https://cloud.githubusercontent.com/assets/1430657/17627262/7f482b76-60a8-11e6-93eb-83f77c2458d9.png" alt="image" /></p>
+<p>Once you’ve answered the questions, the wizard will spend a few seconds generating some files for you and when it has finished creating basic content for you and installing the dependencies of the project, it will display a message.</p>
 
-<p>Running with the debug mode set to on will show every HTTP request and response in pair to help with debugging.</p>
+<p><img src="https://www.dropbox.com/s/6qlxag25rwy5wg6/cli.gif?dl=1" alt="CLI Tool in action" /></p>
+
+<p>You can start your service by running <code class="highlighter-rouge">multicolour start</code> and visiting <a href="http://localhost:1811/docs">http://localhost:1811/docs</a> to view your new API’s documentation.</p>
+
+<h3 id="next-steps">Next steps?</h3>
+
+<p>Open your [target] in your favourite editor and get to the interesting part of your development.</p>
+
+<h3 id="multicolour-version"><code class="highlighter-rouge">multicolour version</code></h3>
+
+<p>Returns the version string for Multicolour, E.G <code class="highlighter-rouge">0.5.2</code></p>
+
+<h3 id="multicolour-plugin-add-plugin"><code class="highlighter-rouge">multicolour plugin-add [plugin]</code></h3>
+
+<p>Add a plugin to this install of Multicolour. This will install and save the plugin to your <code class="highlighter-rouge">package.json</code>. By default, it will only search for official plugins but passing the <code class="highlighter-rouge">--no_prefix|-np</code> argument will install non-officially supported plugins as well.</p>
+
+<p>Does not currently update your <code class="highlighter-rouge">plugins</code> config in the <code class="highlighter-rouge">package.json</code> as some plugins are plugins for the server.</p>
+
+<h3 id="multicolour-start"><code class="highlighter-rouge">multicolour start</code></h3>
+
+<p>Start your services, this command is really only useful if you are using the <code class="highlighter-rouge">package.json</code> based configuration as generated by the init command. Below is the default <code class="highlighter-rouge">package.json</code> for posterity.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"version"</span><span class="err">:</span> <span class="s2">"1.0.0"</span><span class="p">,</span>
+  <span class="s2">"scripts"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"start"</span><span class="err">:</span> <span class="s2">"multicolour start"</span>
+  <span class="p">},</span>
+  <span class="s2">"engineStrict"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"engines"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"node"</span><span class="err">:</span> <span class="s2">"&gt;= 4.0.0"</span>
+  <span class="p">},</span>
+  <span class="s2">"dependencies"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"joi"</span><span class="err">:</span> <span class="s2">"^10.2.2"</span><span class="p">,</span>
+    <span class="s2">"multicolour"</span><span class="err">:</span> <span class="s2">"^0.6.3"</span><span class="p">,</span>
+    <span class="s2">"multicolour-server-hapi"</span><span class="err">:</span> <span class="s2">"^1.4.0"</span><span class="p">,</span>
+    <span class="s2">"sails-postgresql"</span><span class="err">:</span> <span class="s2">"0.11.4"</span>
+  <span class="p">},</span>
+  <span class="s2">"multicolour"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"config"</span><span class="err">:</span> <span class="s2">"./config"</span><span class="p">,</span>
+    <span class="s2">"plugins"</span><span class="err">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">"as"</span><span class="p">:</span> <span class="s2">"server"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"multicolour-server-hapi"</span><span class="p">,</span>
+        <span class="s2">"plugins"</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"test"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="err">:</span> <span class="s2">"test"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
         </article>
       </section>

@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Multicolour documentation plugins</title>
+  <title>Multicolour quickstart</title>
 
   <!-- Base -->
 <meta name="identifier-url" content="site.url" />
-<meta name="title" content="Multicolour documentation plugins" />
-<meta name="description" content="Use plugins to create and extend REST API behaviour." />
-<meta name="abstract" content="Writing Multicolour Plugins" />
-<meta name="keywords" content="multicolour, plugins, rest api business logic" />
+<meta name="title" content="Multicolour quickstart" />
+<meta name="description" content="Get started with Multicolour instantly, create a REST API in less than 5 minutes." />
+<meta name="abstract" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with." />
+<meta name="keywords" content="multicolour, rest api, generator, nodejs" />
 <meta name="author" content="New World Code Ltd" />
 <meta name="revisit-after" content="7" />
 <meta name="language" content="en" />
@@ -24,21 +24,21 @@
 <!-- Social -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@getmulticolour">
-<meta name="twitter:title" content="Multicolour documentation plugins">
-<meta name="twitter:description" content="Writing Multicolour Plugins">
+<meta name="twitter:title" content="Multicolour quickstart">
+<meta name="twitter:description" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.">
 <meta name="twitter:creator" content="@getmulticolour">
 <meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta itemprop="name" content="Multicolour documentation plugins">
-<meta itemprop="description" content="Writing Multicolour Plugins">
+<meta itemprop="name" content="Multicolour quickstart">
+<meta itemprop="description" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.">
 <meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta property="og:title" content="Multicolour documentation plugins" />
+<meta property="og:title" content="Multicolour quickstart" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
-<meta property="og:description" content="Writing Multicolour Plugins" />
-<meta property="og:site_name" content="Multicolour documentation plugins" />
+<meta property="og:description" content="Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with." />
+<meta property="og:site_name" content="Multicolour quickstart" />
 
 <link rel="icon" href="/images/iconography/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
@@ -63,7 +63,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/plugins">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/quickstart/">
   <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
@@ -90,7 +90,7 @@
     </nav>
 
     <menu class="breadcrumb-menu">
-        <h1>Multicolour documentation plugins</h1>
+        <h1>Multicolour quickstart</h1>
 
         <div class="breadcrumbs">
   <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
@@ -115,9 +115,9 @@
   
   
 
-  <a class="current" href="/docs/0.6.3/plugins" title="Multicolour documentation plugins">
+  <a class="current" href="/docs/0.6.3/quickstart/" title="Multicolour quickstart">
     
-    Writing plugins
+    Quickstart
     
   </a>
 </div>
@@ -142,15 +142,15 @@
     {
         "@context": "http://schema.org",
         "@type": "APIReference",
-        "headline": "Multicolour documentation plugins",
+        "headline": "Multicolour quickstart",
         "assemblyVersion": "0.6.3",
         "executableLibraryName": "multicolour",
         "targetPlatform": "NodeJS",
-        "keywords": "multicolour, plugins, rest api business logic",
+        "keywords": "",
         "learningResourceType": ["learning activity"],
-        "wordCount": "336",
-        "datePublished": "2017-03-10 17:23:51 +0000",
-        "url": "/docs/0.6.3/plugins",
+        "wordCount": "214",
+        "datePublished": "2017-03-10 17:38:01 +0000",
+        "url": "/docs/0.6.3/quickstart/",
         "publisher": {
             "@type": "Organization",
             "name": "Multicolour",
@@ -173,9 +173,9 @@
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://0.0.0.0:4000/docs/0.6.3/plugins"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/quickstart/"
         },
-        "articleBody": "Writing Multicolour PluginsYou’ve written loads of awesome new functionality in your custom_routes callback and are thinking “I’d like to distribute my awesome code as a package”, either internally or on npm.You need a plugin, plugins make sharing and using your custom functionality easy.What is a Multicolour plugin?A Muticolour plugin is simply a class that encapsulates your custom behaviour, there aren’t any limitations or locks or blocks to the rest of Multicolour or any other plugins you’re using so you can do what you need to do unincumbered.All plugins are automatically extended with the talkie interface and is assigned a host as well as a unique (unique every time) id. Both can be .request()-ed directly from your plugin. I.E this.request(&quot;host&quot;) or this.request(&quot;id&quot;).Example Multicolour pluginAn example Multicolour plugin that adds a new route to the route table looks like this:// This file is called ./plugins/awesome/index.jsmodule.exports = class {  // Register is the only required member function.  register(multicolour) {    const server = multicolour.get(&quot;server&quot;).request(&quot;raw&quot;)    server.route({      path: &quot;/hello/{name}&quot;,      config: {        handler: (request, reply) =&amp;gt; {          reply(`Hey there, ${requet.params.name}`)        },        validate: {          params: {            name: require(&quot;joi&quot;).string().required()          }        }      }    })  }}Once you’ve saved your plugin, to use it simply add .use(require(&quot;./plugins/awesome&quot;)) to your main app.js (Use the other .use()-es as reference to where, your app.js might be different.)Run your service and your plugin will register and run. Easy as that."
+        "articleBody": "Getting StartedMulticolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.multicolour init .in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, config.js, app.js and content/blueprints/example.jsBlueprintsMulticolour stands on the shoulders of giants, our ORM is the popular Waterline ORM. It has a rich api for creating database schemas without losing control of the underlying technology.Multicolour uses this to allow you to write JSON and get a whole collection of software. If you’ve run multicolour init you’ll see a content/ folder which also contains a blueprints/ folder where you’ll see example.js.  You said I write JSON to get my stuffWe’re not lying, you write JSON and you get your API and frontend but you get .js files because you can expand the generated CRUD with your business logic by using the lifecycle events and custom functions by writing normal JavaScript.Read more about writing blueprints and extending behaviour in the Blueprints API reference and on the Waterline Blueprints documentation."
     }
 </script>
 
@@ -187,7 +187,7 @@
       data-keywords="multicolour API, API reference"
       
       class="visible">
-      <a href="/docs/0.6.3/api-reference" title="Multicolour core API reference">
+      <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
         API Reference
       </a>
       
@@ -199,7 +199,7 @@
       data-keywords="multicolour, cli"
       
       class="visible">
-      <a href="/docs/0.6.3/cli" title="Multicolour documentation CLI">
+      <a href="/docs/0.6.3/cli/" title="Multicolour documentation CLI">
         CLI
       </a>
       
@@ -223,7 +223,7 @@
       data-keywords="multicolour config, server configuration, rest api config"
       
       class="visible">
-      <a href="/docs/0.6.3/configuration" title="Multicolour documentation configuration">
+      <a href="/docs/0.6.3/configuration/" title="Multicolour documentation configuration">
         Configuration
       </a>
       
@@ -259,7 +259,7 @@
       data-keywords="multicolour, rest api, debugging"
       
       class="visible">
-      <a href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
+      <a href="/docs/0.6.3/debugging/" title="Multicolour documentation debugging tips">
         Debugging
       </a>
       
@@ -270,10 +270,8 @@
     <li
       data-keywords=""
       
-      class="visible">
-      <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
+      class="active visible">
         Quickstart
-      </a>
       
 
       
@@ -283,7 +281,7 @@
       data-keywords="multicolour, javascript sdk"
       
       class="visible">
-      <a href="/docs/0.6.3/javascript-sdk" title="Multicolour documentation JavaScript SDK generator">
+      <a href="/docs/0.6.3/javascript-sdk/" title="Multicolour documentation JavaScript SDK generator">
         JavaScript SDK
       </a>
       
@@ -294,8 +292,10 @@
     <li
       data-keywords="multicolour, plugins, rest api business logic"
       
-      class="active visible">
+      class="visible">
+      <a href="/docs/0.6.3/plugins/" title="Multicolour documentation plugins">
         Writing plugins
+      </a>
       
 
       
@@ -354,47 +354,27 @@
             
         </aside>
         <article>
-          <h1 id="writing-multicolour-plugins">Writing Multicolour Plugins</h1>
+          <h1 id="getting-started">Getting Started</h1>
+<p>Multicolour has a CLI to make your life easier, it includes a helper to create a bare bones project for you to get started with.</p>
 
-<p>You’ve written loads of awesome new functionality in your <code class="highlighter-rouge">custom_routes</code> callback and are thinking “I’d like to distribute my awesome code as a package”, either internally or on npm.</p>
+<p><code class="highlighter-rouge">multicolour init .</code></p>
 
-<p>You need a plugin, plugins make sharing and using your custom functionality easy.</p>
+<p>in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, <code class="highlighter-rouge">config.js</code>, <code class="highlighter-rouge">app.js</code> and <code class="highlighter-rouge">content/blueprints/example.js</code></p>
 
-<h2 id="what-is-a-multicolour-plugin">What is a Multicolour plugin?</h2>
+<h2 id="blueprints">Blueprints</h2>
 
-<p>A Muticolour plugin is simply a class that encapsulates your custom behaviour, there aren’t any limitations or locks or blocks to the rest of Multicolour or any other plugins you’re using so you can do what you need to do unincumbered.</p>
+<p>Multicolour stands on the shoulders of giants, our ORM is the popular <a href="https://github.com/balderdashy/waterline">Waterline ORM</a>. It has a rich api for creating database schemas without losing control of the underlying technology.</p>
 
-<p>All plugins are automatically extended with the talkie interface and is assigned a <code class="highlighter-rouge">host</code> as well as a unique (unique every time) id. Both can be <code class="highlighter-rouge">.request()</code>-ed directly from your plugin. I.E <code class="highlighter-rouge">this.request("host")</code> or <code class="highlighter-rouge">this.request("id")</code>.</p>
+<p>Multicolour uses this to allow you to write JSON and get a whole collection of software. If you’ve run <code class="highlighter-rouge">multicolour init</code> you’ll see a <code class="highlighter-rouge">content/</code> folder which also contains a <code class="highlighter-rouge">blueprints/</code> folder where you’ll see <code class="highlighter-rouge">example.js</code>.</p>
 
-<h2 id="example-multicolour-plugin">Example Multicolour plugin</h2>
+<blockquote>
+  <p>You said I write JSON to get my stuff</p>
+</blockquote>
 
-<p>An example Multicolour plugin that adds a new route to the route table looks like this:</p>
+<p>We’re not lying, you write JSON and you get your API and frontend but you get <code class="highlighter-rouge">.js</code> files because you can expand the generated <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> with your business logic by using the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/lifecycle-callbacks.md">lifecycle</a> events and <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/instance-class-methods.md">custom functions</a> by writing normal JavaScript.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// This file is called ./plugins/awesome/index.js</span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kr">class</span> <span class="p">{</span>
-  <span class="c1">// Register is the only required member function.</span>
-  <span class="nx">register</span><span class="p">(</span><span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">multicolour</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"server"</span><span class="p">).</span><span class="nx">request</span><span class="p">(</span><span class="s2">"raw"</span><span class="p">)</span>
+<p>Read more about writing blueprints and extending behaviour in the <a href="/docs/0.6.3/collections/#blueprints">Blueprints API reference</a> and on the <a href="https://github.com/balderdashy/waterline-docs/blob/master/models/models.md">Waterline Blueprints documentation</a>.</p>
 
-    <span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span>
-      <span class="na">path</span><span class="p">:</span> <span class="s2">"/hello/{name}"</span><span class="p">,</span>
-      <span class="na">config</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">handler</span><span class="p">:</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="nx">reply</span><span class="p">(</span><span class="err">`</span><span class="nx">Hey</span> <span class="nx">there</span><span class="p">,</span> <span class="nx">$</span><span class="p">{</span><span class="nx">requet</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="err">`</span><span class="p">)</span>
-        <span class="p">},</span>
-        <span class="na">validate</span><span class="p">:</span> <span class="p">{</span>
-          <span class="na">params</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">name</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"joi"</span><span class="p">).</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">()</span>
-          <span class="p">}</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">})</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Once you’ve saved your plugin, to use it simply add <code class="highlighter-rouge">.use(require("./plugins/awesome"))</code> to your main <code class="highlighter-rouge">app.js</code> (Use the other <code class="highlighter-rouge">.use()</code>-es as reference to where, your <code class="highlighter-rouge">app.js</code> might be different.)</p>
-
-<p>Run your service and your plugin will register and run. Easy as that.</p>
 
         </article>
       </section>

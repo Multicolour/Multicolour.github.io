@@ -6,7 +6,7 @@ keywords: multicolour, cli
 version: '0.6.3'
 short_name: CLI
 contents: false
-permalink: /docs/0.6.3/cli
+permalink: /docs/0.6.3/cli/
 lang: en
 breadcrumbs:
   - permalink: /docs/

@@ -5,7 +5,7 @@ description: Get started with Multicolour instantly, create a REST API in less t
 version: '0.6.3'
 short_name: Quickstart
 contents: false
-permalink: /docs/0.6.3/quickstart
+permalink: /docs/0.6.3/quickstart/
 lang: en
 breadcrumbs:
   - permalink: /docs/
@@ -38,4 +38,4 @@ Read more about writing blueprints and extending behaviour in the [Blueprints AP
 [waterline-lifecycle]: https://github.com/balderdashy/waterline-docs/blob/master/models/lifecycle-callbacks.md
 [custom-functions]: https://github.com/balderdashy/waterline-docs/blob/master/models/instance-class-methods.md
 [waterline-blueprints]: https://github.com/balderdashy/waterline-docs/blob/master/models/models.md
-[blueprints]: ./Blueprints
+[blueprints]: /docs/0.6.3/collections/#blueprints

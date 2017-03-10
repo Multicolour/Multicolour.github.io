@@ -6,7 +6,7 @@ keywords: multicolour, rest api, debugging
 version: '0.6.3'
 short_name: Debugging
 contents: false
-permalink: /docs/0.6.3/debugging
+permalink: /docs/0.6.3/debugging/
 lang: en
 breadcrumbs:
   - permalink: /docs/

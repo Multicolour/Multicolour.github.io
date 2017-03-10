@@ -6,7 +6,7 @@ keywords: multicolour config, server configuration, rest api config
 version: '0.6.3'
 short_name: Configuration
 contents: false
-permalink: /docs/0.6.3/configuration
+permalink: /docs/0.6.3/configuration/
 lang: en
 breadcrumbs:
   - permalink: /docs/

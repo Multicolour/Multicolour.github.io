@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Multicolour documentation CLI</title>
+  <title>Multicolour documentation JavaScript SDK generator</title>
 
   <!-- Base -->
 <meta name="identifier-url" content="site.url" />
-<meta name="title" content="Multicolour documentation CLI" />
-<meta name="description" content="Documentation for the Multicolour CLI tool." />
-<meta name="abstract" content="CLI" />
-<meta name="keywords" content="multicolour, cli" />
+<meta name="title" content="Multicolour documentation JavaScript SDK generator" />
+<meta name="description" content="Learn how to use the JavaScript, frontend SDK generator to get your web apps up and running faster." />
+<meta name="abstract" content="JavaScript SDK generation" />
+<meta name="keywords" content="multicolour, javascript sdk" />
 <meta name="author" content="New World Code Ltd" />
 <meta name="revisit-after" content="7" />
 <meta name="language" content="en" />
@@ -24,21 +24,21 @@
 <!-- Social -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@getmulticolour">
-<meta name="twitter:title" content="Multicolour documentation CLI">
-<meta name="twitter:description" content="CLI">
+<meta name="twitter:title" content="Multicolour documentation JavaScript SDK generator">
+<meta name="twitter:description" content="JavaScript SDK generation">
 <meta name="twitter:creator" content="@getmulticolour">
 <meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta itemprop="name" content="Multicolour documentation CLI">
-<meta itemprop="description" content="CLI">
+<meta itemprop="name" content="Multicolour documentation JavaScript SDK generator">
+<meta itemprop="description" content="JavaScript SDK generation">
 <meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta property="og:title" content="Multicolour documentation CLI" />
+<meta property="og:title" content="Multicolour documentation JavaScript SDK generator" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
-<meta property="og:description" content="CLI" />
-<meta property="og:site_name" content="Multicolour documentation CLI" />
+<meta property="og:description" content="JavaScript SDK generation" />
+<meta property="og:site_name" content="Multicolour documentation JavaScript SDK generator" />
 
 <link rel="icon" href="/images/iconography/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
@@ -63,7 +63,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/cli">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/javascript-sdk/">
   <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
@@ -90,7 +90,7 @@
     </nav>
 
     <menu class="breadcrumb-menu">
-        <h1>Multicolour documentation CLI</h1>
+        <h1>Multicolour documentation JavaScript SDK generator</h1>
 
         <div class="breadcrumbs">
   <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
@@ -115,9 +115,9 @@
   
   
 
-  <a class="current" href="/docs/0.6.3/cli" title="Multicolour documentation CLI">
+  <a class="current" href="/docs/0.6.3/javascript-sdk/" title="Multicolour documentation JavaScript SDK generator">
     
-    CLI
+    JavaScript SDK
     
   </a>
 </div>
@@ -142,15 +142,15 @@
     {
         "@context": "http://schema.org",
         "@type": "APIReference",
-        "headline": "Multicolour documentation CLI",
+        "headline": "Multicolour documentation JavaScript SDK generator",
         "assemblyVersion": "0.6.3",
         "executableLibraryName": "multicolour",
         "targetPlatform": "NodeJS",
-        "keywords": "multicolour, cli",
+        "keywords": "multicolour, javascript sdk",
         "learningResourceType": ["learning activity"],
-        "wordCount": "420",
-        "datePublished": "2017-03-10 17:23:51 +0000",
-        "url": "/docs/0.6.3/cli",
+        "wordCount": "249",
+        "datePublished": "2017-03-10 17:38:01 +0000",
+        "url": "/docs/0.6.3/javascript-sdk/",
         "publisher": {
             "@type": "Organization",
             "name": "Multicolour",
@@ -173,9 +173,9 @@
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://0.0.0.0:4000/docs/0.6.3/cli"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/javascript-sdk/"
         },
-        "articleBody": "CLIMulticolour comes with a CLI to help you get started with your projects.The init wizard will guide you through some common options to create some basic, example content for you.Run multicolour init [target], where target is optional or where you want to generate your project.You’ll be warned that it will bash (overwrite) any existing app in that directory and then ask if you wish to continue.You will then be asked for a few technology choices, use enter and space to select and progress.Once you’ve answered the questions, the wizard will spend a few seconds generating some files for you and when it has finished creating basic content for you and installing the dependencies of the project, it will display a message.You can start your service by running multicolour start and visiting http://localhost:1811/docs to view your new API’s documentation.Next steps?Open your [target] in your favourite editor and get to the interesting part of your development.multicolour versionReturns the version string for Multicolour, E.G 0.5.2multicolour plugin-add [plugin]Add a plugin to this install of Multicolour. This will install and save the plugin to your package.json. By default, it will only search for official plugins but passing the --no_prefix|-np argument will install non-officially supported plugins as well.Does not currently update your plugins config in the package.json as some plugins are plugins for the server.multicolour startStart your services, this command is really only useful if you are using the package.json based configuration as generated by the init command. Below is the default package.json for posterity.{  &quot;version&quot;: &quot;1.0.0&quot;,  &quot;scripts&quot;: {    &quot;start&quot;: &quot;multicolour start&quot;  },  &quot;engineStrict&quot;: true,  &quot;engines&quot;: {    &quot;node&quot;: &quot;&amp;gt;= 4.0.0&quot;  },  &quot;dependencies&quot;: {    &quot;joi&quot;: &quot;^10.2.2&quot;,    &quot;multicolour&quot;: &quot;^0.6.3&quot;,    &quot;multicolour-server-hapi&quot;: &quot;^1.4.0&quot;,    &quot;sails-postgresql&quot;: &quot;0.11.4&quot;  },  &quot;multicolour&quot;: {    &quot;config&quot;: &quot;./config&quot;,    &quot;plugins&quot;: [      {        &quot;as&quot;: &quot;server&quot;,        &quot;name&quot;: &quot;multicolour-server-hapi&quot;,        &quot;plugins&quot;: []      }    ]  },  &quot;name&quot;: &quot;test&quot;,  &quot;description&quot;: &quot;test&quot;}"
+        "articleBody": "JavaScript SDK generationMulticolour comes with an JavaScript SDK generator, it will generate both ES6/ES2015 classes for use with modern libraries like React as well as a standard ES5 library for use anywhere else. It is handwritten code used as templates and Babel transpiles it to today’s standard ES5.To get started with the JavaScript SDK generator, you need configuration in your config file to decide where to put it and whether you want the ES5 code or not.There is also blueprint level configuration to prevent generation of parts of the SDK.The config.js should contain an object such as thissettings: {    ... other config    javascript_sdk: {      destination: `${__dirname}/content/frontend/build/api_sdk`,      module_name: &quot;API_SDK&quot;,      es5: true    }    ... other config  },This tells the generator to put the generated code into the content/frontend/build/api_sdk folder and name the ES5 module API_SDK. The ES5 module is a UMD module so can be required or if no module loader is found is added to window.I don’t want all blueprints generatedThe generator respects the NO_AUTO_GEN_ROUTES variable used to prevent creation of endpoints for certain models so if you don’t want the model generated for a blueprint that has no endpoints, add this option to your blueprint."
     }
 </script>
 
@@ -187,7 +187,7 @@
       data-keywords="multicolour API, API reference"
       
       class="visible">
-      <a href="/docs/0.6.3/api-reference" title="Multicolour core API reference">
+      <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
         API Reference
       </a>
       
@@ -198,8 +198,10 @@
     <li
       data-keywords="multicolour, cli"
       
-      class="active visible">
+      class="visible">
+      <a href="/docs/0.6.3/cli/" title="Multicolour documentation CLI">
         CLI
+      </a>
       
 
       
@@ -221,7 +223,7 @@
       data-keywords="multicolour config, server configuration, rest api config"
       
       class="visible">
-      <a href="/docs/0.6.3/configuration" title="Multicolour documentation configuration">
+      <a href="/docs/0.6.3/configuration/" title="Multicolour documentation configuration">
         Configuration
       </a>
       
@@ -257,7 +259,7 @@
       data-keywords="multicolour, rest api, debugging"
       
       class="visible">
-      <a href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
+      <a href="/docs/0.6.3/debugging/" title="Multicolour documentation debugging tips">
         Debugging
       </a>
       
@@ -269,7 +271,7 @@
       data-keywords=""
       
       class="visible">
-      <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
+      <a href="/docs/0.6.3/quickstart/" title="Multicolour quickstart">
         Quickstart
       </a>
       
@@ -280,10 +282,8 @@
     <li
       data-keywords="multicolour, javascript sdk"
       
-      class="visible">
-      <a href="/docs/0.6.3/javascript-sdk" title="Multicolour documentation JavaScript SDK generator">
+      class="active visible">
         JavaScript SDK
-      </a>
       
 
       
@@ -293,7 +293,7 @@
       data-keywords="multicolour, plugins, rest api business logic"
       
       class="visible">
-      <a href="/docs/0.6.3/plugins" title="Multicolour documentation plugins">
+      <a href="/docs/0.6.3/plugins/" title="Multicolour documentation plugins">
         Writing plugins
       </a>
       
@@ -354,72 +354,33 @@
             
         </aside>
         <article>
-          <h1 id="cli">CLI</h1>
+          <h1 id="javascript-sdk-generation">JavaScript SDK generation</h1>
 
-<p>Multicolour comes with a CLI to help you get started with your projects.</p>
+<p>Multicolour comes with an JavaScript SDK generator, it will generate both ES6/ES2015 classes for use with modern libraries like React as well as a standard ES5 library for use anywhere else. It is handwritten code used as templates and Babel transpiles it to today’s standard ES5.</p>
 
-<p>The <code class="highlighter-rouge">init</code> wizard will guide you through some common options to create some basic, example content for you.</p>
+<p>To get started with the JavaScript SDK generator, you need configuration in your config file to decide where to put it and whether you want the ES5 code or not.</p>
 
-<p>Run <code class="highlighter-rouge">multicolour init [target]</code>, where target is optional or where you want to generate your project.</p>
+<p>There is also blueprint level configuration to prevent generation of parts of the SDK.</p>
 
-<p>You’ll be warned that it will bash (overwrite) any existing app in that directory and then ask if you wish to continue.</p>
+<p>The config.js should contain an object such as this</p>
 
-<p>You will then be asked for a few technology choices, use enter and space to select and progress.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">settings</span><span class="err">:</span> <span class="p">{</span>
+    <span class="p">...</span> <span class="nx">other</span> <span class="nx">config</span>
 
-<p>Once you’ve answered the questions, the wizard will spend a few seconds generating some files for you and when it has finished creating basic content for you and installing the dependencies of the project, it will display a message.</p>
+    <span class="nl">javascript_sdk</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">destination</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content/</span><span class="nx">frontend</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">api_sdk</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">module_name</span><span class="err">:</span> <span class="s2">"API_SDK"</span><span class="p">,</span>
+      <span class="nx">es5</span><span class="err">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
 
-<p><img src="https://www.dropbox.com/s/6qlxag25rwy5wg6/cli.gif?dl=1" alt="CLI Tool in action" /></p>
+    <span class="p">...</span> <span class="nx">other</span> <span class="nx">config</span>
+  <span class="p">},</span></code></pre></figure>
 
-<p>You can start your service by running <code class="highlighter-rouge">multicolour start</code> and visiting <a href="http://localhost:1811/docs">http://localhost:1811/docs</a> to view your new API’s documentation.</p>
+<p>This tells the generator to put the generated code into the <code class="highlighter-rouge">content/frontend/build/api_sdk</code> folder and name the ES5 module <code class="highlighter-rouge">API_SDK</code>. The ES5 module is a UMD module so can be <code class="highlighter-rouge">require</code>d or if no module loader is found is added to <code class="highlighter-rouge">window</code>.</p>
 
-<h3 id="next-steps">Next steps?</h3>
+<h3 id="i-dont-want-all-blueprints-generated">I don’t want all blueprints generated</h3>
 
-<p>Open your [target] in your favourite editor and get to the interesting part of your development.</p>
-
-<h3 id="multicolour-version"><code class="highlighter-rouge">multicolour version</code></h3>
-
-<p>Returns the version string for Multicolour, E.G <code class="highlighter-rouge">0.5.2</code></p>
-
-<h3 id="multicolour-plugin-add-plugin"><code class="highlighter-rouge">multicolour plugin-add [plugin]</code></h3>
-
-<p>Add a plugin to this install of Multicolour. This will install and save the plugin to your <code class="highlighter-rouge">package.json</code>. By default, it will only search for official plugins but passing the <code class="highlighter-rouge">--no_prefix|-np</code> argument will install non-officially supported plugins as well.</p>
-
-<p>Does not currently update your <code class="highlighter-rouge">plugins</code> config in the <code class="highlighter-rouge">package.json</code> as some plugins are plugins for the server.</p>
-
-<h3 id="multicolour-start"><code class="highlighter-rouge">multicolour start</code></h3>
-
-<p>Start your services, this command is really only useful if you are using the <code class="highlighter-rouge">package.json</code> based configuration as generated by the init command. Below is the default <code class="highlighter-rouge">package.json</code> for posterity.</p>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s2">"version"</span><span class="err">:</span> <span class="s2">"1.0.0"</span><span class="p">,</span>
-  <span class="s2">"scripts"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"start"</span><span class="err">:</span> <span class="s2">"multicolour start"</span>
-  <span class="p">},</span>
-  <span class="s2">"engineStrict"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"engines"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"node"</span><span class="err">:</span> <span class="s2">"&gt;= 4.0.0"</span>
-  <span class="p">},</span>
-  <span class="s2">"dependencies"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"joi"</span><span class="err">:</span> <span class="s2">"^10.2.2"</span><span class="p">,</span>
-    <span class="s2">"multicolour"</span><span class="err">:</span> <span class="s2">"^0.6.3"</span><span class="p">,</span>
-    <span class="s2">"multicolour-server-hapi"</span><span class="err">:</span> <span class="s2">"^1.4.0"</span><span class="p">,</span>
-    <span class="s2">"sails-postgresql"</span><span class="err">:</span> <span class="s2">"0.11.4"</span>
-  <span class="p">},</span>
-  <span class="s2">"multicolour"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"config"</span><span class="err">:</span> <span class="s2">"./config"</span><span class="p">,</span>
-    <span class="s2">"plugins"</span><span class="err">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="s2">"as"</span><span class="p">:</span> <span class="s2">"server"</span><span class="p">,</span>
-        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"multicolour-server-hapi"</span><span class="p">,</span>
-        <span class="s2">"plugins"</span><span class="p">:</span> <span class="p">[]</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"test"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="err">:</span> <span class="s2">"test"</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+<p>The generator respects the <code class="highlighter-rouge">NO_AUTO_GEN_ROUTES</code> variable used to prevent creation of endpoints for certain models so if you don’t want the model generated for a blueprint that has no endpoints, add this option to your blueprint.</p>
 
         </article>
       </section>

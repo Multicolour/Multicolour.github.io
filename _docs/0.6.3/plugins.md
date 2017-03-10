@@ -6,7 +6,7 @@ keywords: multicolour, plugins, rest api business logic
 version: '0.6.3'
 short_name: Writing plugins
 contents: false
-permalink: /docs/0.6.3/plugins
+permalink: /docs/0.6.3/plugins/
 lang: en
 breadcrumbs:
   - permalink: /docs/

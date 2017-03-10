@@ -148,8 +148,8 @@
         "targetPlatform": "NodeJS",
         "keywords": "waterline blueprints, multicolour collection, database, table, define, migration",
         "learningResourceType": ["learning activity"],
-        "wordCount": "1145",
-        "datePublished": "2017-03-10 17:23:51 +0000",
+        "wordCount": "1157",
+        "datePublished": "2017-03-10 17:38:01 +0000",
         "url": "/docs/0.6.3/collections/",
         "publisher": {
             "@type": "Organization",
@@ -187,7 +187,7 @@
       data-keywords="multicolour API, API reference"
       
       class="visible">
-      <a href="/docs/0.6.3/api-reference" title="Multicolour core API reference">
+      <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
         API Reference
       </a>
       
@@ -199,7 +199,7 @@
       data-keywords="multicolour, cli"
       
       class="visible">
-      <a href="/docs/0.6.3/cli" title="Multicolour documentation CLI">
+      <a href="/docs/0.6.3/cli/" title="Multicolour documentation CLI">
         CLI
       </a>
       
@@ -221,7 +221,7 @@
       data-keywords="multicolour config, server configuration, rest api config"
       
       class="visible">
-      <a href="/docs/0.6.3/configuration" title="Multicolour documentation configuration">
+      <a href="/docs/0.6.3/configuration/" title="Multicolour documentation configuration">
         Configuration
       </a>
       
@@ -257,7 +257,7 @@
       data-keywords="multicolour, rest api, debugging"
       
       class="visible">
-      <a href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
+      <a href="/docs/0.6.3/debugging/" title="Multicolour documentation debugging tips">
         Debugging
       </a>
       
@@ -269,7 +269,7 @@
       data-keywords=""
       
       class="visible">
-      <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
+      <a href="/docs/0.6.3/quickstart/" title="Multicolour quickstart">
         Quickstart
       </a>
       
@@ -281,7 +281,7 @@
       data-keywords="multicolour, javascript sdk"
       
       class="visible">
-      <a href="/docs/0.6.3/javascript-sdk" title="Multicolour documentation JavaScript SDK generator">
+      <a href="/docs/0.6.3/javascript-sdk/" title="Multicolour documentation JavaScript SDK generator">
         JavaScript SDK
       </a>
       
@@ -293,7 +293,7 @@
       data-keywords="multicolour, plugins, rest api business logic"
       
       class="visible">
-      <a href="/docs/0.6.3/plugins" title="Multicolour documentation plugins">
+      <a href="/docs/0.6.3/plugins/" title="Multicolour documentation plugins">
         Writing plugins
       </a>
       
@@ -362,7 +362,7 @@
 
 <p>A simple, example Multicolour blueprint might look something like this.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="s2">"use strict"</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">attributes</span><span class="p">:</span> <span class="p">{</span>
@@ -399,7 +399,9 @@
       <span class="na">public</span><span class="p">:</span> <span class="p">{</span> <span class="na">compile</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
     <span class="p">},</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>A few things are happening above, we’re exporting an Object with a few keys. The first key is <code class="highlighter-rouge">attributes</code>, this is where you define the properties/columns/keys in your table/document.</p>
 
@@ -426,7 +428,7 @@
 
 <p>If you were to write the JavaScript for that constraint, it might look something like this.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">projects</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">payload</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">project</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">projects</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">payload</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">project</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">!==</span> <span class="nx">request</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">credentials</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
     <span class="o">||</span> <span class="nx">row</span><span class="p">.</span><span class="kr">public</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">reply</span><span class="p">(</span><span class="s2">"You aren't allowed to do this."</span><span class="p">).</span><span class="nx">code</span><span class="p">(</span><span class="mi">412</span><span class="p">)</span>
@@ -435,7 +437,9 @@
     <span class="nx">reply</span><span class="p">(</span><span class="nx">project</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">})</span>
-<span class="p">...</span></code></pre></figure>
+<span class="p">...</span>
+</code></pre>
+</div>
 
 <p>A value computed by a constraint will <strong><em>always</em></strong> overwrite any value sent to the server intended for a write request to the database.</p>
 
@@ -469,7 +473,7 @@
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">...</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
 <span class="nl">attributes</span><span class="p">:</span> <span class="p">{</span>
   <span class="c1">// One-to-one</span>
   <span class="nl">user</span><span class="p">:</span> <span class="p">{</span>
@@ -482,7 +486,9 @@
     <span class="nx">via</span><span class="err">:</span> <span class="s2">"user"</span>
   <span class="p">}</span>
 <span class="p">}</span>
-<span class="p">...</span></code></pre></figure>
+<span class="p">...</span>
+</code></pre>
+</div>
 
 <h3 id="adding-associations-programatically">Adding associations programatically.</h3>
 
@@ -497,14 +503,16 @@ Passing true to <code class="highlighter-rouge">many</code> will make the relati
 
 <p>Adding a team relationship to the <code class="highlighter-rouge">multicolour_user</code> collection.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// app.js</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// app.js</span>
 <span class="nx">my_service</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"database"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">add_relation_to_collection</span><span class="p">(</span><span class="s2">"team"</span><span class="p">,</span> <span class="s2">"multicolour_user"</span><span class="p">,</span> <span class="s2">"team"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">add_relation_to_collection</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="s2">"team"</span><span class="p">,</span> <span class="s2">"multicolour_user"</span><span class="p">)</span></code></pre></figure>
+  <span class="p">.</span><span class="nx">add_relation_to_collection</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="s2">"team"</span><span class="p">,</span> <span class="s2">"multicolour_user"</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>A sugar function that does the same in a more terse way is the <code class="highlighter-rouge">.join</code> method.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">my_service</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"database"</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">my_service</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"database"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">join</span><span class="p">({</span>
     <span class="na">as</span><span class="p">:</span> <span class="s2">"team"</span><span class="p">,</span>
     <span class="na">from</span><span class="p">:</span> <span class="s2">"multicolour_user"</span><span class="p">,</span>
@@ -514,7 +522,9 @@ Passing true to <code class="highlighter-rouge">many</code> will make the relati
     <span class="na">as</span><span class="p">:</span> <span class="s2">"team"</span><span class="p">,</span>
     <span class="na">from</span><span class="p">:</span> <span class="s2">"team"</span><span class="p">,</span>
     <span class="na">to</span><span class="p">:</span> <span class="s2">"multicolour_user"</span>
-  <span class="p">})</span></code></pre></figure>
+  <span class="p">})</span>
+</code></pre>
+</div>
 
 <p>You can find more about how Waterline handles associations by <a href="https://github.com/balderdashy/waterline-docs/tree/master/models/associations">reading the documentation</a></p>
 
@@ -525,7 +535,7 @@ Passing true to <code class="highlighter-rouge">many</code> will make the relati
 
 <p>Example removing a password and salt from a reply:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">attributes</span><span class="err">:</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">attributes</span><span class="err">:</span> <span class="p">{</span>
   <span class="c1">// Your model...</span>
 
   <span class="nl">toJSON</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -534,7 +544,9 @@ Passing true to <code class="highlighter-rouge">many</code> will make the relati
     <span class="k">delete</span> <span class="nx">model</span><span class="p">.</span><span class="nx">salt</span>
     <span class="k">return</span> <span class="nx">model</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <h2 id="flags">Flags</h2>
 
