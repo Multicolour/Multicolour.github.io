@@ -15,59 +15,61 @@ breadcrumbs:
     name: 0.6.3
 ---
 
-## Multicolour
-
 Multicolour aims to make your life simpler, smarter and quicker by generating the boilerplate code for you including authentication and data representation layer.
 
-Multicolour core is a message bus, using the [Talkie][talkie] package.
+Multicolour core is a message bus that uses the Talkie package.
 
 This allows Multicolour to act as two things:
 
-- An `EventEmitter`
-- a request and reply interface
+* An `EventEmitter`  
+* a request and reply interface  
 
 The difference between the two is merely semantic, it allows us to make reading the code more natural and simplify certain aspects of the code resolution process *("What does this do?" .. "Oh, that.")*
 
 Multicolour "extends" all plugins with it's message bus so all plugins have a predictable interface.
 
-## `new Multicolour({ config })`
+---
+
+### `new Multicolour({ config })`
 
 Create an instance of Multicolour, `config` should be a valid configuration object for multicolour to scan for blueprints and connect to your databases.
 
 Returns: `Multicolour`  
 Example:
 
-{% highlight js %}
+```js
 const Multicolour = require("multicolour")
 
 const my_service = new Multicolour({
   content: `${__dirname}/content`
 })
-{% endhighlight %}
+```
 
 ---
 
-## `multicolour.get(key String)`
+### `multicolour.get(key String)`
 
 Get any of the following properties values from Multicolour core, some properties are only available once the service has been `.start()`-ed.
 
-- `"cli"` - `Object` Uninitialised CLI module.
-- `"config"` - `Map` The config as a `Map`, top level properties are also `Map`s.
-- `"env"` - `String` the `process.env.NODE_ENV` value at startup and `"development"` by default.
-- `"has_scanned"` - `Boolean` whether Multicolour has `.scan()`ned for blueprints.
-- `"package"` - `Object` The contents of the app's `package.json` if any.
-- `"blueprints"` - `Object` Only available after `.scan()` has run.
-- `"validators"` - `Multicolour_Default_Validation` class instance for payload and response validation.
-- `"handlers"` - `Multicolour_Route_Templates` class instance which contain the default handlers for the database work.
-- `"database"` - `Map` Only available after `.start()` has completed, the database plugin.
-- `"server"` - `Object` Only available after `.start()` has completed, the server plugin.
+| name  | type  | notes  |
+|---|---|---|
+| `cli`  | [`cli`](/docs/0.6.3/cli)  | Uninitialised CLI module.  |
+| `config`  | [`Config`]({{ site.url }}/docs/0.6.3/configuration)  | The config as a `Map`, top level properties are also `Map`s  |
+| `env`  | `String`  | `process.env.NODE_ENV` value at startup or `"development"` by default.  |
+| `has_scanned`  | `Boolean`  | whether Multicolour has `.scan()`ned for blueprints.  |
+| `package`  | `Object`  | The contents of the app's `package.json` if any  |
+| `blueprints`  | [`Object`]({{ site.url }}/docs/0.6.3/collections/#blueprints)  | Only available after `.scan()` has run.  |
+| `validators`  | `Map<Object>`  | Map of validators.  |
+| `database`  | [`Object`]({{ site.url }}/docs/0.6.3/database)  | Only available after `.start()` has completed, the database plugin.  |
+| `server`  | `Object`  | Only available after `.start()` has completed, the server plugin.  |
+| `handlers`  | [`Object`]({{ site.url }}/docs/0.6.3/handlers)  | object with the handlers used by the server plugins and throughout code.  |
 
-Returns: `Any`  
+Returns: `mixed`  
 Example:
 
-{% highlight js %}
+```js
 console.log(my_service.get("env")) // development
-{% endhighlight %}
+```
 
 Getting core modules such as `database` and `server` will return full plugin instances.
 
@@ -77,106 +79,86 @@ Getting core modules such as `database` and `server` will return full plugin ins
 
 Will return the full `Multicolour_Waterline_Generator` instance including the full waterline object and another Talkie interface.
 
-Available to `.get`
+Much like the `Multicolour.get` interface the database has a number of `.get()`-able properties too.
 
-#### `multicolour.get("database").get("models")`
+| name  | type  | notes  |
+|---|---|---|
+| `models`  | [`Object`](/docs/0.6.3/database/#models)  | An object of each, raw waterline collection registered. |
+| `waterline`  | [`Object`](/docs/0.6.3/database/#waterline)  | The raw Waterline object underneath. |
 
-An object of each, raw waterline collection registered.
-
-#### `multicolour.get("database").get("waterline")`
-
-The raw Waterline object underneath.
-
---
+---
 
 ### `multicolour.get("server")`
 
-A requirement of each server plugin is that it register as `"server"` on Multicolour core
+All of the official server plugins are also Talkie interfaces which allow for `.get()`-ing of the below properties.
 
-Available to read:
-
-#### `multicolour.get("server").request("raw")`
-
-Raw server tech, be it Hapi or Express or whatever plugin you chose to use.
-
-#### `multicolour.get("server").get("api_root")`
-
-The final resolved url the API can be reached at, is 100% truth once the server has started and only a "guess" before the `server_started` event is emitted.
-
-The guess is 95% correct as it is derived from your configuration file but is not 100%.
-
-To read about what more is available to `.get` or .`request`
-
-#### `multicolour.get("server").request("csrf_enabled")`
-
-All endorsed server plugins are required to implement a way of enabling or disabling CSRF tokens for security reasons.
-
-This will return a `Boolean` as to whether CSRF token generation is enabled or not (defaults to false.)
-
-#### `multicolour.get("server").get("flow_runner")`
-
-Server plugins should implement a `flow_runner` used by Multicolour core as part of it's built in integration testing framework. This should return an executable function.
+| name  | type  | notes  |
+|---|---|---|
+| `raw`  | [`mixed`](/docs/0.6.3/server/#raw)  | Raw server tech, be it Hapi or Express or whatever plugin you chose to use. |
+| `api_root`  | [`String`](/docs/0.6.3/server/#api_root)  | A string containing the url of where the server is listening. |
+| `csrf_enabled`  | [`Boolean`](/docs/0.6.3/server/#csrf)  | A boolean representing whether CSRF is enabled. |
 
 ---
 
-## `multicolour.request(key)`
+### `multicolour.request(key)`
 
-Request a property from Multicolour, this is merely semantic sugar. Available properties are:
+Request a property from Multicolour, this is merely semantic sugar and works exactly the same as `.get(string)`.
 
-- `"cli"` - `CLI` newly initialised CLI module.
-- `"new_uuid"` - `String` a unique v4 uuid.
-- `"storage"` - Get the current storage plugin.
+Available properties are:
 
-Returns: `Any`  
+| name  | type  | notes  |
+|---|---|---|
+| `cli`  | [`CLI`](/docs/0.6.3/cli/)  | initialised CLI module. |
+| `new_uuid`  | `String`  | a unique v4 uuid. |
+| `storage`  | [`Object`](/docs/0.6.3/routing/file-uploads/)  | Get the current storage plugin. |
+
+Returns: `mixed`  
 Example:
 
-{% highlight js %}
+```js
 console.log(my_service.request("new_uuid")) // 5d31d224-bf23-49ed-9db0-7a50ab924f4f
-{% endhighlight %}
+```
 
 ---
 
-## `static new_from_config_file_path(config_location)`
+### `static new_from_config_file_path(config_location)`
 
 Create a new instance of Multicolour from a config file location.
 
-[Source Code](https://github.com/Multicolour/multicolour/blob/master/index.js#L112-L129)  
 Returns: `Multicolour`  
 Example:
 
-{% highlight js %}
+```js
 const my_service = require("multicolour").new_from_config_file_path("./config.js")
-{% endhighlight %}
+```
 
 ---
 
-## `multicolour.reset_from_config_path(config_location)`
+### `multicolour.reset_from_config_path(config_location)`
 
 Reset this instance of Multicolour with a config file location.
 
-[Source Code](https://github.com/Multicolour/multicolour/blob/master/index.js#L131-L139)  
 Returns: `Multicolour`  
 Example:
 
-{% highlight js %}
+```js
 const Multicolour = require("multicolour")
 const my_service = Multicolour.new_from_config_file_path("./config.js")
 
 // Actually changed my mind.
 my_service.reset_from_config_path("./my-other-config.js")
-{% endhighlight %}
+```
 
 ---
 
-## `multicolour.cli()`
+### `multicolour.cli()`
 
 Start the CLI tools and parse arguments.
 
-[Source Code](https://github.com/Multicolour/multicolour/blob/master/index.js#L141-L152)  
 Returns: `CLI`  
 Example:
 
-{% highlight js %}
+```js
 #!/usr/bin/env node
 
 // Get Multicolour.
@@ -184,60 +166,55 @@ const Multicolour = require('multicolour')
 
 // Instantiate.
 new Multicolour().cli()
-{% endhighlight %}
+```
 
 ---
 
-## `multicolour._enable_user_model()`
+### `multicolour._enable_user_model()`
 
 Enable the core user model, usually done so by official authentication plugins.
 
 Will create a new table/collection in your database called `multicolour_user`.
 
-[Source Code](https://github.com/Multicolour/multicolour/blob/master/index.js#L154-L172)  
 Returns: `Multicolour`  
 Example:
 
-{% highlight js %}
+```js
 // Get Multicolour.
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
   ._enable_user_model()
-{% endhighlight %}
+```
 
 ---
 
-## `multicolour.scan()`
+### `multicolour.scan()`
 
-Tells Multicolour that you and the server are ready to be scanned for blueprints. The search path is dictated by the `config.content` property.
+Tell Multicolour that you and the server are ready to be scanned for blueprints. The search path is dictated by the `config.content` property.
 
-Once scan has completed a new property is made available via the `Multicolour.get()` interface. These are
+Once scan has completed a new property is made available via the `Multicolour.get()` interface. These are	`"blueprints"`
 
-- `"blueprints"`
-
-[Source Code](https://github.com/Multicolour/multicolour/blob/master/index.js#L174-L214)  
 Returns: `Multicolour`  
 Example:
 
-{% highlight js %}
+```js
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
-{% endhighlight %}
+```
 
 ---
 
-## `multicolour.use(Plugin)`
+### `multicolour.use(Plugin)`
 
 Tell Multicolour to register and "use" the supplied plugin. Your plugin must have a `register` method on it.
 
-[Source Code](https://github.com/Multicolour/multicolour/blob/master/index.js#L216-L238)  
 Returns: `Multicolour`  
 Example:
 
-{% highlight js %}
-class my_plugin {
+```js
+class PingPongPlugin {
   register(Multicolour) {
     Multicolour.reply("ping", "pong")
   }
@@ -247,75 +224,79 @@ const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
 
+  // Here we tell Multicolour to use our plugin.
   .use(my_plugin)
 
 console.log(my_service.request("ping")) // pong
-{% endhighlight %}
+```
 
 ---
 
-## multicolour.start(callback)
+### `multicolour.start()`
 
-Start the database server(s) and the http server and start listening for requests. When both services are ready `callback` is called.
+Start the database server(s), http server(s) and wait for requests.
 
-Triggers  
+Triggers the following events on the Multicolour instance:
 
-`server_starting`  
-`database_starting`
+* `server_starting`  
+* `database_starting`
 
- events on the Multicolour instance and once services are started triggers  
+and once started, triggers  
 
- `server_started`  
- `database_started`
- events.
-
+* `server_started`  
+* `database_started`
 
 Also sets up a listener for `SIGINT` on the process so the services can be `.stop()`ped gracefully
 
-[Source Code](https://github.com/Multicolour/multicolour/blob/master/index.js#L240-L269)  
-Returns: `Multicolour`  
+Returns: `Promise<database, server>`  
 Example:
 
-{% highlight js %}
+```js
 require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
-  .start(() => console.log("Database server started"))
-{% endhighlight %}
+  .start()
+    .then(() => console.log("Services started"))
+```
 
-## multicolour.stop(callback)
+---
 
-Stop the database server(s) and the http server and stop listening for requests. When both services are stopped `callback` is called.
+### `multicolour.stop()`
+
+Stop the database server(s) and the http server and stop listening for requests.
 
 Triggers  
 
-`database_stopping`  
-`server_stopping`  
+* `database_stopping`  
+* `server_stopping`  
 
 events on the Multicolour instance and once services are stopped triggers
 
-`database_stopped`  
-`server_stopped`
+* `database_stopped`  
+* `server_stopped`
 
-[Source Code](https://github.com/Multicolour/multicolour/blob/master/index.js#L271-L326)  
-Returns: `Multicolour`  
+Returns: `Promise`  
 Example:
 
-{% highlight js %}
+```js
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
 
-my_service.start(() => {
-  console.log("HTTP & Database server(s) started")
+my_service.start()
+  .then(() => {
+    console.log("HTTP & Database server(s) started")
 
-  my_service.stop(() => console.log("HTTP & Database server(s) stopped"))
-})
-{% endhighlight %}
+    my_service.stop()
+      .then(() => console.log("HTTP & Database server(s) stopped"))
+  })
+```
 
-## Request and Reply arbitrary data
+---
 
-[Talkie][talkie] enables Multicolour to act both as an `EventEmitter` and as a messaging bus to send arbitrary data to multiple places at once and on the object it extends.
+### Request and Reply arbitrary data
+
+Talkie enables Multicolour to act both as an EventEmitter and as a messaging bus to send arbitrary data to multiple places at once *and* on the object it extends.
 
 Talkie adds `request` and `reply` functions to all extended objects.
 
@@ -325,9 +306,10 @@ When `name` is `request`ed, it will receive the `data` unmodified.
 
 Example:
 
-{% highlight js %}
-multicolour.reply("my_awesome_plugin", new class {})
-{% endhighlight %}
+```js
+multicolour.reply("my_awesome_plugin", new class Awesome {})
+console.log(multicolour.request("my_awesome_plugin")) // [Function Awesome]
+```
 
 ### `multicolour.request(name)`
 
@@ -335,11 +317,11 @@ Purely syntactic sugar, is no different in functionality than `.get(name)`.
 
 Example:
 
-{% highlight js %}
+```js
 const my_awesome_plugin = multicolour.request("my_awesome_plugin")
-{% endhighlight %}
+```
 
-## EventEmitter
+### EventEmitter
 
 Multicolour is an `EventEmitter`, events can be triggered and listened to using the standard interface for inter-plugin communication.
 
@@ -384,7 +366,7 @@ Listen for an event fired on Multicolour core.
 Returns: `Multicolour`  
 Example:
 
-{% highlight js %}
+```js
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
@@ -394,7 +376,7 @@ my_service.on("database_started", () =>
 
 my_service.start()
 
-{% endhighlight %}
+```
 
 ### multicolour.trigger(event, data)
 
@@ -403,17 +385,16 @@ Trigger an event on Multicolour core.
 Returns: `Multicolour`  
 Example:
 
-{% highlight js %}
+```js
 const my_service = require("multicolour")
   .new_from_config_file_path("./config.js")
   .scan()
 
-my_service.start(() => {
-  my_service.trigger("service_up", { my_service })
-})
+my_service.start()
+  .then(() => {
+    my_service.trigger("service_up", { my_service })
+  })
 
-{% endhighlight %}
+```
 
-Other methods can be read up on the [Talkie docs.][talkie]
-
-[talkie]: https://www.npmjs.com/package/@newworldcode/talkie
+Other methods can be read up on the [Talkie docs](https://www.npmjs.com/package/@newworldcode/talkie)

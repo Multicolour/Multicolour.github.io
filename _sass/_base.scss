@@ -25,14 +25,11 @@ body {
   }
 }
 
-@media screen and (max-width: $break-small) {
-  figure {
-    margin: 0;
+figure {
+  margin: 0;
+  table td {
+    border: 0;
   }
-}
-
-figure table td {
-  border: 0;
 }
 
 main {

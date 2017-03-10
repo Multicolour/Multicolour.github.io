@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Multicolour documentation debugging tips</title>
+  <title>Multicolour server docs</title>
 
   <!-- Base -->
 <meta name="identifier-url" content="site.url" />
-<meta name="title" content="Multicolour documentation debugging tips" />
-<meta name="description" content="Learn how to use the built in debugging tools to debug your REST API faster." />
-<meta name="abstract" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ..." />
-<meta name="keywords" content="multicolour, rest api, debugging" />
+<meta name="title" content="Multicolour server docs" />
+<meta name="description" content="Multicolour server object documentation." />
+<meta name="abstract" content="A requirement of each server plugin is that it register as "server" on Multicolour core. A server handles the HTTP side of the data management, all of the of..." />
+<meta name="keywords" content="multicolour, server, http" />
 <meta name="author" content="New World Code Ltd" />
 <meta name="revisit-after" content="7" />
 <meta name="language" content="en" />
@@ -24,21 +24,21 @@
 <!-- Social -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@getmulticolour">
-<meta name="twitter:title" content="Multicolour documentation debugging tips">
-<meta name="twitter:description" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ...">
+<meta name="twitter:title" content="Multicolour server docs">
+<meta name="twitter:description" content="A requirement of each server plugin is that it register as "server" on Multicolour core. A server handles the HTTP side of the data management, all of the of...">
 <meta name="twitter:creator" content="@getmulticolour">
 <meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta itemprop="name" content="Multicolour documentation debugging tips">
-<meta itemprop="description" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ...">
+<meta itemprop="name" content="Multicolour server docs">
+<meta itemprop="description" content="A requirement of each server plugin is that it register as "server" on Multicolour core. A server handles the HTTP side of the data management, all of the of...">
 <meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
-<meta property="og:title" content="Multicolour documentation debugging tips" />
+<meta property="og:title" content="Multicolour server docs" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
-<meta property="og:description" content="DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of ..." />
-<meta property="og:site_name" content="Multicolour documentation debugging tips" />
+<meta property="og:description" content="A requirement of each server plugin is that it register as "server" on Multicolour core. A server handles the HTTP side of the data management, all of the of..." />
+<meta property="og:site_name" content="Multicolour server docs" />
 
 <link rel="icon" href="/images/iconography/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
@@ -63,7 +63,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/debugging">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/server/">
   <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
@@ -90,7 +90,7 @@
     </nav>
 
     <menu class="breadcrumb-menu">
-        <h1>Multicolour documentation debugging tips</h1>
+        <h1>Multicolour server docs</h1>
 
         <div class="breadcrumbs">
   <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
@@ -115,9 +115,9 @@
   
   
 
-  <a class="current" href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
+  <a class="current" href="/docs/0.6.3/server/" title="Multicolour server docs">
     
-    Debugging
+    Server
     
   </a>
 </div>
@@ -142,15 +142,15 @@
     {
         "@context": "http://schema.org",
         "@type": "APIReference",
-        "headline": "Multicolour documentation debugging tips",
+        "headline": "Multicolour server docs",
         "assemblyVersion": "0.6.3",
         "executableLibraryName": "multicolour",
         "targetPlatform": "NodeJS",
-        "keywords": "multicolour, rest api, debugging",
+        "keywords": "multicolour, server, http",
         "learningResourceType": ["learning activity"],
-        "wordCount": "156",
+        "wordCount": "164",
         "datePublished": "2017-03-10 11:15:01 +0000",
-        "url": "/docs/0.6.3/debugging",
+        "url": "/docs/0.6.3/server/",
         "publisher": {
             "@type": "Organization",
             "name": "Multicolour",
@@ -173,9 +173,9 @@
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://0.0.0.0:4000/docs/0.6.3/debugging"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/server/"
         },
-        "articleBody": "DebuggingMulticolour has a few different ways to debug your application, you can start your service with an environmental DEBUG=multicolour:* to see logs of internal objects and operations as they happen.You will see output similar tomulticolour:core Scanning /www/node/multicolour-app/content +2ms  multicolour:core Scanned and found: [  &quot;/www/node/multicolour-app/content/blueprints/abode.js&quot;,  &quot;/www/node/multicolour-app/content/blueprints/gadget.js&quot;,  &quot;/www/node/multicolour-app/content/blueprints/person.js&quot;,  &quot;/www/node/multicolour-app/node_modules/multicolour/lib/user-model.js&quot;] +0ms  multicolour:core Finished scanning +149msYou can also install the multicolour-hapi-vantage plugin to see HTTP logs in real time using the debug on command in the repl.While you can use the DEBUG environmental in conjunction with the repl, the output may appear garbled as the two share the same stdout.Starting your service with the vantage plugin installed will take you to a repl (and start your service in the background)Running with the debug mode set to on will show every HTTP request and response in pair to help with debugging."
+        "articleBody": "A requirement of each server plugin is that it register as &quot;server&quot; on Multicolour core. A server handles the HTTP side of the data management, all of the official plugins use the handlers built into Multicolour so they all behave the same.Getting a raw serverAll server plugins must expose a way to access the raw technology beneath, this is because for custom_routes we use the raw server to pass as an argument.Getting the API’s URL.The final resolved url the API can be reached at, is 100% truth once the server has started and only a “guess” before the server_started event is emitted.The guess is 95% correct as it is derived from your configuration file but is not 100%.To read about what more is available to .get or .requestCSRFAll endorsed server plugins are required to implement a way of enabling or disabling CSRF tokens for security reasons."
     }
 </script>
 
@@ -258,8 +258,10 @@
     <li
       data-keywords="multicolour, rest api, debugging"
       
-      class="active visible">
+      class="visible">
+      <a href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
         Debugging
+      </a>
       
 
       
@@ -328,10 +330,8 @@
     <li
       data-keywords="multicolour, server, http"
       
-      class="visible">
-      <a href="/docs/0.6.3/server/" title="Multicolour server docs">
+      class="active visible">
         Server
-      </a>
       
 
       
@@ -354,29 +354,23 @@
             
         </aside>
         <article>
-          <h1 id="debugging">Debugging</h1>
-<p>Multicolour has a few different ways to debug your application, you can start your service with an environmental <code class="highlighter-rouge">DEBUG=multicolour:*</code> to see logs of internal objects and operations as they happen.</p>
+          <p>A requirement of each server plugin is that it register as <code class="highlighter-rouge">"server"</code> on Multicolour core. A <code class="highlighter-rouge">server</code> handles the HTTP side of the data management, all of the official plugins use the <code class="highlighter-rouge">handlers</code> built into Multicolour so they all behave the same.</p>
 
-<p>You will see output similar to</p>
+<h2 id="getting-a-raw-server">Getting a raw server</h2>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">multicolour:core Scanning /www/node/multicolour-app/content +2ms
-  multicolour:core Scanned and found: [
-  "/www/node/multicolour-app/content/blueprints/abode.js",
-  "/www/node/multicolour-app/content/blueprints/gadget.js",
-  "/www/node/multicolour-app/content/blueprints/person.js",
-  "/www/node/multicolour-app/node_modules/multicolour/lib/user-model.js"
-] +0ms
-  multicolour:core Finished scanning +149ms</code></pre></figure>
+<p>All server plugins must expose a way to access the raw technology beneath, this is because for <code class="highlighter-rouge">custom_routes</code> we use the raw server to pass as an argument.</p>
 
-<p>You can also install the <code class="highlighter-rouge">multicolour-hapi-vantage</code> plugin to see HTTP logs in real time using the <code class="highlighter-rouge">debug on</code> command in the repl.</p>
+<h2 id="getting-the-apis-url">Getting the API’s URL.</h2>
 
-<p>While you can use the <code class="highlighter-rouge">DEBUG</code> environmental in conjunction with the repl, the output may appear garbled as the two share the same stdout.</p>
+<p>The final resolved url the API can be reached at, is 100% truth once the server has started and only a “guess” before the <code class="highlighter-rouge">server_started</code> event is emitted.</p>
 
-<p>Starting your service with the vantage plugin installed will take you to a repl (and start your service in the background)</p>
+<p>The guess is 95% correct as it is derived from your configuration file but is not 100%.</p>
 
-<p><img src="https://cloud.githubusercontent.com/assets/1430657/17627262/7f482b76-60a8-11e6-93eb-83f77c2458d9.png" alt="image" /></p>
+<p>To read about what more is available to <code class="highlighter-rouge">.get</code> or .<code class="highlighter-rouge">request</code></p>
 
-<p>Running with the debug mode set to on will show every HTTP request and response in pair to help with debugging.</p>
+<h2 id="csrf">CSRF</h2>
+
+<p>All endorsed server plugins are required to implement a way of enabling or disabling CSRF tokens for security reasons.</p>
 
         </article>
       </section>

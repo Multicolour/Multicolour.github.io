@@ -3,6 +3,8 @@
   border-radius: 3px;
   padding: .15em;
   color: #CFCFCF; }
+  .highlighter-rouge .highlight {
+    padding: .5em; }
 
 .language-text {
   color: #f8f8f2; }
@@ -853,11 +855,10 @@ body {
       font-size: 5.1vw;
       line-height: 8.5vw; } }
 
-@media screen and (max-width: 414px) {
-  figure {
-    margin: 0; } }
-figure table td {
-  border: 0; }
+figure {
+  margin: 0; }
+  figure table td {
+    border: 0; }
 
 main {
   background-color: #FFF; }

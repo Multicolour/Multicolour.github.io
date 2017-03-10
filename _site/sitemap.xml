@@ -153,6 +153,12 @@
      </url>
   
     <url>
+      <loc>http://0.0.0.0:4000/docs/0.6.3/server/</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+     </url>
+  
+    <url>
       <loc>http://0.0.0.0:4000/docs/0.6.3/routing/file-uploads/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
