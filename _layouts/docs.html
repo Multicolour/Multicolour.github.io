@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+
+{% include head.html %}
+
+<body>
+    <main class="docs">
+      {% include inner-header.html %}
+
+      <section class="columns">
+        <aside>
+            {% if page.version %}
+            <h2 class="title">Docs <span>{{ page.version }}</span></h2>
+            {% else %}
+            <h2 class="title">Select version</h2>
+            {% endif %}
+            <section class="search">
+                <input type="search" name="search" placeholder="search the docs">
+            </section>
+
+            {% if page.version %}
+            {%
+              include structured-data/documentation.html
+              headline=page.title
+              version=page.version
+              keywords=page.keywords
+              content=page.content
+              link=page.permalink
+            %}
+
+            {% include docs-list.html version=page.version %}
+            {% else %}
+            {% include versions-list.html %}
+            {% endif %}
+        </aside>
+        <article>
+          {{ content }}
+        </article>
+      </section>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multicolour server docs</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="Multicolour server docs" />
+<meta name="description" content="Multicolour server object documentation." />
+<meta name="abstract" content="A requirement of each server plugin is that it register as "server" on Multicolour core. A server handles the HTTP side of the data management, all of the of..." />
+<meta name="keywords" content="multicolour, server, http" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="en" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="Multicolour server docs">
+<meta name="twitter:description" content="A requirement of each server plugin is that it register as "server" on Multicolour core. A server handles the HTTP side of the data management, all of the of...">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="Multicolour server docs">
+<meta itemprop="description" content="A requirement of each server plugin is that it register as "server" on Multicolour core. A server handles the HTTP side of the data management, all of the of...">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="Multicolour server docs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="A requirement of each server plugin is that it register as "server" on Multicolour core. A server handles the HTTP side of the data management, all of the of..." />
+<meta property="og:site_name" content="Multicolour server docs" />
+
+<link rel="icon" href="/images/iconography/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#FF9999">
+<meta name="msapplication-TileImage" content="/images/iconography/ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/server/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
+</head>
+
+
+<body>
+    <main class="docs">
+      <div class="general-nav">
+    <nav>
+        <a href="/" class="logo-link no-border" title="Multicolour - Rest API generator">
+            <img class="nav-logo" src="/images/logo-stamp.svg" alt="Multicolour - Rest API generator">
+        </a>
+
+        <ul class="menu">
+            <li>
+                <a href="/examples/" title="Multicolour rest api generator examples">examples</a>
+            </li>
+            <li>
+                <a href="/docs/" title="Multicolour docs">docs</a>
+            </li>
+            <li>
+                <a href="/blog/" title="Multicolour blog">blog</a>
+            </li>
+        </ul>
+    </nav>
+
+    <menu class="breadcrumb-menu">
+        <h1>Multicolour server docs</h1>
+
+        <div class="breadcrumbs">
+  <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
+    <img src="/images/iconography/android-icon-36x36.png" alt="Multicolour - Rest API generator">
+  </a>
+
+  <span class="arrow">&rarr;</span>
+
+  
+  
+  <a href="/docs/" title="docs">
+    docs
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  <a href="/docs/0.6.3/" title="0.6.3">
+    0.6.3
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  
+
+  <a class="current" href="/docs/0.6.3/server/" title="Multicolour server docs">
+    
+    Server
+    
+  </a>
+</div>
+
+    </menu>
+</div>
+
+
+      <section class="columns">
+        <aside>
+            
+            <h2 class="title">Docs <span>0.6.3</span></h2>
+            
+            <section class="search">
+                <input type="search" name="search" placeholder="search the docs">
+            </section>
+
+            
+            
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "headline": "Multicolour server docs",
+        "assemblyVersion": "0.6.3",
+        "executableLibraryName": "multicolour",
+        "targetPlatform": "NodeJS",
+        "keywords": "multicolour, server, http",
+        "learningResourceType": ["learning activity"],
+        "wordCount": "164",
+        "datePublished": "2017-03-10 11:15:01 +0000",
+        "url": "/docs/0.6.3/server/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
+            }
+        },
+        "image":{
+            "@type":"ImageObject",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
+            "height":"500",
+            "width":"1500"
+         },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/server/"
+        },
+        "articleBody": "A requirement of each server plugin is that it register as &quot;server&quot; on Multicolour core. A server handles the HTTP side of the data management, all of the official plugins use the handlers built into Multicolour so they all behave the same.Getting a raw serverAll server plugins must expose a way to access the raw technology beneath, this is because for custom_routes we use the raw server to pass as an argument.Getting the API’s URL.The final resolved url the API can be reached at, is 100% truth once the server has started and only a “guess” before the server_started event is emitted.The guess is 95% correct as it is derived from your configuration file but is not 100%.To read about what more is available to .get or .requestCSRFAll endorsed server plugins are required to implement a way of enabling or disabling CSRF tokens for security reasons."
+    }
+</script>
+
+
+            <ul class="search-results">
+  
+  
+    <li
+      data-keywords="multicolour API, API reference"
+      
+      class="visible">
+      <a href="/docs/0.6.3/api-reference" title="Multicolour core API reference">
+        API Reference
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, cli"
+      
+      class="visible">
+      <a href="/docs/0.6.3/cli" title="Multicolour documentation CLI">
+        CLI
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="waterline blueprints, multicolour collection, database, table, define, migration"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/" title="Multicolour documentation collections">
+        Collections/Blueprints
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour config, server configuration, rest api config"
+      
+      class="visible">
+      <a href="/docs/0.6.3/configuration" title="Multicolour documentation configuration">
+        Configuration
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="codeless business logic, multicolour constraints"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/constraints/" title="Multicolour documentation constraints">
+        Constraints
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="database, migration, data, existing database, automatic"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/migration/" title="Multicolour documentation database migration">
+        Migration
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, rest api, debugging"
+      
+      class="visible">
+      <a href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
+        Debugging
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords=""
+      
+      class="visible">
+      <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
+        Quickstart
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, javascript sdk"
+      
+      class="visible">
+      <a href="/docs/0.6.3/javascript-sdk" title="Multicolour documentation JavaScript SDK generator">
+        JavaScript SDK
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, plugins, rest api business logic"
+      
+      class="visible">
+      <a href="/docs/0.6.3/plugins" title="Multicolour documentation plugins">
+        Writing plugins
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, REST API routes, routing"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/" title="Multicolour documentation routing">
+        Routing
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="rest api query, results filtering, searching"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/results/" title="Multicolour documentation result filtering">
+        Results Filtering
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, server, http"
+      
+      class="active visible">
+        Server
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="file uploads, multicolour, rest api file uploads"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/file-uploads/" title="Multicolour documentation file uploads">
+        Uploading files
+      </a>
+      
+
+      
+    </li>
+  
+</ul>
+
+            
+        </aside>
+        <article>
+          <p>A requirement of each server plugin is that it register as <code class="highlighter-rouge">"server"</code> on Multicolour core. A <code class="highlighter-rouge">server</code> handles the HTTP side of the data management, all of the official plugins use the <code class="highlighter-rouge">handlers</code> built into Multicolour so they all behave the same.</p>
+
+<h2 id="getting-a-raw-server">Getting a raw server</h2>
+
+<p>All server plugins must expose a way to access the raw technology beneath, this is because for <code class="highlighter-rouge">custom_routes</code> we use the raw server to pass as an argument.</p>
+
+<h2 id="getting-the-apis-url">Getting the API’s URL.</h2>
+
+<p>The final resolved url the API can be reached at, is 100% truth once the server has started and only a “guess” before the <code class="highlighter-rouge">server_started</code> event is emitted.</p>
+
+<p>The guess is 95% correct as it is derived from your configuration file but is not 100%.</p>
+
+<p>To read about what more is available to <code class="highlighter-rouge">.get</code> or .<code class="highlighter-rouge">request</code></p>
+
+<h2 id="csrf">CSRF</h2>
+
+<p>All endorsed server plugins are required to implement a way of enabling or disabling CSRF tokens for security reasons.</p>
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+
+  <ul>
+    <li>
+      <a href="/code-of-conduct" title="Multicolour code of conduct">
+        Code of Conduct
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow noopener noreferrer">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow noopener noreferrer">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; All copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+<script src="/js/main.js" async defer></script>
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+    analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+    analytics.page()
+  }}();
+</script>
+
+
+</body>
+
+</html>

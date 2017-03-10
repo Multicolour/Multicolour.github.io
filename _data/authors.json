@@ -1,0 +1,23 @@
+{
+  "Dave Mackintosh": {
+    "image": "https://pbs.twimg.com/profile_images/829333833015296001/L4V4Qc4c.jpg",
+    "links": [
+      "https://twitter.com/daveymackintosh",
+      "https://github.com/davemackintosh"
+    ]
+  },
+
+  "Jamie Colban": {
+    "image": "https://pbs.twimg.com/profile_images/820355000446676997/Cb9S-_on.jpg",
+    "links": [
+      "https://twitter.com/JamieColban"
+    ]
+  },
+
+  "Joe Rutland": {
+    "image": "https://pbs.twimg.com/profile_images/746649494931050496/ChUn7B3j.jpg",
+    "links": [
+      "https://twitter.com/Jrutlanddesign"
+    ]
+  }
+}

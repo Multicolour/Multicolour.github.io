@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+
+{% include head.html %}
+
+<body>
+    <main>
+      {% include inner-header.html %}
+
+      <section class="columns">
+        <aside>
+            <h2 class="title">Select example</h2>
+
+            <section class="search">
+                <input type="search" name="search" placeholder="search examples">
+            </section>
+
+            {% include examples-list.html %}
+        </aside>
+        <article>
+          {{ content }}
+        </article>
+      </section>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>

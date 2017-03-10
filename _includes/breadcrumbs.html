@@ -1,0 +1,25 @@
+<div class="breadcrumbs">
+  <a class="breadcrumbs-logo" href="/" title="{{ site.title }}">
+    <img src="/images/iconography/android-icon-36x36.png" alt="{{ site.title }}">
+  </a>
+
+  <span class="arrow">&rarr;</span>
+
+  {% if !!page.breadcrumbs %}
+  {% for breadcrumb in page.breadcrumbs %}
+  <a href="{{ breadcrumb.permalink }}" title="{{ breadcrumb.name }}">
+    {{ breadcrumb.name }}
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  {% endfor %}
+  {% endif %}
+
+  <a class="current" href="{{ page.permalink }}" title="{{ page.title }}">
+    {% if page.short_name %}
+    {{ page.short_name }}
+    {% else %}
+    {{ page.title }}
+    {% endif %}
+  </a>
+</div>

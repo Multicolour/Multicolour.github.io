@@ -1,0 +1,206 @@
+// Global element styles //
+
+* + * {
+  margin-bottom: $vertical-rhythm;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: $primary_font_face;
+  font-size: $base-font-size;
+  line-height: $base-font-size * 2;
+  -webkit-font-smoothing: antialiased;
+  padding: 1rem;
+  color: $colour_primary_font;
+
+  @include gradient-background();
+
+  @media screen and (max-width: $break-small) {
+    font-size: $base-font-size * 3;
+    line-height: ($base-font-size * 2) * 2.5;
+  }
+}
+
+figure {
+  margin: 0;
+  table td {
+    border: 0;
+  }
+}
+
+main {
+  background-color: $colour_primary_background;
+}
+
+hr {
+  border: 0;
+  background: transparent;
+  border-top: 1px solid lighten($colour_secondary_font, 35%);
+}
+
+time {
+  font-family: $secondary_font_face;
+  font-size: .8em;
+  color: lighten($colour_secondary_font, 10%);
+}
+
+h1, h2, h3 {
+  code {
+    background-color: $colour_alternative_background !important;
+    color: $colour_primary_font !important;
+    font-size: 1.2em !important;
+    text-shadow: none !important;
+    word-break: break-word;
+  }
+}
+
+pre code {
+  font-size: .8em;
+}
+
+nav a,
+h1, h2, h3,
+.point-header {
+  font-family: $secondary_font_face;
+  color: $colour_primary_font;
+  margin: 1.4em 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+em {
+  font-style: italic;
+}
+
+ol {
+  padding-left: 2em;
+  padding-bottom: 2em;
+}
+
+ul > li {
+  list-style-type: square;
+  padding-bottom: 1em;
+}
+
+ul li {
+  line-height: 1.4em;
+  margin-bottom: 0;
+}
+
+.index {
+  ul > li {
+    padding-bottom: initial;
+  }
+}
+
+li li {
+  list-style-type: circle;
+  margin-left: $horizontal-rhythm;
+}
+
+strong {
+  font-weight: 700;
+}
+
+pre {
+  margin: 0;
+}
+
+p {
+  margin-bottom: $vertical-rhythm;
+
+  @media screen and (max-width: $break-small) {
+    margin-bottom: $vertical-rhythm / 2;
+  }
+}
+
+p, img {
+  vertical-align: top;
+  line-height: 1.7em;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  img {
+    border: 0;
+    outline: 0;
+  }
+
+  &:not(.no-border) {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+table {
+  th,
+  td {
+    padding: .7em;
+    border: 1px solid lighten($colour_secondary_font, 33%);
+  }
+}
+
+.simplified-example {
+  text-align: center;
+
+  pre {
+    font-size: .65em;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 2vw;
+  }
+}
+
+// Our styles.
+.row, .content {
+  width: 70vw;
+  margin: 7vh auto;
+
+  @media screen and (max-width: $break-small) {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: $vertical-rhythm / 2;
+  }
+}
+
+.logo {
+  display: block;
+  width: 30vw;
+  margin: $vertical-rhythm * 3 auto;
+
+  @media screen and (max-width: $break-small) {
+    width: 60vw;
+  }
+}
+
+.point-header {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.examples {
+  .getting-started {
+    margin-top: $vertical-rhythm * 3;
+  }
+}

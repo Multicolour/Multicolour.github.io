@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+
+{% include head.html %}
+
+<body>
+    <main class="blog-post">
+      {% include inner-header.html %}
+
+      <section class="columns">
+        <aside>
+          {% assign author = site.data.authors[page.author] %}
+          {% assign post_url = page.url | prepend: site.url %}
+
+          {%
+            include author.html
+            image=author.image
+            author=page.author
+          %}
+
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ page.date | date_to_long_string }}
+          </time>
+
+          <hr>
+
+          <strong>Share</strong>
+          <div class="share-buttons">
+            <a href="https://twitter.com/share?text={{ page.title | url_encode }} - {{post_url}}&via=getmulticolour&dnt=true" class="no-border twitter-share-button" target="_blank" rel="nofollow noopener noreferrer">
+              <img src="/images/icons/twitter-lines.svg" alt="Share {{ page.title }} on Twitter">
+            </a>
+
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ post_url }}" class="no-border facebook-share-button" target="_blank" rel="nofollow noopener noreferrer">
+              <img src="/images/icons/facebook-lines.svg" alt="Share {{ page.title }} on Facebook">
+            </a>
+          </div>
+
+        </aside>
+
+        <article class="post content" itemprop="articleBody" itemtype="http://schema.org/BlogPosting">
+          {%
+            include structured-data/blog-post.html
+            title=page.title
+            category=page.category
+            keywords=page.keywords
+            content=page.content
+            link=page.permalink
+            date=page.date
+            author=page.author
+          %}
+
+          {{ content }}
+        </article>
+      </section>
+    </main>
+
+    {% include footer.html %}
+    <!-- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+</body>
+
+</html>

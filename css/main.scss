@@ -1,0 +1,58 @@
+---
+---
+@charset "utf-8";
+
+// Vars and mixins
+$vertical-rhythm: 5vh;
+$horizontal-rhythm: 2vw;
+$base-font-size: 1.7vw;
+
+// Colours.
+$colour_purple_base: #7423b5;
+$colour_purple_middle: #ab21b4;
+$colour_pink_base: #ff9999;
+
+$colour_primary_background: #FFF;
+$colour_alternative_background: #F6F6F6;
+
+$colour_primary_font: #444;
+$colour_secondary_font: #888;
+
+// Fonts.
+$primary_font_face: "georgia", Times, sans-serif;
+$secondary_font_face: 'Source Sans Pro', sans-serif;
+
+// Media query vars.
+$break-small: 414px;
+$break-medium: 768px;
+$break-large: 1200px;
+
+@mixin media-query($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin gradient-background() {
+  background: $colour_purple_base;
+  background: -moz-linear-gradient(top, $colour_pink_base  0%, $colour_purple_middle 27%, $colour_purple_base 100%);
+  background: -webkit-linear-gradient(top,  $colour_pink_base  0%, $colour_purple_middle 27%, $colour_purple_base 100%);
+  background: linear-gradient(to bottom,  $colour_pink_base  0%, $colour_purple_middle 27%, $colour_purple_base 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colour_pink_base', endColorstr='$colour_purple_base',GradientType=0 );
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "syntax-highlighting";
+@import "normalize";
+@import "navigation";
+@import "columns";
+@import "author";
+@import "email-signup";
+@import "breadcrumbs";
+@import "docs";
+@import "blog";
+@import "footer";
+@import "base";
+@import "post";
+@import "index";
+@import "404";

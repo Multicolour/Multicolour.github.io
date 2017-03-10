@@ -1,0 +1,28 @@
+.author {
+  margin: 0;
+
+  .author-image,
+  .author-name {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .author-image {
+    border-radius: 50%;
+    max-width: 3em;
+  }
+
+  .author-name {
+    color: $colour_secondary_font;
+    padding-left: .5em;
+    margin: 0;
+    font-size: .9em;
+    font-family: $secondary_font_face;
+
+    .name {
+      margin: 0;
+      line-height: .85em;
+      font-family: $primary_font_face;
+    }
+  }
+}

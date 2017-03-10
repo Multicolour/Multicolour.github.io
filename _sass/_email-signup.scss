@@ -1,0 +1,56 @@
+.email-signup {
+  text-align: center;
+  font-family: $secondary_font_face;
+
+  fieldset {
+    display: block;
+    margin: 0 auto;
+    clear: both;
+    height: 4em;
+    overflow: hidden;
+    border: 0;
+  }
+
+  input, button {
+    height: 100%;
+    margin: 0;
+    font-family: inherit;
+    font-size: $base-font-size;
+    float: left;
+    padding: 0 $horizontal-rhythm;
+    border-radius: 0;
+    -webkit-appearance: none;
+	  -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $break-small) {
+      padding: $vertical-rhythm / 2.25 $horizontal-rhythm;
+      font-size: $base-font-size * 1.5;
+    }
+  }
+
+  input {
+    width: 80%;
+    border: 1px solid #979797;
+  }
+
+  button {
+    border: 0;
+    width: 20%;
+    background: #333;
+    color: #FFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #333;
+
+
+    @media screen and (max-width: $break-small) {
+      padding: $vertical-rhythm / 4 $horizontal-rhythm;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

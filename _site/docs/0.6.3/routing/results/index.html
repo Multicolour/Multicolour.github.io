@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multicolour documentation result filtering</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="Multicolour documentation result filtering" />
+<meta name="description" content="Perform queries on your data without writing any business logic." />
+<meta name="abstract" content="Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already." />
+<meta name="keywords" content="rest api query, results filtering, searching" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="en" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="Multicolour documentation result filtering">
+<meta name="twitter:description" content="Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already.">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="Multicolour documentation result filtering">
+<meta itemprop="description" content="Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already.">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="Multicolour documentation result filtering" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already." />
+<meta property="og:site_name" content="Multicolour documentation result filtering" />
+
+<link rel="icon" href="/images/iconography/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#FF9999">
+<meta name="msapplication-TileImage" content="/images/iconography/ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/routing/results/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
+</head>
+
+
+<body>
+    <main class="docs">
+      <div class="general-nav">
+    <nav>
+        <a href="/" class="logo-link no-border" title="Multicolour - Rest API generator">
+            <img class="nav-logo" src="/images/logo-stamp.svg" alt="Multicolour - Rest API generator">
+        </a>
+
+        <ul class="menu">
+            <li>
+                <a href="/examples/" title="Multicolour rest api generator examples">examples</a>
+            </li>
+            <li>
+                <a href="/docs/" title="Multicolour docs">docs</a>
+            </li>
+            <li>
+                <a href="/blog/" title="Multicolour blog">blog</a>
+            </li>
+        </ul>
+    </nav>
+
+    <menu class="breadcrumb-menu">
+        <h1>Multicolour documentation result filtering</h1>
+
+        <div class="breadcrumbs">
+  <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
+    <img src="/images/iconography/android-icon-36x36.png" alt="Multicolour - Rest API generator">
+  </a>
+
+  <span class="arrow">&rarr;</span>
+
+  
+  
+  <a href="/docs/" title="docs">
+    docs
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  <a href="/docs/0.6.3/" title="0.6.3">
+    0.6.3
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  <a href="/docs/0.6.3/routing/" title="routing">
+    routing
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  
+
+  <a class="current" href="/docs/0.6.3/routing/results/" title="Multicolour documentation result filtering">
+    
+    Results Filtering
+    
+  </a>
+</div>
+
+    </menu>
+</div>
+
+
+      <section class="columns">
+        <aside>
+            
+            <h2 class="title">Docs <span>0.6.3</span></h2>
+            
+            <section class="search">
+                <input type="search" name="search" placeholder="search the docs">
+            </section>
+
+            
+            
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "headline": "Multicolour documentation result filtering",
+        "assemblyVersion": "0.6.3",
+        "executableLibraryName": "multicolour",
+        "targetPlatform": "NodeJS",
+        "keywords": "rest api query, results filtering, searching",
+        "learningResourceType": ["learning activity"],
+        "wordCount": "216",
+        "datePublished": "2017-03-10 11:15:01 +0000",
+        "url": "/docs/0.6.3/routing/results/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
+            }
+        },
+        "image":{
+            "@type":"ImageObject",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
+            "height":"500",
+            "width":"1500"
+         },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/routing/results/"
+        },
+        "articleBody": "Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already.Assuming you have a table named person with this data            id      name      parent                  1      mother      NULL              2      father      NULL              3      child 1      1              4      child 1      2      we can filter these results by using the query string to find results. See these examples and results:GET /person will return all 4 rows.GET /person?parent=1 &amp;amp; GET /person?parent[name]=mother both return{  &quot;id&quot;: 3,  &quot;name&quot;: &quot;child 1&quot;,  &quot;parent&quot;: {    &quot;id&quot;: 1,    &quot;name&quot;: &quot;mother&quot;  }}because the query string parent=1 is a simple WHERE parent=1 and the later, ?parent[name]=mother finds the ids of the data that match that sub-query and then does a WHERE parent in [ 1 ] to return the same row.You can query your tables using any of the colunmns defined and you can query based on related tables columns too."
+    }
+</script>
+
+
+            <ul class="search-results">
+  
+  
+    <li
+      data-keywords="multicolour API, API reference"
+      
+      class="visible">
+      <a href="/docs/0.6.3/api-reference" title="Multicolour core API reference">
+        API Reference
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, cli"
+      
+      class="visible">
+      <a href="/docs/0.6.3/cli" title="Multicolour documentation CLI">
+        CLI
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="waterline blueprints, multicolour collection, database, table, define, migration"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/" title="Multicolour documentation collections">
+        Collections/Blueprints
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour config, server configuration, rest api config"
+      
+      class="visible">
+      <a href="/docs/0.6.3/configuration" title="Multicolour documentation configuration">
+        Configuration
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="codeless business logic, multicolour constraints"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/constraints/" title="Multicolour documentation constraints">
+        Constraints
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="database, migration, data, existing database, automatic"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/migration/" title="Multicolour documentation database migration">
+        Migration
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, rest api, debugging"
+      
+      class="visible">
+      <a href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
+        Debugging
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords=""
+      
+      class="visible">
+      <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
+        Quickstart
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, javascript sdk"
+      
+      class="visible">
+      <a href="/docs/0.6.3/javascript-sdk" title="Multicolour documentation JavaScript SDK generator">
+        JavaScript SDK
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, plugins, rest api business logic"
+      
+      class="visible">
+      <a href="/docs/0.6.3/plugins" title="Multicolour documentation plugins">
+        Writing plugins
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, REST API routes, routing"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/" title="Multicolour documentation routing">
+        Routing
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="rest api query, results filtering, searching"
+      
+      class="active visible">
+        Results Filtering
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, server, http"
+      
+      class="visible">
+      <a href="/docs/0.6.3/server/" title="Multicolour server docs">
+        Server
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="file uploads, multicolour, rest api file uploads"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/file-uploads/" title="Multicolour documentation file uploads">
+        Uploading files
+      </a>
+      
+
+      
+    </li>
+  
+</ul>
+
+            
+        </aside>
+        <article>
+          <p>Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already.</p>
+
+<p>Assuming you have a table named <code class="highlighter-rouge">person</code> with this data</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>parent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>mother</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>father</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>child 1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>child 1</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>we can filter these results by using the query string to find results. See these examples and results:</p>
+
+<p><code class="highlighter-rouge">GET /person</code> will return all 4 rows.</p>
+
+<p><code class="highlighter-rouge">GET /person?parent=1</code> &amp; <code class="highlighter-rouge">GET /person?parent[name]=mother</code> both return</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"child 1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mother"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>because the query string <code class="highlighter-rouge">parent=1</code> is a simple <code class="highlighter-rouge">WHERE parent=1</code> and the later, <code class="highlighter-rouge">?parent[name]=mother</code> finds the ids of the data that match that sub-query and then does a <code class="highlighter-rouge">WHERE parent in [ 1 ]</code> to return the same row.</p>
+
+<p>You can query your tables using any of the colunmns defined and you can query based on related tables columns too.</p>
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+
+  <ul>
+    <li>
+      <a href="/code-of-conduct" title="Multicolour code of conduct">
+        Code of Conduct
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow noopener noreferrer">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow noopener noreferrer">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; All copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+<script src="/js/main.js" async defer></script>
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+    analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+    analytics.page()
+  }}();
+</script>
+
+
+</body>
+
+</html>

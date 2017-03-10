@@ -1,0 +1,22 @@
+<ul class="search-results">
+  {% for example in site.examples %}
+    <li
+      data-keywords="{{ example.search_terms }}"
+      {% if page.permalink == example.permalink %}
+      class="active visible">
+        {{ example.title }}
+      {% else %}
+      class="visible">
+      <a href="{{ example.permalink }}" title="{{ example.title }}">
+        {{ example.title }}
+      </a>
+      {% endif %}
+
+      {% if example.description %}
+      <small>
+        {{ example.description }}
+      </small>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multicolour - Rest API generator</title>
+    <description>Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.</description>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 10 Mar 2017 11:15:01 +0000</pubDate>
+    <lastBuildDate>Fri, 10 Mar 2017 11:15:01 +0000</lastBuildDate>
+    <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Branding and voice of Multicolour</title>
+        <description>&lt;p&gt;Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those years ago has blossomed into a truly wonderful and expressive tool.&lt;/p&gt;
+
+&lt;p&gt;That’s where I started with the branding and the voice of Multicolour, technically it’s 7 years old and one of my first NodeJS projects and it was a solution in problem space to a usual blocker to mine and many colleagues workflow. I decided I’d build it out, to replace the “temporary” part of it with “permanent”.&lt;/p&gt;
+
+&lt;p&gt;The first version of the product was a big mash of code into one file and lo and behold it worked first time. Was fast, simple and a totally viable product. I had made a generator and that’s where I started with the logo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/uploads/old-logo.jpeg&quot; alt=&quot;The old logo, a modified generator symbol commonly seen in electronic designs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The old logo, a modified generator symbol commonly seen in electronic designs. That’s where I started, adding colour that represented the night time dedication I had to building the project out and the fact it was a generator.&lt;/p&gt;
+
+&lt;p&gt;The logo stayed the same for about a year but now, with the 0.4.0 release of Multicolour it was time for a change that matched the product.&lt;/p&gt;
+
+&lt;p&gt;This logo no longer worked for what was no longer a purely technical solution to a technical problem but rather a simple solution to a complex problem.&lt;/p&gt;
+
+&lt;p&gt;I tried to create a new logo many, many times and failed. What I had in my mind simply couldn’t come out. I wanted to communicate the simple, trustworthy and production ready aspect of Multicolour and with that I created a &lt;a href=&quot;https://getmulticolour.com/branding-brief&quot;&gt;simple brief&lt;/a&gt;, set some cash aside and put the feelers out for a &lt;strong&gt;proper&lt;/strong&gt; designer to do the branding.&lt;/p&gt;
+
+&lt;p&gt;I had an overwhelming response from some of the designers I’ve admired in the industry for years but in the end I decided to go with Dan Edwards at No Divide. I’ve followed No Divide for a couple of years and &lt;strong&gt;always&lt;/strong&gt; loved their work and never heard a bad thing about them. I was like a smitten puppy when I sent the email asking if they’d help me create a vocal brand.&lt;/p&gt;
+
+&lt;p&gt;Within 2 weeks, I had seen sketches, experiments, ideas built upon and earlier this week I got the final version.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/uploads/new-logo.jpeg&quot; alt=&quot;it communicates everything I wanted the logo to communicate&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;😍 it’s a beauty, it communicates everything I wanted the logo to communicate. It has depth in 2d and 3D space. It works in just about every colour, in just about every place. Just like Multicolour does.&lt;/p&gt;
+
+&lt;p&gt;This is the next chapter of Multicolour, an already production ready API generator in use by several companies around the world. With a legitimate logo.&lt;/p&gt;
+
+&lt;p&gt;Multicolour 0.4.0 is a massive release for the project. With many new features, bug fixes, performance and security fixes it’s by far the coolest release yet and it makes total sense that it comes with a new logo and new website to reflect the generation of this product.&lt;/p&gt;
+
+&lt;p&gt;If you need branding done, I spent 2 weeks constantly thrilled by &lt;a href=&quot;https://nodividestudio.com&quot;&gt;No Divide&lt;/a&gt;’s work and presentation. I can’t recommend them and their work enough ❤️&lt;/p&gt;
+
+&lt;p&gt;Onto the next chapter of Multicolour,&lt;/p&gt;
+
+&lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Feb 2017 08:42:51 +0000</pubDate>
+        <link>http://0.0.0.0:4000/blog/multicolour-branding-voice</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/multicolour-branding-voice</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Write less code, do more. Welcome to the future.</title>
+        <description>&lt;p&gt;When you’re asked “what do you do each day?” what’s the first thing you think of? Maybe it’s something like “I make web apps” or “I create APIs for apps”. That’s great and it’s a growing market filling with clever people.
+What do you really do each day though? You’re probably writing the familiar create, read, update and delete (CRUD) stuff day in, day out to satisfy your client’s needs and wants. That’s cool, it’s age old and it’s your bread and butter.
+We all mine through the CRUD to get to the gold; the truly inspirational work in the business logic and the finely tuned front end, the “fun” part of our jobs.
+But what if you could get there in minutes instead of days or months? What if you could create a RESTful API with OAuth support for all major platforms, use almost any database technology with full relationship support and JSONAPI compliancy in less than 5 minutes?&lt;/p&gt;
+
+&lt;h3 id=&quot;enter-multicolour&quot;&gt;Enter Multicolour&lt;/h3&gt;
+&lt;p&gt;In a world that’s increasingly relying on automated technologies and the web in general, it’s becoming more and more important to be lean. That doesn’t mean we should cut corners, but that we need to get smarter with what we have. We need to do more with the near infinite number of solutions already out there designed to make our lives easier.&lt;/p&gt;
+
+&lt;p&gt;That’s where Multicolour sits, firmly. It’s not a framework, it’s not a library, but in fact it is just glue between many other open source projects. If there wasn’t a plethora of incredibly clever people out there, Multicolour wouldn’t exist.&lt;/p&gt;
+
+&lt;h3 id=&quot;thats-fine-but-what-is-multicolour&quot;&gt;That’s fine, but what is Multicolour?&lt;/h3&gt;
+
+&lt;p&gt;Multicolour is a “generator”; built on NodeJS, it generates various things but right now we’re concentrating on generating functional and super fast REST APIs. It uses JSON schemas to generate the create, read, update and delete operations of your API saving you time and preventing you having to repeat your work.&lt;/p&gt;
+
+&lt;p&gt;At New World Code, we don’t like having to repeat ourselves when tackling problems shared by multiple projects. We’ve always used a simple fake server generator so we can get started with front ends and mobile apps while the backend is being developed but after working this way for some time, we realised that even faster and smarter alternatives exist. Multicolour was conceived to help us create APIs in 90% less time, generating the repeated boilerplate and glue for us in a matter of seconds.&lt;/p&gt;
+
+&lt;p&gt;It was important that it didn’t stop us doing our normal work though, so we made sure the CRUD comes for free. You can get straight to the project specific logic in just a few minutes!&lt;/p&gt;
+
+&lt;h3 id=&quot;the-feature-set-for-beta-is&quot;&gt;The feature set for BETA is:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;OAuth support&lt;/strong&gt; for Facebook, GitHub, Google, Instagram, LinkedIn, Twitter, Yahoo, Foursquare, VK, ArcGIS Online, Windows Live, Nest, Phabricator, BitBucket, Dropbox, Reddit, Tumblr and Twitch. With built in role support route and verb based controls.&lt;/p&gt;
+
+&lt;p&gt;Support for &lt;strong&gt;almost any database technology&lt;/strong&gt;, even concurrently. If you have a table; say “projects”, in PostgreSQL and a collection; say “users”, in Mongo, you can relate the two without any code change regardless of the different database technologies or different servers. You can see a list of the supported database technologies here.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;JSONAPI compliancy&lt;/strong&gt; to prevent the age old argument on how the data should be represented. Have a well written API spec to send to your developers to work from, safe in the knowledge that the API will follow suite.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Content Negotiation&lt;/strong&gt; was a must. As much as we love JSONAPI at NWC, not all clients can consume it without heaps of work. So if you want straight JSON, ask for application/json but if you want JSONAPI (or any other content type) request it + profit.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Code-less logic&lt;/strong&gt;, if you want to lock those proverbial “projects” in your database to their creator you don’t have to write any business logic to handle that, use Multicolour constraints.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Self documenting API&lt;/strong&gt; with Swagger and Swagger UI, see your endpoints and even try them right in your browser straight away.&lt;/p&gt;
+
+&lt;p&gt;Create a &lt;strong&gt;Plugin system&lt;/strong&gt; that lets you extend and modify Multicolour’s behaviour without limit.&lt;/p&gt;
+
+&lt;p&gt;And many other features but as well as that, we’re building out a new module that can generate a single page, Polymer/React apps to get you rocking and rolling with the front-end as well!&lt;/p&gt;
+
+&lt;p&gt;None of these features get in the way of you adding your business logic, all your custom routes and custom logic is written exactly the same as usual in the same place.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-do-i-get-in-onthis&quot;&gt;How do I get in on this?!&lt;/h3&gt;
+&lt;p&gt;Multicolour is being very actively developed in plain sight on Github, it’s maturing quickly but it’s still in BETA with enhancements and bug fixes being pushed to the plugins every couple of days.&lt;/p&gt;
+
+&lt;p&gt;Head over to the Github repo and star/subscribe for updates as they happen and if you really want to be ahead of the curve you can sign up for occasional updates and exclusive private beta access to modules by email on our website, https://getmulticolour.com&lt;/p&gt;
+
+&lt;p&gt;It’s already in the wild with two companies, it’s powering the amazing design tool Context and the Floato app and backend as well as a couple of exciting other projects we can’t talk about today!&lt;/p&gt;
+
+&lt;p&gt;We also have a Gitter channel specifically for Multicolour users to get advice and help straight from the horses mouth.&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-next-for-multicolour&quot;&gt;What’s next for Multicolour?&lt;/h3&gt;
+&lt;p&gt;We’re busy working away on several issues and updates to bring more stability and performance to your APIs so go and star/fork and start work on the interesting solutions for your clients.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Mar 2016 08:42:51 +0000</pubDate>
+        <link>http://0.0.0.0:4000/blog/introducing-multicolour</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/introducing-multicolour</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Introducing Multicolour</title>
+        <description>&lt;h1 id=&quot;introducing-multicolour&quot;&gt;Introducing Multicolour&lt;/h1&gt;
+
+&lt;p&gt;Multicolour is about a year old; as a product, but in real “release” life it’s only 6 months old. What started as a technical solution to a technical problem as my little helper library all those years ago has blossomed into a truly wonderful and expressive tool.&lt;/p&gt;
+
+&lt;p&gt;That’s where I started with the branding and the voice of Multicolour, technically it’s 7 years old and one of my first NodeJS projects and it was a solution in problem space to a usual blocker to mine and many colleagues workflow. I decided I’d build it out, to replace the “temporary” part of it with “permanent”.&lt;/p&gt;
+
+&lt;p&gt;The first version of the product was a big mash of code into one file and lo and behold it worked first time. Was fast, simple and a totally viable product. I had made a generator and that’s where I started with the logo.&lt;/p&gt;
+
+&lt;p&gt;The old logo, a modified generator symbol commonly seen in electronic designs. That’s where I started, adding colour that represented the night time dedication I had to building the project out and the fact it was a generator.&lt;/p&gt;
+
+&lt;p&gt;The logo stayed the same for about a year but now, with the 0.4.0 release of Multicolour it was time for a change that matched the product.&lt;/p&gt;
+
+&lt;p&gt;This logo no longer worked for what was no longer a purely technical solution to a technical problem but rather a simple solution to a complex problem.&lt;/p&gt;
+
+&lt;p&gt;I tried to create a new logo many, many times and failed. What I had in my mind simply couldn’t come out. I wanted to communicate the simple, trustworthy and production ready aspect of Multicolour and with that I created a &lt;a href=&quot;https://getmulticolour.com/branding-brief&quot;&gt;simple brief&lt;/a&gt;, set some cash aside and put the feelers out for a &lt;strong&gt;proper&lt;/strong&gt; designer to do the branding.&lt;/p&gt;
+
+&lt;p&gt;I had an overwhelming response from some of the designers I’ve admired in the industry for years but in the end I decided to go with Dan Edwards at No Divide. I’ve followed No Divide for a couple of years and &lt;strong&gt;always&lt;/strong&gt; loved their work and never heard a bad thing about them. I was like a smitten puppy when I sent the email asking if they’d help me create a vocal brand.&lt;/p&gt;
+
+&lt;p&gt;Within 2 weeks, I had seen sketches, experiments, ideas built upon and earlier this week I got the final version.&lt;/p&gt;
+
+&lt;p&gt;😍 it’s a beauty, it communicates everything I wanted the logo to communicate. It has depth in 2d and 3D space. It works in just about every colour, in just about every place. Just like Multicolour does.&lt;/p&gt;
+
+&lt;p&gt;This is the next chapter of Multicolour, an already production ready API generator in use by several companies around the world. With a legitimate logo.&lt;/p&gt;
+
+&lt;p&gt;Multicolour 0.4.0 is a massive release for the project. With many new features, bug fixes, performance and security fixes it’s by far the coolest release yet and it makes total sense that it comes with a new logo and new website to reflect the generation of this product.&lt;/p&gt;
+
+&lt;p&gt;If you need branding done, I spent 2 weeks constantly thrilled by &lt;a href=&quot;https://nodividestudio.com&quot;&gt;No Divide&lt;/a&gt;’s work and presentation. I can’t recommend them and their work enough ❤️&lt;/p&gt;
+
+&lt;p&gt;Onto the next chapter of Multicolour,&lt;/p&gt;
+
+&lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Feb 2016 08:42:51 +0000</pubDate>
+        <link>http://0.0.0.0:4000/blog/introducing-multicolour</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/introducing-multicolour</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

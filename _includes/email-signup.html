@@ -1,0 +1,22 @@
+<section class="email-signup row">
+  <form
+    method="post"
+    enctype="multipart/form-data"
+    action="{{ site.mailchimp_uri }}">
+    <fieldset name="email">
+      <input
+        name="EMAIL"
+        type="email"
+        alt="Enter your best email for news on Multicolour's development"
+        placeholder="Enter your best email for news on Multicolour's development">
+      <button
+        type="submit"
+        name="subscribe">
+        SIGN UP
+      </button>
+    </fieldset>
+  </form>
+  <p class="really-small">
+    Your email address is safe with us &mdash; We’ll only send you occasional news and will never share your data. &hearts;
+  </p>
+</section>

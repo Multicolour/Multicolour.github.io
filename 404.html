@@ -1,0 +1,21 @@
+---
+layout: page
+title: 404 Page Not found!
+---
+<section class="content page-404">
+  <h1>404 - Page not found!</h1>
+  <p>This page could not be found, maybe the url was wrong? Maybe your bookmark is out of date.</p>
+
+  <p>Why not checkout a blog post while you're lost?</p>
+  <ul>
+    {% for post in site.posts limit: 5 %}
+    <li>
+      <a href="{{ post.url | prepend: site.url }}" title="{{ post.title }}" target="_blank">
+        {{ post.title }}
+      </a>
+      <small>{{ post.content | truncatewords: 20 }}</small>
+      <em class="tags">{{ post.keywords }}</em>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

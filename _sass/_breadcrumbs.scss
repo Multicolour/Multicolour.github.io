@@ -1,0 +1,69 @@
+.breadcrumb-menu {
+  border-top: 1px solid #CFCFCF;
+  overflow: hidden;
+
+  h1, .breadcrumbs {
+    display: block;
+    vertical-align: top;
+    max-width: 48%;
+  }
+
+  h1 {
+    margin: .5em;
+    float: left;
+    font-family: $primary_font_face;
+    font-size: 1.5em;
+    color: $colour_secondary_font;
+    font-weight: 400;
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .breadcrumbs-logo {
+    display: inline-block !important;
+    width: 28px;
+    height: 28px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      border: 0;
+      vertical-align: middle;
+    }
+  }
+
+  .breadcrumbs {
+    float: right;
+    text-align: right;
+    margin-bottom: 0;
+    font-family: $secondary_font_face;
+    padding-top: 0.35em;
+
+    @media screen and (max-width: $break-small) {
+      display: none;
+    }
+
+    a,
+    .arrow {
+      color: lighten($colour_secondary_font, 5%);
+      font-size: .8em;
+      display: inline;
+      vertical-align: text-top;
+      margin: 0;
+    }
+
+    a {
+      font-family: inherit;
+      text-decoration: none;
+      border: 0;
+      padding: 0 1em;
+
+      &.current {
+        font-weight: 600;
+        color: $colour_purple_base;
+      }
+    }
+  }
+}

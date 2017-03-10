@@ -1,0 +1,100 @@
+.blog {
+  clear: both;
+  overflow: hidden;
+
+  .read-more {
+    display: block;
+    text-align: right;
+    color: $colour_purple_middle;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: $secondary_font_face;
+    font-size: .9em;
+    line-height: 1em;
+    margin-top: 2.5em;
+
+    small {
+      display: block;
+      color: $colour_secondary_font;
+      font-size: .8em;
+      padding-right: 1.5em;
+      font-weight: normal;
+    }
+  }
+
+  .post {
+    padding: 1em;
+    width: 33.3333%;
+
+    .post-title {
+      display: block;
+      line-height: 1.3em;
+      font-size: 2em;
+      color: $colour_secondary_font;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    &.post-narrow {
+      padding: 3em 1.5em;
+      float: left;
+      background-color: $colour_alternative_background;
+
+      &:nth-child(even) {
+        background-color: lighten($colour_alternative_background, 1.75%);
+      }
+    }
+
+    &.post-wide {
+      width: 100%;
+      display: block;
+
+      .left,
+      .right {
+        display: inline-block;
+        vertical-align: top;
+        width: 47%;
+        padding: 1em;
+
+        .post-title {
+          margin-bottom: 2.5em;
+        }
+      }
+
+      .right {
+        background-color: $colour_alternative_background;
+      }
+
+      @media screen and (max-width: $break-small) {
+        width: auto;
+
+        .left,
+        .right {
+          width: 100%;
+          float: none;
+        }
+      }
+    }
+
+    @media screen and (max-width: $break-small) {
+      width: auto;
+
+      .left,
+      .right {
+        width: 100%;
+      }
+    }
+  }
+
+  .more-posts {
+    width: 100%;
+    text-align: center;
+    font-size: 1.7em;
+    font-family: $primary_font_face;
+    clear: both;
+  }
+
+}

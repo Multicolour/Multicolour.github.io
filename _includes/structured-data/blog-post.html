@@ -1,0 +1,46 @@
+{% assign wordcount = include.content | number_of_words %}
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ include.title }}",
+        "genre": "{{ include.category }}",
+        "keywords": "{{ include.keywords }}",
+        "wordCount": "{{ wordcount }}",
+        "url": "{{ include.link }}",
+        "datePublished": "{{ include.date | date: '%Y-%m-%d' }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ include.author }}",
+            "sameAs": [
+                "{{ site.data.authors[include.author].links | join: '", "' }}"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "{{ site.url }}/images/logo.png",
+                "url": "{{ site.url }}"
+            }
+        },
+        "image":{
+            "@type":"ImageObject",
+            "contentUrl":"{{ site.url }}/images/social-header.jpg",
+            "url":"{{ site.url }}",
+            "height":"500",
+            "width":"1500"
+         },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ include.link | prepend: site.url }}"
+        },
+        "articleBody": "{{ include.content | strip_html | xml_escape | normalize_whitepace | strip_newlines | strip }}"
+    }
+</script>

@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multicolour core API reference</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="Multicolour core API reference" />
+<meta name="description" content="Multicolour core API reference." />
+<meta name="abstract" content="Multicolour aims to make your life simpler, smarter and quicker by generating the boilerplate code for you including authentication and data representation l..." />
+<meta name="keywords" content="multicolour API, API reference" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="en" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="Multicolour core API reference">
+<meta name="twitter:description" content="Multicolour aims to make your life simpler, smarter and quicker by generating the boilerplate code for you including authentication and data representation l...">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="Multicolour core API reference">
+<meta itemprop="description" content="Multicolour aims to make your life simpler, smarter and quicker by generating the boilerplate code for you including authentication and data representation l...">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="Multicolour core API reference" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="Multicolour aims to make your life simpler, smarter and quicker by generating the boilerplate code for you including authentication and data representation l..." />
+<meta property="og:site_name" content="Multicolour core API reference" />
+
+<link rel="icon" href="/images/iconography/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#FF9999">
+<meta name="msapplication-TileImage" content="/images/iconography/ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/api-reference">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
+</head>
+
+
+<body>
+    <main class="docs">
+      <div class="general-nav">
+    <nav>
+        <a href="/" class="logo-link no-border" title="Multicolour - Rest API generator">
+            <img class="nav-logo" src="/images/logo-stamp.svg" alt="Multicolour - Rest API generator">
+        </a>
+
+        <ul class="menu">
+            <li>
+                <a href="/examples/" title="Multicolour rest api generator examples">examples</a>
+            </li>
+            <li>
+                <a href="/docs/" title="Multicolour docs">docs</a>
+            </li>
+            <li>
+                <a href="/blog/" title="Multicolour blog">blog</a>
+            </li>
+        </ul>
+    </nav>
+
+    <menu class="breadcrumb-menu">
+        <h1>Multicolour core API reference</h1>
+
+        <div class="breadcrumbs">
+  <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
+    <img src="/images/iconography/android-icon-36x36.png" alt="Multicolour - Rest API generator">
+  </a>
+
+  <span class="arrow">&rarr;</span>
+
+  
+  
+  <a href="/docs/" title="docs">
+    docs
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  <a href="/docs/0.6.3/" title="0.6.3">
+    0.6.3
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  
+
+  <a class="current" href="/docs/0.6.3/api-reference" title="Multicolour core API reference">
+    
+    API Reference
+    
+  </a>
+</div>
+
+    </menu>
+</div>
+
+
+      <section class="columns">
+        <aside>
+            
+            <h2 class="title">Docs <span>0.6.3</span></h2>
+            
+            <section class="search">
+                <input type="search" name="search" placeholder="search the docs">
+            </section>
+
+            
+            
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "headline": "Multicolour core API reference",
+        "assemblyVersion": "0.6.3",
+        "executableLibraryName": "multicolour",
+        "targetPlatform": "NodeJS",
+        "keywords": "multicolour API, API reference",
+        "learningResourceType": ["learning activity"],
+        "wordCount": "1754",
+        "datePublished": "2017-03-10 11:15:01 +0000",
+        "url": "/docs/0.6.3/api-reference",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
+            }
+        },
+        "image":{
+            "@type":"ImageObject",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
+            "height":"500",
+            "width":"1500"
+         },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/api-reference"
+        },
+        "articleBody": "Multicolour aims to make your life simpler, smarter and quicker by generating the boilerplate code for you including authentication and data representation layer.Multicolour core is a message bus that uses the Talkie package.This allows Multicolour to act as two things:  An EventEmitter  a request and reply interfaceThe difference between the two is merely semantic, it allows us to make reading the code more natural and simplify certain aspects of the code resolution process (“What does this do?” .. “Oh, that.”)Multicolour “extends” all plugins with it’s message bus so all plugins have a predictable interface.new Multicolour({ config })Create an instance of Multicolour, config should be a valid configuration object for multicolour to scan for blueprints and connect to your databases.Returns: MulticolourExample:const Multicolour = require(&quot;multicolour&quot;)const my_service = new Multicolour({  content: `${__dirname}/content`})multicolour.get(key String)Get any of the following properties values from Multicolour core, some properties are only available once the service has been .start()-ed.            name      type      notes                  cli      cli      Uninitialised CLI module.              config      Config      The config as a Map, top level properties are also Maps              env      String      process.env.NODE_ENV value at startup or &quot;development&quot; by default.              has_scanned      Boolean      whether Multicolour has .scan()ned for blueprints.              package      Object      The contents of the app’s package.json if any              blueprints      Object      Only available after .scan() has run.              validators      Map&amp;lt;Object&amp;gt;      Map of validators.              database      Object      Only available after .start() has completed, the database plugin.              server      Object      Only available after .start() has completed, the server plugin.              handlers      Object      object with the handlers used by the server plugins and throughout code.      Returns: mixedExample:console.log(my_service.get(&quot;env&quot;)) // developmentGetting core modules such as database and server will return full plugin instances.–multicolour.get(&quot;database&quot;)Will return the full Multicolour_Waterline_Generator instance including the full waterline object and another Talkie interface.Much like the Multicolour.get interface the database has a number of .get()-able properties too.            name      type      notes                  models      Object      An object of each, raw waterline collection registered.              waterline      Object      The raw Waterline object underneath.      multicolour.get(&quot;server&quot;)All of the official server plugins are also Talkie interfaces which allow for .get()-ing of the below properties.            name      type      notes                  raw      mixed      Raw server tech, be it Hapi or Express or whatever plugin you chose to use.              api_root      String      A string containing the url of where the server is listening.              csrf_enabled      Boolean      A boolean representing whether CSRF is enabled.      multicolour.request(key)Request a property from Multicolour, this is merely semantic sugar and works exactly the same as .get(string).Available properties are:            name      type      notes                  cli      CLI      initialised CLI module.              new_uuid      String      a unique v4 uuid.              storage      Object      Get the current storage plugin.      Returns: mixedExample:console.log(my_service.request(&quot;new_uuid&quot;)) // 5d31d224-bf23-49ed-9db0-7a50ab924f4fstatic new_from_config_file_path(config_location)Create a new instance of Multicolour from a config file location.Returns: MulticolourExample:const my_service = require(&quot;multicolour&quot;).new_from_config_file_path(&quot;./config.js&quot;)multicolour.reset_from_config_path(config_location)Reset this instance of Multicolour with a config file location.Returns: MulticolourExample:const Multicolour = require(&quot;multicolour&quot;)const my_service = Multicolour.new_from_config_file_path(&quot;./config.js&quot;)// Actually changed my mind.my_service.reset_from_config_path(&quot;./my-other-config.js&quot;)multicolour.cli()Start the CLI tools and parse arguments.Returns: CLIExample:#!/usr/bin/env node// Get Multicolour.const Multicolour = require('multicolour')// Instantiate.new Multicolour().cli()multicolour._enable_user_model()Enable the core user model, usually done so by official authentication plugins.Will create a new table/collection in your database called multicolour_user.Returns: MulticolourExample:// Get Multicolour.const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()  ._enable_user_model()multicolour.scan()Tell Multicolour that you and the server are ready to be scanned for blueprints. The search path is dictated by the config.content property.Once scan has completed a new property is made available via the Multicolour.get() interface. These are	&quot;blueprints&quot;Returns: MulticolourExample:const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()multicolour.use(Plugin)Tell Multicolour to register and “use” the supplied plugin. Your plugin must have a register method on it.Returns: MulticolourExample:class PingPongPlugin {  register(Multicolour) {    Multicolour.reply(&quot;ping&quot;, &quot;pong&quot;)  }}const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()  // Here we tell Multicolour to use our plugin.  .use(my_plugin)console.log(my_service.request(&quot;ping&quot;)) // pongmulticolour.start()Start the database server(s), http server(s) and wait for requests.Triggers the following events on the Multicolour instance:  server_starting  database_startingand once started, triggers  server_started  database_startedAlso sets up a listener for SIGINT on the process so the services can be .stop()ped gracefullyReturns: Promise&amp;lt;database, server&amp;gt;Example:require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()  .start()    .then(() =&amp;gt; console.log(&quot;Services started&quot;))multicolour.stop()Stop the database server(s) and the http server and stop listening for requests.Triggers  database_stopping  server_stoppingevents on the Multicolour instance and once services are stopped triggers  database_stopped  server_stoppedReturns: PromiseExample:const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()my_service.start()  .then(() =&amp;gt; {    console.log(&quot;HTTP &amp;amp; Database server(s) started&quot;)    my_service.stop()      .then(() =&amp;gt; console.log(&quot;HTTP &amp;amp; Database server(s) stopped&quot;))  })Request and Reply arbitrary dataTalkie enables Multicolour to act both as an EventEmitter and as a messaging bus to send arbitrary data to multiple places at once and on the object it extends.Talkie adds request and reply functions to all extended objects.multicolour.reply(name, data)When name is requested, it will receive the data unmodified.Example:multicolour.reply(&quot;my_awesome_plugin&quot;, new class Awesome {})console.log(multicolour.request(&quot;my_awesome_plugin&quot;)) // [Function Awesome]multicolour.request(name)Purely syntactic sugar, is no different in functionality than .get(name).Example:const my_awesome_plugin = multicolour.request(&quot;my_awesome_plugin&quot;)EventEmitterMulticolour is an EventEmitter, events can be triggered and listened to using the standard interface for inter-plugin communication.At any point an event can be triggered and listened to in your app’s lifetime.All events are asyncronous, results from a trigger cannot be attained without providing a callback in the data sent.All plugins that used by Multicolour are also made into message busses with the exact same interface as Multicolour and access to all the Multicolour events.EventsThese events are fired from core and emit no data.database_startingEmitted with no data when a database startup has been started.database_startedEmitted with no data when a database startup has completed.database_stoppingEmitted with no data when a database shutdown has been started.database_stoppedEmitted with no data when a database shutdown has completed.server_stoppingEmitted with no data when a HTTP server shutdown has been started.server_stoppedEmitted with no data when a HTTP shutdown has completed.multicolour.on(event, callback(event))Listen for an event fired on Multicolour core.Returns: MulticolourExample:const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()my_service.on(&quot;database_started&quot;, () =&amp;gt;  console.log(&quot;Bewm, databases are up.&quot;))my_service.start()multicolour.trigger(event, data)Trigger an event on Multicolour core.Returns: MulticolourExample:const my_service = require(&quot;multicolour&quot;)  .new_from_config_file_path(&quot;./config.js&quot;)  .scan()my_service.start()  .then(() =&amp;gt; {    my_service.trigger(&quot;service_up&quot;, { my_service })  })Other methods can be read up on the Talkie docs"
+    }
+</script>
+
+
+            <ul class="search-results">
+  
+  
+    <li
+      data-keywords="multicolour API, API reference"
+      
+      class="active visible">
+        API Reference
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, cli"
+      
+      class="visible">
+      <a href="/docs/0.6.3/cli" title="Multicolour documentation CLI">
+        CLI
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="waterline blueprints, multicolour collection, database, table, define, migration"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/" title="Multicolour documentation collections">
+        Collections/Blueprints
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour config, server configuration, rest api config"
+      
+      class="visible">
+      <a href="/docs/0.6.3/configuration" title="Multicolour documentation configuration">
+        Configuration
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="codeless business logic, multicolour constraints"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/constraints/" title="Multicolour documentation constraints">
+        Constraints
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="database, migration, data, existing database, automatic"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/migration/" title="Multicolour documentation database migration">
+        Migration
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, rest api, debugging"
+      
+      class="visible">
+      <a href="/docs/0.6.3/debugging" title="Multicolour documentation debugging tips">
+        Debugging
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords=""
+      
+      class="visible">
+      <a href="/docs/0.6.3/quickstart" title="Multicolour quickstart">
+        Quickstart
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, javascript sdk"
+      
+      class="visible">
+      <a href="/docs/0.6.3/javascript-sdk" title="Multicolour documentation JavaScript SDK generator">
+        JavaScript SDK
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, plugins, rest api business logic"
+      
+      class="visible">
+      <a href="/docs/0.6.3/plugins" title="Multicolour documentation plugins">
+        Writing plugins
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, REST API routes, routing"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/" title="Multicolour documentation routing">
+        Routing
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="rest api query, results filtering, searching"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/results/" title="Multicolour documentation result filtering">
+        Results Filtering
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, server, http"
+      
+      class="visible">
+      <a href="/docs/0.6.3/server/" title="Multicolour server docs">
+        Server
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="file uploads, multicolour, rest api file uploads"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/file-uploads/" title="Multicolour documentation file uploads">
+        Uploading files
+      </a>
+      
+
+      
+    </li>
+  
+</ul>
+
+            
+        </aside>
+        <article>
+          <p>Multicolour aims to make your life simpler, smarter and quicker by generating the boilerplate code for you including authentication and data representation layer.</p>
+
+<p>Multicolour core is a message bus that uses the Talkie package.</p>
+
+<p>This allows Multicolour to act as two things:</p>
+
+<ul>
+  <li>An <code class="highlighter-rouge">EventEmitter</code></li>
+  <li>a request and reply interface</li>
+</ul>
+
+<p>The difference between the two is merely semantic, it allows us to make reading the code more natural and simplify certain aspects of the code resolution process <em>(“What does this do?” .. “Oh, that.”)</em></p>
+
+<p>Multicolour “extends” all plugins with it’s message bus so all plugins have a predictable interface.</p>
+
+<hr />
+
+<h3 id="new-multicolour-config-"><code class="highlighter-rouge">new Multicolour({ config })</code></h3>
+
+<p>Create an instance of Multicolour, <code class="highlighter-rouge">config</code> should be a valid configuration object for multicolour to scan for blueprints and connect to your databases.</p>
+
+<p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">Multicolour</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Multicolour</span><span class="p">({</span>
+  <span class="na">content</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content</span><span class="err">`
+</span><span class="p">})</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="multicolourgetkey-string"><code class="highlighter-rouge">multicolour.get(key String)</code></h3>
+
+<p>Get any of the following properties values from Multicolour core, some properties are only available once the service has been <code class="highlighter-rouge">.start()</code>-ed.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>type</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">cli</code></td>
+      <td><a href="/docs/0.6.3/cli"><code class="highlighter-rouge">cli</code></a></td>
+      <td>Uninitialised CLI module.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">config</code></td>
+      <td><a href="http://0.0.0.0:4000/docs/0.6.3/configuration"><code class="highlighter-rouge">Config</code></a></td>
+      <td>The config as a <code class="highlighter-rouge">Map</code>, top level properties are also <code class="highlighter-rouge">Map</code>s</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">env</code></td>
+      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="highlighter-rouge">process.env.NODE_ENV</code> value at startup or <code class="highlighter-rouge">"development"</code> by default.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">has_scanned</code></td>
+      <td><code class="highlighter-rouge">Boolean</code></td>
+      <td>whether Multicolour has <code class="highlighter-rouge">.scan()</code>ned for blueprints.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">package</code></td>
+      <td><code class="highlighter-rouge">Object</code></td>
+      <td>The contents of the app’s <code class="highlighter-rouge">package.json</code> if any</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">blueprints</code></td>
+      <td><a href="http://0.0.0.0:4000/docs/0.6.3/collections/#blueprints"><code class="highlighter-rouge">Object</code></a></td>
+      <td>Only available after <code class="highlighter-rouge">.scan()</code> has run.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">validators</code></td>
+      <td><code class="highlighter-rouge">Map&lt;Object&gt;</code></td>
+      <td>Map of validators.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">database</code></td>
+      <td><a href="http://0.0.0.0:4000/docs/0.6.3/database"><code class="highlighter-rouge">Object</code></a></td>
+      <td>Only available after <code class="highlighter-rouge">.start()</code> has completed, the database plugin.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">server</code></td>
+      <td><code class="highlighter-rouge">Object</code></td>
+      <td>Only available after <code class="highlighter-rouge">.start()</code> has completed, the server plugin.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">handlers</code></td>
+      <td><a href="http://0.0.0.0:4000/docs/0.6.3/handlers"><code class="highlighter-rouge">Object</code></a></td>
+      <td>object with the handlers used by the server plugins and throughout code.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Returns: <code class="highlighter-rouge">mixed</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">my_service</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"env"</span><span class="p">))</span> <span class="c1">// development</span>
+</code></pre>
+</div>
+
+<p>Getting core modules such as <code class="highlighter-rouge">database</code> and <code class="highlighter-rouge">server</code> will return full plugin instances.</p>
+
+<p>–</p>
+
+<h3 id="multicolourgetdatabase"><code class="highlighter-rouge">multicolour.get("database")</code></h3>
+
+<p>Will return the full <code class="highlighter-rouge">Multicolour_Waterline_Generator</code> instance including the full waterline object and another Talkie interface.</p>
+
+<p>Much like the <code class="highlighter-rouge">Multicolour.get</code> interface the database has a number of <code class="highlighter-rouge">.get()</code>-able properties too.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>type</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">models</code></td>
+      <td><a href="/docs/0.6.3/database/#models"><code class="highlighter-rouge">Object</code></a></td>
+      <td>An object of each, raw waterline collection registered.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">waterline</code></td>
+      <td><a href="/docs/0.6.3/database/#waterline"><code class="highlighter-rouge">Object</code></a></td>
+      <td>The raw Waterline object underneath.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="multicolourgetserver"><code class="highlighter-rouge">multicolour.get("server")</code></h3>
+
+<p>All of the official server plugins are also Talkie interfaces which allow for <code class="highlighter-rouge">.get()</code>-ing of the below properties.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>type</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">raw</code></td>
+      <td><a href="/docs/0.6.3/server/#raw"><code class="highlighter-rouge">mixed</code></a></td>
+      <td>Raw server tech, be it Hapi or Express or whatever plugin you chose to use.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">api_root</code></td>
+      <td><a href="/docs/0.6.3/server/#api_root"><code class="highlighter-rouge">String</code></a></td>
+      <td>A string containing the url of where the server is listening.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">csrf_enabled</code></td>
+      <td><a href="/docs/0.6.3/server/#csrf"><code class="highlighter-rouge">Boolean</code></a></td>
+      <td>A boolean representing whether CSRF is enabled.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="multicolourrequestkey"><code class="highlighter-rouge">multicolour.request(key)</code></h3>
+
+<p>Request a property from Multicolour, this is merely semantic sugar and works exactly the same as <code class="highlighter-rouge">.get(string)</code>.</p>
+
+<p>Available properties are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>type</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">cli</code></td>
+      <td><a href="/docs/0.6.3/cli/"><code class="highlighter-rouge">CLI</code></a></td>
+      <td>initialised CLI module.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">new_uuid</code></td>
+      <td><code class="highlighter-rouge">String</code></td>
+      <td>a unique v4 uuid.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">storage</code></td>
+      <td><a href="/docs/0.6.3/routing/file-uploads/"><code class="highlighter-rouge">Object</code></a></td>
+      <td>Get the current storage plugin.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Returns: <code class="highlighter-rouge">mixed</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">my_service</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"new_uuid"</span><span class="p">))</span> <span class="c1">// 5d31d224-bf23-49ed-9db0-7a50ab924f4f</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="static-new_from_config_file_pathconfig_location"><code class="highlighter-rouge">static new_from_config_file_path(config_location)</code></h3>
+
+<p>Create a new instance of Multicolour from a config file location.</p>
+
+<p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">).</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="multicolourreset_from_config_pathconfig_location"><code class="highlighter-rouge">multicolour.reset_from_config_path(config_location)</code></h3>
+
+<p>Reset this instance of Multicolour with a config file location.</p>
+
+<p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">Multicolour</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">Multicolour</span><span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+
+<span class="c1">// Actually changed my mind.</span>
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">reset_from_config_path</span><span class="p">(</span><span class="s2">"./my-other-config.js"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="multicolourcli"><code class="highlighter-rouge">multicolour.cli()</code></h3>
+
+<p>Start the CLI tools and parse arguments.</p>
+
+<p>Returns: <code class="highlighter-rouge">CLI</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="cp">#!/usr/bin/env node
+</span>
+<span class="c1">// Get Multicolour.</span>
+<span class="kr">const</span> <span class="nx">Multicolour</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'multicolour'</span><span class="p">)</span>
+
+<span class="c1">// Instantiate.</span>
+<span class="k">new</span> <span class="nx">Multicolour</span><span class="p">().</span><span class="nx">cli</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="multicolour_enable_user_model"><code class="highlighter-rouge">multicolour._enable_user_model()</code></h3>
+
+<p>Enable the core user model, usually done so by official authentication plugins.</p>
+
+<p>Will create a new table/collection in your database called <code class="highlighter-rouge">multicolour_user</code>.</p>
+
+<p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Get Multicolour.</span>
+<span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">_enable_user_model</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="multicolourscan"><code class="highlighter-rouge">multicolour.scan()</code></h3>
+
+<p>Tell Multicolour that you and the server are ready to be scanned for blueprints. The search path is dictated by the <code class="highlighter-rouge">config.content</code> property.</p>
+
+<p>Once scan has completed a new property is made available via the <code class="highlighter-rouge">Multicolour.get()</code> interface. These are	<code class="highlighter-rouge">"blueprints"</code></p>
+
+<p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="multicolouruseplugin"><code class="highlighter-rouge">multicolour.use(Plugin)</code></h3>
+
+<p>Tell Multicolour to register and “use” the supplied plugin. Your plugin must have a <code class="highlighter-rouge">register</code> method on it.</p>
+
+<p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">PingPongPlugin</span> <span class="p">{</span>
+  <span class="nx">register</span><span class="p">(</span><span class="nx">Multicolour</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Multicolour</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"ping"</span><span class="p">,</span> <span class="s2">"pong"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+
+  <span class="c1">// Here we tell Multicolour to use our plugin.</span>
+  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">my_plugin</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">my_service</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"ping"</span><span class="p">))</span> <span class="c1">// pong</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="multicolourstart"><code class="highlighter-rouge">multicolour.start()</code></h3>
+
+<p>Start the database server(s), http server(s) and wait for requests.</p>
+
+<p>Triggers the following events on the Multicolour instance:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">server_starting</code></li>
+  <li><code class="highlighter-rouge">database_starting</code></li>
+</ul>
+
+<p>and once started, triggers</p>
+
+<ul>
+  <li><code class="highlighter-rouge">server_started</code></li>
+  <li><code class="highlighter-rouge">database_started</code></li>
+</ul>
+
+<p>Also sets up a listener for <code class="highlighter-rouge">SIGINT</code> on the process so the services can be <code class="highlighter-rouge">.stop()</code>ped gracefully</p>
+
+<p>Returns: <code class="highlighter-rouge">Promise&lt;database, server&gt;</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Services started"</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="multicolourstop"><code class="highlighter-rouge">multicolour.stop()</code></h3>
+
+<p>Stop the database server(s) and the http server and stop listening for requests.</p>
+
+<p>Triggers</p>
+
+<ul>
+  <li><code class="highlighter-rouge">database_stopping</code></li>
+  <li><code class="highlighter-rouge">server_stopping</code></li>
+</ul>
+
+<p>events on the Multicolour instance and once services are stopped triggers</p>
+
+<ul>
+  <li><code class="highlighter-rouge">database_stopped</code></li>
+  <li><code class="highlighter-rouge">server_stopped</code></li>
+</ul>
+
+<p>Returns: <code class="highlighter-rouge">Promise</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP &amp; Database server(s) started"</span><span class="p">)</span>
+
+    <span class="nx">my_service</span><span class="p">.</span><span class="nx">stop</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP &amp; Database server(s) stopped"</span><span class="p">))</span>
+  <span class="p">})</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="request-and-reply-arbitrary-data">Request and Reply arbitrary data</h3>
+
+<p>Talkie enables Multicolour to act both as an EventEmitter and as a messaging bus to send arbitrary data to multiple places at once <em>and</em> on the object it extends.</p>
+
+<p>Talkie adds <code class="highlighter-rouge">request</code> and <code class="highlighter-rouge">reply</code> functions to all extended objects.</p>
+
+<h3 id="multicolourreplyname-data"><code class="highlighter-rouge">multicolour.reply(name, data)</code></h3>
+
+<p>When <code class="highlighter-rouge">name</code> is <code class="highlighter-rouge">request</code>ed, it will receive the <code class="highlighter-rouge">data</code> unmodified.</p>
+
+<p>Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">multicolour</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"my_awesome_plugin"</span><span class="p">,</span> <span class="k">new</span> <span class="kr">class</span> <span class="nx">Awesome</span> <span class="p">{})</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multicolour</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"my_awesome_plugin"</span><span class="p">))</span> <span class="c1">// [Function Awesome]</span>
+</code></pre>
+</div>
+
+<h3 id="multicolourrequestname"><code class="highlighter-rouge">multicolour.request(name)</code></h3>
+
+<p>Purely syntactic sugar, is no different in functionality than <code class="highlighter-rouge">.get(name)</code>.</p>
+
+<p>Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">my_awesome_plugin</span> <span class="o">=</span> <span class="nx">multicolour</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"my_awesome_plugin"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="eventemitter">EventEmitter</h3>
+
+<p>Multicolour is an <code class="highlighter-rouge">EventEmitter</code>, events can be triggered and listened to using the standard interface for inter-plugin communication.</p>
+
+<p>At <strong>any</strong> point an event can be triggered and listened to in your app’s lifetime.</p>
+
+<p>All events are asyncronous, results from a trigger cannot be attained without providing a callback in the data sent.</p>
+
+<p>All plugins that used by Multicolour are also made into message busses with the exact same interface as Multicolour and access to all the Multicolour events.</p>
+
+<h3 id="events">Events</h3>
+
+<p>These events are fired from core and emit no data.</p>
+
+<h4 id="database_starting"><code class="highlighter-rouge">database_starting</code></h4>
+
+<p>Emitted with no data when a database startup has been started.</p>
+
+<h4 id="database_started"><code class="highlighter-rouge">database_started</code></h4>
+
+<p>Emitted with no data when a database startup has completed.</p>
+
+<h4 id="database_stopping"><code class="highlighter-rouge">database_stopping</code></h4>
+
+<p>Emitted with no data when a database shutdown has been started.</p>
+
+<h4 id="database_stopped"><code class="highlighter-rouge">database_stopped</code></h4>
+
+<p>Emitted with no data when a database shutdown has completed.</p>
+
+<h4 id="server_stopping"><code class="highlighter-rouge">server_stopping</code></h4>
+
+<p>Emitted with no data when a HTTP server shutdown has been started.</p>
+
+<h4 id="server_stopped"><code class="highlighter-rouge">server_stopped</code></h4>
+
+<p>Emitted with no data when a HTTP shutdown has completed.</p>
+
+<h3 id="multicolouronevent-callbackevent">multicolour.on(event, callback(event))</h3>
+
+<p>Listen for an event fired on Multicolour core.</p>
+
+<p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"database_started"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Bewm, databases are up."</span><span class="p">))</span>
+
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+
+</code></pre>
+</div>
+
+<h3 id="multicolourtriggerevent-data">multicolour.trigger(event, data)</h3>
+
+<p>Trigger an event on Multicolour core.</p>
+
+<p>Returns: <code class="highlighter-rouge">Multicolour</code><br />
+Example:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">my_service</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
+
+<span class="nx">my_service</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">my_service</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">"service_up"</span><span class="p">,</span> <span class="p">{</span> <span class="nx">my_service</span> <span class="p">})</span>
+  <span class="p">})</span>
+
+</code></pre>
+</div>
+
+<p>Other methods can be read up on the <a href="https://www.npmjs.com/package/@newworldcode/talkie">Talkie docs</a></p>
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+
+  <ul>
+    <li>
+      <a href="/code-of-conduct" title="Multicolour code of conduct">
+        Code of Conduct
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow noopener noreferrer">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow noopener noreferrer">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; All copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+<script src="/js/main.js" async defer></script>
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+    analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+    analytics.page()
+  }}();
+</script>
+
+
+</body>
+
+</html>

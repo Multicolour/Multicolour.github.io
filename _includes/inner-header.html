@@ -1,0 +1,25 @@
+<div class="general-nav">
+    <nav>
+        <a href="/" class="logo-link no-border" title="{{ site.title }}">
+            <img class="nav-logo" src="/images/logo-stamp.svg" alt="{{ site.title }}">
+        </a>
+
+        <ul class="menu">
+            <li>
+                <a href="/examples/" title="Multicolour rest api generator examples">examples</a>
+            </li>
+            <li>
+                <a href="/docs/" title="Multicolour docs">docs</a>
+            </li>
+            <li>
+                <a href="/blog/" title="Multicolour blog">blog</a>
+            </li>
+        </ul>
+    </nav>
+
+    <menu class="breadcrumb-menu">
+        <h1>{{page.title}}</h1>
+
+        {% include breadcrumbs.html %}
+    </menu>
+</div>

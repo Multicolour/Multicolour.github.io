@@ -1,0 +1,86 @@
+---
+layout: page
+title:  Multicolour blog
+description: Read Multicolour's latest news, hints, tips and learn more about REST APIs.
+keywords: blog, multicolour, rest api
+permalink: /blog/
+short_name: multicolour blog
+lang: en
+---
+
+<section class="blog">
+  {% for post in site.posts limit: 4 %}
+      {% assign author = site.data.authors[post.author] %}
+
+      {% if forloop.first %}
+      <article class="post post-wide">
+        <div class="left">
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date_to_long_string }}
+          </time>
+
+          <a class="post-title no-border" title="{{ post.title }}" href="{{ post.permalink }}">
+              {{ post.title }}
+          </a>
+
+          <hr>
+
+          {%
+            include author.html
+            image=author.image
+            author=post.author
+          %}
+        </div>
+
+        <div class="right">
+          {% if !!page.excerpt %}
+          {{ post.excerpt | truncatewords: 45 }}
+          {% else %}
+          {{ post.content | truncatewords: 45 }}
+          {% endif %}
+
+          <a class="no-border read-more" href="{{ post.permalink }}" title="{{ post.title }}">
+            Read the full article &rarr;
+            <small>{{ post.content | strip_html | number_of_words | divided_by: 200 }} minutes</small>
+          </a>
+        </div>
+      </article>
+
+      <p class="more-posts">More posts</p>
+
+      {% else %}
+
+      <article class="post post-narrow">
+
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date_to_long_string }}
+        </time>
+
+        <a class="post-title no-border" href="{{ post.permalink }}" title="{{ post.title }}">
+            {{ post.title }}
+        </a>
+
+        {%
+          include author.html
+          image=author.image
+          author=post.author
+        %}
+
+        <hr>
+
+        {% if !!page.excerpt %}
+        {{ post.excerpt | truncatewords: 40 }}
+        {% else %}
+        {{ post.content | truncatewords: 40 }}
+        {% endif %}
+
+        <a class="no-border read-more" href="{{ post.permalink }}" title="{{ post.title }}">
+          Read more &rarr;
+          <small>{{ post.content | strip_html | number_of_words | divided_by: 200 }} minutes</small>
+        </a>
+      </article>
+      {% endif %}
+
+
+  {% endfor %}
+</section>

@@ -1,0 +1,42 @@
+{% assign wordcount = include.content | number_of_words %}
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "headline": "{{ include.headline }}",
+        "assemblyVersion": "{{ include.version }}",
+        "executableLibraryName": "multicolour",
+        "targetPlatform": "NodeJS",
+        "keywords": "{{ include.keywords }}",
+        "learningResourceType": ["learning activity"],
+        "wordCount": "{{ wordcount }}",
+        "datePublished": "{{ site.time }}",
+        "url": "{{ include.link }}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "{{ site.url }}/images/logo.png",
+                "url": "{{ site.url }}"
+            }
+        },
+        "image":{
+            "@type":"ImageObject",
+            "contentUrl":"{{ site.url }}/images/social-header.jpg",
+            "url":"{{ site.url }}",
+            "height":"500",
+            "width":"1500"
+         },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ include.link | prepend: site.url }}"
+        },
+        "articleBody": "{{ include.content | strip_html | xml_escape | normalize_whitepace | strip_newlines | strip }}"
+    }
+</script>
