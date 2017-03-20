@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation collections">
 <meta name="twitter:description" content="Collections">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation collections">
 <meta itemprop="description" content="Collections">
-<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation collections" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://getmulticolour.com" />
-<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Collections" />
 <meta property="og:site_name" content="Multicolour documentation collections" />
 
@@ -63,8 +63,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://getmulticolour.com/docs/0.6.3/collections/">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/collections/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
 
@@ -149,7 +149,7 @@
         "keywords": "waterline blueprints, multicolour collection, database, table, define, migration",
         "learningResourceType": ["learning activity"],
         "wordCount": "1157",
-        "datePublished": "2017-03-20 09:38:19 +0000",
+        "datePublished": "2017-03-20 17:29:08 +0000",
         "url": "/docs/0.6.3/collections/",
         "publisher": {
             "@type": "Organization",
@@ -160,20 +160,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "https://getmulticolour.com/images/logo.png",
-                "url": "https://getmulticolour.com"
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"https://getmulticolour.com/images/social-header.jpg",
-            "url":"https://getmulticolour.com",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://getmulticolour.com/docs/0.6.3/collections/"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/collections/"
         },
         "articleBody": "CollectionsMulticolour collections are built on the popular Waterline ORM, this allowed us to minimise the amount of work that you do to get something you’d spend weeks or months doing.Multicolour expands on Blueprints slightly to give you some extra behavioural and timesaving tweaks as well as extra behaviour for Multicolour.A simple, example Multicolour blueprint might look something like this.&quot;use strict&quot;module.exports = {  attributes: {    slug: &quot;string&quot;,    title: {      type: &quot;string&quot;,      required: true,      index: true    },    description: {      type: &quot;string&quot;,      required: true    },    public: {      type: &quot;boolean&quot;,      defaultsTo: true,      metadata: {        description: &quot;Some projects are private, this flag is the decider.&quot;      }    },    // Associations.    user: {      model: &quot;user&quot;    }  },  constraints: {    get: {      user: &quot;auth.credentials.user.id&quot;,      public: { compile: false, value: true }    },  }}A few things are happening above, we’re exporting an Object with a few keys. The first key is attributes, this is where you define the properties/columns/keys in your table/document.Each key of the attributes can be an object of properties or simply the type that key should be. Valid types are:  &quot;string&quot;  &quot;text&quot;  &quot;email&quot;  &quot;integer&quot;  &quot;float&quot;  &quot;date&quot;  &quot;time&quot;  &quot;datetime&quot;  &quot;boolean&quot;  &quot;binary&quot;  &quot;array&quot;  &quot;json&quot;Properties can also have a metadata key, this is where you can add descriptive and informative notes that will appear in the documentation generated by your chosen server framework.There is also a constraints key outside of the attributes, this serves as a simple “logic free” way to constrain actions on the database.If you were to write the JavaScript for that constraint, it might look something like this.projects.findOne(request.payload, (err, project) =&amp;gt; {  if (row.user.toString() !== request.auth.credentials.user.id.toString()    || row.public === false) {    reply(&quot;You aren't allowed to do this.&quot;).code(412)  }  else {    reply(project)  }})...A value computed by a constraint will always overwrite any value sent to the server intended for a write request to the database.Naming and identityTo be as predictable as possible, Multicolour takes the name of your blueprint.js and makes sure it is not pluralised in any way. If you have a blueprint named projects.js in your blueprints folder, Multicolour will name your collection project and your routes will all be /project/.Lifecycle callbacksIf constraints aren’t for you, you can use lifecycle callbacks to prevent/check writes and reads from your database.Each model has the following available callbacks.  beforeValidate(values, next)  afterValidate(values, next)  beforeCreate(values, next)  afterCreatefn(newlyInsertedRecord, next)  beforeUpdate(valuesToUpdate, next)  afterUpdate(updatedRecord, next)  beforeDestroy(criteria, next)  afterDestroy(deletedRecord, next)To read more on lifecycle callbacks, read the Waterline lifecycle documentation.AssociationsYour blueprints can have associations to other blueprints (even across database technologies) which are automatically populated by Multicolour. Your associations can be one-to-one, one-to-many or many-to-many.You make associations in your blueprint by specifying the property that should be associated and either a model or collection property within with an optional via value.Example:...attributes: {  // One-to-one  user: {    model: &quot;user&quot;  },  // One-to-many  projects: {    collection: &quot;project&quot;,    via: &quot;user&quot;  }}...Adding associations programatically.There may be a time you need to add a relationship to another collection without modifying the blueprint. The add_relation_to_collection(as, target_collection, related_collection, many) function will do this for you.This function will add a relationship, either one to one or one to many to your collection.It will not overwrite any relationship by the same nameIt will throw if either collection does not exist.Passing true to many will make the relationship one to many.ExampleAdding a team relationship to the multicolour_user collection.// app.jsmy_service.get(&quot;database&quot;)  .add_relation_to_collection(&quot;team&quot;, &quot;multicolour_user&quot;, &quot;team&quot;)  .add_relation_to_collection(&quot;users&quot;, &quot;team&quot;, &quot;multicolour_user&quot;)A sugar function that does the same in a more terse way is the .join method.my_service.get(&quot;database&quot;)  .join({    as: &quot;team&quot;,    from: &quot;multicolour_user&quot;,    to: &quot;team&quot;  })  .join({    as: &quot;team&quot;,    from: &quot;team&quot;,    to: &quot;multicolour_user&quot;  })You can find more about how Waterline handles associations by reading the documentationtoJSONEvery model has a toJSON method, even if you don’t supply one, Multicolour adds one for you which simply removes any null or undefined keys before conitnueing with the reply.If you supply a toJSON method, Multicolour wraps your toJSON in the default so behaviour stays predictable.Example removing a password and salt from a reply:attributes: {  // Your model...  toJSON: function() {    const model = this.toObject()    delete model.password    delete model.salt    return model  }}FlagsThere are flags available to change Multicolour behaviour on your models, they are:  NO_AUTO_GEN_ROUTES: Boolean This tells Multicolour whether or not to generate CRUD endpoints for this model. custom_routes are still honoured.  NO_AUTO_GEN_FRONTEND: Boolean This tells Multicolour whether or not to generate a frontend (if you have enabled a frontend plugin).During the generation Multicolour also adds a new property to each model, multicolour_instance which is the current instance of Multicolour from which you can access your entire app."
     }

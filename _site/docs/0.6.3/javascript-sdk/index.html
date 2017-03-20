@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation JavaScript SDK generator">
 <meta name="twitter:description" content="JavaScript SDK generation">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation JavaScript SDK generator">
 <meta itemprop="description" content="JavaScript SDK generation">
-<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation JavaScript SDK generator" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://getmulticolour.com" />
-<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="JavaScript SDK generation" />
 <meta property="og:site_name" content="Multicolour documentation JavaScript SDK generator" />
 
@@ -63,8 +63,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://getmulticolour.com/docs/0.6.3/javascript-sdk/">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/javascript-sdk/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
 
@@ -149,7 +149,7 @@
         "keywords": "multicolour, javascript sdk",
         "learningResourceType": ["learning activity"],
         "wordCount": "249",
-        "datePublished": "2017-03-20 09:38:19 +0000",
+        "datePublished": "2017-03-20 17:29:08 +0000",
         "url": "/docs/0.6.3/javascript-sdk/",
         "publisher": {
             "@type": "Organization",
@@ -160,20 +160,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "https://getmulticolour.com/images/logo.png",
-                "url": "https://getmulticolour.com"
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"https://getmulticolour.com/images/social-header.jpg",
-            "url":"https://getmulticolour.com",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://getmulticolour.com/docs/0.6.3/javascript-sdk/"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/javascript-sdk/"
         },
         "articleBody": "JavaScript SDK generationMulticolour comes with an JavaScript SDK generator, it will generate both ES6/ES2015 classes for use with modern libraries like React as well as a standard ES5 library for use anywhere else. It is handwritten code used as templates and Babel transpiles it to today’s standard ES5.To get started with the JavaScript SDK generator, you need configuration in your config file to decide where to put it and whether you want the ES5 code or not.There is also blueprint level configuration to prevent generation of parts of the SDK.The config.js should contain an object such as thissettings: {    ... other config    javascript_sdk: {      destination: `${__dirname}/content/frontend/build/api_sdk`,      module_name: &quot;API_SDK&quot;,      es5: true    }    ... other config  },This tells the generator to put the generated code into the content/frontend/build/api_sdk folder and name the ES5 module API_SDK. The ES5 module is a UMD module so can be required or if no module loader is found is added to window.I don’t want all blueprints generatedThe generator respects the NO_AUTO_GEN_ROUTES variable used to prevent creation of endpoints for certain models so if you don’t want the model generated for a blueprint that has no endpoints, add this option to your blueprint."
     }

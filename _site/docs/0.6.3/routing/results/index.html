@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation result filtering">
 <meta name="twitter:description" content="Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already.">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation result filtering">
 <meta itemprop="description" content="Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already.">
-<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation result filtering" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://getmulticolour.com" />
-<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already." />
 <meta property="og:site_name" content="Multicolour documentation result filtering" />
 
@@ -63,8 +63,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://getmulticolour.com/docs/0.6.3/routing/results/">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/routing/results/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
 </head>
 
 
@@ -155,7 +155,7 @@
         "keywords": "rest api query, results filtering, searching",
         "learningResourceType": ["learning activity"],
         "wordCount": "216",
-        "datePublished": "2017-03-20 09:38:19 +0000",
+        "datePublished": "2017-03-20 17:29:08 +0000",
         "url": "/docs/0.6.3/routing/results/",
         "publisher": {
             "@type": "Organization",
@@ -166,20 +166,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "https://getmulticolour.com/images/logo.png",
-                "url": "https://getmulticolour.com"
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"https://getmulticolour.com/images/social-header.jpg",
-            "url":"https://getmulticolour.com",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://getmulticolour.com/docs/0.6.3/routing/results/"
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/routing/results/"
         },
         "articleBody": "Multicolour has a fully featured results filtering engine built out of the box, all your GET requests support this behaviour already.Assuming you have a table named person with this data            id      name      parent                  1      mother      NULL              2      father      NULL              3      child 1      1              4      child 1      2      we can filter these results by using the query string to find results. See these examples and results:GET /person will return all 4 rows.GET /person?parent=1 &amp;amp; GET /person?parent[name]=mother both return{  &quot;id&quot;: 3,  &quot;name&quot;: &quot;child 1&quot;,  &quot;parent&quot;: {    &quot;id&quot;: 1,    &quot;name&quot;: &quot;mother&quot;  }}because the query string parent=1 is a simple WHERE parent=1 and the later, ?parent[name]=mother finds the ids of the data that match that sub-query and then does a WHERE parent in [ 1 ] to return the same row.You can query your tables using any of the colunmns defined and you can query based on related tables columns too."
     }
