@@ -69,9 +69,9 @@ lang: en
         <hr>
 
         {% if !!page.excerpt %}
-        {{ post.excerpt | truncatewords: 40 }}
+        {{ post.excerpt | strip_html | truncatewords: 40 }}
         {% else %}
-        {{ post.content | truncatewords: 40 }}
+        {{ post.content | strip_html | truncatewords: 40 }}
         {% endif %}
 
         <a class="no-border read-more" href="{{ post.permalink }}" title="{{ post.title }}">
