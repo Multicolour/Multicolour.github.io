@@ -1,6 +1,7 @@
 .blog {
   clear: both;
   overflow: hidden;
+  margin-bottom: 0;
 
   .read-more {
     display: block;
@@ -25,6 +26,8 @@
   .post {
     padding: 1em;
     width: 33.3333%;
+    max-height: 40em;
+    overflow: auto;
 
     .post-title {
       display: block;
@@ -65,7 +68,13 @@
       }
 
       .right {
+        padding: 2em 1em;
         background-color: $colour_alternative_background;
+
+        // Hide the title so it's not duplicated on the page.
+        h1, h2, h3, h4 {
+          display: none;
+        }
       }
 
       @media screen and (max-width: $break-small) {

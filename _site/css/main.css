@@ -543,7 +543,8 @@ nav {
 
 .columns {
   width: 100%;
-  display: flex; }
+  display: flex;
+  margin-bottom: 0; }
   .columns aside,
   .columns article {
     display: inline-block;
@@ -748,7 +749,8 @@ nav {
 
 .blog {
   clear: both;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 0; }
   .blog .read-more {
     display: block;
     text-align: right;
@@ -767,7 +769,9 @@ nav {
       font-weight: normal; }
   .blog .post {
     padding: 1em;
-    width: 33.3333%; }
+    width: 33.3333%;
+    max-height: 40em;
+    overflow: auto; }
     .blog .post .post-title {
       display: block;
       line-height: 1.3em;
@@ -795,7 +799,10 @@ nav {
         .blog .post.post-wide .right .post-title {
           margin-bottom: 2.5em; }
       .blog .post.post-wide .right {
+        padding: 2em 1em;
         background-color: #F6F6F6; }
+        .blog .post.post-wide .right h1, .blog .post.post-wide .right h2, .blog .post.post-wide .right h3, .blog .post.post-wide .right h4 {
+          display: none; }
       @media screen and (max-width: 414px) {
         .blog .post.post-wide {
           width: auto; }
@@ -817,18 +824,38 @@ nav {
     clear: both; }
 
 footer {
-  padding: 1em;
   font-family: "Source Sans Pro", sans-serif;
   font-size: .8em;
   color: #FFF;
   text-align: center; }
-  footer ul {
+  footer .social {
+    display: flex;
+    flex-grow: 1;
+    background: #444; }
+    footer .social a {
+      flex: 1 33%;
+      text-align: center;
+      padding: 3em 1em;
+      display: inline-block;
+      border: 0;
+      outline: 0;
+      height: 100%;
+      vertical-align: middle;
+      margin: 0; }
+      footer .social a img {
+        display: inline-block;
+        width: 4em;
+        vertical-align: middle; }
+        @media screen and (max-width: 414px) {
+          footer .social a img {
+            width: 3em; } }
+  footer .meta {
     margin-bottom: 1em;
     width: 100%; }
-    footer ul, footer ul li {
+    footer .meta, footer .meta li {
       list-style: none !important;
       display: inline-block; }
-    footer ul li {
+    footer .meta li {
       padding: 0 2em; }
 
 * + * {
@@ -966,7 +993,8 @@ table td {
 
 .row, .content {
   width: 70vw;
-  margin: 7vh auto; }
+  margin: 7vh auto 0 auto;
+  overflow: hidden; }
   @media screen and (max-width: 414px) {
     .row, .content {
       width: 90%;
@@ -994,7 +1022,7 @@ table td {
     flex-direction: column-reverse; }
     .blog-post .columns aside,
     .blog-post .columns article {
-      width: auto; }
+      width: 100%; }
     .blog-post .columns aside {
       text-align: center; }
       .blog-post .columns aside .author-image,

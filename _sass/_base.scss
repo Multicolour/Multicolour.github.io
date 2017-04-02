@@ -175,7 +175,8 @@ table {
 // Our styles.
 .row, .content {
   width: 70vw;
-  margin: 7vh auto;
+  margin: 7vh auto 0 auto;
+  overflow: hidden;
 
   @media screen and (max-width: $break-small) {
     width: 90%;

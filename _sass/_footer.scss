@@ -1,11 +1,38 @@
 footer {
-  padding: 1em;
   font-family: $secondary_font_face;
   font-size: .8em;
   color: #FFF;
   text-align: center;
 
-  ul {
+  .social {
+    display: flex;
+    flex-grow: 1;
+    background: $colour_primary_font;
+
+    a {
+      flex: 1 33%;
+      text-align: center;
+      padding: 3em 1em;
+      display: inline-block;
+      border: 0;
+      outline: 0;
+      height: 100%;
+      vertical-align: middle;
+      margin: 0;
+
+      img {
+        display: inline-block;
+        width: 4em;
+        vertical-align: middle;
+
+        @media screen and (max-width: $break-small) {
+          width: 3em;
+        }
+      }
+    }
+  }
+
+  .meta {
     margin-bottom: 1em;
     width: 100%;
 

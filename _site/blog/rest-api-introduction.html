@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Brief Introduction to REST APIs</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="A Brief Introduction to REST APIs" />
+<meta name="description" content="A brief introduction to RESTful APIs; what they are, Who is using them, why they are useful and how Multicolour can help." />
+<meta name="abstract" content="A Brief Introduction to REST API’s" />
+<meta name="keywords" content="multicolour, rest api, generator, introduction, beginner" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="en" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="A Brief Introduction to REST APIs">
+<meta name="twitter:description" content="A brief introduction to RESTful APIs; what they are, Who is using them, why they are useful and how Multicolour can help.">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="A Brief Introduction to REST APIs">
+<meta itemprop="description" content="A brief introduction to RESTful APIs; what they are, Who is using them, why they are useful and how Multicolour can help.">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="A Brief Introduction to REST APIs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="A brief introduction to RESTful APIs; what they are, Who is using them, why they are useful and how Multicolour can help." />
+<meta property="og:site_name" content="A Brief Introduction to REST APIs" />
+
+<link rel="icon" href="/images/iconography/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#FF9999">
+<meta name="msapplication-TileImage" content="/images/iconography/ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://0.0.0.0:4000/blog/rest-api-introduction">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
+</head>
+
+
+<body>
+    <main class="blog-post">
+      <div class="general-nav">
+    <nav>
+        <a href="/" class="logo-link no-border" title="Multicolour - Rest API generator">
+            <img class="nav-logo" src="/images/logo-stamp.svg" alt="Multicolour - Rest API generator">
+        </a>
+
+        <ul class="menu">
+            <li>
+                <a href="/examples/" title="Multicolour rest api generator examples">examples</a>
+            </li>
+            <li>
+                <a href="/docs/0.6.3/" title="Multicolour docs">docs</a>
+            </li>
+            <li>
+                <a href="/blog/" title="Multicolour blog">blog</a>
+            </li>
+        </ul>
+    </nav>
+
+    <menu class="breadcrumb-menu">
+        <h1>A Brief Introduction to REST APIs</h1>
+
+        <div class="breadcrumbs">
+  <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
+    <img src="/images/iconography/android-icon-36x36.png" alt="Multicolour - Rest API generator">
+  </a>
+
+  <span class="arrow">&rarr;</span>
+
+  
+  
+  <a href="/blog/" title="multicolour blog">
+    multicolour blog
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  
+
+  <a class="current" href="/blog/rest-api-introduction" title="A Brief Introduction to REST APIs">
+    
+    A Brief Introduction to REST APIs
+    
+  </a>
+</div>
+
+    </menu>
+</div>
+
+
+      <section class="columns">
+        <aside>
+          
+          
+
+          <div class="author" itemscope itemtype="http://schema.org/Person">
+    <img class="author-image" src="https://pbs.twimg.com/profile_images/820355000446676997/Cb9S-_on.jpg" alt="Jamie Colban">
+    <div class="author-name">
+      <small>written by:</small>
+      <p class="name">Jamie Colban</p>
+    </div>
+</div>
+
+
+          <time datetime="2017-04-02T10:23:51+00:00" itemprop="datePublished">
+            02 April 2017
+          </time>
+
+          <hr>
+
+          <strong>Share</strong>
+          <div class="share-buttons">
+            <a href="https://twitter.com/share?text=A+Brief+Introduction+to+REST+APIs - http://0.0.0.0:4000/blog/rest-api-introduction&via=getmulticolour&dnt=true" class="no-border twitter-share-button" target="_blank" rel="nofollow noopener noreferrer">
+              <img src="/images/icons/twitter-lines.svg" alt="Share A Brief Introduction to REST APIs on Twitter">
+            </a>
+
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/blog/rest-api-introduction" class="no-border facebook-share-button" target="_blank" rel="nofollow noopener noreferrer">
+              <img src="/images/icons/facebook-lines.svg" alt="Share A Brief Introduction to REST APIs on Facebook">
+            </a>
+          </div>
+
+        </aside>
+
+        <article class="post content" itemprop="articleBody" itemtype="http://schema.org/BlogPosting">
+          
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A Brief Introduction to REST APIs",
+        "genre": "",
+        "keywords": "multicolour, rest api, generator, introduction, beginner",
+        "wordCount": "1071",
+        "url": "/blog/rest-api-introduction",
+        "datePublished": "2017-04-02",
+        "author": {
+            "@type": "Person",
+            "name": "Jamie Colban",
+            "sameAs": [
+                "https://twitter.com/JamieColban"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
+            }
+        },
+        "image":{
+            "@type":"ImageObject",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
+            "height":"500",
+            "width":"1500"
+         },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://0.0.0.0:4000/blog/rest-api-introduction"
+        },
+        "articleBody": "A Brief Introduction to REST API’sIt’s time to talk about REST APIs. In my previous post, we spoke about Multicolour and focused on what our wonderful API generator can do for you. This time I thought it might be nice to delve a little more into REST API’s to show you what you could potentially be missing out on.I’ve split this post into three sections;  What is a REST API?  What are REST API’s for?  Who’s using them?If I’m doing my job right, by the time we’re done you will all see the benefits of RESTful APIs and how their application can streamline and potentially boost your business. There are some big fish out there already making use of REST APIs and reaping the benefits of them even as you’re reading this blog post.What are REST APIs?So, what is a REST API?A REST API is an application programme interface (API) that uses HTTP requests to GET, PUT, PATCH, POST and DELETE data. A RESTful API—also referred to as a RESTful web service—is based on representational state transfer, an architectural style and approach to communications often used in web services development.according to http://searchcloudstorage.techtarget.comStraight-forward right? This definition lays out for you what REST API’s are as a bare bones concept, but let’s explore things in a little bit more detail.A Rest API makes use of a specific set of verbs;  GET (This will retrieve a resource.)  PUT (Updates or creates a resource.)  PATCH (Updates a resource)  POST (Create a resource)  DELETE (Pretty sure I don’t need to explain this one!)There is a presumption, when using these verbs, that all calls are stateless. What is meant by this is that nothing can be saved by the REST service between executions. This lack of retention however is not necessarily a bad thing.  In fact, it can be very useful when it comes to building web services.Stateless applications can scale more easily to fit load changes and can be redeployed if something goes wrong. The fact that nothing is remembered by the process makes REST APIs perfect for web usage. This is  because it’s much faster and more flexible.That’s the key really and the reason that REST APIs are taking over from traditional procedural design for web based development. They are faster and the flexibility of the stateless approach is infinitely useful when using web based processes.What are they for?Ok what is a REST API for though? Why use it? Well, we’ve covered that a bit in the section above. There are many benefits to using REST APIs for web-based applications. For example they open up channels for communication between the user and the host so that, in a way, they exponentially expand what is already there and what you already have.REST APIs are on the rise and, honestly, it’s only a matter of time before they’re an industry standard, replacing the old guard of procedural technologies. The reason for this is that REST APIs use less bandwidth which makes them more suitable for online and mobile use.They’re  perfect for mobile apps and games! An API is merely code that allows multiple programmes to manage and transform data in a centralised place.Consumers utilise REST the same way we speak to one another. It’s the language of the web. With online resources on the rise, particularly with cloud usage becoming more  widespread, APIs are becoming a way to connect a rising number of people to web services.If you’re building an API, It makes sense to ensure that you utilise the capabilities of REST to allow your users to connect and interact with your online services.What is great about REST APIs is that they provide the developer with a lot of flexibility and granularity by breaking down any transaction into a series of resources.The difficulty lies in their complexity. They are difficult to design from the ground up and it can be quite time consuming! (This is where Multicolour really shines.)As a RESTful API generator, Multicolour is ideally suited to bring you up to speed by creating boilerplate code in a matter of seconds! With Multicolour doing the legwork for you, you’re free to enjoy all of that increased flexibility almost straight away!Who’s using them?It’s all very well telling you that ‘big’ companies are making use of REST APIs but that just sounds ominous and gives you very little useable information.  You may find yourself asking;  What type of companies?  What industries do REST APIs work best in?  Will I be able to make use of REST APIs?Let’s take a look at who we know is using the humble REST API. Social media websites see a lot of request traffic. The user wants a specific thing at a specific time usually ASAP so  it comes as no surprise that websites such as Facebook, Twitter, Tumblr and** **Linkedin are using RESTful APIs to make this happen.If you think that RESTful APIs can only apply in a social media format though,  then think again. Think how many businesses use the cloud functionality.  Wordpress and other blog websites  Review and opinion websites such as Huffington post and tripadvisor  Online forums  Localised online resources such as University intranets.The list goes on. Mobile applications could also make significant use of RESTful APIs and they do!In fact REST APIs are essentially universal in their application, from social media to gaming to online shopping! The increase in flexibility and speed that a RESTful API can bring any Web based business are far too good to pass up.Hopefully you now have a better understanding of just what a REST API is, what they are for and also, who out there is using them.If I have convinced you of the virtues of the REST API then you’ll see why Multicolour is such a big deal. Not only is it a peerless time saving tool for development, it’s so easy to use that even a complete novice can have a usable RESTful API within seconds of loading the programme.When it works and works well, why use anything else?Remember If you have any issues using the software, don’t hesitate to contact us directly on Twitter or Slack"
+    }
+</script>
+
+
+          <h1 id="a-brief-introduction-to-rest-apis">A Brief Introduction to REST API’s</h1>
+
+<p>It’s time to talk about REST APIs. In my previous post, we spoke about Multicolour and focused on what our wonderful API generator can do for you. This time I thought it might be nice to delve a little more into REST API’s to show you what you could potentially be missing out on.</p>
+
+<p>I’ve split this post into three sections;</p>
+
+<ul>
+  <li>What is a REST API?</li>
+  <li>What are REST API’s for?</li>
+  <li>Who’s using them?</li>
+</ul>
+
+<p>If I’m doing my job right, by the time we’re done you will all see the benefits of RESTful APIs and how their application can streamline and potentially boost your business. There are some big fish out there already making use of REST APIs and reaping the benefits of them even as you’re reading this blog post.</p>
+
+<h1 id="what-are-rest-apis">What are REST APIs?</h1>
+
+<p>So, what is a REST API?</p>
+
+<p>A REST API is an application programme interface (API) that uses HTTP requests to GET, PUT, PATCH, POST and DELETE data. A RESTful API—also referred to as a RESTful web service—is based on representational state transfer, an architectural style and approach to communications often used in web services development.</p>
+
+<p>according to <a href="http://searchcloudstorage.techtarget.com">http://searchcloudstorage.techtarget.com</a></p>
+
+<p>Straight-forward right? This definition lays out for you what REST API’s are as a bare bones concept, but let’s explore things in a little bit more detail.</p>
+
+<p>A Rest API makes use of a specific set of verbs;</p>
+
+<ul>
+  <li>GET (This will retrieve a resource.)</li>
+  <li>PUT (Updates or creates a resource.)</li>
+  <li>PATCH (Updates a resource)</li>
+  <li>POST (Create a resource)</li>
+  <li>DELETE (Pretty sure I don’t need to explain this one!)</li>
+</ul>
+
+<p>There is a presumption, when using these verbs, that all calls are stateless. What is meant by this is that nothing can be saved by the REST service between executions. This lack of retention however is not necessarily a bad thing.  In fact, it can be very useful when it comes to building web services.</p>
+
+<p>Stateless applications can scale more easily to fit load changes and can be redeployed if something goes wrong. The fact that nothing is remembered by the process makes REST APIs perfect for web usage. This is  because it’s much faster and more flexible.</p>
+
+<p>That’s the key really and the reason that REST APIs are taking over from traditional procedural design for web based development. They are faster and the flexibility of the stateless approach is infinitely useful when using web based processes.</p>
+
+<h1 id="what-are-they-for">What are they for?</h1>
+
+<p>Ok what is a REST API for though? Why use it? Well, we’ve covered that a bit in the section above. There are many benefits to using REST APIs for web-based applications. For example they open up channels for communication between the user and the host so that, in a way, they exponentially expand what is already there and what you already have.</p>
+
+<p>REST APIs are on the rise and, honestly, it’s only a matter of time before they’re an industry standard, replacing the old guard of procedural technologies. The reason for this is that REST APIs use less bandwidth which makes them more suitable for online and mobile use.</p>
+
+<p>They’re  perfect for mobile apps and games! An API is merely code that allows multiple programmes to manage and transform data in a centralised place.</p>
+
+<p>Consumers utilise REST the same way we speak to one another. It’s the language of the web. With online resources on the rise, particularly with cloud usage becoming more  widespread, APIs are becoming a way to connect a rising number of people to web services.</p>
+
+<p>If you’re building an API, It makes sense to ensure that you utilise the capabilities of REST to allow your users to connect and interact with your online services.</p>
+
+<p>What is great about REST APIs is that they provide the developer with a lot of flexibility and granularity by breaking down any transaction into a series of resources.</p>
+
+<p>The difficulty lies in their complexity. They are difficult to design from the ground up and it can be quite time consuming! (This is where Multicolour really shines.)</p>
+
+<p>As a RESTful API generator, Multicolour is ideally suited to bring you up to speed by creating boilerplate code in a matter of seconds! With Multicolour doing the legwork for you, you’re free to enjoy all of that increased flexibility almost straight away!</p>
+
+<p><img src="/images/posts/image_0.png" alt="image alt text" /></p>
+
+<h1 id="whos-using-them">Who’s using them?</h1>
+
+<p>It’s all very well telling you that ‘big’ companies are making use of REST APIs but that just sounds ominous and gives you very little useable information.  You may find yourself asking;</p>
+
+<ul>
+  <li>What type of companies?</li>
+  <li>What industries do REST APIs work best in?</li>
+  <li>Will I be able to make use of REST APIs?</li>
+</ul>
+
+<p>Let’s take a look at who we know is using the humble REST API. Social media websites see a lot of request traffic. The user wants a specific thing at a specific time usually ASAP so  it comes as no surprise that websites such as Facebook, Twitter, Tumblr and** **Linkedin are using RESTful APIs to make this happen.</p>
+
+<p>If you think that RESTful APIs can only apply in a social media format though,  then think again. Think how many businesses use the cloud functionality.</p>
+
+<ul>
+  <li>Wordpress and other blog websites</li>
+  <li>Review and opinion websites such as Huffington post and tripadvisor</li>
+  <li>Online forums</li>
+  <li>Localised online resources such as University intranets.</li>
+</ul>
+
+<p>The list goes on. Mobile applications could also make significant use of RESTful APIs and they do!</p>
+
+<p>In fact REST APIs are essentially universal in their application, from social media to gaming to online shopping! The increase in flexibility and speed that a RESTful API can bring any Web based business are far too good to pass up.</p>
+
+<p>Hopefully you now have a better understanding of just what a REST API is, what they are for and also, who out there is using them.</p>
+
+<p>If I have convinced you of the virtues of the REST API then you’ll see why Multicolour is such a big deal. Not only is it a peerless time saving tool for development, it’s so easy to use that even a complete novice can have a usable RESTful API within seconds of loading the programme.</p>
+
+<p>When it works and works well, why use anything else?</p>
+
+<p>Remember If you have any issues using the software, don’t hesitate to contact us directly on <a href="https://twitter.com/getmulticolour.">Twitter</a> or <a href="https://slack.getmulticolour.com">Slack</a></p>
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+  <div class="social">
+    <a href="https://github.com/Multicolour" rel="nofollow noreferrer noopener">
+      <img src="/images/logos/github.svg" alt="Multicolour open source projects">
+    </a>
+
+    <a href="https://slack.getmulticolour.com" rel="nofollow noreferrer noopener">
+      <img src="/images/logos/slack.svg" alt="Multicolour Slack channel, help, tutorials">
+    </a>
+
+    <a href="https://twitter.com/getmulticolour" rel="nofollow noreferrer noopener">
+      <img src="/images/logos/twitter.svg" alt="Multicolour Twitter feed">
+    </a>
+  </div>
+
+  <ul class="meta">
+    <li>
+      <a href="/code-of-conduct" title="Multicolour code of conduct">
+        Code of Conduct
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow noopener noreferrer">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow noopener noreferrer">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; All copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+<script src="/js/main.js" async defer></script>
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+    analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+    analytics.page()
+  }}();
+</script>
+
+
+    <!-- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+</body>
+
+</html>

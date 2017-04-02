@@ -3,11 +3,113 @@
   <channel>
     <title>Multicolour - Rest API generator</title>
     <description>Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.</description>
-    <link>https://getmulticolour.com/</link>
-    <atom:link href="https://getmulticolour.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 02 Apr 2017 09:48:30 +0000</pubDate>
-    <lastBuildDate>Sun, 02 Apr 2017 09:48:30 +0000</lastBuildDate>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 02 Apr 2017 11:50:58 +0000</pubDate>
+    <lastBuildDate>Sun, 02 Apr 2017 11:50:58 +0000</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
+    
+      <item>
+        <title>A Brief Introduction to REST APIs</title>
+        <description>&lt;h1 id=&quot;a-brief-introduction-to-rest-apis&quot;&gt;A Brief Introduction to REST API’s&lt;/h1&gt;
+
+&lt;p&gt;It’s time to talk about REST APIs. In my previous post, we spoke about Multicolour and focused on what our wonderful API generator can do for you. This time I thought it might be nice to delve a little more into REST API’s to show you what you could potentially be missing out on.&lt;/p&gt;
+
+&lt;p&gt;I’ve split this post into three sections;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What is a REST API?&lt;/li&gt;
+  &lt;li&gt;What are REST API’s for?&lt;/li&gt;
+  &lt;li&gt;Who’s using them?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If I’m doing my job right, by the time we’re done you will all see the benefits of RESTful APIs and how their application can streamline and potentially boost your business. There are some big fish out there already making use of REST APIs and reaping the benefits of them even as you’re reading this blog post.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-are-rest-apis&quot;&gt;What are REST APIs?&lt;/h1&gt;
+
+&lt;p&gt;So, what is a REST API?&lt;/p&gt;
+
+&lt;p&gt;A REST API is an application programme interface (API) that uses HTTP requests to GET, PUT, PATCH, POST and DELETE data. A RESTful API—also referred to as a RESTful web service—is based on representational state transfer, an architectural style and approach to communications often used in web services development.&lt;/p&gt;
+
+&lt;p&gt;according to &lt;a href=&quot;http://searchcloudstorage.techtarget.com&quot;&gt;http://searchcloudstorage.techtarget.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Straight-forward right? This definition lays out for you what REST API’s are as a bare bones concept, but let’s explore things in a little bit more detail.&lt;/p&gt;
+
+&lt;p&gt;A Rest API makes use of a specific set of verbs;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GET (This will retrieve a resource.)&lt;/li&gt;
+  &lt;li&gt;PUT (Updates or creates a resource.)&lt;/li&gt;
+  &lt;li&gt;PATCH (Updates a resource)&lt;/li&gt;
+  &lt;li&gt;POST (Create a resource)&lt;/li&gt;
+  &lt;li&gt;DELETE (Pretty sure I don’t need to explain this one!)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is a presumption, when using these verbs, that all calls are stateless. What is meant by this is that nothing can be saved by the REST service between executions. This lack of retention however is not necessarily a bad thing.  In fact, it can be very useful when it comes to building web services.&lt;/p&gt;
+
+&lt;p&gt;Stateless applications can scale more easily to fit load changes and can be redeployed if something goes wrong. The fact that nothing is remembered by the process makes REST APIs perfect for web usage. This is  because it’s much faster and more flexible.&lt;/p&gt;
+
+&lt;p&gt;That’s the key really and the reason that REST APIs are taking over from traditional procedural design for web based development. They are faster and the flexibility of the stateless approach is infinitely useful when using web based processes.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-are-they-for&quot;&gt;What are they for?&lt;/h1&gt;
+
+&lt;p&gt;Ok what is a REST API for though? Why use it? Well, we’ve covered that a bit in the section above. There are many benefits to using REST APIs for web-based applications. For example they open up channels for communication between the user and the host so that, in a way, they exponentially expand what is already there and what you already have.&lt;/p&gt;
+
+&lt;p&gt;REST APIs are on the rise and, honestly, it’s only a matter of time before they’re an industry standard, replacing the old guard of procedural technologies. The reason for this is that REST APIs use less bandwidth which makes them more suitable for online and mobile use.&lt;/p&gt;
+
+&lt;p&gt;They’re  perfect for mobile apps and games! An API is merely code that allows multiple programmes to manage and transform data in a centralised place.&lt;/p&gt;
+
+&lt;p&gt;Consumers utilise REST the same way we speak to one another. It’s the language of the web. With online resources on the rise, particularly with cloud usage becoming more  widespread, APIs are becoming a way to connect a rising number of people to web services.&lt;/p&gt;
+
+&lt;p&gt;If you’re building an API, It makes sense to ensure that you utilise the capabilities of REST to allow your users to connect and interact with your online services.&lt;/p&gt;
+
+&lt;p&gt;What is great about REST APIs is that they provide the developer with a lot of flexibility and granularity by breaking down any transaction into a series of resources.&lt;/p&gt;
+
+&lt;p&gt;The difficulty lies in their complexity. They are difficult to design from the ground up and it can be quite time consuming! (This is where Multicolour really shines.)&lt;/p&gt;
+
+&lt;p&gt;As a RESTful API generator, Multicolour is ideally suited to bring you up to speed by creating boilerplate code in a matter of seconds! With Multicolour doing the legwork for you, you’re free to enjoy all of that increased flexibility almost straight away!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/image_0.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;whos-using-them&quot;&gt;Who’s using them?&lt;/h1&gt;
+
+&lt;p&gt;It’s all very well telling you that ‘big’ companies are making use of REST APIs but that just sounds ominous and gives you very little useable information.  You may find yourself asking;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What type of companies?&lt;/li&gt;
+  &lt;li&gt;What industries do REST APIs work best in?&lt;/li&gt;
+  &lt;li&gt;Will I be able to make use of REST APIs?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s take a look at who we know is using the humble REST API. Social media websites see a lot of request traffic. The user wants a specific thing at a specific time usually ASAP so  it comes as no surprise that websites such as Facebook, Twitter, Tumblr and** **Linkedin are using RESTful APIs to make this happen.&lt;/p&gt;
+
+&lt;p&gt;If you think that RESTful APIs can only apply in a social media format though,  then think again. Think how many businesses use the cloud functionality.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wordpress and other blog websites&lt;/li&gt;
+  &lt;li&gt;Review and opinion websites such as Huffington post and tripadvisor&lt;/li&gt;
+  &lt;li&gt;Online forums&lt;/li&gt;
+  &lt;li&gt;Localised online resources such as University intranets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The list goes on. Mobile applications could also make significant use of RESTful APIs and they do!&lt;/p&gt;
+
+&lt;p&gt;In fact REST APIs are essentially universal in their application, from social media to gaming to online shopping! The increase in flexibility and speed that a RESTful API can bring any Web based business are far too good to pass up.&lt;/p&gt;
+
+&lt;p&gt;Hopefully you now have a better understanding of just what a REST API is, what they are for and also, who out there is using them.&lt;/p&gt;
+
+&lt;p&gt;If I have convinced you of the virtues of the REST API then you’ll see why Multicolour is such a big deal. Not only is it a peerless time saving tool for development, it’s so easy to use that even a complete novice can have a usable RESTful API within seconds of loading the programme.&lt;/p&gt;
+
+&lt;p&gt;When it works and works well, why use anything else?&lt;/p&gt;
+
+&lt;p&gt;Remember If you have any issues using the software, don’t hesitate to contact us directly on &lt;a href=&quot;https://twitter.com/getmulticolour.&quot;&gt;Twitter&lt;/a&gt; or &lt;a href=&quot;https://slack.getmulticolour.com&quot;&gt;Slack&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Apr 2017 10:23:51 +0000</pubDate>
+        <link>http://0.0.0.0:4000/blog/rest-api-introduction</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/rest-api-introduction</guid>
+        
+        
+      </item>
     
       <item>
         <title>Multipurpose Multicolour</title>
@@ -79,8 +181,8 @@
 &lt;p&gt;Remember If you have any issues using the software, don’t hesitate to contact us directly on &lt;a href=&quot;https://twitter.com/getmulticolour.&quot;&gt;Twitter&lt;/a&gt; or &lt;a href=&quot;https://slack.getmulticolour.com&quot;&gt;Slack&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Mar 2017 09:37:51 +0000</pubDate>
-        <link>https://getmulticolour.com/blog/multipurpose-multicolour</link>
-        <guid isPermaLink="true">https://getmulticolour.com/blog/multipurpose-multicolour</guid>
+        <link>http://0.0.0.0:4000/blog/multipurpose-multicolour</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/multipurpose-multicolour</guid>
         
         
       </item>
@@ -122,8 +224,8 @@
 &lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Feb 2017 08:42:51 +0000</pubDate>
-        <link>https://getmulticolour.com/blog/multicolour-branding-voice</link>
-        <guid isPermaLink="true">https://getmulticolour.com/blog/multicolour-branding-voice</guid>
+        <link>http://0.0.0.0:4000/blog/multicolour-branding-voice</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/multicolour-branding-voice</guid>
         
         
       </item>
@@ -180,8 +282,8 @@ But what if you could get there in minutes instead of days or months? What if yo
 &lt;p&gt;We’re busy working away on several issues and updates to bring more stability and performance to your APIs so go and star/fork and start work on the interesting solutions for your clients.&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Mar 2016 08:42:51 +0000</pubDate>
-        <link>https://getmulticolour.com/blog/introducing-multicolour</link>
-        <guid isPermaLink="true">https://getmulticolour.com/blog/introducing-multicolour</guid>
+        <link>http://0.0.0.0:4000/blog/introducing-multicolour</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/introducing-multicolour</guid>
         
         
       </item>
@@ -221,8 +323,8 @@ But what if you could get there in minutes instead of days or months? What if yo
 &lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
 </description>
         <pubDate>Sat, 27 Feb 2016 08:42:51 +0000</pubDate>
-        <link>https://getmulticolour.com/blog/introducing-multicolour</link>
-        <guid isPermaLink="true">https://getmulticolour.com/blog/introducing-multicolour</guid>
+        <link>http://0.0.0.0:4000/blog/introducing-multicolour</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/blog/introducing-multicolour</guid>
         
         
       </item>
