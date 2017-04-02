@@ -9,7 +9,7 @@ lang: en
 ---
 
 <section class="blog">
-  {% for post in site.posts limit: 4 %}
+  {% for post in site.posts %}
       {% assign author = site.data.authors[post.author] %}
 
       {% if forloop.first %}

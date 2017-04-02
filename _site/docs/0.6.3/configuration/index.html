@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation configuration">
 <meta name="twitter:description" content="Documentation on configuring and altering configuration for a Multicolour REST API.">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation configuration">
 <meta itemprop="description" content="Documentation on configuring and altering configuration for a Multicolour REST API.">
-<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation configuration" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://0.0.0.0:4000" />
-<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="https://getmulticolour.com" />
+<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Documentation on configuring and altering configuration for a Multicolour REST API." />
 <meta property="og:site_name" content="Multicolour documentation configuration" />
 
@@ -63,8 +63,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/configuration/">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
+  <link rel="canonical" href="https://getmulticolour.com/docs/0.6.3/configuration/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
 </head>
 
 
@@ -149,7 +149,7 @@
         "keywords": "multicolour config, server configuration, rest api config",
         "learningResourceType": ["learning activity"],
         "wordCount": "745",
-        "datePublished": "2017-03-21 11:46:05 +0000",
+        "datePublished": "2017-04-02 09:48:30 +0000",
         "url": "/docs/0.6.3/configuration/",
         "publisher": {
             "@type": "Organization",
@@ -160,20 +160,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
-                "url": "http://0.0.0.0:4000"
+                "contentUrl": "https://getmulticolour.com/images/logo.png",
+                "url": "https://getmulticolour.com"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
-            "url":"http://0.0.0.0:4000",
+            "contentUrl":"https://getmulticolour.com/images/social-header.jpg",
+            "url":"https://getmulticolour.com",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://0.0.0.0:4000/docs/0.6.3/configuration/"
+            "@id": "https://getmulticolour.com/docs/0.6.3/configuration/"
         },
         "articleBody": "ConfigurationMulticolour is config driven, it’s not a library or a framework but a tool that links all your favourite libraries together to make a restful API.The config can seem a bit convoluted if all kept in one file and this is why it’s a .js file and not a .json file.A typical config.js might look something like the below and it configures:  a default timeout on the server of 30 seconds  the pagination results limit of 20  a prefix on the API routes of /api  where to write the JavaScript SDK to.  Where the server should list and on what port, etc (standard Hapi config)  and two database connections, one for when NODE_ENV is development and for production.&quot;use strict&quot;const PORT = parseInt(process.env.PORT) || 1811module.exports = {  content: `${__dirname}/content`,  settings: {    timeout: 3e4,    results: {      per_page: 20    },    route_prefix: &quot;/api&quot;,    javascript_sdk: {      destination: `${__dirname}/content/frontend/build/api_sdk`,      module_name: &quot;API_SDK&quot;    }  },  api_connections: {    port: PORT,    routes: {      cors: {        origin: [ `http://localhost:${PORT}` ]      }    },    router: { stripTrailingSlash: true }  },  api_server: {    connections: {      routes: {        security: true      }    },    debug: { request: [&quot;error&quot;] }  },  db: {    adapters: {      mongo: require(&quot;sails-mongo&quot;)    },    connections: {      development: {        adapter: &quot;mongo&quot;,        database: &quot;multicolour&quot;      },      production: {        adapter: &quot;mongo&quot;,        host: &quot;some-mongo-host.com&quot;,        port: 27017,        database: &quot;multicolour&quot;      }    }  }}A full config file may contain any of the following options:&quot;use strict&quot;module.exports = {  content: String  settings: {    timeout: Number,    results: {      per_page: Number    },    route_prefix: String,    javascript_sdk: {      destination: String,      module_name: String    }  },  auth: {    password: String,    providers: [      {        provider: String,        clientId: String,        clientSecret: String,        isSecure: Boolean      }    ]  },  // As HAPI is the only available server plugin currently  // it's config options are shown below in briefand you  // should consult the Hapijs docs for the full configuration  // documentation.  api_connections: {    port: Number,    host: String,    routes: {      cors: Boolean or {        origin: [ String ]      }    },    router: { stripTrailingSlash: true }  },  api_server: {    connections: {      routes: {        security: Boolean      }    },    debug: { request: [ String ] }  },  db: {    adapters: {      String: require(String)    },    connections: {      String: {        adapter: String,        host: String,        port: Number,        username: String,        password: String,        ssl: Boolean,        database: String      }    }  }}"
     }

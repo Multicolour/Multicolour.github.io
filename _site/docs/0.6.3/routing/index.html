@@ -27,16 +27,16 @@
 <meta name="twitter:title" content="Multicolour documentation routing">
 <meta name="twitter:description" content="Multicolour documentation on generated routes and creating custom routes.">
 <meta name="twitter:creator" content="@getmulticolour">
-<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta name="twitter:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta itemprop="name" content="Multicolour documentation routing">
 <meta itemprop="description" content="Multicolour documentation on generated routes and creating custom routes.">
-<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+<meta itemprop="image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png">
 
 <meta property="og:title" content="Multicolour documentation routing" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://0.0.0.0:4000" />
-<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:url" content="https://getmulticolour.com" />
+<meta property="og:image" content="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" />
 <meta property="og:description" content="Multicolour documentation on generated routes and creating custom routes." />
 <meta property="og:site_name" content="Multicolour documentation routing" />
 
@@ -63,8 +63,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/routing/">
-  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
+  <link rel="canonical" href="https://getmulticolour.com/docs/0.6.3/routing/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="https://getmulticolour.com/feed.xml">
 </head>
 
 
@@ -149,7 +149,7 @@
         "keywords": "multicolour, REST API routes, routing",
         "learningResourceType": ["learning activity"],
         "wordCount": "713",
-        "datePublished": "2017-03-21 11:46:05 +0000",
+        "datePublished": "2017-04-02 09:48:30 +0000",
         "url": "/docs/0.6.3/routing/",
         "publisher": {
             "@type": "Organization",
@@ -160,20 +160,20 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
-                "url": "http://0.0.0.0:4000"
+                "contentUrl": "https://getmulticolour.com/images/logo.png",
+                "url": "https://getmulticolour.com"
             }
         },
         "image":{
             "@type":"ImageObject",
-            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
-            "url":"http://0.0.0.0:4000",
+            "contentUrl":"https://getmulticolour.com/images/social-header.jpg",
+            "url":"https://getmulticolour.com",
             "height":"500",
             "width":"1500"
          },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://0.0.0.0:4000/docs/0.6.3/routing/"
+            "@id": "https://getmulticolour.com/docs/0.6.3/routing/"
         },
         "articleBody": "RoutingMulticolour generates a lot of routes for you but your business logic is exactly that, it’s yours and yours only. Multicolour doesn’t try to handle that for you but saves you the time getting there.By default Multicolour generates your CRUD interface and configures your auth, validations and Swagger documentation.Multicolour generates the following for you.  POST /{identity} Create a new {identity}  PUT /{identity} Update or create a {identity}  GET /{identity}?page={page} Get a paginated  list of {identity}  GET /{identity}/{id} Get a single {identity} by {id}  GET /{identity}?{query}&amp;amp;page={page} Get a paginated list of {identity} where {query}  PATCH /{identity} Update a {identity}  DELETE /{identity} Permanently remove a {identity}Creating your own routes is simple, currently custom routes are not transportable between server technologies but may be in the future.The handlersMulticolour core supplies handlers for pretty much all your verbs out of the box, you can access and use them anytime by getting them from core like below.const handlers = my_service.get(&quot;handlers&quot;)// handlers -&amp;gt; Multicolour_Route_TemplatesMulticolour_Route_Templates classThis class contains all the handlers/route templates, they do the work on the database with the  request data for you. The methods all share the same signature of[VERB](model, request, reply)Where [VERB] is one of the followingPOST - Create stuff.GET - Read stuff.PATCH - Update stuff.PUT - Update or create stuff.DELETE - Delete stuff.UPLOAD - Upload stuff.and where model is retrieved from my_service.get(&quot;database&quot;).get(&quot;models&quot;)Creating custom routesYou have had a request from the client asking for something Multicolour hasn’t already given you, it’s time to write a custom route and handler.Add a custom_route property to your blueprint:{  attributes: {...},  custom_routes: function custom_routes(server, multicolour) {    // Route based on your server technology here.  }}Multicolour does not interfere, know about or modify anything you do inside of this function. This is your domain and you are free to do what you will.An example route using the hapi server technology might look like this.{  attributes: {...},  custom_routes: function custom_routes(server, multicolour) {    // this === this blueprint    server.route({      method: &quot;GET&quot;,      path: &quot;/project/count&quot;,      handler: (request, reply) =&amp;gt; {        this          .count({})          .exec((err, count) =&amp;gt; reply[multicolour.request(&quot;decorator&quot;)](err || count))      }    })  }}Gotchas while writing custom routesAs mentioned above, Multicolour makes no effort to watch, change or interfere with your custom routes as we consider custom_routes to contain business critical logic.DecoratorsIn order to “decorate” your reply, you should request the decorator property stored on Multicolour, multicolour.request(&quot;decorator&quot;).AuthIf you wish to authenticate your custom routes in the same way that Multicolour authenticates your CRUD routes, you must do this manually.ValidationPayload and response validations are not created for you and you should implement this yourself.Path clashesIf you need to write a custom handler for one of the CRUD operations, currently you need to flag to Multicolour that you don’t want to generate routes at all for this blueprint with the NO_AUTO_GEN_ROUTES property and write handlers for all the verbs you wish to support.AssociationsYou will not see associations automatically populated, Multicolour has however already fixed and made the associations to other blueprints for you so .populateAll() will work for your queries and any decorator plugin should automatically call this for you."
     }
