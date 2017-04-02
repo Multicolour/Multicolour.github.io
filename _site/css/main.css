@@ -870,7 +870,7 @@ body {
   font-size: 1.7vw;
   line-height: 3.4vw;
   -webkit-font-smoothing: antialiased;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   color: #444;
   background: #7423b5;
   background: -moz-linear-gradient(top, #ff9999 0%, #ab21b4 27%, #7423b5 100%);

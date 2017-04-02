@@ -14,7 +14,7 @@ body {
   font-size: $base-font-size;
   line-height: $base-font-size * 2;
   -webkit-font-smoothing: antialiased;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   color: $colour_primary_font;
 
   @include gradient-background();
