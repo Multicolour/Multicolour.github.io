@@ -114,7 +114,7 @@ class Multicolour_Disk_Storage {
 module.exports = Multicolour_Disk_Storage
 {% endhighlight %}
 
-To use your newly created plugin, edit your `app.js` to include it, E.G
+To use your newly created plugin, edit your `app.js` or `package.json` to include it, E.G
 
 {% highlight js %}
 require("multicolour")

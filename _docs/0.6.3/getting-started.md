@@ -19,7 +19,7 @@ Multicolour has a CLI to make your life easier, it includes a helper to create a
 
 `multicolour init .`
 
-in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, `config.js`, `app.js` and `content/blueprints/example.js`
+in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 2 files for you. `config.js` and `content/blueprints/example.js`
 
 ## Blueprints
 

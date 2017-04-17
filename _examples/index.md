@@ -18,7 +18,7 @@ Multicolour has a CLI to make your life easier, it includes a helper to create a
 
 `multicolour init .`
 
-in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 3 files for you, `config.js`, `app.js` and `content/blueprints/example.js`
+in your target directory, this will start a wizard to guide you through the creation of your project. This will generate 2 files for you. `config.js` and `content/blueprints/example.js`
 
 ## Blueprints
 
@@ -36,7 +36,7 @@ Looking at what we get by running `multicolour init .` we can see a few files ge
     - blueprints/
       - example.js
   - config.js
-  - app.js
+  - package.json
 {% endhighlight %}
 
 Your `content/blueprints/example.js` is your first blueprint, lets look at it's anatomy.

@@ -55,6 +55,6 @@ module.exports = class {
 }
 {% endhighlight %}
 
-Once you've saved your plugin, to use it simply add `.use(require("./plugins/awesome"))` to your main `app.js` (Use the other `.use()`-es as reference to where, your `app.js` might be different.)
+Once you've saved your plugin, to use it simply add `.use(require("./plugins/awesome"))` to your main `app.js` or add the path to your plugin to your package.json.
 
 Run your service and your plugin will register and run. Easy as that.

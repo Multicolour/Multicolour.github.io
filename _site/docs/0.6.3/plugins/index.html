@@ -148,8 +148,8 @@
         "targetPlatform": "NodeJS",
         "keywords": "multicolour, plugins, rest api business logic",
         "learningResourceType": ["learning activity"],
-        "wordCount": "336",
-        "datePublished": "2017-04-02 11:55:19 +0000",
+        "wordCount": "331",
+        "datePublished": "2017-04-17 18:59:43 +0000",
         "url": "/docs/0.6.3/plugins/",
         "publisher": {
             "@type": "Organization",
@@ -175,7 +175,7 @@
             "@type": "WebPage",
             "@id": "http://0.0.0.0:4000/docs/0.6.3/plugins/"
         },
-        "articleBody": "Writing Multicolour PluginsYou’ve written loads of awesome new functionality in your custom_routes callback and are thinking “I’d like to distribute my awesome code as a package”, either internally or on npm.You need a plugin, plugins make sharing and using your custom functionality easy.What is a Multicolour plugin?A Muticolour plugin is simply a class that encapsulates your custom behaviour, there aren’t any limitations or locks or blocks to the rest of Multicolour or any other plugins you’re using so you can do what you need to do unincumbered.All plugins are automatically extended with the talkie interface and is assigned a host as well as a unique (unique every time) id. Both can be .request()-ed directly from your plugin. I.E this.request(&quot;host&quot;) or this.request(&quot;id&quot;).Example Multicolour pluginAn example Multicolour plugin that adds a new route to the route table looks like this:// This file is called ./plugins/awesome/index.jsmodule.exports = class {  // Register is the only required member function.  register(multicolour) {    const server = multicolour.get(&quot;server&quot;).request(&quot;raw&quot;)    server.route({      path: &quot;/hello/{name}&quot;,      config: {        handler: (request, reply) =&amp;gt; {          reply(`Hey there, ${requet.params.name}`)        },        validate: {          params: {            name: require(&quot;joi&quot;).string().required()          }        }      }    })  }}Once you’ve saved your plugin, to use it simply add .use(require(&quot;./plugins/awesome&quot;)) to your main app.js (Use the other .use()-es as reference to where, your app.js might be different.)Run your service and your plugin will register and run. Easy as that."
+        "articleBody": "Writing Multicolour PluginsYou’ve written loads of awesome new functionality in your custom_routes callback and are thinking “I’d like to distribute my awesome code as a package”, either internally or on npm.You need a plugin, plugins make sharing and using your custom functionality easy.What is a Multicolour plugin?A Muticolour plugin is simply a class that encapsulates your custom behaviour, there aren’t any limitations or locks or blocks to the rest of Multicolour or any other plugins you’re using so you can do what you need to do unincumbered.All plugins are automatically extended with the talkie interface and is assigned a host as well as a unique (unique every time) id. Both can be .request()-ed directly from your plugin. I.E this.request(&quot;host&quot;) or this.request(&quot;id&quot;).Example Multicolour pluginAn example Multicolour plugin that adds a new route to the route table looks like this:// This file is called ./plugins/awesome/index.jsmodule.exports = class {  // Register is the only required member function.  register(multicolour) {    const server = multicolour.get(&quot;server&quot;).request(&quot;raw&quot;)    server.route({      path: &quot;/hello/{name}&quot;,      config: {        handler: (request, reply) =&amp;gt; {          reply(`Hey there, ${requet.params.name}`)        },        validate: {          params: {            name: require(&quot;joi&quot;).string().required()          }        }      }    })  }}Once you’ve saved your plugin, to use it simply add .use(require(&quot;./plugins/awesome&quot;)) to your main app.js or add the path to your plugin to your package.json.Run your service and your plugin will register and run. Easy as that."
     }
 </script>
 
@@ -404,7 +404,7 @@
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Once you’ve saved your plugin, to use it simply add <code class="highlighter-rouge">.use(require("./plugins/awesome"))</code> to your main <code class="highlighter-rouge">app.js</code> (Use the other <code class="highlighter-rouge">.use()</code>-es as reference to where, your <code class="highlighter-rouge">app.js</code> might be different.)</p>
+<p>Once you’ve saved your plugin, to use it simply add <code class="highlighter-rouge">.use(require("./plugins/awesome"))</code> to your main <code class="highlighter-rouge">app.js</code> or add the path to your plugin to your package.json.</p>
 
 <p>Run your service and your plugin will register and run. Easy as that.</p>
 
