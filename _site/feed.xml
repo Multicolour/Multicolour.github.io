@@ -5,9 +5,9 @@
     <description>Generate a NodeJS REST API for your apps, games and in minutes using Multicolour rest api generator.</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Apr 2017 18:59:43 +0000</pubDate>
-    <lastBuildDate>Mon, 17 Apr 2017 18:59:43 +0000</lastBuildDate>
-    <generator>Jekyll v3.4.1</generator>
+    <pubDate>Tue, 30 Jan 2018 10:02:25 -0600</pubDate>
+    <lastBuildDate>Tue, 30 Jan 2018 10:02:25 -0600</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>A Brief Introduction to REST APIs</title>
@@ -104,7 +104,7 @@
 
 &lt;p&gt;Remember If you have any issues using the software, don’t hesitate to contact us directly on &lt;a href=&quot;https://twitter.com/getmulticolour.&quot;&gt;Twitter&lt;/a&gt; or &lt;a href=&quot;https://slack.getmulticolour.com&quot;&gt;Slack&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 02 Apr 2017 10:23:51 +0000</pubDate>
+        <pubDate>Sun, 02 Apr 2017 05:23:51 -0500</pubDate>
         <link>http://0.0.0.0:4000/blog/rest-api-introduction</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/blog/rest-api-introduction</guid>
         
@@ -180,7 +180,7 @@
 
 &lt;p&gt;Remember If you have any issues using the software, don’t hesitate to contact us directly on &lt;a href=&quot;https://twitter.com/getmulticolour.&quot;&gt;Twitter&lt;/a&gt; or &lt;a href=&quot;https://slack.getmulticolour.com&quot;&gt;Slack&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 20 Mar 2017 09:37:51 +0000</pubDate>
+        <pubDate>Mon, 20 Mar 2017 04:37:51 -0500</pubDate>
         <link>http://0.0.0.0:4000/blog/multipurpose-multicolour</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/blog/multipurpose-multicolour</guid>
         
@@ -223,7 +223,7 @@
 
 &lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 27 Feb 2017 08:42:51 +0000</pubDate>
+        <pubDate>Mon, 27 Feb 2017 02:42:51 -0600</pubDate>
         <link>http://0.0.0.0:4000/blog/multicolour-branding-voice</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/blog/multicolour-branding-voice</guid>
         
@@ -281,7 +281,7 @@ But what if you could get there in minutes instead of days or months? What if yo
 &lt;h3 id=&quot;whats-next-for-multicolour&quot;&gt;What’s next for Multicolour?&lt;/h3&gt;
 &lt;p&gt;We’re busy working away on several issues and updates to bring more stability and performance to your APIs so go and star/fork and start work on the interesting solutions for your clients.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 26 Mar 2016 08:42:51 +0000</pubDate>
+        <pubDate>Sat, 26 Mar 2016 03:42:51 -0500</pubDate>
         <link>http://0.0.0.0:4000/blog/introducing-multicolour</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/blog/introducing-multicolour</guid>
         
@@ -322,7 +322,7 @@ But what if you could get there in minutes instead of days or months? What if yo
 
 &lt;p&gt;Dave Mackintosh ~ Creator of Multicolour.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 27 Feb 2016 08:42:51 +0000</pubDate>
+        <pubDate>Sat, 27 Feb 2016 02:42:51 -0600</pubDate>
         <link>http://0.0.0.0:4000/blog/introducing-multicolour</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/blog/introducing-multicolour</guid>
         

@@ -154,8 +154,8 @@
         "targetPlatform": "NodeJS",
         "keywords": "file uploads, multicolour, rest api file uploads",
         "learningResourceType": ["learning activity"],
-        "wordCount": "793",
-        "datePublished": "2017-04-17 18:59:43 +0000",
+        "wordCount": "988",
+        "datePublished": "2018-01-30 10:02:25 -0600",
         "url": "/docs/0.6.3/routing/file-uploads/",
         "publisher": {
             "@type": "Organization",
@@ -195,6 +195,18 @@
       class="visible">
       <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
         API Reference
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour API, API security, REST API, Authentication"
+      
+      class="visible">
+      <a href="/docs/0.6.3/authentication/" title="Authentication on your REST API">
+        API Authentication
       </a>
       
 
@@ -376,12 +388,7 @@
 
 <p>If you want to upload files, Multicolour has your back. To support uploading files on your blueprints you simply need to add <code class="highlighter-rouge">can_upload_file: String</code> to your blueprint.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nl">location</span><span class="p">:</span> <span class="s2">"string"</span>
-  <span class="p">},</span>
-  <span class="nx">can_upload_file</span><span class="err">:</span> <span class="s2">"location"</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span><br data-jekyll-commonmark-ghpages="" />  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="nl">location</span><span class="p">:</span> <span class="s2">"string"</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span><br data-jekyll-commonmark-ghpages="" />  <span class="nx">can_upload_file</span><span class="p">:</span> <span class="s2">"location"</span><br data-jekyll-commonmark-ghpages="" /><span class="p">}</span></code></pre></figure>
 
 <p>The value of <code class="highlighter-rouge">can_upload_file</code> should be the name of the key on the record to store the location of the uploaded file, if it is <code class="highlighter-rouge">true</code> “file” will be used.</p>
 
@@ -397,86 +404,11 @@
 
 <p>Below is a storage plugin that stores files in <code class="highlighter-rouge">/uploads</code></p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span>
-
-<span class="c1">// Get the tools we need.</span>
-<span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">)</span>
-
-<span class="kr">class</span> <span class="nx">Multicolour_Disk_Storage</span> <span class="p">{</span>
-
-  <span class="cm">/**
-   * Create default options and values.
-   * @return {Multicolour_Disk_Storage} Object for chaining.
-   */</span>
-  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// Set up the default options.</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">path</span><span class="p">:</span> <span class="s2">"/uploads"</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="k">this</span>
-  <span class="p">}</span>
-
-  <span class="nx">register</span><span class="p">(</span><span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">multicolour</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"storage"</span><span class="p">,</span> <span class="k">this</span><span class="p">)</span>
-  <span class="p">}</span>
-
-  <span class="cm">/**
-   * Upload a file to disk and return a writable stream.
-   * @param  {multicolour/File} file to upload to S3.
-   * @param  {String} destination to write the file to.
-   * @return {fs.WritableStream} object to listen for events.
-   */</span>
-  <span class="nx">upload</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">destination</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Check we got a destination.</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">destination</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nx">ReferenceError</span><span class="p">(</span><span class="s2">"No destination for uploaded file"</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="c1">// Upload the file.</span>
-    <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">// We'll return the writable stream.</span>
-      <span class="kr">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">path</span><span class="p">}</span><span class="sr">/${destination}`</span><span class="err">)
-</span>
-      <span class="c1">// Check if we got a readable stream, in.</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">pipe</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">file</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">stream</span><span class="p">)</span>
-      <span class="p">}</span>
-      <span class="c1">// Otherwise, read the file out.</span>
-      <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="nx">file</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">stream</span><span class="p">)</span>
-      <span class="p">}</span>
-
-      <span class="c1">// Return the stream.</span>
-      <span class="k">return</span> <span class="nx">stream</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="cm">/**
-   * Download a file from disk and return
-   * an EventEmitter to listen for data events.
-   * @param  {multicolour/File} file to get from disk.
-   * @return {fs.ReadableStream} object to listen for event
-   */</span>
-  <span class="nx">get</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">path</span><span class="p">}</span><span class="sr">/${file}`</span><span class="err">)
-</span>  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Export the required config for Multicolour to register.</span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Multicolour_Disk_Storage</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="c1">// Get the tools we need.</span><br data-jekyll-commonmark-ghpages="" /><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="kd">class</span> <span class="nx">Multicolour_Disk_Storage</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="cm">/**<br data-jekyll-commonmark-ghpages="" />   * Create default options and values.<br data-jekyll-commonmark-ghpages="" />   * @return {Multicolour_Disk_Storage} Object for chaining.<br data-jekyll-commonmark-ghpages="" />   */</span><br data-jekyll-commonmark-ghpages="" />  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="c1">// Set up the default options.</span><br data-jekyll-commonmark-ghpages="" />    <span class="k">this</span><span class="p">.</span><span class="nx">options</span> <span class="o">=</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">path</span><span class="p">:</span> <span class="s2">"/uploads"</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    <span class="k">return</span> <span class="k">this</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="nx">register</span><span class="p">(</span><span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="nx">multicolour</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"storage"</span><span class="p">,</span> <span class="k">this</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="cm">/**<br data-jekyll-commonmark-ghpages="" />   * Upload a file to disk and return a writable stream.<br data-jekyll-commonmark-ghpages="" />   * @param  {multicolour/File} file to upload to S3.<br data-jekyll-commonmark-ghpages="" />   * @param  {String} destination to write the file to.<br data-jekyll-commonmark-ghpages="" />   * @return {fs.WritableStream} object to listen for events.<br data-jekyll-commonmark-ghpages="" />   */</span><br data-jekyll-commonmark-ghpages="" />  <span class="nx">upload</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">destination</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="c1">// Check we got a destination.</span><br data-jekyll-commonmark-ghpages="" />    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">destination</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="k">throw</span> <span class="k">new</span> <span class="nx">ReferenceError</span><span class="p">(</span><span class="s2">"No destination for uploaded file"</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />    <span class="c1">// Upload the file.</span><br data-jekyll-commonmark-ghpages="" />    <span class="k">else</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="c1">// We'll return the writable stream.</span><br data-jekyll-commonmark-ghpages="" />      <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">path</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">destination</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />      <span class="c1">// Check if we got a readable stream, in.</span><br data-jekyll-commonmark-ghpages="" />      <span class="k">if</span> <span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">pipe</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="nx">file</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">stream</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />      <span class="c1">// Otherwise, read the file out.</span><br data-jekyll-commonmark-ghpages="" />      <span class="k">else</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="nx">file</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">stream</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />      <span class="c1">// Return the stream.</span><br data-jekyll-commonmark-ghpages="" />      <span class="k">return</span> <span class="nx">stream</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="cm">/**<br data-jekyll-commonmark-ghpages="" />   * Download a file from disk and return<br data-jekyll-commonmark-ghpages="" />   * an EventEmitter to listen for data events.<br data-jekyll-commonmark-ghpages="" />   * @param  {multicolour/File} file to get from disk.<br data-jekyll-commonmark-ghpages="" />   * @return {fs.ReadableStream} object to listen for event<br data-jekyll-commonmark-ghpages="" />   */</span><br data-jekyll-commonmark-ghpages="" />  <span class="kd">get</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="k">return</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">path</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">file</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="c1">// Export the required config for Multicolour to register.</span><br data-jekyll-commonmark-ghpages="" /><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Multicolour_Disk_Storage</span></code></pre></figure>
 
 <p>To use your newly created plugin, edit your <code class="highlighter-rouge">app.js</code> or <code class="highlighter-rouge">package.json</code> to include it, E.G</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span>
-  <span class="c1">// Configure the service core and scan for content.</span>
-  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span>
-
-  <span class="c1">// Register the server plugin.</span>
-  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour-server-hapi"</span><span class="p">))</span>
-
-  <span class="c1">// Register our storage plugin.</span>
-  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour-disk-storage"</span><span class="p">))</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour"</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />  <span class="c1">// Configure the service core and scan for content.</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">.</span><span class="nx">new_from_config_file_path</span><span class="p">(</span><span class="s2">"./config.js"</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">.</span><span class="nx">scan</span><span class="p">()</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="c1">// Register the server plugin.</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour-server-hapi"</span><span class="p">))</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="c1">// Register our storage plugin.</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">"multicolour-disk-storage"</span><span class="p">))</span></code></pre></figure>
 
 <h2 id="advanced-storage-plugin-configuration">Advanced storage plugin configuration.</h2>
 
@@ -486,32 +418,11 @@
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// blueprints/upload.js</span>
-<span class="p">{</span>
-  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nl">location</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
-    <span class="nx">pending</span><span class="err">:</span> <span class="s2">"boolean"</span>
-  <span class="p">},</span>
-
-  <span class="nx">can_upload_file</span><span class="err">:</span> <span class="s2">"location"</span><span class="p">,</span>
-  <span class="nx">custom_param</span><span class="err">:</span> <span class="mi">1234567890</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// blueprints/upload.js</span><br data-jekyll-commonmark-ghpages="" /><span class="p">{</span><br data-jekyll-commonmark-ghpages="" />  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="nl">location</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />    <span class="nx">pending</span><span class="p">:</span> <span class="s2">"boolean"</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="nx">can_upload_file</span><span class="p">:</span> <span class="s2">"location"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />  <span class="nx">custom_param</span><span class="p">:</span> <span class="mi">1234567890</span><br data-jekyll-commonmark-ghpages="" /><span class="p">}</span></code></pre></figure>
 
 <hr />
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// my-storage-plugin.js</span>
-<span class="p">...</span>
-  <span class="cm">/**
-   * Set the storage name on our host.
-   * @param  {Multicolour} multicolour host instance.
-   * @return {void}
-   */</span>
-  <span class="nx">register</span><span class="p">(</span><span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">multicolour</span>
-      <span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"storage"</span><span class="p">,</span> <span class="k">this</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"storage_config_keys"</span><span class="p">,</span> <span class="p">[</span> <span class="s2">"custom_param"</span> <span class="p">])</span>
-  <span class="p">}</span>
-<span class="p">...</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// my-storage-plugin.js</span><br data-jekyll-commonmark-ghpages="" /><span class="p">...</span><br data-jekyll-commonmark-ghpages="" />  <span class="cm">/**<br data-jekyll-commonmark-ghpages="" />   * Set the storage name on our host.<br data-jekyll-commonmark-ghpages="" />   * @param  {Multicolour} multicolour host instance.<br data-jekyll-commonmark-ghpages="" />   * @return {void}<br data-jekyll-commonmark-ghpages="" />   */</span><br data-jekyll-commonmark-ghpages="" />  <span class="nx">register</span><span class="p">(</span><span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="nx">multicolour</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"storage"</span><span class="p">,</span> <span class="k">this</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">"storage_config_keys"</span><span class="p">,</span> <span class="p">[</span> <span class="s2">"custom_param"</span> <span class="p">])</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><span class="p">...</span></code></pre></figure>
 
 
         </article>

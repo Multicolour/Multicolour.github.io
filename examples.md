@@ -18,9 +18,7 @@ in your target directory, this will start a wizard to guide you through the crea
 
 ## Blueprints
 
-Multicolour stands on the shoulders of giants, our ORM is the popular [Waterline ORM](https://github.com/balderdashy/waterline). It has a rich api for creating database schemas without losing control of the underlying technology.
-
-Multicolour uses this to allow you to write JSON and get a whole collection of software. If you’ve run `multicolour init` you’ll see a `content/` folder which also contains a `blueprints/` folder where you’ll see `example.js`.
+Using Multicolour allows you to write JSON and get a whole collection of software. If you’ve run `multicolour init` you’ll see a `content/` folder which also contains a `blueprints/` folder where you’ll see `example.js`.
 
 ### A look at what we get
 

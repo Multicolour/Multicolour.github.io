@@ -148,8 +148,8 @@
         "targetPlatform": "NodeJS",
         "keywords": "multicolour config, server configuration, rest api config",
         "learningResourceType": ["learning activity"],
-        "wordCount": "745",
-        "datePublished": "2017-04-17 18:59:43 +0000",
+        "wordCount": "991",
+        "datePublished": "2018-01-30 10:02:25 -0600",
         "url": "/docs/0.6.3/configuration/",
         "publisher": {
             "@type": "Organization",
@@ -189,6 +189,18 @@
       class="visible">
       <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
         API Reference
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour API, API security, REST API, Authentication"
+      
+      class="visible">
+      <a href="/docs/0.6.3/authentication/" title="Authentication on your REST API">
+        API Authentication
       </a>
       
 
@@ -383,140 +395,11 @@
   <li>and two database connections, one for when <code class="highlighter-rouge">NODE_ENV</code> is development and for production.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span>
-
-<span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1811</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">content</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content`</span><span class="err">,
-</span>
-  <span class="na">settings</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">timeout</span><span class="p">:</span> <span class="mi">3</span><span class="nx">e4</span><span class="p">,</span>
-
-    <span class="na">results</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">per_page</span><span class="p">:</span> <span class="mi">20</span>
-    <span class="p">},</span>
-
-    <span class="na">route_prefix</span><span class="p">:</span> <span class="s2">"/api"</span><span class="p">,</span>
-
-    <span class="na">javascript_sdk</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">destination</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content/</span><span class="nx">frontend</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">api_sdk</span><span class="err">`</span><span class="p">,</span>
-      <span class="na">module_name</span><span class="p">:</span> <span class="s2">"API_SDK"</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="na">api_connections</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">port</span><span class="p">:</span> <span class="nx">PORT</span><span class="p">,</span>
-    <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">cors</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">origin</span><span class="p">:</span> <span class="p">[</span> <span class="err">`</span><span class="na">http</span><span class="p">:</span><span class="c1">//localhost:${PORT}` ]</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="na">router</span><span class="p">:</span> <span class="p">{</span> <span class="na">stripTrailingSlash</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
-  <span class="p">},</span>
-
-  <span class="na">api_server</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">security</span><span class="p">:</span> <span class="kc">true</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="na">debug</span><span class="p">:</span> <span class="p">{</span> <span class="na">request</span><span class="p">:</span> <span class="p">[</span><span class="s2">"error"</span><span class="p">]</span> <span class="p">}</span>
-  <span class="p">},</span>
-
-  <span class="na">db</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">adapters</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">mongo</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"sails-mongo"</span><span class="p">)</span>
-    <span class="p">},</span>
-    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">development</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span>
-        <span class="na">database</span><span class="p">:</span> <span class="s2">"multicolour"</span>
-      <span class="p">},</span>
-      <span class="na">production</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span>
-        <span class="na">host</span><span class="p">:</span> <span class="s2">"some-mongo-host.com"</span><span class="p">,</span>
-        <span class="na">port</span><span class="p">:</span> <span class="mi">27017</span><span class="p">,</span>
-        <span class="na">database</span><span class="p">:</span> <span class="s2">"multicolour"</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="kd">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1811</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />  <span class="na">content</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">__dirname</span><span class="p">}</span><span class="s2">/content`</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="na">settings</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">timeout</span><span class="p">:</span> <span class="mi">3</span><span class="nx">e4</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    <span class="na">results</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">per_page</span><span class="p">:</span> <span class="mi">20</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">},</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    <span class="na">route_prefix</span><span class="p">:</span> <span class="s2">"/api"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    <span class="na">javascript_sdk</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">destination</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">__dirname</span><span class="p">}</span><span class="s2">/content/frontend/build/api_sdk`</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">module_name</span><span class="p">:</span> <span class="s2">"API_SDK"</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span><br data-jekyll-commonmark-ghpages="" />  <span class="na">api_connections</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">port</span><span class="p">:</span> <span class="nx">PORT</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">routes</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">cors</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">origin</span><span class="p">:</span> <span class="p">[</span> <span class="s2">`http://localhost:</span><span class="p">${</span><span class="nx">PORT</span><span class="p">}</span><span class="s2">`</span> <span class="p">]</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">},</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">router</span><span class="p">:</span> <span class="p">{</span> <span class="na">stripTrailingSlash</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="na">api_server</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">routes</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">security</span><span class="p">:</span> <span class="kc">true</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">},</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">debug</span><span class="p">:</span> <span class="p">{</span> <span class="na">request</span><span class="p">:</span> <span class="p">[</span><span class="s2">"error"</span><span class="p">]</span> <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="na">db</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">adapters</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">mongo</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"sails-mongo"</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">},</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">development</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">database</span><span class="p">:</span> <span class="s2">"multicolour"</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">},</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">production</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">adapter</span><span class="p">:</span> <span class="s2">"mongo"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">host</span><span class="p">:</span> <span class="s2">"some-mongo-host.com"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">port</span><span class="p">:</span> <span class="mi">27017</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">database</span><span class="p">:</span> <span class="s2">"multicolour"</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><span class="p">}</span></code></pre></figure>
 
 <p>A full config file may contain any of the following options:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">content</span><span class="p">:</span> <span class="nb">String</span>
-
-  <span class="na">settings</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">timeout</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span>
-
-    <span class="na">results</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">per_page</span><span class="p">:</span> <span class="nb">Number</span>
-    <span class="p">},</span>
-
-    <span class="na">route_prefix</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-
-    <span class="na">javascript_sdk</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">destination</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-      <span class="na">module_name</span><span class="p">:</span> <span class="nb">String</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-
-  <span class="na">auth</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">password</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-    <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="na">provider</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-        <span class="na">clientId</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-        <span class="na">clientSecret</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-        <span class="na">isSecure</span><span class="p">:</span> <span class="nb">Boolean</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-
-  <span class="c1">// As HAPI is the only available server plugin currently</span>
-  <span class="c1">// it's config options are shown below in briefand you</span>
-  <span class="c1">// should consult the Hapijs docs for the full configuration</span>
-  <span class="c1">// documentation.</span>
-  <span class="na">api_connections</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">port</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span>
-    <span class="na">host</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-    <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">cors</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="nx">or</span> <span class="p">{</span>
-        <span class="na">origin</span><span class="p">:</span> <span class="p">[</span> <span class="nb">String</span> <span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="na">router</span><span class="p">:</span> <span class="p">{</span> <span class="na">stripTrailingSlash</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
-  <span class="p">},</span>
-
-  <span class="na">api_server</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">security</span><span class="p">:</span> <span class="nb">Boolean</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="na">debug</span><span class="p">:</span> <span class="p">{</span> <span class="na">request</span><span class="p">:</span> <span class="p">[</span> <span class="nb">String</span> <span class="p">]</span> <span class="p">}</span>
-  <span class="p">},</span>
-
-  <span class="na">db</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">adapters</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">String</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span>
-    <span class="p">},</span>
-    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">String</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">adapter</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-        <span class="na">host</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-        <span class="na">port</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span>
-        <span class="na">username</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-        <span class="na">password</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-        <span class="na">ssl</span><span class="p">:</span> <span class="nb">Boolean</span><span class="p">,</span>
-        <span class="na">database</span><span class="p">:</span> <span class="nb">String</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"use strict"</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />  <span class="na">content</span><span class="p">:</span> <span class="nb">String</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="na">settings</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">timeout</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    <span class="na">results</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">per_page</span><span class="p">:</span> <span class="nb">Number</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">},</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    <span class="na">route_prefix</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    <span class="na">javascript_sdk</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">destination</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">module_name</span><span class="p">:</span> <span class="nb">String</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="na">auth</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">password</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">providers</span><span class="p">:</span> <span class="p">[</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">provider</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">clientId</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">clientSecret</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">isSecure</span><span class="p">:</span> <span class="nb">Boolean</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">]</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="c1">// As HAPI is the only available server plugin currently</span><br data-jekyll-commonmark-ghpages="" />  <span class="c1">// it's config options are shown below in briefand you</span><br data-jekyll-commonmark-ghpages="" />  <span class="c1">// should consult the Hapijs docs for the full configuration</span><br data-jekyll-commonmark-ghpages="" />  <span class="c1">// documentation.</span><br data-jekyll-commonmark-ghpages="" />  <span class="na">api_connections</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">port</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">host</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">routes</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">cors</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="nx">or</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">origin</span><span class="p">:</span> <span class="p">[</span> <span class="nb">String</span> <span class="p">]</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">},</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">router</span><span class="p">:</span> <span class="p">{</span> <span class="na">stripTrailingSlash</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="na">api_server</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">routes</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">security</span><span class="p">:</span> <span class="nb">Boolean</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">},</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">debug</span><span class="p">:</span> <span class="p">{</span> <span class="na">request</span><span class="p">:</span> <span class="p">[</span> <span class="nb">String</span> <span class="p">]</span> <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />  <span class="na">db</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">adapters</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">String</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">},</span><br data-jekyll-commonmark-ghpages="" />    <span class="na">connections</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">String</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">adapter</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">host</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">port</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">username</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">password</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">ssl</span><span class="p">:</span> <span class="nb">Boolean</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />        <span class="na">database</span><span class="p">:</span> <span class="nb">String</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><span class="p">}</span></code></pre></figure>
 
 
         </article>

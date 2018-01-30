@@ -154,8 +154,8 @@
         "targetPlatform": "NodeJS",
         "keywords": "rest api query, results filtering, searching",
         "learningResourceType": ["learning activity"],
-        "wordCount": "216",
-        "datePublished": "2017-04-17 18:59:43 +0000",
+        "wordCount": "182",
+        "datePublished": "2018-01-30 10:02:25 -0600",
         "url": "/docs/0.6.3/routing/results/",
         "publisher": {
             "@type": "Organization",
@@ -195,6 +195,18 @@
       class="visible">
       <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
         API Reference
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour API, API security, REST API, Authentication"
+      
+      class="visible">
+      <a href="/docs/0.6.3/authentication/" title="Authentication on your REST API">
+        API Authentication
       </a>
       
 
@@ -414,16 +426,15 @@
 
 <p><code class="highlighter-rouge">GET /person?parent=1</code> &amp; <code class="highlighter-rouge">GET /person?parent[name]=mother</code> both return</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"child 1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mother"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "id": 3,
+  "name": "child 1",
+  "parent": {
+    "id": 1,
+    "name": "mother"
+  }
+}
+</code></pre></div></div>
 
 <p>because the query string <code class="highlighter-rouge">parent=1</code> is a simple <code class="highlighter-rouge">WHERE parent=1</code> and the later, <code class="highlighter-rouge">?parent[name]=mother</code> finds the ids of the data that match that sub-query and then does a <code class="highlighter-rouge">WHERE parent in [ 1 ]</code> to return the same row.</p>
 

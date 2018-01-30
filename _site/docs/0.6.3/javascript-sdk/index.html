@@ -148,8 +148,8 @@
         "targetPlatform": "NodeJS",
         "keywords": "multicolour, javascript sdk",
         "learningResourceType": ["learning activity"],
-        "wordCount": "249",
-        "datePublished": "2017-04-17 18:59:43 +0000",
+        "wordCount": "262",
+        "datePublished": "2018-01-30 10:02:25 -0600",
         "url": "/docs/0.6.3/javascript-sdk/",
         "publisher": {
             "@type": "Organization",
@@ -189,6 +189,18 @@
       class="visible">
       <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
         API Reference
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour API, API security, REST API, Authentication"
+      
+      class="visible">
+      <a href="/docs/0.6.3/authentication/" title="Authentication on your REST API">
+        API Authentication
       </a>
       
 
@@ -376,17 +388,7 @@
 
 <p>The config.js should contain an object such as this</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">settings</span><span class="err">:</span> <span class="p">{</span>
-    <span class="p">...</span> <span class="nx">other</span> <span class="nx">config</span>
-
-    <span class="nl">javascript_sdk</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nl">destination</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">__dirname</span><span class="p">}</span><span class="sr">/content/</span><span class="nx">frontend</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">api_sdk</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">module_name</span><span class="err">:</span> <span class="s2">"API_SDK"</span><span class="p">,</span>
-      <span class="nx">es5</span><span class="err">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-
-    <span class="p">...</span> <span class="nx">other</span> <span class="nx">config</span>
-  <span class="p">},</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">settings</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">...</span> <span class="nx">other</span> <span class="nx">config</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    <span class="nx">javascript_sdk</span><span class="p">:</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />      <span class="nl">destination</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">__dirname</span><span class="p">}</span><span class="s2">/content/frontend/build/api_sdk`</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />      <span class="nx">module_name</span><span class="p">:</span> <span class="s2">"API_SDK"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />      <span class="nx">es5</span><span class="p">:</span> <span class="kc">true</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    <span class="p">...</span> <span class="nx">other</span> <span class="nx">config</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">},</span></code></pre></figure>
 
 <p>This tells the generator to put the generated code into the <code class="highlighter-rouge">content/frontend/build/api_sdk</code> folder and name the ES5 module <code class="highlighter-rouge">API_SDK</code>. The ES5 module is a UMD module so can be <code class="highlighter-rouge">require</code>d or if no module loader is found is added to <code class="highlighter-rouge">window</code>.</p>
 

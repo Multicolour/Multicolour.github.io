@@ -34,6 +34,12 @@ figure {
 
 main {
   background-color: $colour_primary_background;
+  max-width: 92%;
+  margin: 0 auto;
+
+  @media screen and (max-width: $break-small) {
+    max-width: 100%;
+  }
 }
 
 hr {

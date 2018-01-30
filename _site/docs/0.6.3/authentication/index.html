@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Authentication on your REST API</title>
+
+  <!-- Base -->
+<meta name="identifier-url" content="site.url" />
+<meta name="title" content="Authentication on your REST API" />
+<meta name="description" content="Authentication on your REST API." />
+<meta name="abstract" content="Authentication on your REST API is very important and while Multicolour by default is unauthenticated you should use a prebuilt plugin or build a plugin of y..." />
+<meta name="keywords" content="multicolour API, API security, REST API, Authentication" />
+<meta name="author" content="New World Code Ltd" />
+<meta name="revisit-after" content="7" />
+<meta name="language" content="en" />
+<meta name="copyright" content="© 2017 New World Code Ltd" />
+<meta name="robots" content="Index" />
+
+
+<!-- Social -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@getmulticolour">
+<meta name="twitter:title" content="Authentication on your REST API">
+<meta name="twitter:description" content="Authentication on your REST API.">
+<meta name="twitter:creator" content="@getmulticolour">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta itemprop="name" content="Authentication on your REST API">
+<meta itemprop="description" content="Authentication on your REST API.">
+<meta itemprop="image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png">
+
+<meta property="og:title" content="Authentication on your REST API" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://0.0.0.0:4000" />
+<meta property="og:image" content="http://0.0.0.0:4000/images/MC_Icon_PurpleRain_Logotype.png" />
+<meta property="og:description" content="Authentication on your REST API." />
+<meta property="og:site_name" content="Authentication on your REST API" />
+
+<link rel="icon" href="/images/iconography/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/iconography/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/iconography/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/iconography/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/iconography/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/iconography/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/iconography/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/iconography/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/iconography/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/iconography/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/iconography/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/iconography/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/iconography/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/iconography/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#FF9999">
+<meta name="msapplication-TileImage" content="/images/iconography/ms-icon-144x144.png">
+<meta name="theme-color" content="#FF9999">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet" type="text/css" async>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://0.0.0.0:4000/docs/0.6.3/authentication/">
+  <link rel="alternate" type="application/rss+xml" title="Multicolour - Rest API generator" href="http://0.0.0.0:4000/feed.xml">
+</head>
+
+
+<body>
+    <main class="docs">
+      <div class="general-nav">
+    <nav>
+        <a href="/" class="logo-link no-border" title="Multicolour - Rest API generator">
+            <img class="nav-logo" src="/images/logo-stamp.svg" alt="Multicolour - Rest API generator">
+        </a>
+
+        <ul class="menu">
+            <li>
+                <a href="/examples/" title="Multicolour rest api generator examples">examples</a>
+            </li>
+            <li>
+                <a href="/docs/0.6.3/" title="Multicolour docs">docs</a>
+            </li>
+            <li>
+                <a href="/blog/" title="Multicolour blog">blog</a>
+            </li>
+        </ul>
+    </nav>
+
+    <menu class="breadcrumb-menu">
+        <h1>Authentication on your REST API</h1>
+
+        <div class="breadcrumbs">
+  <a class="breadcrumbs-logo" href="/" title="Multicolour - Rest API generator">
+    <img src="/images/iconography/android-icon-36x36.png" alt="Multicolour - Rest API generator">
+  </a>
+
+  <span class="arrow">&rarr;</span>
+
+  
+  
+  <a href="/docs/" title="docs">
+    docs
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  <a href="/docs/0.6.3/" title="0.6.3">
+    0.6.3
+  </a>
+
+  <span class="arrow">&rarr;</span>
+  
+  
+
+  <a class="current" href="/docs/0.6.3/authentication/" title="Authentication on your REST API">
+    
+    API Authentication
+    
+  </a>
+</div>
+
+    </menu>
+</div>
+
+
+      <section class="columns">
+        <aside>
+            
+            <h2 class="title">Docs <span>0.6.3</span></h2>
+            
+            <section class="search">
+                <input type="search" name="search" placeholder="search the docs">
+            </section>
+
+            
+            
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "headline": "Authentication on your REST API",
+        "assemblyVersion": "0.6.3",
+        "executableLibraryName": "multicolour",
+        "targetPlatform": "NodeJS",
+        "keywords": "multicolour API, API security, REST API, Authentication",
+        "learningResourceType": ["learning activity"],
+        "wordCount": "380",
+        "datePublished": "2018-01-30 10:02:25 -0600",
+        "url": "/docs/0.6.3/authentication/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Multicolour",
+            "sameAs": [
+                "https://twitter.com/getmulticolour",
+                "https://github.com/Multicolour"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "contentUrl": "http://0.0.0.0:4000/images/logo.png",
+                "url": "http://0.0.0.0:4000"
+            }
+        },
+        "image":{
+            "@type":"ImageObject",
+            "contentUrl":"http://0.0.0.0:4000/images/social-header.jpg",
+            "url":"http://0.0.0.0:4000",
+            "height":"500",
+            "width":"1500"
+         },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://0.0.0.0:4000/docs/0.6.3/authentication/"
+        },
+        "articleBody": "Authentication on your REST API is very important and while Multicolour by default is unauthenticated you should use a prebuilt plugin or build a plugin of your own to authenticate your users.Luckily, there are two plugins for your REST API that provide the most common forms of authentication that are available:OAuthJWT tokens &amp;amp; Email/password combosBoth of these plugins will authenticate any endpoint set for authentication.RolesAuthenticating users is a good first step but you’ll always want different levels of scope for your models. Multicolour has a built in way to handle specific role based authentication features and they’re defined per verb and per model to give you the ultimate flexibility.ExamplesThis example ensures that only an admin can do anything with this particular model.const roles = [&quot;admin&quot;]const verbs = [&quot;post&quot;, &quot;get&quot;, &quot;put&quot;, &quot;patch&quot;, &quot;delete&quot;]module.exports = {  roles: verbs.reduce((target, verb) =&amp;gt; {    target[verb] = roles    return target  }, {}),  attributes: {    campaignName: {      type: &quot;string&quot;,    },    campaignVolunteers: {      collection: &quot;multicolour_user&quot;,    },  }}This example ensures that only an admin can create, update or delete any of this data but everyone can read it safely.const adminRoles = [&quot;admin&quot;]const readRoles = [&quot;admin&quot;, &quot;user&quot;]module.exports = {  roles: {    post: adminRoles,    put: adminRoles,    patch: adminRoles,    delete: adminRoles,    get: readRoles,  },  attributes: {    campaignName: {      type: &quot;string&quot;,    },    campaignVolunteers: {      collection: &quot;multicolour_user&quot;,    },  }}"
+    }
+</script>
+
+
+            <ul class="search-results">
+  
+  
+    <li
+      data-keywords="multicolour API, API reference"
+      
+      class="visible">
+      <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
+        API Reference
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour API, API security, REST API, Authentication"
+      
+      class="active visible">
+        API Authentication
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, cli"
+      
+      class="visible">
+      <a href="/docs/0.6.3/cli/" title="Multicolour documentation CLI">
+        CLI
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="waterline blueprints, multicolour collection, database, table, define, migration"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/" title="Multicolour documentation collections">
+        Collections/Blueprints
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour config, server configuration, rest api config"
+      
+      class="visible">
+      <a href="/docs/0.6.3/configuration/" title="Multicolour documentation configuration">
+        Configuration
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="codeless business logic, multicolour constraints"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/constraints/" title="Multicolour documentation constraints">
+        Constraints
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="database, migration, data, existing database, automatic"
+      
+      class="visible">
+      <a href="/docs/0.6.3/collections/migration/" title="Multicolour documentation database migration">
+        Migration
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, rest api, debugging"
+      
+      class="visible">
+      <a href="/docs/0.6.3/debugging/" title="Multicolour documentation debugging tips">
+        Debugging
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords=""
+      
+      class="visible">
+      <a href="/docs/0.6.3/quickstart/" title="Multicolour quickstart">
+        Quickstart
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, rest api, verbs, handlers"
+      
+      class="visible">
+      <a href="/docs/0.6.3/handlers/" title="Multicolour REST API method handlers documentation.">
+        Handlers
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, javascript sdk"
+      
+      class="visible">
+      <a href="/docs/0.6.3/javascript-sdk/" title="Multicolour documentation JavaScript SDK generator">
+        JavaScript SDK
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, plugins, rest api business logic"
+      
+      class="visible">
+      <a href="/docs/0.6.3/plugins/" title="Multicolour documentation plugins">
+        Writing plugins
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, REST API routes, routing"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/" title="Multicolour documentation routing">
+        Routing
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="rest api query, results filtering, searching"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/results/" title="Multicolour documentation result filtering">
+        Results Filtering
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour, server, http"
+      
+      class="visible">
+      <a href="/docs/0.6.3/server/" title="Multicolour server docs">
+        Server
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="file uploads, multicolour, rest api file uploads"
+      
+      class="visible">
+      <a href="/docs/0.6.3/routing/file-uploads/" title="Multicolour documentation file uploads">
+        Uploading files
+      </a>
+      
+
+      
+    </li>
+  
+</ul>
+
+            
+        </aside>
+        <article>
+          <p>Authentication on your REST API is very important and while Multicolour by default is unauthenticated you should use a prebuilt plugin or build a plugin of your own to authenticate your users.</p>
+
+<p>Luckily, there are two plugins for your REST API that provide the most common forms of authentication that are available:</p>
+
+<p><a href="https://github.com/Multicolour/multicolour-hapi-oauth">OAuth</a><br />
+<a href="https://github.com/Multicolour/multicolour-auth-jwt">JWT tokens &amp; Email/password combos</a></p>
+
+<p>Both of these plugins will authenticate any endpoint set for authentication.</p>
+
+<h2 id="roles">Roles</h2>
+
+<p>Authenticating users is a good first step but you’ll always want different levels of scope for your models. Multicolour has a built in way to handle specific role based authentication features and they’re defined per verb and per model to give you the ultimate flexibility.</p>
+
+<p><em>Examples</em></p>
+
+<p>This example ensures that only an admin can do anything with this particular model.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">roles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"admin"</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">verbs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"post"</span><span class="p">,</span> <span class="s2">"get"</span><span class="p">,</span> <span class="s2">"put"</span><span class="p">,</span> <span class="s2">"patch"</span><span class="p">,</span> <span class="s2">"delete"</span><span class="p">]</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">roles</span><span class="p">:</span> <span class="nx">verbs</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">target</span><span class="p">,</span> <span class="nx">verb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">target</span><span class="p">[</span><span class="nx">verb</span><span class="p">]</span> <span class="o">=</span> <span class="nx">roles</span>
+    <span class="k">return</span> <span class="nx">target</span>
+  <span class="p">},</span> <span class="p">{}),</span>
+
+  <span class="na">attributes</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">campaignName</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="p">},</span>
+
+    <span class="na">campaignVolunteers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">collection</span><span class="p">:</span> <span class="s2">"multicolour_user"</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>This example ensures that only an admin can create, update or delete any of this data but everyone can read it safely.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">adminRoles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"admin"</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">readRoles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"admin"</span><span class="p">,</span> <span class="s2">"user"</span><span class="p">]</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">roles</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">post</span><span class="p">:</span> <span class="nx">adminRoles</span><span class="p">,</span>
+    <span class="na">put</span><span class="p">:</span> <span class="nx">adminRoles</span><span class="p">,</span>
+    <span class="na">patch</span><span class="p">:</span> <span class="nx">adminRoles</span><span class="p">,</span>
+    <span class="na">delete</span><span class="p">:</span> <span class="nx">adminRoles</span><span class="p">,</span>
+
+    <span class="na">get</span><span class="p">:</span> <span class="nx">readRoles</span><span class="p">,</span>
+  <span class="p">},</span>
+
+  <span class="na">attributes</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">campaignName</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="p">},</span>
+
+    <span class="na">campaignVolunteers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">collection</span><span class="p">:</span> <span class="s2">"multicolour_user"</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+  <div class="social">
+    <a href="https://github.com/Multicolour" rel="nofollow noreferrer noopener">
+      <img src="/images/logos/github.svg" alt="Multicolour open source projects">
+    </a>
+
+    <a href="https://slack.getmulticolour.com" rel="nofollow noreferrer noopener">
+      <img src="/images/logos/slack.svg" alt="Multicolour Slack channel, help, tutorials">
+    </a>
+
+    <a href="https://twitter.com/getmulticolour" rel="nofollow noreferrer noopener">
+      <img src="/images/logos/twitter.svg" alt="Multicolour Twitter feed">
+    </a>
+  </div>
+
+  <ul class="meta">
+    <li>
+      <a href="/code-of-conduct" title="Multicolour code of conduct">
+        Code of Conduct
+      </a>
+    </li>
+    <li>
+      <a href="/Multicolour_Branding_Guidelines_2016.pdf" target="_blank" rel="nofollow noopener noreferrer">
+        Branding guidelines
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Multicolour" target="_blank" rel="nofollow noopener noreferrer">
+        Github Organisation
+      </a>
+    </li>
+  </ul>
+  <p>&copy; All copyright to Get Multicolour &amp; New World Code Ltd 2017</p>
+</footer>
+
+<script src="/js/main.js" async defer></script>
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+    analytics.load("Qurt0kpTtzocuF8h8VgRH6ygztdQPK5i");
+    analytics.page()
+  }}();
+</script>
+
+
+</body>
+
+</html>

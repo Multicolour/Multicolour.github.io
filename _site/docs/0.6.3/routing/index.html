@@ -148,8 +148,8 @@
         "targetPlatform": "NodeJS",
         "keywords": "multicolour, REST API routes, routing",
         "learningResourceType": ["learning activity"],
-        "wordCount": "713",
-        "datePublished": "2017-04-17 18:59:43 +0000",
+        "wordCount": "730",
+        "datePublished": "2018-01-30 10:02:25 -0600",
         "url": "/docs/0.6.3/routing/",
         "publisher": {
             "@type": "Organization",
@@ -189,6 +189,18 @@
       class="visible">
       <a href="/docs/0.6.3/api-reference/" title="Multicolour core API reference">
         API Reference
+      </a>
+      
+
+      
+    </li>
+  
+    <li
+      data-keywords="multicolour API, API security, REST API, Authentication"
+      
+      class="visible">
+      <a href="/docs/0.6.3/authentication/" title="Authentication on your REST API">
+        API Authentication
       </a>
       
 
@@ -375,13 +387,13 @@
 <p>Multicolour generates the following for you.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">POST /{identity}</code> Create a new <code class="highlighter-rouge"><span class="p">{</span><span class="err">identity</span><span class="p">}</span></code></li>
-  <li><code class="highlighter-rouge">PUT /{identity}</code> Update or create a <code class="highlighter-rouge"><span class="p">{</span><span class="err">identity</span><span class="p">}</span></code></li>
-  <li><code class="highlighter-rouge">GET /{identity}?page={page}</code> Get a paginated  list of <code class="highlighter-rouge"><span class="p">{</span><span class="err">identity</span><span class="p">}</span></code></li>
-  <li><code class="highlighter-rouge">GET /{identity}/{id}</code> Get a single <code class="highlighter-rouge"><span class="p">{</span><span class="err">identity</span><span class="p">}</span></code> by <code class="highlighter-rouge"><span class="p">{</span><span class="err">id</span><span class="p">}</span></code></li>
-  <li><code class="highlighter-rouge">GET /{identity}?{query}&amp;page={page}</code> Get a paginated list of <code class="highlighter-rouge"><span class="p">{</span><span class="err">identity</span><span class="p">}</span></code> where <code class="highlighter-rouge"><span class="p">{</span><span class="err">query</span><span class="p">}</span></code></li>
-  <li><code class="highlighter-rouge">PATCH /{identity}</code> Update a <code class="highlighter-rouge"><span class="p">{</span><span class="err">identity</span><span class="p">}</span></code></li>
-  <li><code class="highlighter-rouge">DELETE /{identity}</code> Permanently remove a <code class="highlighter-rouge"><span class="p">{</span><span class="err">identity</span><span class="p">}</span></code></li>
+  <li><code class="highlighter-rouge">POST /{identity}</code> Create a new <code class="highlighter-rouge">{identity}</code></li>
+  <li><code class="highlighter-rouge">PUT /{identity}</code> Update or create a <code class="highlighter-rouge">{identity}</code></li>
+  <li><code class="highlighter-rouge">GET /{identity}?page={page}</code> Get a paginated  list of <code class="highlighter-rouge">{identity}</code></li>
+  <li><code class="highlighter-rouge">GET /{identity}/{id}</code> Get a single <code class="highlighter-rouge">{identity}</code> by <code class="highlighter-rouge">{id}</code></li>
+  <li><code class="highlighter-rouge">GET /{identity}?{query}&amp;page={page}</code> Get a paginated list of <code class="highlighter-rouge">{identity}</code> where <code class="highlighter-rouge">{query}</code></li>
+  <li><code class="highlighter-rouge">PATCH /{identity}</code> Update a <code class="highlighter-rouge">{identity}</code></li>
+  <li><code class="highlighter-rouge">DELETE /{identity}</code> Permanently remove a <code class="highlighter-rouge">{identity}</code></li>
 </ul>
 
 <p>Creating your own routes is simple, currently custom routes are not transportable between server technologies but may be in the future.</p>
@@ -390,9 +402,7 @@
 
 <p>Multicolour core supplies handlers for pretty much all your verbs out of the box, you can access and use them anytime by <code class="highlighter-rouge">get</code>ting them from core like below.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">handlers</span> <span class="o">=</span> <span class="nx">my_service</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"handlers"</span><span class="p">)</span>
-
-<span class="c1">// handlers -&gt; Multicolour_Route_Templates</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">handlers</span> <span class="o">=</span> <span class="nx">my_service</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"handlers"</span><span class="p">)</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="c1">// handlers -&gt; Multicolour_Route_Templates</span></code></pre></figure>
 
 <h2 id="multicolour_route_templates-class"><code class="highlighter-rouge">Multicolour_Route_Templates</code> class</h2>
 
@@ -402,12 +412,7 @@
 
 <p>Where <code class="highlighter-rouge">[VERB]</code> is one of the following</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">POST - Create stuff.
-GET - Read stuff.
-PATCH - Update stuff.
-PUT - Update or create stuff.
-DELETE - Delete stuff.
-UPLOAD - Upload stuff.</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">POST - Create stuff.<br data-jekyll-commonmark-ghpages="" />GET - Read stuff.<br data-jekyll-commonmark-ghpages="" />PATCH - Update stuff.<br data-jekyll-commonmark-ghpages="" />PUT - Update or create stuff.<br data-jekyll-commonmark-ghpages="" />DELETE - Delete stuff.<br data-jekyll-commonmark-ghpages="" />UPLOAD - Upload stuff.</code></pre></figure>
 
 <p>and where model is retrieved from <code class="highlighter-rouge">my_service.get("database").get("models")</code></p>
 
@@ -417,32 +422,13 @@ UPLOAD - Upload stuff.</code></pre></figure>
 
 <p>Add a <code class="highlighter-rouge">custom_route</code> property to your blueprint:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{...},</span>
-  <span class="nx">custom_routes</span><span class="err">:</span> <span class="kd">function</span> <span class="nx">custom_routes</span><span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Route based on your server technology here.</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span><br data-jekyll-commonmark-ghpages="" />  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{...},</span><br data-jekyll-commonmark-ghpages="" />  <span class="nx">custom_routes</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">custom_routes</span><span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="c1">// Route based on your server technology here.</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><span class="p">}</span></code></pre></figure>
 
 <p>Multicolour does not interfere, know about or modify anything you do inside of this function. This is your domain and you are free to do what you will.</p>
 
 <p>An example route using the <code class="highlighter-rouge">hapi</code> server technology might look like this.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{...},</span>
-  <span class="nx">custom_routes</span><span class="err">:</span> <span class="kd">function</span> <span class="nx">custom_routes</span><span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// this === this blueprint</span>
-    <span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span>
-      <span class="na">method</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-      <span class="na">path</span><span class="p">:</span> <span class="s2">"/project/count"</span><span class="p">,</span>
-      <span class="na">handler</span><span class="p">:</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">this</span>
-          <span class="p">.</span><span class="nx">count</span><span class="p">({})</span>
-          <span class="p">.</span><span class="nx">exec</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">count</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reply</span><span class="p">[</span><span class="nx">multicolour</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"decorator"</span><span class="p">)](</span><span class="nx">err</span> <span class="o">||</span> <span class="nx">count</span><span class="p">))</span>
-      <span class="p">}</span>
-    <span class="p">})</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span><br data-jekyll-commonmark-ghpages="" />  <span class="nl">attributes</span><span class="p">:</span> <span class="p">{...},</span><br data-jekyll-commonmark-ghpages="" />  <span class="nx">custom_routes</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">custom_routes</span><span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">multicolour</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="c1">// this === this blueprint</span><br data-jekyll-commonmark-ghpages="" />    <span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">method</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">path</span><span class="p">:</span> <span class="s2">"/project/count"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />      <span class="na">handler</span><span class="p">:</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />        <span class="k">this</span><br data-jekyll-commonmark-ghpages="" />          <span class="p">.</span><span class="nx">count</span><span class="p">({})</span><br data-jekyll-commonmark-ghpages="" />          <span class="p">.</span><span class="nx">exec</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">count</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reply</span><span class="p">[</span><span class="nx">multicolour</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"decorator"</span><span class="p">)](</span><span class="nx">err</span> <span class="o">||</span> <span class="nx">count</span><span class="p">))</span><br data-jekyll-commonmark-ghpages="" />      <span class="p">}</span><br data-jekyll-commonmark-ghpages="" />    <span class="p">})</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><span class="p">}</span></code></pre></figure>
 
 <h2 id="gotchas-while-writing-custom-routes">Gotchas while writing custom routes</h2>
 <p>As mentioned above, Multicolour makes no effort to watch, change or interfere with your custom routes as we consider <code class="highlighter-rouge">custom_routes</code> to contain business critical logic.</p>
