@@ -62,9 +62,46 @@ UPLOAD - Upload stuff.
 
 and where model is retrieved from `my_service.get("database").get("models")`
 
+## The generated routes are nearly there, I want to change something.
+
+You have one last chance to alter the generated routes before they're registered with Hapi, that's done by using the route config middleware available as a callback on every model. This is only available on Multicolour APIs running `multicolour-server-hapi@1.8.2+`.
+
+The callback takes a single argument object with 2 keys, the `verb` that's being configured currently and the current config of the route (`routeConfig`) before it's registered.
+
+**example**:
+
+{% highlight js %}
+{
+  attributes: {...},
+  routeConfigMiddleware: ({routeConfig}) => {
+    
+    switch (routeConfig.method) {
+    case "GET": {
+      // This line create a headers object ommiting the authorization key.
+      const { authorization, ...headers } = routeConfig.config.validate.headers // eslint-disable-line
+      
+      return {
+        ...routeConfig,
+        config: {
+          ...routeConfig.config,
+          auth: false,
+          validate: {
+            ...routeConfig.config.validate,
+            headers,
+          },
+        },
+      }
+    }
+    default:
+      return routeConfig
+    }
+  },
+}
+{% endhighlight %}
+
 ## Creating custom routes
 
-You have had a request from the client asking for something Multicolour hasn't already given you, it's time to write a custom route and handler.
+You have had a request from the client asking for something Multicolour hasn't already given you and you can't achieve with constraints or the route config middleware, it's time to write a custom route and handler. This is also a great way to ship and share plugins containing re-usable functionality and logic.
 
 Add a `custom_route` property to your blueprint:
 
